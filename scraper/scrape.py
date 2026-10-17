@@ -10,6 +10,7 @@ con pause tra l'una e l'altra.
 """
 
 import json
+import os
 import random
 import re
 import sys
@@ -28,6 +29,7 @@ OUT_FILE = ROOT / "data" / "corsi.json"
 BASE_URL = "https://urbansportsclub.com/en/venues/"
 DAYS_AHEAD = 14             # quanti giorni scaricare (oggi incluso)
 PAUSE_SECONDS = (2.0, 4.0)  # pausa casuale tra una richiesta e l'altra
+MIN_AGE_HOURS = 12          # se i dati sono più recenti, non si scarica di nuovo (salvo FORCE=true)
 
 HEADERS = {
     "User-Agent": (
@@ -193,6 +195,17 @@ def main():
     old = load_old()
     old_classes = old.get("classes", [])
     old_venues = old.get("venues", {})
+
+    if os.environ.get("FORCE", "").lower() != "true" and old.get("updated"):
+        try:
+            age = datetime.now(ZoneInfo("Europe/Berlin")) - datetime.fromisoformat(old["updated"])
+        except (ValueError, TypeError):
+            age = None
+        if age is not None and age < timedelta(hours=MIN_AGE_HOURS):
+            print(f"I dati sono stati scaricati {int(age.total_seconds() // 60)} minuti fa "
+                  f"(meno di {MIN_AGE_HOURS} ore): non scarico di nuovo. "
+                  "Per scaricare comunque, spunta 'forza' quando lanci il workflow.")
+            return
     today = datetime.now(ZoneInfo("Europe/Berlin")).date()
     monday = today - timedelta(days=today.weekday())
     days = [today + timedelta(days=i) for i in range(DAYS_AHEAD)]
