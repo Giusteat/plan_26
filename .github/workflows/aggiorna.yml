@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "0 5 */5 * *"   # ogni 5 giorni, alle 5:00 UTC
   workflow_dispatch:         # permette di lanciarlo a mano dal sito GitHub
+    inputs:
+      forza:
+        description: "Scarica comunque, anche se i dati hanno meno di 12 ore"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -22,6 +27,8 @@ jobs:
         run: pip install requests
 
       - name: Scarica gli orari
+        env:
+          FORCE: ${{ inputs.forza }}
         run: python scraper/scrape.py
 
       - name: Salva i dati nel repository
