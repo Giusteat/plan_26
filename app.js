@@ -1,12 +1,34 @@
-// Colori per categoria di Urban Sports (id categoria -> [sfondo, testo])
+// ======================= REGOLE (si possono modificare) =======================
+// 1) Correzioni di categoria, solo nell'interfaccia: vale la prima regola che combacia col titolo.
+const CATEGORY_RULES = [
+    [/reformer/i, "Pilates Reformer"],
+    [/pilates/i, "Pilates"],
+    [/\bpole\b/i, "Pole Dance"],
+    [/\bballet+\b|\bjazz\b/i, "Dance"],
+    [/cyclica/i, "Fitness"]
+];
+// 2) Voci del filtro: [nome mostrato, categorie dentro]
+const GROUPS = [
+    ["Pilates & Barre", ["Pilates", "Barre"]], ["Pilates Reformer", ["Pilates Reformer"]], ["Pole Dance", ["Pole Dance"]],
+    ["Yoga & Meditation", ["Yoga", "Meditation", "Aerial"]], ["Fitness", ["Fitness"]], ["Dance", ["Dance"]],
+    ["Functional Training", ["Functional Training"]]
+];
+// 3) Colori per categoria: [sfondo, testo]
 const COLORS = {
-    4: ["#e0f2fe", "#0369a1"], 344: ["#fce7f3", "#be185d"], 135: ["#f3e8ff", "#6b21a8"], 6: ["#dcfce7", "#15803d"],
-    1: ["#ffedd5", "#c2410c"], 7: ["#fef08a", "#854d0e"], 233: ["#ccfbf1", "#0f766e"], 13: ["#e0e7ff", "#4338ca"],
-    1378: ["#fee2e2", "#b91c1c"], 92: ["#ecfccb", "#4d7c0f"]
+    "Pilates": ["#e0f2fe", "#0369a1"], "Barre": ["#fee2e2", "#b91c1c"], "Pilates Reformer": ["#fce7f3", "#be185d"],
+    "Pole Dance": ["#f3e8ff", "#6b21a8"], "Yoga": ["#dcfce7", "#15803d"], "Meditation": ["#e0e7ff", "#4338ca"],
+    "Aerial": ["#ecfccb", "#4d7c0f"], "Fitness": ["#ffedd5", "#c2410c"], "Dance": ["#fef08a", "#854d0e"],
+    "Functional Training": ["#ccfbf1", "#0f766e"]
 };
+// 4) Titoli: parole che restano tutte maiuscole
+const KEEP_CAPS = ["USC", "HIIT", "TRX", "DJ", "FLINTA", "HALO"];
+// ==============================================================================
+
 const PLANS = [["M", "Classic"], ["L", "Premium"], ["XL", "Max"]];
 const DAYS = ["Lun", "Mar", "Mer", "Gio", "Ven", "Sab", "Dom"];
 const HOUR_H = 60;
+const GROUP_OF = {};
+GROUPS.forEach(([g, cats]) => cats.forEach(c => { GROUP_OF[c] = g; }));
 
 const $ = id => document.getElementById(id);
 const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; };
@@ -16,33 +38,58 @@ const iso = d => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())
 const parse = s => { const [y, m, d] = s.split("-").map(Number); return new Date(y, m - 1, d); };
 const addDays = (d, n) => { const x = new Date(d); x.setDate(x.getDate() + n); return x; };
 const mondayOf = d => addDays(new Date(d.getFullYear(), d.getMonth(), d.getDate()), -((d.getDay() + 6) % 7));
+const todayDate = () => { const t = new Date(); return new Date(t.getFullYear(), t.getMonth(), t.getDate()); };
 const fmt = d => d.toLocaleDateString("it-IT", { day: "numeric", month: "short" });
+const dayName = d => DAYS[(d.getDay() + 6) % 7];
 const store = {
     get(k, f) { try { const v = localStorage.getItem(k); return v === null ? f : JSON.parse(v); } catch (e) { return f; } },
     set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { } }
 };
 
+// Titolo ordinato per la visualizzazione (il titolo originale resta nei dati)
+function formatTitle(t) {
+    let s = t.replace(/\s+\|\s+/g, " · ");
+    s = s.replace(/\s*·\s*in English\b/i, " (EN)").replace(/\bin English\b/i, "(EN)");
+    s = s.replace(/\b(DE|EN)\s*\/\s*(DE|EN)\b/g, "$1/$2");
+    s = s.replace(/\s*NEW ?TIME!*/i, "");
+    s = s.replace(/\s*\b\d{2,3}\s*Mi(?:n(?:utes?)?)?\b/i, "");
+    s = s.trim().split(/\s+/).map(w => {
+        const m = w.match(/^\(?((?:DE|EN)(?:\/(?:DE|EN))?)\)?$/);
+        if (m) return `(${m[1]})`;
+        const core = w.replace(/[.:!*,]+$/, "");
+        if (/^[A-ZÄÖÜ]{2,}$/.test(core) && !KEEP_CAPS.includes(core)) return core[0] + core.slice(1).toLowerCase() + w.slice(core.length);
+        return w;
+    }).join(" ");
+    return s.replace(/\s*[·\-–]\s*$/, "").trim();
+}
+function effectiveCategory(c) {
+    for (const [re, cat] of CATEGORY_RULES) if (re.test(c.title)) return cat;
+    return (c.category || {}).name || "-";
+}
+
 let classes = [], venues = {}, startHour = 7, endHour = 22, minDay, maxDay;
-const S = { cat: new Set(), venue: new Set(), plan: store.get("plan", ""), fav: false, week: null, day: null };
+const S = { cat: new Set(), venue: new Set(), plan: store.get("plan", ""), fav: false, view: 7, start: null, day: null };
 const favs = new Set(store.get("favs", []));
 const mobile = window.matchMedia("(max-width: 760px)");
 
-// Un corso preferito = stesso studio, titolo, giorno della settimana, ora e insegnante
+// Un preferito = stesso studio, titolo originale, giorno della settimana, ora e insegnante
 function prep(c) {
     c.date = c.startDateTimeUTC.slice(0, 10);
     c.start = c.startDateTimeUTC.slice(11, 16);
     c.end = c.endDateTimeUTC.slice(11, 16);
     c.dow = (parse(c.date).getDay() + 6) % 7;
     c.studio = (venues[c.venue] || {}).name || c.venue;
-    c.cat = (c.category || {}).name || "-";
+    c.cat = effectiveCategory(c);
+    c.group = GROUP_OF[c.cat] || c.cat;
+    c.name = formatTitle(c.title);
     c.plans = c.planTypesB2C || [];
     c.key = [c.venue, c.title, c.dow, c.start, c.teacherName || ""].join("|");
     return c;
 }
 const visible = c =>
-    (!S.cat.size || S.cat.has(c.cat)) && (!S.venue.size || S.venue.has(c.studio)) &&
+    (!S.cat.size || S.cat.has(c.group)) && (!S.venue.size || S.venue.has(c.studio)) &&
     (!S.plan || c.plans.includes(S.plan)) && (!S.fav || favs.has(c.key));
-const colorOf = c => COLORS[(c.category || {}).id] || ["#e5e7eb", "#374151"];
+const colorOf = c => COLORS[c.cat] || ["#e5e7eb", "#374151"];
 
 function toggleFav(c) {
     favs.has(c.key) ? favs.delete(c.key) : favs.add(c.key);
@@ -84,7 +131,7 @@ function planFilter() {
 document.addEventListener("click", e =>
     document.querySelectorAll("details.dd[open]").forEach(d => { if (!d.contains(e.target)) d.open = false; }));
 
-// ---------- griglia settimanale (computer) ----------
+// ---------- griglia (computer): 1, 4 o 7 giorni ----------
 function layout(list) {
     const evs = list.map(c => ({ ...c, a: toMin(c.start), z: toMin(c.end) })).sort((x, y) => x.a - y.a);
     const clusters = [];
@@ -108,26 +155,25 @@ function layout(list) {
 }
 const isPast = (c, todayIso, nowMin) => c.date < todayIso || (c.date === todayIso && toMin(c.end) < nowMin);
 
-function renderWeek(view, list) {
-    const now = new Date(), todayIso = iso(now), nowMin = now.getHours() * 60 + now.getMinutes();
+function renderGrid(view, list) {
+    const n = S.view, now = new Date(), todayIso = iso(now), nowMin = now.getHours() * 60 + now.getMinutes();
     const grid = el("div", "grid");
+    grid.style.gridTemplateColumns = `48px repeat(${n}, minmax(0, 1fr))`;
     view.appendChild(grid);
     grid.appendChild(el("div", "gh"));
-    for (let i = 0; i < 7; i++) {
-        const d = addDays(S.week, i);
-        grid.appendChild(el("div", "gh" + (iso(d) === todayIso ? " today" : ""), `${DAYS[i]} ${d.getDate()}`));
-    }
+    const days = Array.from({ length: n }, (_, i) => addDays(S.start, i));
+    days.forEach(d => grid.appendChild(el("div", "gh" + (iso(d) === todayIso ? " today" : ""), `${dayName(d)} ${d.getDate()}`)));
     const cols = [];
     for (let h = startHour; h <= endHour; h++) {
         grid.appendChild(el("div", "ts", `${pad(h)}:00`));
-        for (let i = 0; i < 7; i++) {
+        for (let i = 0; i < n; i++) {
             const c = el("div", "dc");
             grid.appendChild(c);
             if (h === startHour) cols[i] = c;
         }
     }
-    for (let i = 0; i < 7; i++) {
-        const dayIso = iso(addDays(S.week, i));
+    days.forEach((d, i) => {
+        const dayIso = iso(d);
         layout(list.filter(c => c.date === dayIso)).forEach(ev => {
             const [bg, fg] = colorOf(ev), w = 100 / ev.cols;
             const b = el("div", "ev" + (isPast(ev, todayIso, nowMin) ? " past" : ""));
@@ -136,19 +182,19 @@ function renderWeek(view, list) {
                 height: `${Math.max(((ev.z - ev.a) / 60) * HOUR_H, 22)}px`,
                 left: `calc(${ev.col * w}% + 1px)`, width: `calc(${w}% - 2px)`
             });
-            b.title = `${ev.title}\n${ev.start}–${ev.end} · ${ev.studio}\n${ev.teacherName || ""}`;
-            b.append(el("div", "t", ev.title), el("div", "s", `${ev.start}–${ev.end} · ${ev.studio}`));
+            b.title = `${ev.name}\n${ev.start}–${ev.end} · ${ev.studio}\n${ev.teacherName || ""}`;
+            b.append(el("div", "t", ev.name), el("div", "s", `${ev.start}–${ev.end} · ${ev.studio}`));
+            if (n <= 4 && ev.teacherName) b.appendChild(el("div", "tc", ev.teacherName));
             if (favs.has(ev.key)) b.appendChild(el("span", "h", "♥"));
             b.onclick = () => openSheet(ev);
             cols[i].appendChild(b);
         });
-    }
-    const ti = (now.getDay() + 6) % 7;
-    if (iso(addDays(S.week, ti)) === todayIso && nowMin >= startHour * 60 && nowMin <= (endHour + 1) * 60) {
-        const line = el("div", "now");
-        line.style.top = `${((nowMin - startHour * 60) / 60) * HOUR_H}px`;
-        cols[ti].appendChild(line);
-    }
+        if (dayIso === todayIso && nowMin >= startHour * 60 && nowMin <= (endHour + 1) * 60) {
+            const line = el("div", "now");
+            line.style.top = `${((nowMin - startHour * 60) / 60) * HOUR_H}px`;
+            cols[i].appendChild(line);
+        }
+    });
 }
 
 // ---------- lista del giorno (telefono) ----------
@@ -161,7 +207,7 @@ function renderDay(view, list) {
         const row = el("div", "row" + (isPast(c, todayIso, nowMin) ? " past" : ""));
         row.style.borderLeftColor = colorOf(c)[1];
         const bd = el("div", "bd");
-        bd.append(el("div", "tt", c.title), el("div", "sub", `${c.studio} · ${c.teacherName || "–"}`));
+        bd.append(el("div", "tt", c.name), el("div", "sub", `${c.studio} · ${c.teacherName || "–"}`));
         const h = el("button", "heart", favs.has(c.key) ? "♥" : "♡");
         h.setAttribute("aria-label", "Preferito");
         h.onclick = e => { e.stopPropagation(); toggleFav(c); };
@@ -182,7 +228,7 @@ function openSheet(c) {
     const plans = PLANS.filter(([k]) => c.plans.includes(k)).map(p => p[1]).join(", ");
     const rows = [
         ["Quando", `${DAYS[c.dow]} ${parse(c.date).toLocaleDateString("it-IT", { day: "numeric", month: "long" })}, ${c.start}–${c.end}`],
-        ["Insegnante", c.teacherName || "–"], ["Studio", c.studio], ["Indirizzo", addr || "–"], ["Categoria", c.cat],
+        ["Insegnante", c.teacherName || "–"], ["Studio", c.studio], ["Indirizzo", addr || "–"], ["Categoria", c.group],
         ["Posti", c.spots && c.spots.max != null ? String(c.spots.max) : "–"], ["Piani", plans || "–"]
     ];
     const dl = el("dl");
@@ -196,7 +242,7 @@ function openSheet(c) {
     const link = (href, text) => { const a = el("a", null, text); a.href = href; a.target = "_blank"; a.rel = "noopener"; links.appendChild(a); };
     link(`https://urbansportsclub.com/en/venues/${encodeURIComponent(c.venue)}`, "Apri su Urban Sports");
     if (v.website && /^https?:\/\//.test(v.website)) link(v.website, "Sito dello studio");
-    box.append(x, el("h2", null, c.title), dl, links);
+    box.append(x, el("h2", null, c.name), dl, links);
     sh.appendChild(box);
 }
 $("sheet").addEventListener("click", e => { if (e.target === $("sheet")) closeSheet(); });
@@ -204,25 +250,41 @@ document.addEventListener("keydown", e => { if (e.key === "Escape") closeSheet()
 
 // ---------- navigazione e rendering ----------
 const clampDay = d => d < minDay ? minDay : d > maxDay ? maxDay : d;
-const clampWeek = d => { const a = mondayOf(minDay), b = mondayOf(maxDay); return d < a ? a : d > b ? b : d; };
+const firstStart = () => S.view === 7 ? mondayOf(minDay) : minDay;
+const lastStart = () => { if (S.view === 7) return mondayOf(maxDay); const d = addDays(maxDay, -(S.view - 1)); return d < minDay ? minDay : d; };
+const clampStart = d => { const a = firstStart(), b = lastStart(); return d < a ? a : d > b ? b : d; };
+
 function step(n) {
-    if (mobile.matches) S.day = clampDay(addDays(S.day, n)); else S.week = clampWeek(addDays(S.week, 7 * n));
+    if (mobile.matches) S.day = clampDay(addDays(S.day, n)); else S.start = clampStart(addDays(S.start, S.view * n));
+    render();
+}
+function setView(n) {
+    const prev = S.view; S.view = n; store.set("view", n);
+    if (n === 7) S.start = mondayOf(S.start);
+    else if (prev === 7) { const t = todayDate(); if (t >= S.start && t <= addDays(S.start, 6)) S.start = t; }
+    S.start = clampStart(S.start);
+    render();
+}
+function goToday() {
+    S.day = clampDay(todayDate());
+    S.start = clampStart(S.view === 7 ? mondayOf(new Date()) : todayDate());
     render();
 }
 function render() {
-    if (!S.week) return;
+    if (!S.start) return;
     const view = $("view");
     view.innerHTML = "";
     const list = classes.filter(visible);
     if (mobile.matches) {
         renderDay(view, list);
-        $("label").textContent = `${DAYS[(S.day.getDay() + 6) % 7]} ${fmt(S.day)}`;
+        $("label").textContent = `${dayName(S.day)} ${fmt(S.day)}`;
         $("prev").disabled = S.day <= minDay; $("next").disabled = S.day >= maxDay;
     } else {
-        renderWeek(view, list);
-        $("label").textContent = `${fmt(S.week)} – ${fmt(addDays(S.week, 6))}`;
-        $("prev").disabled = S.week <= mondayOf(minDay); $("next").disabled = S.week >= mondayOf(maxDay);
+        renderGrid(view, list);
+        $("label").textContent = S.view === 1 ? `${dayName(S.start)} ${fmt(S.start)}` : `${fmt(S.start)} – ${fmt(addDays(S.start, S.view - 1))}`;
+        $("prev").disabled = S.start <= firstStart(); $("next").disabled = S.start >= lastStart();
     }
+    document.querySelectorAll("#views .btn").forEach(b => b.classList.toggle("active", Number(b.dataset.v) === S.view));
 }
 
 async function init() {
@@ -240,21 +302,27 @@ async function init() {
 
     const dates = classes.map(c => c.date).sort();
     minDay = parse(dates[0]); maxDay = parse(dates[dates.length - 1]);
-    const today = new Date();
-    S.day = clampDay(new Date(today.getFullYear(), today.getMonth(), today.getDate()));
-    S.week = clampWeek(mondayOf(today));
+    const v = store.get("view", 7);
+    S.view = [1, 4, 7].includes(v) ? v : 7;
+    S.day = clampDay(todayDate());
+    S.start = clampStart(S.view === 7 ? mondayOf(new Date()) : todayDate());
     startHour = Math.min(7, Math.floor(Math.min(...classes.map(c => toMin(c.start))) / 60));
     endHour = Math.max(22, Math.ceil(Math.max(...classes.map(c => toMin(c.end))) / 60));
 
+    const present = new Set(classes.map(c => c.group));
+    const known = GROUPS.map(g => g[0]).filter(g => present.has(g));
+    const others = [...present].filter(g => !known.includes(g)).sort();
     const f = $("filters");
-    f.append(multi("Categorie", [...new Set(classes.map(c => c.cat))].sort(), S.cat),
+    f.append(multi("Categorie", [...known, ...others], S.cat),
              multi("Studi", [...new Set(classes.map(c => c.studio))].sort(), S.venue), planFilter());
     const fav = el("button", "btn", "♥ Solo preferiti");
     fav.onclick = () => { S.fav = !S.fav; fav.classList.toggle("active", S.fav); render(); };
     f.appendChild(fav);
 
-    $("prev").onclick = () => step(-1); $("next").onclick = () => step(1);
-    $("today").onclick = () => { S.day = clampDay(new Date(today.getFullYear(), today.getMonth(), today.getDate())); S.week = clampWeek(mondayOf(new Date())); render(); };
+    [[1, "1 giorno"], [4, "4 giorni"], [7, "7 giorni"]].forEach(([n, l]) => {
+        const b = el("button", "btn", l); b.dataset.v = n; b.onclick = () => setView(n); $("views").appendChild(b);
+    });
+    $("prev").onclick = () => step(-1); $("next").onclick = () => step(1); $("today").onclick = goToday;
     $("copyFav").onclick = async () => {
         try { await navigator.clipboard.writeText(JSON.stringify([...favs])); alert("Preferiti copiati. Incollali sull'altro dispositivo."); }
         catch (e) { prompt("Copia questo testo:", JSON.stringify([...favs])); }
