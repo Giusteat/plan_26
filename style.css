@@ -62,3 +62,5 @@ footer { text-align: center; margin-top: 14px; display: flex; gap: 8px; justify-
 @media (max-width: 760px) { .views { display: none; } }
 
 .panel label.off { color: #b0b4ba; cursor: not-allowed; }
+
+.lnk { display: block; text-align: center; font-size: .8rem; color: var(--primary); margin-bottom: 8px; }
