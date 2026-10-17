@@ -2,7 +2,7 @@
 """
 Scarica gli orari pubblici (senza login) delle palestre elencate in
 scraper/venues.json dalle pagine di Urban Sports Club e li salva in
-data/usc.json.
+data/corsi.json.
 
 Regola: si salvano i dati di Urban Sports con i loro nomi di campo, senza
 inventare categorie, emoji o etichette. Uso personale: poche richieste,
@@ -23,7 +23,7 @@ import requests
 
 ROOT = Path(__file__).resolve().parent.parent
 VENUES_FILE = ROOT / "scraper" / "venues.json"
-OUT_FILE = ROOT / "data" / "usc.json"
+OUT_FILE = ROOT / "data" / "corsi.json"
 
 BASE_URL = "https://urbansportsclub.com/en/venues/"
 DAYS_AHEAD = 14             # quanti giorni scaricare (oggi incluso)
