@@ -1,25 +1,7 @@
 [
-  {
-    "slug": "lyra-prenzlauerberg",
-    "name": "Lyra Prenzlauerberg",
-    "force_category": "pole"
-  },
-  {
-    "slug": "halenow-prenzlauer-berg",
-    "name": "Hale&Now PBerg Floor"
-  },
-  {
-    "slug": "halenow-prenzlauer-berg-pilates-reformer",
-    "name": "Hale&Now PBerg Reformer",
-    "force_category": "reformer"
-  },
-  {
-    "slug": "hot-aura",
-    "name": "Hot Aura",
-    "force_category": "matbarre"
-  },
-  {
-    "slug": "good-moves-studio",
-    "name": "Good Moves"
-  }
+  { "slug": "lyra-prenzlauerberg" },
+  { "slug": "halenow-prenzlauer-berg" },
+  { "slug": "halenow-prenzlauer-berg-pilates-reformer" },
+  { "slug": "hot-aura" },
+  { "slug": "good-moves-studio" }
 ]
