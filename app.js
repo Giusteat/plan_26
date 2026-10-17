@@ -68,7 +68,7 @@ function effectiveCategory(c) {
 }
 
 let classes = [], venues = {}, startHour = 7, endHour = 22, minDay, maxDay;
-const S = { cat: new Set(), venue: new Set(), plan: store.get("plan", ""), fav: false, view: 7, start: null, day: null };
+const S = { cat: new Set(), venue: new Set(), plan: store.get("plan", ""), fav: false, allDay: false, view: 7, start: null, day: null };
 const favs = new Set(store.get("favs", []));
 const mobile = window.matchMedia("(max-width: 760px)");
 
@@ -77,6 +77,8 @@ function prep(c) {
     c.date = c.startDateTimeUTC.slice(0, 10);
     c.start = c.startDateTimeUTC.slice(11, 16);
     c.end = c.endDateTimeUTC.slice(11, 16);
+    if (toMin(c.end) <= toMin(c.start)) c.end = "24:00";   // finisce a mezzanotte
+    c.allDay = !!(venues[c.venue] || {}).allDay;
     c.dow = (parse(c.date).getDay() + 6) % 7;
     c.studio = (venues[c.venue] || {}).name || c.venue;
     c.cat = effectiveCategory(c);
@@ -88,7 +90,7 @@ function prep(c) {
 }
 // Un corso passa i filtri se li rispetta tutti; "skip" ignora un filtro (serve per capire cosa è ancora scegliibile)
 const matches = (c, skip) =>
-    (skip === "cat" || !S.cat.size || S.cat.has(c.group)) && (skip === "venue" || !S.venue.size || S.venue.has(c.studio)) &&
+    (S.allDay || !c.allDay) && (skip === "cat" || !S.cat.size || S.cat.has(c.group)) && (skip === "venue" || !S.venue.size || S.venue.has(c.studio)) &&
     (skip === "plan" || !S.plan || c.plans.includes(S.plan)) && (skip === "fav" || !S.fav || favs.has(c.key));
 const visible = c => matches(c, null);
 const UI = { cat: new Map(), venue: new Map(), plan: new Map(), fav: null };
@@ -292,9 +294,17 @@ function goToday() {
     S.start = clampStart(S.view === 7 ? mondayOf(new Date()) : todayDate());
     render();
 }
+// Le ore della griglia seguono i corsi visibili (gli studi a orari continui allargano la griglia solo se attivi)
+function fitHours() {
+    const base = classes.filter(c => S.allDay || !c.allDay);
+    if (!base.length) return;
+    startHour = Math.min(7, Math.floor(Math.min(...base.map(c => toMin(c.start))) / 60));
+    endHour = Math.max(22, Math.ceil(Math.max(...base.map(c => toMin(c.end))) / 60) - 1);
+}
 function render() {
     if (!S.start) return;
     updateAvailability();
+    fitHours();
     const view = $("view");
     view.innerHTML = "";
     const list = classes.filter(visible);
@@ -342,6 +352,12 @@ async function init() {
     UI.fav = fav;
     fav.onclick = () => { S.fav = !S.fav; fav.classList.toggle("active", S.fav); render(); };
     f.appendChild(fav);
+    if (classes.some(c => c.allDay)) {
+        const ad = el("button", "btn", "Mostra orari continui");
+        ad.title = "Studi con un corso ogni ora o accesso tutto il giorno, nascosti di default";
+        ad.onclick = () => { S.allDay = !S.allDay; ad.classList.toggle("active", S.allDay); render(); };
+        f.appendChild(ad);
+    }
 
     [[1, "1 giorno"], [4, "4 giorni"], [7, "7 giorni"]].forEach(([n, l]) => {
         const b = el("button", "btn", l); b.dataset.v = n; b.onclick = () => setView(n); $("views").appendChild(b);
