@@ -150,6 +150,7 @@ def build_venue(slug, item, limits, website):
 def convert(item, slug):
     """Un corso, con i nomi di campo di Urban Sports."""
     cat = item.get("category") or {}
+    flags = item.get("flags") or {}
     return {
         "id": item["id"],
         "title": item["title"],
@@ -159,6 +160,7 @@ def convert(item, slug):
         "category": {"id": cat.get("id"), "name": cat.get("name")},
         "spots": {"max": (item.get("spots") or {}).get("max")},
         "planTypesB2C": item.get("planTypesB2C") or [],
+        "isPlusCheckin": flags.get("isPlusCheckin"),
         "venue": slug,
     }
 
@@ -319,6 +321,8 @@ def main():
     for (v, cid, cname), n in sorted(Counter(
             (c["venue"], c["category"]["id"] or 0, c["category"]["name"] or "-") for c in result).items()):
         print(f"    {v} | {cid} | {cname}: {n}")
+    plus = Counter(c["venue"] for c in result if c.get("isPlusCheckin"))
+    print("CORSI CON CHECK-IN PLUS (palestra: corsi):", dict(plus) if plus else "nessuno")
     print("PIANI (combinazione: corsi)")
     for k, n in sorted(Counter(",".join(c["planTypesB2C"]) or "nessuno" for c in result).items()):
         print(f"    {k}: {n}")
