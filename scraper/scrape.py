@@ -156,11 +156,28 @@ def convert(item, slug):
         "startDateTimeUTC": item["startDateTimeUTC"],  # in realtà ora di Berlino (+02:00 / +01:00)
         "endDateTimeUTC": item["endDateTimeUTC"],
         "category": {"id": cat.get("id"), "name": cat.get("name")},
+        "spots": {"max": (item.get("spots") or {}).get("max")},
         "planTypesB2C": item.get("planTypesB2C") or [],
         "isOnline": flags.get("isOnline"),
         "bookingType": item.get("bookingType"),
         "venue": slug,
     }
+
+
+def allowed(cfg, item):
+    """Se la palestra ha "only_categories" in venues.json, tiene solo quei corsi.
+    Si possono indicare nomi (es. "Pilates") o numeri di categoria."""
+    wanted = cfg.get("only_categories")
+    if not wanted:
+        return True
+    cat = item.get("category") or {}
+    name = (cat.get("name") or "").strip().lower()
+    for w in wanted:
+        if isinstance(w, int) and w == cat.get("id"):
+            return True
+        if isinstance(w, str) and w.strip().lower() == name:
+            return True
+    return False
 
 
 def load_old():
@@ -196,6 +213,8 @@ def main():
         last_error = None
         consecutive_fail = 0
         extra = None   # (limiti, sito) dalla prima risposta valida
+        seen = Counter()
+        dropped = 0
         first_item = None
 
         for day in days:
@@ -231,10 +250,15 @@ def main():
                         c = convert(item, slug)
                     except KeyError:
                         continue
-                    if c["startDateTimeUTC"][:10] == day.isoformat():
+                    if c["startDateTimeUTC"][:10] != day.isoformat():
+                        continue
+                    seen[c["category"]["name"] or "-"] += 1
+                    if first_item is None:
+                        first_item = item
+                    if allowed(cfg, item):
                         classes[c["id"]] = c
-                        if first_item is None:
-                            first_item = item
+                    else:
+                        dropped += 1
             time.sleep(random.uniform(*PAUSE_SECONDS))
 
         # Giorni non scaricati: tieni i dati vecchi, se ci sono
@@ -253,6 +277,11 @@ def main():
         if failed_days:
             status += f" | problemi: {last_error}"
         print(f"[{slug}] {status}")
+        if cfg.get("only_categories"):
+            print(f"[{slug}] filtro {cfg['only_categories']}: scartati {dropped} corsi. "
+                  f"Categorie viste: {dict(seen)}")
+            if seen and dropped == sum(seen.values()):
+                print(f"[{slug}] ATTENZIONE: nessun corso corrisponde al filtro")
         if ok_days > 0:
             venues_ok += 1
 
