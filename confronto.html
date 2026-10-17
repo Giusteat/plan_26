@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Confronto abbonamenti</title>
+<style>
+:root{--bg:#f8f9fa;--card:#fff;--text:#212529;--muted:#6c757d;--primary:#4f46e5;--border:#e5e7eb;--good:#15803d;--bad:#b91c1c;--warn:#b45309}
+*{box-sizing:border-box}
+body{margin:0;padding:8px 12px 32px;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+header,main{max-width:1100px;margin:0 auto}
+header a{font-size:.8rem;color:var(--primary)}
+h1{font-size:1.25rem;margin:6px 0 2px}
+h2{font-size:1rem;margin:0 0 8px}
+.meta,.hint{font-size:.75rem;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px;margin-top:12px}
+.week{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:8px 0}
+.week label{font-size:.75rem;color:var(--muted);display:block}
+select{width:100%;padding:6px;border:1px solid var(--border);border-radius:8px;font-size:.85rem;background:#fff}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-top:12px}
+.res h3{margin:0 0 6px;font-size:1rem}
+.big{font-size:1.5rem;font-weight:700}
+.res.win{border:2px solid var(--good)}
+.res ul{margin:8px 0 0;padding-left:18px;font-size:.82rem}
+.warn{color:var(--warn)}.bad{color:var(--bad)}.ok{color:var(--good)}
+.verdict{margin-top:12px;font-weight:600}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.8rem}
+th,td{border-bottom:1px solid var(--border);padding:6px 8px;text-align:left;white-space:nowrap}
+th{background:#f1f5f9}
+td.no{color:#b0b4ba}
+.notes ul{font-size:.8rem;padding-left:18px;margin:0}
+</style>
+</head>
+<body>
+<header>
+  <a href="index.html">← Calendario</a>
+  <h1>Confronto: Urban Sports e Wellhub</h1>
+  <div class="meta" id="meta">Carico i dati…</div>
+</header>
+<main>
+  <section class="card">
+    <h2>La mia settimana tipo</h2>
+    <div class="hint">Scegli lo studio per ogni giorno. Una lezione al giorno al massimo, come nei due servizi.</div>
+    <div class="week" id="week"></div>
+    <label class="hint">Persone <select id="people" style="width:auto"><option value="1">1</option><option value="2">2, ognuno con il suo abbonamento</option></select></label>
+  </section>
+  <section class="two" id="result"></section>
+  <div class="verdict" id="verdict"></div>
+  <section class="card"><h2>Studio per studio</h2><div class="scroll"><table id="table"></table></div></section>
+  <section class="card notes"><h2>Come sono fatti i conti</h2><ul>
+    <li>Un mese vale 4,33 settimane: due lezioni a settimana sono circa 8,7 al mese.</li>
+    <li>Urban Sports: limiti mensili per studio e per piano, letti dagli orari scaricati. Essential non include nessuno di questi studi.</li>
+    <li>Wellhub: i corsi "premium" hanno una quota settimanale unica per tutti gli studi premium (Gold 1, Gold+ 2, Platinum 3, Diamond 4). Gli studi "standard" usano l'accesso del giorno.</li>
+    <li>Non conto: i check-in "Plus" di Urban Sports, i corsi online, le lezioni private di Wellhub, la palestra di HALE.NOW.</li>
+    <li>I prezzi e gli studi di Wellhub sono quelli che hai letto nella tua app.</li>
+  </ul></section>
+</main>
+<script>
+const WPM = 52 / 12, DAYS = ["Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato", "Domenica"];
+const $ = id => document.getElementById(id);
+const el = (t, c, x) => { const e = document.createElement(t); if (c) e.className = c; if (x !== undefined) e.textContent = x; return e; };
+const eur = n => n.toLocaleString("it-IT", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
+const num = n => n.toLocaleString("it-IT", { maximumFractionDigits: 1 });
+const store = {
+  get(k, f) { try { const v = localStorage.getItem(k); return v === null ? f : JSON.parse(v); } catch (e) { return f; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { } }
+};
+let cfg, venues = {};
+let week = store.get("cw", ["", "", "lyra-prenzlauerberg", "", "", "lyra-prenzlauerberg", "halenow-prenzlauer-berg-pilates-reformer"]);
+let people = store.get("cp", 1);
+const nm = s => (venues[s] || {}).name || s;
+const limitOf = (slug, code) => ((venues[slug] || {}).visitLimits || []).find(x => x.name === code);
+
+// Urban Sports: il piano più economico che regge tutti i limiti mensili per studio
+function calcUSC(counts) {
+  const plans = cfg.usc.plans; let prevFail = [];
+  for (let i = 0; i < plans.length; i++) {
+    const p = plans[i], fail = [], warn = [];
+    for (const [slug, n] of Object.entries(counts)) {
+      const lim = limitOf(slug, p.code), monthly = n * WPM;
+      if (!lim || !lim.isProvidedByVenue || lim.monthlyLimitVenueAddress == null) { fail.push(`${nm(slug)} non è incluso in ${p.name}`); continue; }
+      const cap = lim.monthlyLimitVenueAddress;
+      if (cap < 0) continue;
+      if (monthly > cap + 1) fail.push(`${nm(slug)}: ${num(monthly)} al mese, limite ${cap}`);
+      else if (monthly > cap) warn.push(`${nm(slug)}: ${num(monthly)} al mese e limite ${cap}, in alcuni mesi una lezione in meno`);
+    }
+    if (!fail.length) return { plan: p, name: p.name, price: p.price, why: i ? [`Non basta ${plans[i - 1].name}: ${prevFail[0]}`] : [], warn };
+    prevFail = fail;
+  }
+  return { none: true, why: prevFail };
+}
+// Wellhub: piano minimo dello studio più "alto" e quota premium settimanale
+function calcWH(counts) {
+  const plans = cfg.wellhub.plans, st = cfg.wellhub.studios, why = [], warn = [];
+  let minIdx = 0, bind = null, premium = 0;
+  for (const [slug, n] of Object.entries(counts)) {
+    const s = st[slug];
+    if (!s) { warn.push(`${nm(slug)} non è su Wellhub`); continue; }
+    const idx = plans.findIndex(p => p.id === s.from);
+    if (idx >= minIdx) { minIdx = idx; bind = slug; }
+    if (s.type === "premium") premium += n;
+    if (s.cap && n * WPM > s.cap) warn.push(`${nm(slug)}: limite ${s.cap} al mese`);
+    if (s.note) warn.push(`${nm(slug)}: ${s.note}`);
+  }
+  if (bind) why.push(`${nm(bind)} è disponibile da ${plans[minIdx].id}`);
+  let idx = minIdx;
+  while (idx < plans.length && plans[idx].premiumPerWeek < premium) idx++;
+  if (idx >= plans.length) return { none: true, why: [`${premium} lezioni premium a settimana sono più della quota di qualsiasi piano`] };
+  if (premium) why.push(`${premium} lezion${premium > 1 ? "i" : "e"} premium a settimana: quota unica per tutti gli studi premium${idx > minIdx ? `, serve almeno ${plans[idx].id}` : ""}`);
+  return { plan: plans[idx], name: plans[idx].id, price: plans[idx].price, why, warn };
+}
+function card(title, r, perMonth, win) {
+  const c = el("section", "card res" + (win ? " win" : ""));
+  c.appendChild(el("h3", null, title));
+  if (r.none) { c.appendChild(el("div", "bad", "Nessun piano copre questa settimana")); }
+  else {
+    c.appendChild(el("div", "big", `${r.name}: ${eur(r.price * people)}`));
+    c.appendChild(el("div", "hint", `al mese${people > 1 ? `, ${people} × ${eur(r.price)}` : ""} · ${eur(r.price / perMonth)} a lezione · ${num(perMonth)} lezioni al mese`));
+  }
+  const ul = el("ul");
+  r.why.forEach(t => ul.appendChild(el("li", null, t)));
+  (r.warn || []).forEach(t => ul.appendChild(el("li", "warn", t)));
+  if (ul.children.length) c.appendChild(ul);
+  return c;
+}
+function render() {
+  const counts = {};
+  week.forEach(s => { if (s) counts[s] = (counts[s] || 0) + 1; });
+  const total = week.filter(Boolean).length, res = $("result"), v = $("verdict");
+  res.innerHTML = ""; v.textContent = ""; v.className = "verdict";
+  if (!total) { res.appendChild(el("p", "hint", "Scegli almeno un giorno per vedere il confronto.")); return; }
+  const perMonth = total * WPM, u = calcUSC(counts), w = calcWH(counts);
+  const best = !u.none && !w.none ? (u.price < w.price ? "u" : w.price < u.price ? "w" : "") : (u.none ? (w.none ? "" : "w") : "u");
+  res.append(card("Urban Sports", u, perMonth, best === "u"), card("Wellhub", w, perMonth, best === "w"));
+  if (!u.none && !w.none && best) {
+    const d = Math.abs(u.price - w.price) * people;
+    v.textContent = `Costa meno ${best === "u" ? "Urban Sports" : "Wellhub"}: ${eur(d)} in meno al mese, ${eur(d * 12)} all'anno.`;
+  } else if (best) v.textContent = `Con questa settimana solo ${best === "u" ? "Urban Sports" : "Wellhub"} copre tutto.`;
+}
+function buildTable() {
+  const st = cfg.wellhub.studios, plans = cfg.wellhub.plans, t = $("table");
+  const price = s => plans.find(p => p.id === st[s].from).price;
+  const slugs = Object.keys(st).sort((a, b) => price(a) - price(b) || nm(a).localeCompare(nm(b)));
+  const head = el("tr"); ["Studio", "Wellhub", ...cfg.usc.plans.map(p => "USC " + p.name)].forEach(h => head.appendChild(el("th", null, h)));
+  t.appendChild(head);
+  slugs.forEach(s => {
+    const tr = el("tr"), w = st[s];
+    tr.appendChild(el("td", null, nm(s)));
+    tr.appendChild(el("td", null, `${w.from} (${eur(price(s))}) · ${w.type === "premium" ? "premium, 1 a settimana in comune" : "1 al giorno"}${w.cap ? `, max ${w.cap} al mese` : ""}`));
+    cfg.usc.plans.forEach(p => {
+      const lim = limitOf(s, p.code), ok = lim && lim.isProvidedByVenue && lim.monthlyLimitVenueAddress != null;
+      tr.appendChild(el("td", ok ? null : "no", ok ? (lim.monthlyLimitVenueAddress < 0 ? "senza limite" : `${lim.monthlyLimitVenueAddress} al mese`) : "non incluso"));
+    });
+    t.appendChild(tr);
+  });
+}
+async function init() {
+  try {
+    const [c, d] = await Promise.all([fetch("confronto.json", { cache: "no-cache" }), fetch("data/corsi.json", { cache: "no-cache" })]);
+    if (!c.ok || !d.ok) throw new Error("file non trovato");
+    cfg = await c.json(); venues = (await d.json()).venues || {};
+  } catch (e) { $("meta").textContent = "Impossibile caricare i dati (" + e.message + ")"; return; }
+  $("meta").textContent = cfg.nota;
+  const slugs = Object.keys(cfg.wellhub.studios).sort((a, b) => nm(a).localeCompare(nm(b)));
+  const box = $("week");
+  DAYS.forEach((day, i) => {
+    const w = el("div"), l = el("label", null, day), s = el("select");
+    s.appendChild(new Option("— nessuna lezione —", ""));
+    slugs.forEach(sl => s.appendChild(new Option(nm(sl), sl)));
+    s.value = week[i] || "";
+    s.onchange = () => { week[i] = s.value; store.set("cw", week); render(); };
+    w.append(l, s); box.appendChild(w);
+  });
+  $("people").value = String(people);
+  $("people").onchange = e => { people = Number(e.target.value); store.set("cp", people); render(); };
+  buildTable(); render();
+}
+init();
+</script>
+</body>
+</html>
