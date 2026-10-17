@@ -148,7 +148,6 @@ def build_venue(slug, item, limits, website):
 def convert(item, slug):
     """Un corso, con i nomi di campo di Urban Sports."""
     cat = item.get("category") or {}
-    flags = item.get("flags") or {}
     return {
         "id": item["id"],
         "title": item["title"],
@@ -158,8 +157,6 @@ def convert(item, slug):
         "category": {"id": cat.get("id"), "name": cat.get("name")},
         "spots": {"max": (item.get("spots") or {}).get("max")},
         "planTypesB2C": item.get("planTypesB2C") or [],
-        "isOnline": flags.get("isOnline"),
-        "bookingType": item.get("bookingType"),
         "venue": slug,
     }
 
@@ -195,6 +192,7 @@ def main():
     old_classes = old.get("classes", [])
     old_venues = old.get("venues", {})
     today = datetime.now(ZoneInfo("Europe/Berlin")).date()
+    monday = today - timedelta(days=today.weekday())
     days = [today + timedelta(days=i) for i in range(DAYS_AHEAD)]
 
     session = requests.Session()
@@ -289,8 +287,17 @@ def main():
         print("ERRORE: nessuna palestra scaricata. Il file esistente NON viene toccato.")
         sys.exit(1)
 
+    # Giorni passati di questa settimana (da lunedì a ieri): restano dal file precedente.
+    # Da lunedì prossimo la settimana vecchia sparisce da sola.
+    slugs = {v["slug"] for v in venues_cfg}
+    for c in old_classes:
+        d = c["startDateTimeUTC"][:10]
+        if monday.isoformat() <= d < today.isoformat() and c.get("venue") in slugs:
+            c = {k: v for k, v in c.items() if k not in ("isOnline", "bookingType")}
+            classes.setdefault(c["id"], c)
+
     result = sorted(classes.values(), key=lambda c: (c["startDateTimeUTC"], c["venue"]))
-    result = [c for c in result if c["startDateTimeUTC"][:10] >= today.isoformat()]
+    result = [c for c in result if c["startDateTimeUTC"][:10] >= monday.isoformat()]
 
     # Riepilogo da guardare insieme
     print("\nCATEGORIE DI URBAN SPORTS (palestra | id | nome: corsi)")
@@ -300,8 +307,6 @@ def main():
     print("PIANI (combinazione: corsi)")
     for k, n in sorted(Counter(",".join(c["planTypesB2C"]) or "nessuno" for c in result).items()):
         print(f"    {k}: {n}")
-    print("isOnline:", dict(Counter(str(c["isOnline"]) for c in result)))
-    print("bookingType:", dict(Counter(str(c["bookingType"]) for c in result)))
 
     OUT_FILE.parent.mkdir(parents=True, exist_ok=True)
     OUT_FILE.write_text(
