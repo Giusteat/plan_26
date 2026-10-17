@@ -58,7 +58,6 @@ td.no{color:#b0b4ba}
     <h2>La mia settimana tipo</h2>
     <div class="hint">Scegli lo studio per ogni giorno. Una lezione al giorno al massimo, come nei due servizi.</div>
     <div class="week" id="week"></div>
-    <label class="hint">Persone <select id="people" style="width:auto"><option value="1">1</option><option value="2">2, ognuno con il suo abbonamento</option></select></label>
   </section>
   <section class="two" id="result"></section>
   <div class="verdict" id="verdict"></div>
@@ -68,6 +67,7 @@ td.no{color:#b0b4ba}
       <label>Urban Sports <select id="vu"></select></label>
       <label>Wellhub <select id="vw"></select></label>
     </div>
+    <div class="verdict" id="vprice" style="margin:0 0 8px"></div>
     <div class="legend">
       <span><span class="sq u"></span> ingresso Urban Sports</span>
       <span><span class="sq w"></span> ingresso Wellhub</span>
@@ -98,7 +98,7 @@ const store = {
 };
 let cfg, venues = {};
 let week = store.get("cw", ["", "", "lyra-prenzlauerberg", "", "", "lyra-prenzlauerberg", "halenow-prenzlauer-berg-pilates-reformer"]);
-let people = store.get("cp", 1);
+const people = 1;
 const nm = s => (venues[s] || {}).name || s;
 const limitOf = (slug, code) => ((venues[slug] || {}).visitLimits || []).find(x => x.name === code);
 
@@ -204,6 +204,7 @@ function buildViz() {
   const box = $("viz"), st = cfg.wellhub.studios, plans = cfg.wellhub.plans;
   box.innerHTML = "";
   const pIdx = plans.findIndex(p => p.id === vw), up = cfg.usc.plans.find(p => p.code === vu);
+  $("vprice").textContent = `Al mese: Urban Sports ${up.name} ${eur(up.price)} · Wellhub ${vw} ${eur(plans[pIdx].price)}`;
   const price = s => plans.find(p => p.id === st[s].from).price;
   const row = (label, content) => { const r = el("div", "vzr"); r.append(el("div", null, label), content); return r; };
   const head = el("div", "weeks");
@@ -229,8 +230,8 @@ function buildViz() {
 }
 function initViz() {
   const su = $("vu"), sw = $("vw");
-  cfg.usc.plans.forEach(p => su.appendChild(new Option(p.name, p.code)));
-  cfg.wellhub.visual.forEach(id => sw.appendChild(new Option(id, id)));
+  cfg.usc.plans.forEach(p => su.appendChild(new Option(`${p.name} · ${eur(p.price)}`, p.code)));
+  cfg.wellhub.visual.forEach(id => sw.appendChild(new Option(`${id} · ${eur(cfg.wellhub.plans.find(p => p.id === id).price)}`, id)));
   if (!cfg.usc.plans.some(p => p.code === vu)) vu = cfg.usc.plans[0].code;
   if (!cfg.wellhub.visual.includes(vw)) vw = cfg.wellhub.visual[0];
   su.value = vu; sw.value = vw;
@@ -255,8 +256,6 @@ async function init() {
     s.onchange = () => { week[i] = s.value; store.set("cw", week); render(); };
     w.append(l, s); box.appendChild(w);
   });
-  $("people").value = String(people);
-  $("people").onchange = e => { people = Number(e.target.value); store.set("cp", people); render(); };
   buildTable(); initViz(); render();
 }
 init();
