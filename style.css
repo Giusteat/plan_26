@@ -1,0 +1,74 @@
+:root {
+    --bg-color: #f8f9fa; --card-bg: #ffffff; --text-main: #212529; --text-muted: #6c757d;
+    --primary: #4f46e5; --border-color: #e5e7eb; --grid-line: #e2e8f0; --now-color: #ea4335;
+}
+* { box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg-color); color: var(--text-main); margin: 0; padding: 8px 12px;
+    height: 100vh; height: 100dvh; display: flex; flex-direction: column;
+}
+.container { max-width: 1400px; width: 100%; margin: 0 auto; display: flex; flex-direction: column; flex: 1; overflow: hidden; }
+h1 { text-align: center; font-size: 1.25rem; margin: 0 0 2px; }
+.meta { text-align: center; font-size: 0.7rem; color: var(--text-muted); margin-bottom: 6px; }
+.week-nav { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 6px; flex-shrink: 0; }
+.week-nav button {
+    background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 50%;
+    width: 28px; height: 28px; font-size: 1.1rem; line-height: 1; cursor: pointer; color: var(--text-main);
+}
+.week-nav button:hover:not(:disabled) { border-color: var(--primary); color: var(--primary); }
+.week-nav button:disabled { opacity: 0.3; cursor: default; }
+.week-label { font-weight: 600; font-size: 0.9rem; min-width: 140px; text-align: center; }
+.filters-wrapper { display: flex; flex-direction: column; gap: 4px; margin-bottom: 8px; flex-shrink: 0; }
+.filters { display: flex; flex-wrap: wrap; gap: 4px; justify-content: center; }
+.filter-btn {
+    background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-main);
+    padding: 3px 8px; border-radius: 12px; cursor: pointer; font-size: 0.75rem;
+    transition: all 0.15s ease; box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.filter-btn:hover { border-color: var(--primary); }
+.filter-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+.divider { max-width: 300px; height: 1px; background: var(--border-color); margin: 2px auto; width: 100%; }
+.calendar-grid-wrapper {
+    background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px;
+    overflow: auto; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); flex: 1;
+}
+.calendar-grid { display: grid; grid-template-columns: 55px repeat(7, minmax(140px, 1fr)); min-width: 1050px; }
+.grid-header {
+    background: #f1f5f9; padding: 6px 4px; text-align: center; font-weight: 600; font-size: 0.8rem;
+    border-bottom: 2px solid var(--border-color); border-right: 1px solid var(--border-color);
+    position: sticky; top: 0; z-index: 10;
+}
+.grid-header.today { background: #e0e7ff; color: var(--primary); }
+.time-slot {
+    padding: 4px 6px 4px 4px; font-size: 0.68rem; color: var(--text-muted); text-align: right;
+    border-bottom: 1px solid var(--grid-line); border-right: 1px solid var(--border-color); height: 60px;
+}
+.day-column {
+    border-right: 1px solid var(--border-color); position: relative;
+    background-image: linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px); background-size: 100% 60px;
+}
+.current-time-line { position: absolute; left: 0; right: 0; height: 2px; background: var(--now-color); z-index: 50; pointer-events: none; }
+.current-time-line::before {
+    content: ''; position: absolute; left: -5px; top: -4px; width: 10px; height: 10px;
+    background: var(--now-color); border-radius: 50%;
+}
+.cal-event {
+    position: absolute; border-radius: 4px; padding: 2px 4px; font-size: 0.68rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1); overflow: hidden; z-index: 2; cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease; white-space: nowrap; text-overflow: ellipsis;
+}
+.cal-event.past { opacity: 0.45; }
+.cal-event:hover {
+    z-index: 999 !important; transform: scale(1.12); box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    overflow: visible; white-space: normal; min-width: 160px; height: auto !important; min-height: 50px; opacity: 1;
+}
+.cal-event-title { font-weight: 700; margin-bottom: 1px; line-height: 1.05; }
+.cal-event-time, .cal-event-details { opacity: 0.9; font-size: 0.62rem; line-height: 1.05; }
+.cat-matbarre { background: #e0f2fe; color: #0369a1; }
+.cat-reformer { background: #fce7f3; color: #be185d; }
+.cat-pole { background: #f3e8ff; color: #6b21a8; }
+.cat-yogasound { background: #dcfce7; color: #15803d; }
+.cat-strength { background: #ffedd5; color: #c2410c; }
+.cat-dance { background: #fef08a; color: #854d0e; }
+.cat-calisthenics { background: #ccfbf1; color: #0f766e; }
