@@ -9,5 +9,5 @@
   { "slug": "casa-flow" },
   { "slug": "dare-to-dance" },
   { "slug": "the-center-berlin-studio-2-1" },
-  { "slug": "mysenses", "only_categories": ["Pilates"] }
+  { "slug": "mysenses", "only_categories": ["Pilates"], "or_title_contains": ["pilates"] }
 ]
