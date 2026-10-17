@@ -2,32 +2,104 @@
   "nota": "Prezzi dalle app (ottobre 2026). Per modificarli cambia i numeri qui.",
   "usc": {
     "plans": [
-      { "code": "M", "name": "Classic", "price": 75 },
-      { "code": "L", "name": "Premium", "price": 115 },
-      { "code": "XL", "name": "Max", "price": 165 }
+      {
+        "code": "M",
+        "name": "Classic",
+        "price": 75
+      },
+      {
+        "code": "L",
+        "name": "Premium",
+        "price": 115
+      }
     ]
   },
   "wellhub": {
     "plans": [
-      { "id": "Basic", "price": 18.3, "premiumPerWeek": 0 },
-      { "id": "Silver", "price": 36.7, "premiumPerWeek": 0 },
-      { "id": "Gold", "price": 50.4, "premiumPerWeek": 1 },
-      { "id": "Gold+", "price": 68.7, "premiumPerWeek": 2 },
-      { "id": "Platinum", "price": 105.4, "premiumPerWeek": 3 },
-      { "id": "Diamond", "price": 183.3, "premiumPerWeek": 4 }
+      {
+        "id": "Basic",
+        "price": 18.3,
+        "premiumPerWeek": 0
+      },
+      {
+        "id": "Silver",
+        "price": 36.7,
+        "premiumPerWeek": 0
+      },
+      {
+        "id": "Gold",
+        "price": 50.4,
+        "premiumPerWeek": 1
+      },
+      {
+        "id": "Gold+",
+        "price": 68.7,
+        "premiumPerWeek": 2
+      },
+      {
+        "id": "Platinum",
+        "price": 105.4,
+        "premiumPerWeek": 3
+      },
+      {
+        "id": "Diamond",
+        "price": 183.3,
+        "premiumPerWeek": 4
+      }
     ],
     "studios": {
-      "mysenses": { "from": "Basic", "type": "standard", "cap": 8 },
-      "dare-to-dance": { "from": "Silver", "type": "standard", "cap": 8 },
-      "lyra-prenzlauerberg": { "from": "Gold", "type": "standard" },
-      "the-center-berlin-studio-2-1": { "from": "Gold", "type": "standard", "cap": 8 },
-      "halenow-prenzlauer-berg": { "from": "Gold", "type": "premium", "note": "senza cancellazione gratuita" },
-      "hot-aura": { "from": "Gold", "type": "premium" },
-      "casa-flow": { "from": "Gold", "type": "premium" },
-      "studio-berlin": { "from": "Gold", "type": "premium" },
-      "berlin-movement-lab": { "from": "Gold", "type": "premium" },
-      "good-moves-studio": { "from": "Platinum", "type": "standard" },
-      "halenow-prenzlauer-berg-pilates-reformer": { "from": "Platinum", "type": "premium" }
-    }
+      "mysenses": {
+        "from": "Basic",
+        "type": "standard",
+        "cap": 8
+      },
+      "dare-to-dance": {
+        "from": "Silver",
+        "type": "standard",
+        "cap": 8
+      },
+      "lyra-prenzlauerberg": {
+        "from": "Gold",
+        "type": "standard"
+      },
+      "the-center-berlin-studio-2-1": {
+        "from": "Gold",
+        "type": "standard",
+        "cap": 8
+      },
+      "halenow-prenzlauer-berg": {
+        "from": "Gold",
+        "type": "premium",
+        "note": "senza cancellazione gratuita"
+      },
+      "hot-aura": {
+        "from": "Gold",
+        "type": "premium"
+      },
+      "casa-flow": {
+        "from": "Gold",
+        "type": "premium"
+      },
+      "studio-berlin": {
+        "from": "Gold",
+        "type": "premium"
+      },
+      "berlin-movement-lab": {
+        "from": "Gold",
+        "type": "premium"
+      },
+      "good-moves-studio": {
+        "from": "Platinum",
+        "type": "standard"
+      },
+      "halenow-prenzlauer-berg-pilates-reformer": {
+        "from": "Platinum",
+        "type": "premium"
+      }
+    },
+    "visual": [
+      "Gold",
+      "Platinum"
+    ]
   }
 }
