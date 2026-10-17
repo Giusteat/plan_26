@@ -1,3 +1,5 @@
+*per aggiungere una palestra, copiare  { "slug": "xxxxx" } inserire xxxx il nome della palestra preso dall'indirizzo url*
+
 [
   { "slug": "lyra-prenzlauerberg" },
   { "slug": "halenow-prenzlauer-berg" },
