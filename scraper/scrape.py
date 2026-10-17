@@ -287,6 +287,8 @@ def main():
             venues_out[slug] = build_venue(slug, first_item, extra[0], extra[1])
         elif slug in old_venues:
             venues_out[slug] = old_venues[slug]
+        if cfg.get("all_day") and slug in venues_out:
+            venues_out[slug]["allDay"] = True   # studio con orari continui: nascosto nel calendario salvo filtro
 
         status = f"{ok_days}/{len(days)} giorni ok"
         if failed_days:
