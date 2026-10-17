@@ -24,7 +24,7 @@ const COLORS = {
 const KEEP_CAPS = ["USC", "HIIT", "TRX", "DJ", "FLINTA", "HALO"];
 // ==============================================================================
 
-const PLANS = [["M", "Classic"], ["L", "Premium"], ["XL", "Max"]];
+const PLANS = [["M", "Classic"], ["L", "Premium"]];   // il piano Max non è considerato
 const DAYS = ["Lun", "Mar", "Mer", "Gio", "Ven", "Sab", "Dom"];
 const HOUR_H = 60;
 const GROUP_OF = {};
@@ -68,7 +68,7 @@ function effectiveCategory(c) {
 }
 
 let classes = [], venues = {}, startHour = 7, endHour = 22, minDay, maxDay;
-const S = { cat: new Set(), venue: new Set(), plan: store.get("plan", ""), fav: false, allDay: false, view: 7, start: null, day: null };
+const S = { cat: new Set(), venue: new Set(), plan: (p => PLANS.some(x => x[0] === p) ? p : "")(store.get("plan", "")), fav: false, allDay: false, view: 7, start: null, day: null };
 const favs = new Set(store.get("favs", []));
 const mobile = window.matchMedia("(max-width: 760px)");
 
@@ -206,7 +206,7 @@ function renderGrid(view, list) {
                 height: `${Math.max(((ev.z - ev.a) / 60) * HOUR_H, 22)}px`,
                 left: `calc(${ev.col * w}% + 1px)`, width: `calc(${w}% - 2px)`
             });
-            b.title = `${ev.name}\n${ev.start}–${ev.end} · ${ev.studio}\n${ev.teacherName || ""}`;
+            b.title = `${ev.name}\n${ev.start}–${ev.end} · ${ev.studio}\n${ev.teacherName || ""}\nAl mese: ${monthlyText(ev)}`;
             b.append(el("div", "t", ev.name), el("div", "s", `${ev.start}–${ev.end} · ${ev.studio}`));
             if (n <= 4 && ev.teacherName) b.appendChild(el("div", "tc", ev.teacherName));
             if (favs.has(ev.key)) b.appendChild(el("span", "h", "♥"));
@@ -242,6 +242,20 @@ function renderDay(view, list) {
 }
 
 // ---------- scheda del corso ----------
+// Ingressi al mese in questo studio con un piano: limite dello studio, ridotto dal limite della categoria se c'è
+function monthlyFor(c, code) {
+    if (!c.plans.includes(code)) return null;
+    const lim = ((venues[c.venue] || {}).visitLimits || []).find(x => x.name === code);
+    if (!lim || !lim.isProvidedByVenue || lim.monthlyLimitVenueAddress == null) return null;
+    let n = lim.monthlyLimitVenueAddress;
+    const cl = (lim.categoryLimits || []).find(x => x.id === (c.category || {}).id);
+    if (cl && cl.limit >= 0) n = n < 0 ? cl.limit : Math.min(n, cl.limit);
+    return n === 0 ? null : n;
+}
+function monthlyText(c) {
+    const t = PLANS.map(([k, n]) => { const m = monthlyFor(c, k); return m === null ? null : `${n} ${m < 0 ? "senza limite" : m}`; }).filter(Boolean).join(" · ");
+    return t || "–";
+}
 function closeSheet() { $("sheet").hidden = true; }
 function openSheet(c) {
     const sh = $("sheet"), v = venues[c.venue] || {};
@@ -249,11 +263,11 @@ function openSheet(c) {
     const box = el("div", "box");
     const x = el("button", "x", "✕"); x.onclick = closeSheet;
     const addr = [v.address, [v.postalCode, v.district].filter(Boolean).join(" ")].filter(Boolean).join(", ");
-    const plans = PLANS.filter(([k]) => c.plans.includes(k)).map(p => p[1]).join(", ");
+    const monthly = monthlyText(c);
     const rows = [
         ["Quando", `${DAYS[c.dow]} ${parse(c.date).toLocaleDateString("it-IT", { day: "numeric", month: "long" })}, ${c.start}–${c.end}`],
         ["Insegnante", c.teacherName || "–"], ["Studio", c.studio], ["Indirizzo", addr || "–"], ["Categoria", c.group],
-        ["Posti", c.spots && c.spots.max != null ? String(c.spots.max) : "–"], ["Piani", plans || "–"]
+        ["Posti", c.spots && c.spots.max != null ? String(c.spots.max) : "–"], ["Al mese", monthly || "–"]
     ];
     const dl = el("dl");
     rows.forEach(([k, val]) => dl.append(el("dt", null, k), el("dd", null, val)));
@@ -330,7 +344,7 @@ async function init() {
     } catch (err) { meta.textContent = "Impossibile caricare gli orari (" + err.message + ")"; return; }
     venues = data.venues || {};
     classes = (data.classes || []).map(prep);
-    meta.textContent = "Aggiornato il " + new Date(data.updated).toLocaleString("it-IT", { dateStyle: "medium", timeStyle: "short" });
+    meta.textContent = "Aggiornato " + new Date(data.updated).toLocaleString("it-IT", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
     if (!classes.length) { meta.textContent += " · nessun corso nel file"; return; }
 
     const dates = classes.map(c => c.date).sort();
