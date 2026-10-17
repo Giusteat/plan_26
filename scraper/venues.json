@@ -3,5 +3,11 @@
   { "slug": "halenow-prenzlauer-berg" },
   { "slug": "halenow-prenzlauer-berg-pilates-reformer" },
   { "slug": "hot-aura" },
-  { "slug": "good-moves-studio" }
+  { "slug": "good-moves-studio" },
+  { "slug": "berlin-movement-lab" },
+  { "slug": "studio-berlin" },
+  { "slug": "casa-flow" },
+  { "slug": "dare-to-dance" },
+  { "slug": "the-center-berlin-studio-2-1" },
+  { "slug": "mysenses", "only_categories": ["Pilates"] }
 ]
