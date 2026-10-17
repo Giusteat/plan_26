@@ -2,9 +2,11 @@
 """
 Scarica gli orari pubblici (senza login) delle palestre elencate in
 scraper/venues.json dalle pagine di Urban Sports Club e li salva in
-data/corsi.json.
+data/usc.json.
 
-Uso personale: poche richieste, con pause tra l'una e l'altra.
+Regola: si salvano i dati di Urban Sports con i loro nomi di campo, senza
+inventare categorie, emoji o etichette. Uso personale: poche richieste,
+con pause tra l'una e l'altra.
 """
 
 import json
@@ -12,6 +14,7 @@ import random
 import re
 import sys
 import time
+from collections import Counter
 from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -20,10 +23,10 @@ import requests
 
 ROOT = Path(__file__).resolve().parent.parent
 VENUES_FILE = ROOT / "scraper" / "venues.json"
-OUT_FILE = ROOT / "data" / "corsi.json"
+OUT_FILE = ROOT / "data" / "usc.json"
 
 BASE_URL = "https://urbansportsclub.com/en/venues/"
-DAYS_AHEAD = 14          # quanti giorni scaricare (oggi incluso)
+DAYS_AHEAD = 14             # quanti giorni scaricare (oggi incluso)
 PAUSE_SECONDS = (2.0, 4.0)  # pausa casuale tra una richiesta e l'altra
 
 HEADERS = {
@@ -33,40 +36,8 @@ HEADERS = {
     ),
     "Accept": "*/*",
     "Accept-Language": "en-US,en;q=0.9",
-    "RSC": "1",  # chiede al sito la versione "dati" della pagina
+    "RSC": "1",
 }
-
-EMOJI = {
-    "matbarre": "🧘‍♀️",
-    "reformer": "➿",
-    "pole": "💈",
-    "yogasound": "🪷",
-    "strength": "🏋️‍♂️",
-    "dance": "🩰",
-    "calisthenics": "🤸",
-}
-
-# Regole per assegnare la categoria dal titolo (si applica la prima che combacia).
-CATEGORY_RULES = [
-    ("reformer", r"reformer"),
-    ("calisthenics", r"calisthenics|handstand|gymnastic|rings|acro"),
-    ("matbarre", r"pilates|barre"),
-    ("yogasound", r"yoga|yin|sound|gong|mobility|flexib|stretch|meditat|qi ?gong|nidra|fascia|breathe"),
-    ("strength", r"strength|conditioning|circuit|cyclica|weight|glutes|sculpt|full body"),
-    ("dance", r"ballet|dance|heels|contemporary"),
-]
-DEFAULT_CATEGORY = "matbarre"
-
-
-def categorize(title, venue):
-    if venue.get("force_category"):
-        return venue["force_category"]
-    t = title.lower()
-    for category, pattern in CATEGORY_RULES:
-        if re.search(pattern, t):
-            return category
-    return DEFAULT_CATEGORY
-
 
 STATE_TREE = (
     "%5B%22%22%2C%7B%22children%22%3A%5B%5B%22locale%22%2C%22en%22%2C%22d%22%2Cnull%5D%2C"
@@ -102,146 +73,186 @@ def fetch_day(session, slug, day):
     return None, error
 
 
-def _find_classes(text):
-    key = '"activities":'
+def normalize(text):
+    """Se arriva una pagina HTML, estrae il testo dei dati dagli script del sito."""
+    if '"activities":' in text:
+        return text
+    chunks = re.findall(r'self\.__next_f\.push\(\[1,("(?:[^"\\]|\\.)*")\]\)', text)
+    joined = ""
+    for c in chunks:
+        try:
+            joined += json.loads(c)
+        except json.JSONDecodeError:
+            pass
+    return joined or text
+
+
+def value_after(text, key):
+    """Legge il valore JSON che segue una chiave, es. "activities":{...}"""
     i = text.find(key)
     if i == -1:
         return None
-    j = text.find("{", i)
-    if j == -1:
-        return None
+    j = i + len(key)
+    while j < len(text) and text[j] in " \n":
+        j += 1
     try:
         obj, _ = json.JSONDecoder().raw_decode(text[j:])
     except json.JSONDecodeError:
         return None
-    classes = obj.get("classes")
-    return classes if isinstance(classes, list) else None
+    return obj
 
 
-def extract_classes(text):
-    """Trova nel testo il blocco "activities" e ne ritorna la lista "classes"."""
-    result = _find_classes(text)
-    if result is not None:
-        return result
-    # Piano B: se arriva una pagina HTML, i dati stanno dentro self.__next_f.push([1,"..."])
-    chunks = re.findall(r'self\.__next_f\.push\(\[1,("(?:[^"\\]|\\.)*")\]\)', text)
-    if chunks:
-        joined = ""
-        for c in chunks:
-            try:
-                joined += json.loads(c)
-            except json.JSONDecodeError:
-                pass
-        return _find_classes(joined)
-    return None
+def extract(text):
+    """Ritorna (corsi, limiti_visite, sito_web) oppure None se mancano gli orari."""
+    text = normalize(text)
+    activities = value_after(text, '"activities":')
+    if not isinstance(activities, dict) or not isinstance(activities.get("classes"), list):
+        return None
+    limits = value_after(text, '"venueLimits":')
+    website = None
+    k = text.find('"children":"Website"')
+    if k != -1:
+        m = re.search(r'"href":"(https?://[^"]+)"', text[k:k + 3000])
+        if m:
+            website = m.group(1)
+    return activities["classes"], limits, website
 
 
-def describe(r, text):
-    history = [h.status_code for h in r.history]
-    return (
-        f"status={r.status_code} url_finale={r.url} tipo={r.headers.get('content-type')} "
-        f"lunghezza={len(text)} redirect={history}\n"
-        f"    INIZIO RISPOSTA: {text[:600]!r}"
-    )
-
-
-def convert(item, venue):
-    start_raw = item["startDateTimeUTC"]  # es. 2026-10-18T10:30:00+02:00 (ora di Berlino)
-    end_raw = item["endDateTimeUTC"]
-    class_date = datetime.strptime(start_raw[:10], "%Y-%m-%d").date()
-    title = item["title"].strip()
-    category = categorize(title, venue)
-    spots = item.get("spots") or {}
+def build_venue(slug, item, limits, website):
+    """Dati della palestra, salvati una volta sola."""
+    v = (item or {}).get("venue") or {}
+    loc = v.get("location") or {}
+    visit_limits = []
+    for p in ((limits or {}).get("b2c") or []):
+        entry = {k: p.get(k) for k in (
+            "name", "planName", "isAvailableAtVenue", "isProvidedByVenue",
+            "monthlyLimitVenue", "monthlyLimitVenueAddress")}
+        entry["categoryLimits"] = [
+            {"id": c.get("id"), "name": c.get("name"), "limit": c.get("limit")}
+            for c in (p.get("categoryLimits") or [])]
+        visit_limits.append(entry)
     return {
-        "id": item["id"],
-        "title": f"{EMOJI[category]} {title}",
-        "studio": venue["name"],
-        "teacher": item.get("teacherName") or "N/D",
-        "date": class_date.isoformat(),
-        "day": class_date.weekday(),  # 0 = lunedì ... 6 = domenica
-        "start": start_raw[11:16],
-        "end": end_raw[11:16],
-        "category": category,
-        "spotsFree": spots.get("free"),
-        "spotsMax": spots.get("max"),
+        "slug": slug,
+        "id": v.get("id"),
+        "name": v.get("name"),
+        "address": loc.get("address"),
+        "postalCode": loc.get("postalCode"),
+        "district": loc.get("displayAddress"),
+        "latitude": loc.get("latitude"),
+        "longitude": loc.get("longitude"),
+        "website": website,
+        "visitLimits": visit_limits,
     }
 
 
-def load_old_events():
+def convert(item, slug):
+    """Un corso, con i nomi di campo di Urban Sports."""
+    cat = item.get("category") or {}
+    flags = item.get("flags") or {}
+    return {
+        "id": item["id"],
+        "title": item["title"],
+        "teacherName": item.get("teacherName"),
+        "startDateTimeUTC": item["startDateTimeUTC"],  # in realtà ora di Berlino (+02:00 / +01:00)
+        "endDateTimeUTC": item["endDateTimeUTC"],
+        "category": {"id": cat.get("id"), "name": cat.get("name")},
+        "planTypesB2C": item.get("planTypesB2C") or [],
+        "isOnline": flags.get("isOnline"),
+        "bookingType": item.get("bookingType"),
+        "venue": slug,
+    }
+
+
+def load_old():
     if not OUT_FILE.exists():
-        return []
+        return {}
     try:
-        return json.loads(OUT_FILE.read_text(encoding="utf-8")).get("events", [])
+        return json.loads(OUT_FILE.read_text(encoding="utf-8"))
     except (json.JSONDecodeError, OSError):
-        return []
+        return {}
 
 
 def main():
-    venues = json.loads(VENUES_FILE.read_text(encoding="utf-8"))
-    old_events = load_old_events()
+    venues_cfg = json.loads(VENUES_FILE.read_text(encoding="utf-8"))
+    old = load_old()
+    old_classes = old.get("classes", [])
+    old_venues = old.get("venues", {})
     today = datetime.now(ZoneInfo("Europe/Berlin")).date()
     days = [today + timedelta(days=i) for i in range(DAYS_AHEAD)]
 
     session = requests.Session()
     session.headers.update(HEADERS)
-
     session.cookies.set("usc_city_selected", "1", domain="urbansportsclub.com")
 
-    events = {}
+    classes = {}
+    venues_out = {}
     venues_ok = 0
     diag_printed = False
 
-    for venue in venues:
-        name = venue["name"]
+    for cfg in venues_cfg:
+        slug = cfg["slug"]
         ok_days = 0
         failed_days = []
         last_error = None
-
         consecutive_fail = 0
+        extra = None   # (limiti, sito) dalla prima risposta valida
+        first_item = None
+
         for day in days:
-            r, error = fetch_day(session, venue["slug"], day)
-            classes = None
+            r, error = fetch_day(session, slug, day)
+            result = None
             if r is None:
                 last_error = error
             else:
                 text = r.content.decode("utf-8", errors="replace")
-                classes = extract_classes(text)
-                if classes is None:
+                result = extract(text)
+                if result is None:
                     last_error = "dati degli orari non trovati nella risposta"
                     if not diag_printed:
-                        print("DIAGNOSI (prima risposta senza orari):")
-                        print("    " + describe(r, text))
+                        print(f"DIAGNOSI: status={r.status_code} url={r.url} "
+                              f"tipo={r.headers.get('content-type')} lunghezza={len(text)}")
+                        print(f"    INIZIO RISPOSTA: {text[:600]!r}")
                         diag_printed = True
 
-            if classes is None:
+            if result is None:
                 failed_days.append(day)
                 consecutive_fail += 1
                 if consecutive_fail >= 3:
-                    print(f"[{name}] 3 errori di fila, salto il resto dei giorni")
+                    print(f"[{slug}] 3 errori di fila, salto il resto dei giorni")
                     break
             else:
                 consecutive_fail = 0
                 ok_days += 1
-                for item in classes:
+                items, limits, website = result
+                if extra is None:
+                    extra = (limits, website)
+                for item in items:
                     try:
-                        ev = convert(item, venue)
-                    except (KeyError, ValueError):
+                        c = convert(item, slug)
+                    except KeyError:
                         continue
-                    if ev["date"] == day.isoformat():
-                        events[ev["id"]] = ev
+                    if c["startDateTimeUTC"][:10] == day.isoformat():
+                        classes[c["id"]] = c
+                        if first_item is None:
+                            first_item = item
             time.sleep(random.uniform(*PAUSE_SECONDS))
 
-        # Per i giorni non scaricati, tieni i dati vecchi (se ci sono)
+        # Giorni non scaricati: tieni i dati vecchi, se ci sono
         if failed_days:
             failed_iso = {d.isoformat() for d in failed_days}
-            for ev in old_events:
-                if ev.get("studio") == name and ev.get("date") in failed_iso:
-                    events[ev["id"]] = ev
+            for c in old_classes:
+                if c.get("venue") == slug and c["startDateTimeUTC"][:10] in failed_iso:
+                    classes[c["id"]] = c
+
+        if extra is not None:
+            venues_out[slug] = build_venue(slug, first_item, extra[0], extra[1])
+        elif slug in old_venues:
+            venues_out[slug] = old_venues[slug]
 
         status = f"{ok_days}/{len(days)} giorni ok"
         if failed_days:
             status += f" | problemi: {last_error}"
-        print(f"[{name}] {status}")
+        print(f"[{slug}] {status}")
         if ok_days > 0:
             venues_ok += 1
 
@@ -249,21 +260,30 @@ def main():
         print("ERRORE: nessuna palestra scaricata. Il file esistente NON viene toccato.")
         sys.exit(1)
 
-    result = sorted(events.values(), key=lambda e: (e["date"], e["start"], e["studio"]))
-    # niente corsi nel passato
-    result = [e for e in result if e["date"] >= today.isoformat()]
+    result = sorted(classes.values(), key=lambda c: (c["startDateTimeUTC"], c["venue"]))
+    result = [c for c in result if c["startDateTimeUTC"][:10] >= today.isoformat()]
+
+    # Riepilogo da guardare insieme
+    print("\nCATEGORIE DI URBAN SPORTS (palestra | id | nome: corsi)")
+    for (v, cid, cname), n in sorted(Counter(
+            (c["venue"], c["category"]["id"] or 0, c["category"]["name"] or "-") for c in result).items()):
+        print(f"    {v} | {cid} | {cname}: {n}")
+    print("PIANI (combinazione: corsi)")
+    for k, n in sorted(Counter(",".join(c["planTypesB2C"]) or "nessuno" for c in result).items()):
+        print(f"    {k}: {n}")
+    print("isOnline:", dict(Counter(str(c["isOnline"]) for c in result)))
+    print("bookingType:", dict(Counter(str(c["bookingType"]) for c in result)))
 
     OUT_FILE.parent.mkdir(parents=True, exist_ok=True)
     OUT_FILE.write_text(
-        json.dumps(
-            {"updated": datetime.now(ZoneInfo("Europe/Berlin")).isoformat(timespec="minutes"),
-             "events": result},
-            ensure_ascii=False,
-            indent=1,
-        ),
+        json.dumps({
+            "updated": datetime.now(ZoneInfo("Europe/Berlin")).isoformat(timespec="minutes"),
+            "venues": venues_out,
+            "classes": result,
+        }, ensure_ascii=False, indent=1),
         encoding="utf-8",
     )
-    print(f"Salvati {len(result)} corsi in {OUT_FILE.relative_to(ROOT)}")
+    print(f"\nSalvati {len(result)} corsi e {len(venues_out)} palestre in {OUT_FILE.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":
