@@ -86,9 +86,29 @@ function prep(c) {
     c.key = [c.venue, c.title, c.dow, c.start, c.teacherName || ""].join("|");
     return c;
 }
-const visible = c =>
-    (!S.cat.size || S.cat.has(c.group)) && (!S.venue.size || S.venue.has(c.studio)) &&
-    (!S.plan || c.plans.includes(S.plan)) && (!S.fav || favs.has(c.key));
+// Un corso passa i filtri se li rispetta tutti; "skip" ignora un filtro (serve per capire cosa è ancora scegliibile)
+const matches = (c, skip) =>
+    (skip === "cat" || !S.cat.size || S.cat.has(c.group)) && (skip === "venue" || !S.venue.size || S.venue.has(c.studio)) &&
+    (skip === "plan" || !S.plan || c.plans.includes(S.plan)) && (skip === "fav" || !S.fav || favs.has(c.key));
+const visible = c => matches(c, null);
+const UI = { cat: new Map(), venue: new Map(), plan: new Map(), fav: null };
+
+// Le voci che non darebbero nessun corso diventano grigie e non cliccabili (quelle già scelte restano cliccabili)
+function updateAvailability() {
+    const avail = (skip, get) => {
+        const out = new Set();
+        classes.forEach(c => { if (matches(c, skip)) get(c).forEach(v => out.add(v)); });
+        return out;
+    };
+    const apply = (reg, ok, selected) => reg.forEach(({ i, l }, v) => {
+        const off = !ok.has(v) && !selected(v);
+        i.disabled = off; l.classList.toggle("off", off);
+    });
+    apply(UI.cat, avail("cat", c => [c.group]), v => S.cat.has(v));
+    apply(UI.venue, avail("venue", c => [c.studio]), v => S.venue.has(v));
+    apply(UI.plan, avail("plan", c => c.plans), v => v === "" || S.plan === v);
+    if (UI.fav) UI.fav.disabled = !S.fav && !classes.some(c => matches(c, "fav") && favs.has(c.key));
+}
 const colorOf = c => COLORS[c.cat] || ["#e5e7eb", "#374151"];
 
 function toggleFav(c) {
@@ -98,12 +118,13 @@ function toggleFav(c) {
 }
 
 // ---------- filtri ----------
-function multi(label, items, set) {
+function multi(label, items, set, reg) {
     const d = el("details", "dd"), s = el("summary", null, label), p = el("div", "panel");
     d.append(s, p);
     items.forEach(name => {
         const l = el("label"), i = el("input");
         i.type = "checkbox";
+        reg.set(name, { i, l });
         i.onchange = () => {
             i.checked ? set.add(name) : set.delete(name);
             s.textContent = label + (set.size ? ` (${set.size})` : "");
@@ -121,6 +142,7 @@ function planFilter() {
     [["", "Tutti"], ...PLANS].forEach(([v, n]) => {
         const l = el("label"), i = el("input");
         i.type = "radio"; i.name = "plan"; i.checked = S.plan === v;
+        UI.plan.set(v, { i, l });
         i.onchange = () => { S.plan = v; store.set("plan", v); upd(); d.open = false; render(); };
         l.append(i, document.createTextNode(" " + n));
         p.appendChild(l);
@@ -272,6 +294,7 @@ function goToday() {
 }
 function render() {
     if (!S.start) return;
+    updateAvailability();
     const view = $("view");
     view.innerHTML = "";
     const list = classes.filter(visible);
@@ -313,9 +336,10 @@ async function init() {
     const known = GROUPS.map(g => g[0]).filter(g => present.has(g));
     const others = [...present].filter(g => !known.includes(g)).sort();
     const f = $("filters");
-    f.append(multi("Categorie", [...known, ...others], S.cat),
-             multi("Studi", [...new Set(classes.map(c => c.studio))].sort(), S.venue), planFilter());
+    f.append(multi("Categorie", [...known, ...others], S.cat, UI.cat),
+             multi("Studi", [...new Set(classes.map(c => c.studio))].sort(), S.venue, UI.venue), planFilter());
     const fav = el("button", "btn", "♥ Solo preferiti");
+    UI.fav = fav;
     fav.onclick = () => { S.fav = !S.fav; fav.classList.toggle("active", S.fav); render(); };
     f.appendChild(fav);
 
