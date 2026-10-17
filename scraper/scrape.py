@@ -68,20 +68,33 @@ def categorize(title, venue):
     return DEFAULT_CATEGORY
 
 
+STATE_TREE = (
+    "%5B%22%22%2C%7B%22children%22%3A%5B%5B%22locale%22%2C%22en%22%2C%22d%22%2Cnull%5D%2C"
+    "%7B%22children%22%3A%5B%22venues%22%2C%7B%22children%22%3A%5B%5B%22slug%22%2C%22SLUG%22"
+    "%2C%22d%22%2Cnull%5D%2C%7B%22children%22%3A%5B%22__PAGE__%22%2C%7B%7D%2Cnull%2Cnull%2C0"
+    "%5D%7D%2Cnull%2Cnull%2C4%5D%7D%2Cnull%2Cnull%2C8%5D%7D%2Cnull%2Cnull%2C24%5D%7D%2Cnull"
+    "%2Cnull%2C8%5D"
+)
+
+
 def fetch_day(session, slug, day):
-    """Scarica la pagina-dati di una palestra per un giorno. Ritorna (testo, errore)."""
+    """Scarica la pagina-dati di una palestra per un giorno. Ritorna (risposta, errore)."""
     url = BASE_URL + slug
     params = {"view": "new", "date": day.isoformat(), "_rsc": "plan26"}
+    extra = {
+        "Referer": f"{url}?view=new",
+        "Next-Url": f"/en/venues/{slug}",
+        "Next-Router-State-Tree": STATE_TREE.replace("SLUG", slug),
+    }
     error = "errore sconosciuto"
     for _ in range(2):
         try:
-            r = session.get(url, params=params, timeout=30)
+            r = session.get(url, params=params, headers=extra, timeout=30)
         except requests.RequestException as exc:
             error = str(exc)
         else:
             if r.status_code == 200:
-                # decodifica esplicita in UTF-8 (evita caratteri strani)
-                return r.content.decode("utf-8", errors="replace"), None
+                return r, None
             error = f"HTTP {r.status_code}"
             if r.status_code in (403, 429, 503):
                 error += " (probabile blocco anti-bot)"
@@ -89,8 +102,7 @@ def fetch_day(session, slug, day):
     return None, error
 
 
-def extract_classes(text):
-    """Trova nel testo il blocco "activities" e ne ritorna la lista "classes"."""
+def _find_classes(text):
     key = '"activities":'
     i = text.find(key)
     if i == -1:
@@ -104,6 +116,33 @@ def extract_classes(text):
         return None
     classes = obj.get("classes")
     return classes if isinstance(classes, list) else None
+
+
+def extract_classes(text):
+    """Trova nel testo il blocco "activities" e ne ritorna la lista "classes"."""
+    result = _find_classes(text)
+    if result is not None:
+        return result
+    # Piano B: se arriva una pagina HTML, i dati stanno dentro self.__next_f.push([1,"..."])
+    chunks = re.findall(r'self\.__next_f\.push\(\[1,("(?:[^"\\]|\\.)*")\]\)', text)
+    if chunks:
+        joined = ""
+        for c in chunks:
+            try:
+                joined += json.loads(c)
+            except json.JSONDecodeError:
+                pass
+        return _find_classes(joined)
+    return None
+
+
+def describe(r, text):
+    history = [h.status_code for h in r.history]
+    return (
+        f"status={r.status_code} url_finale={r.url} tipo={r.headers.get('content-type')} "
+        f"lunghezza={len(text)} redirect={history}\n"
+        f"    INIZIO RISPOSTA: {text[:600]!r}"
+    )
 
 
 def convert(item, venue):
@@ -146,8 +185,11 @@ def main():
     session = requests.Session()
     session.headers.update(HEADERS)
 
+    session.cookies.set("usc_city_selected", "1", domain="urbansportsclub.com")
+
     events = {}
     venues_ok = 0
+    diag_printed = False
 
     for venue in venues:
         name = venue["name"]
@@ -155,25 +197,38 @@ def main():
         failed_days = []
         last_error = None
 
+        consecutive_fail = 0
         for day in days:
-            text, error = fetch_day(session, venue["slug"], day)
-            if text is None:
-                failed_days.append(day)
+            r, error = fetch_day(session, venue["slug"], day)
+            classes = None
+            if r is None:
                 last_error = error
             else:
+                text = r.content.decode("utf-8", errors="replace")
                 classes = extract_classes(text)
                 if classes is None:
-                    failed_days.append(day)
                     last_error = "dati degli orari non trovati nella risposta"
-                else:
-                    ok_days += 1
-                    for item in classes:
-                        try:
-                            ev = convert(item, venue)
-                        except (KeyError, ValueError):
-                            continue
-                        if ev["date"] == day.isoformat():
-                            events[ev["id"]] = ev
+                    if not diag_printed:
+                        print("DIAGNOSI (prima risposta senza orari):")
+                        print("    " + describe(r, text))
+                        diag_printed = True
+
+            if classes is None:
+                failed_days.append(day)
+                consecutive_fail += 1
+                if consecutive_fail >= 3:
+                    print(f"[{name}] 3 errori di fila, salto il resto dei giorni")
+                    break
+            else:
+                consecutive_fail = 0
+                ok_days += 1
+                for item in classes:
+                    try:
+                        ev = convert(item, venue)
+                    except (KeyError, ValueError):
+                        continue
+                    if ev["date"] == day.isoformat():
+                        events[ev["id"]] = ev
             time.sleep(random.uniform(*PAUSE_SECONDS))
 
         # Per i giorni non scaricati, tieni i dati vecchi (se ci sono)
