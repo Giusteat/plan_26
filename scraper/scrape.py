@@ -163,7 +163,8 @@ def convert(item, slug):
 
 def allowed(cfg, item):
     """Se la palestra ha "only_categories" in venues.json, tiene solo quei corsi.
-    Si possono indicare nomi (es. "Pilates") o numeri di categoria."""
+    Si possono indicare nomi (es. "Pilates") o numeri di categoria.
+    Con "or_title_contains" entrano anche i corsi che hanno quelle parole nel titolo."""
     wanted = cfg.get("only_categories")
     if not wanted:
         return True
@@ -174,7 +175,8 @@ def allowed(cfg, item):
             return True
         if isinstance(w, str) and w.strip().lower() == name:
             return True
-    return False
+    title = (item.get("title") or "").lower()
+    return any(k.lower() in title for k in cfg.get("or_title_contains", []))
 
 
 def load_old():
