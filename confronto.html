@@ -31,6 +31,20 @@ th,td{border-bottom:1px solid var(--border);padding:6px 8px;text-align:left;whit
 th{background:#f1f5f9}
 td.no{color:#b0b4ba}
 .notes ul{font-size:.8rem;padding-left:18px;margin:0}
+.vzbar{display:flex;gap:16px;flex-wrap:wrap;font-size:.8rem;margin-bottom:8px}
+.vzbar select{width:auto}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.75rem;color:var(--muted);margin-bottom:6px;align-items:center}
+.legend .sq{display:inline-flex;vertical-align:middle}
+.vz{border-top:1px solid var(--border);padding:8px 0}
+.vz-name{font-weight:600;font-size:.85rem;margin-bottom:4px}
+.vzr{display:grid;grid-template-columns:130px 1fr;align-items:center;gap:6px;margin:3px 0;font-size:.75rem}
+.weeks{display:flex;gap:10px;flex-wrap:wrap}
+.wk{display:flex;gap:2px}
+.sq{width:16px;height:16px;border-radius:3px;background:#eef0f3;font-size:.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;color:#fff}
+.sq.u{background:#4f46e5}.sq.w{background:#0d9488}.sq.p{background:#f59e0b}
+.dh{width:16px;text-align:center;font-size:.65rem;color:var(--muted)}
+.nota{color:#9aa0a6;font-style:italic}
+@media(max-width:600px){.sq,.dh{width:11px}.sq{height:11px}.vzr{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -48,12 +62,27 @@ td.no{color:#b0b4ba}
   </section>
   <section class="two" id="result"></section>
   <div class="verdict" id="verdict"></div>
+  <section class="card">
+    <h2>Confronto visivo: 4 settimane</h2>
+    <div class="vzbar">
+      <label>Urban Sports <select id="vu"></select></label>
+      <label>Wellhub <select id="vw"></select></label>
+    </div>
+    <div class="legend">
+      <span><span class="sq u"></span> ingresso Urban Sports</span>
+      <span><span class="sq w"></span> ingresso Wellhub</span>
+      <span><span class="sq p">P</span> quota premium, in comune tra tutti gli studi premium</span>
+    </div>
+    <div class="hint">Ogni quadretto è un giorno, da lunedì a domenica. Mostra quanti ingressi hai, non quando andare: i giorni li scegli tu.</div>
+    <div id="viz"></div>
+  </section>
   <section class="card"><h2>Studio per studio</h2><div class="scroll"><table id="table"></table></div></section>
   <section class="card notes"><h2>Come sono fatti i conti</h2><ul>
     <li>Un mese vale 4,33 settimane: due lezioni a settimana sono circa 8,7 al mese.</li>
     <li>Urban Sports: limiti mensili per studio e per piano, letti dagli orari scaricati. Essential non include nessuno di questi studi.</li>
     <li>Wellhub: i corsi "premium" hanno una quota settimanale unica per tutti gli studi premium (Gold 1, Gold+ 2, Platinum 3, Diamond 4). Gli studi "standard" usano l'accesso del giorno.</li>
     <li>Non conto: i check-in "Plus" di Urban Sports, i corsi online, le lezioni private di Wellhub, la palestra di HALE.NOW.</li>
+    <li>Il piano Max di Urban Sports non è considerato. Nel confronto visivo, Wellhub è solo Gold e Platinum: uno studio incluso in un piano più economico (Basic, Silver) ha gli stessi ingressi anche con Gold.</li>
     <li>I prezzi e gli studi di Wellhub sono quelli che hai letto nella tua app.</li>
   </ul></section>
 </main>
@@ -156,6 +185,59 @@ function buildTable() {
     t.appendChild(tr);
   });
 }
+// ---------- confronto visivo ----------
+const ORDER = [2, 1, 3, 0, 4, 5, 6], DL = ["L", "M", "M", "G", "V", "S", "D"];   // mercoledì, martedì, giovedì, lunedì...
+let vu = store.get("vu", "M"), vw = store.get("vw", "Gold");
+const unlimited = () => [0, 1, 2, 3].map(() => [0, 1, 2, 3, 4, 5, 6]);
+// ingressi al mese distribuiti sulle 4 settimane: 4 = un mercoledì a settimana, 8 = martedì e mercoledì
+const pattern = n => [0, 1, 2, 3].map(w => ORDER.slice(0, Math.min(7, Math.floor(n / 4) + (w < n % 4 ? 1 : 0))));
+function weeksEl(days, cls, label) {
+  const wrap = el("div", "weeks");
+  days.forEach(set => {
+    const wk = el("div", "wk");
+    for (let d = 0; d < 7; d++) { const on = set.includes(d), q = el("span", "sq" + (on ? " " + cls : "")); if (on && label) q.textContent = label; wk.appendChild(q); }
+    wrap.appendChild(wk);
+  });
+  return wrap;
+}
+function buildViz() {
+  const box = $("viz"), st = cfg.wellhub.studios, plans = cfg.wellhub.plans;
+  box.innerHTML = "";
+  const pIdx = plans.findIndex(p => p.id === vw), up = cfg.usc.plans.find(p => p.code === vu);
+  const price = s => plans.find(p => p.id === st[s].from).price;
+  const row = (label, content) => { const r = el("div", "vzr"); r.append(el("div", null, label), content); return r; };
+  const head = el("div", "weeks");
+  for (let w = 0; w < 4; w++) { const wk = el("div", "wk"); DL.forEach(l => wk.appendChild(el("span", "dh", l))); head.appendChild(wk); }
+  box.appendChild(row("", head));
+  Object.keys(st).sort((a, b) => price(a) - price(b) || nm(a).localeCompare(nm(b))).forEach(slug => {
+    const s = st[slug], blk = el("div", "vz");
+    blk.appendChild(el("div", "vz-name", nm(slug)));
+    // Urban Sports
+    const lim = limitOf(slug, vu), ok = lim && lim.isProvidedByVenue && lim.monthlyLimitVenueAddress != null;
+    if (ok) blk.appendChild(row(`Urban Sports`, weeksEl(lim.monthlyLimitVenueAddress < 0 ? unlimited() : pattern(lim.monthlyLimitVenueAddress), "u")));
+    else {
+      const first = cfg.usc.plans.find(p => { const l = limitOf(slug, p.code); return l && l.isProvidedByVenue && l.monthlyLimitVenueAddress != null; });
+      blk.appendChild(row("Urban Sports", el("span", "nota", `non incluso in ${up.name}${first ? ` (da ${first.name})` : ""}`)));
+    }
+    // Wellhub
+    const sIdx = plans.findIndex(p => p.id === s.from), label = "Wellhub" + (sIdx < pIdx ? ` (${s.from})` : "");
+    if (sIdx > pIdx) blk.appendChild(row("Wellhub", el("span", "nota", `non incluso in ${vw} (da ${s.from})`)));
+    else if (s.type === "premium") blk.appendChild(row(label, weeksEl(Array(4).fill(ORDER.slice(0, plans[pIdx].premiumPerWeek)), "p", "P")));
+    else blk.appendChild(row(label, weeksEl(s.cap ? pattern(s.cap) : unlimited(), "w")));
+    box.appendChild(blk);
+  });
+}
+function initViz() {
+  const su = $("vu"), sw = $("vw");
+  cfg.usc.plans.forEach(p => su.appendChild(new Option(p.name, p.code)));
+  cfg.wellhub.visual.forEach(id => sw.appendChild(new Option(id, id)));
+  if (!cfg.usc.plans.some(p => p.code === vu)) vu = cfg.usc.plans[0].code;
+  if (!cfg.wellhub.visual.includes(vw)) vw = cfg.wellhub.visual[0];
+  su.value = vu; sw.value = vw;
+  su.onchange = () => { vu = su.value; store.set("vu", vu); buildViz(); };
+  sw.onchange = () => { vw = sw.value; store.set("vw", vw); buildViz(); };
+  buildViz();
+}
 async function init() {
   try {
     const [c, d] = await Promise.all([fetch("confronto.json", { cache: "no-cache" }), fetch("data/corsi.json", { cache: "no-cache" })]);
@@ -175,7 +257,7 @@ async function init() {
   });
   $("people").value = String(people);
   $("people").onchange = e => { people = Number(e.target.value); store.set("cp", people); render(); };
-  buildTable(); render();
+  buildTable(); initViz(); render();
 }
 init();
 </script>
