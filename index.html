@@ -3,28 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="robots" content="noindex, nofollow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Berlin Fitness Weekly Grid</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Berlin Fitness Schedule</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
+<header>
     <h1>Berlin Fitness Schedule</h1>
     <div class="meta" id="meta">Carico gli orari…</div>
-    <div class="week-nav">
-        <button id="prevWeek" aria-label="Settimana precedente">‹</button>
-        <span class="week-label" id="weekLabel"></span>
-        <button id="nextWeek" aria-label="Settimana successiva">›</button>
+    <div class="bar">
+        <div class="nav">
+            <button class="btn" id="prev" aria-label="Precedente">‹</button>
+            <span id="label"></span>
+            <button class="btn" id="next" aria-label="Successivo">›</button>
+            <button class="btn" id="today">Oggi</button>
+        </div>
+        <div class="filters" id="filters"></div>
     </div>
-    <div class="filters-wrapper">
-        <div class="filters" id="categoryFilters"></div>
-        <div class="divider"></div>
-        <div class="filters" id="venueFilters"></div>
-    </div>
-    <div class="calendar-grid-wrapper">
-        <div class="calendar-grid" id="calendarGrid"></div>
-    </div>
-</div>
+</header>
+<main id="view"></main>
+<footer>
+    <button class="btn" id="copyFav">Copia preferiti</button>
+    <button class="btn" id="pasteFav">Incolla preferiti</button>
+</footer>
+<div class="sheet" id="sheet" hidden></div>
 <script src="app.js"></script>
 </body>
 </html>
