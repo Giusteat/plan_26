@@ -90,7 +90,7 @@ function prep(c) {
 }
 // Un corso passa i filtri se li rispetta tutti; "skip" ignora un filtro (serve per capire cosa è ancora scegliibile)
 const matches = (c, skip) =>
-    (S.allDay || !c.allDay) && (skip === "cat" || !S.cat.size || S.cat.has(c.group)) && (skip === "venue" || !S.venue.size || S.venue.has(c.studio)) &&
+    c.allDay === S.allDay && (skip === "cat" || !S.cat.size || S.cat.has(c.group)) && (skip === "venue" || !S.venue.size || S.venue.has(c.studio)) &&
     (skip === "plan" || !S.plan || c.plans.includes(S.plan)) && (skip === "fav" || !S.fav || favs.has(c.key));
 const visible = c => matches(c, null);
 const UI = { cat: new Map(), venue: new Map(), plan: new Map(), fav: null };
@@ -102,15 +102,21 @@ function updateAvailability() {
         classes.forEach(c => { if (matches(c, skip)) get(c).forEach(v => out.add(v)); });
         return out;
     };
-    const apply = (reg, ok, selected) => reg.forEach(({ i, l }, v) => {
-        const off = !ok.has(v) && !selected(v);
-        i.disabled = off; l.classList.toggle("off", off);
-    });
+    const apply = (reg, ok, selected, keepOrder) => {
+        const rows = [];
+        reg.forEach(({ i, l }, v) => {
+            const off = !ok.has(v) && !selected(v);
+            i.disabled = off; l.classList.toggle("off", off);
+            rows.push([off, v, l]);
+        });
+        if (!keepOrder) rows.sort((a, b) => a[0] - b[0] || byName(a[1], b[1])).forEach(([, , l]) => l.parentNode.appendChild(l));
+    };
     apply(UI.cat, avail("cat", c => [c.group]), v => S.cat.has(v));
     apply(UI.venue, avail("venue", c => [c.studio]), v => S.venue.has(v));
-    apply(UI.plan, avail("plan", c => c.plans), v => v === "" || S.plan === v);
+    apply(UI.plan, avail("plan", c => c.plans), v => v === "" || S.plan === v, true);
     if (UI.fav) UI.fav.disabled = !S.fav && !classes.some(c => matches(c, "fav") && favs.has(c.key));
 }
+const byName = (a, b) => a.localeCompare(b, "it", { sensitivity: "base" });
 const colorOf = c => COLORS[c.cat] || ["#e5e7eb", "#374151"];
 
 function toggleFav(c) {
@@ -308,9 +314,9 @@ function goToday() {
     S.start = clampStart(S.view === 7 ? mondayOf(new Date()) : todayDate());
     render();
 }
-// Le ore della griglia seguono i corsi visibili (gli studi a orari continui allargano la griglia solo se attivi)
+// Le ore della griglia seguono i corsi visibili (con l'interruttore acceso: solo gli studi a orari continui)
 function fitHours() {
-    const base = classes.filter(c => S.allDay || !c.allDay);
+    const base = classes.filter(c => c.allDay === S.allDay);
     if (!base.length) return;
     startHour = Math.min(7, Math.floor(Math.min(...base.map(c => toMin(c.start))) / 60));
     endHour = Math.max(22, Math.ceil(Math.max(...base.map(c => toMin(c.end))) / 60) - 1);

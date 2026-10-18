@@ -16,7 +16,7 @@ h1 { text-align: center; font-size: 1.25rem; margin: 4px 0 2px; }
 .btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
 .dd { position: relative; }
 .dd[open] summary { border-color: var(--primary); }
-.panel { position: absolute; top: 110%; left: 0; z-index: 30; background: var(--card); border: 1px solid var(--border);
+.panel { position: absolute; top: 110%; left: 0; z-index: 60; background: var(--card); border: 1px solid var(--border);
     border-radius: 8px; box-shadow: 0 6px 16px rgba(0,0,0,.15); padding: 6px 10px; max-height: 60vh; overflow: auto; min-width: 200px; }
 .panel label { display: block; padding: 4px 0; font-size: .85rem; white-space: nowrap; cursor: pointer; }
 .grid { display: grid; grid-template-columns: 48px repeat(7, minmax(0, 1fr)); background: var(--card);
