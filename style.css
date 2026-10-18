@@ -79,3 +79,4 @@ footer { text-align: center; margin-top: 14px; display: flex; gap: 8px; justify-
 .switch input:checked + .knob { background: var(--primary); }
 .switch input:checked + .knob::after { transform: translateX(14px); }
 .switch input:focus-visible + .knob { outline: 2px solid var(--primary); outline-offset: 2px; }
+.ico.left { right: auto; left: 0; }

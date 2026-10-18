@@ -198,7 +198,10 @@ def main():
     old_classes = old.get("classes", [])
     old_venues = old.get("venues", {})
 
-    if os.environ.get("FORCE", "").lower() != "true" and old.get("updated"):
+    # ONLY_SLUGS="a,b": scarica solo queste palestre, le altre restano come sono
+    only = {x.strip() for x in os.environ.get("ONLY_SLUGS", "").split(",") if x.strip()}
+
+    if not only and os.environ.get("FORCE", "").lower() != "true" and old.get("updated"):
         try:
             age = datetime.now(ZoneInfo("Europe/Berlin")) - datetime.fromisoformat(old["updated"])
         except (ValueError, TypeError):
@@ -223,6 +226,13 @@ def main():
 
     for cfg in venues_cfg:
         slug = cfg["slug"]
+        if only and slug not in only:
+            for c in old_classes:
+                if c.get("venue") == slug:
+                    classes[c["id"]] = c
+            if slug in old_venues:
+                venues_out[slug] = old_venues[slug]
+            continue
         ok_days = 0
         failed_days = []
         last_error = None
@@ -289,6 +299,8 @@ def main():
             venues_out[slug] = old_venues[slug]
         if cfg.get("all_day") and slug in venues_out:
             venues_out[slug]["allDay"] = True   # studio con orari continui: nascosto nel calendario salvo filtro
+        elif slug in venues_out:
+            venues_out[slug].pop("allDay", None)
 
         status = f"{ok_days}/{len(days)} giorni ok"
         if failed_days:
@@ -302,7 +314,8 @@ def main():
         if ok_days > 0:
             venues_ok += 1
 
-    if venues_ok == 0:
+    requested = {v["slug"] for v in venues_cfg} & only if only else None
+    if venues_ok == 0 and requested != set():
         print("ERRORE: nessuna palestra scaricata. Il file esistente NON viene toccato.")
         sys.exit(1)
 

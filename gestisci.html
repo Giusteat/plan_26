@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gestisci palestre</title>
+<style>
+:root{--bg:#f8f9fa;--card:#fff;--text:#212529;--muted:#6c757d;--primary:#4f46e5;--border:#e5e7eb;--bad:#b91c1c}
+*{box-sizing:border-box}
+body{margin:0;padding:8px 12px 32px;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+header,main{max-width:760px;margin:0 auto}
+header a{font-size:.8rem;color:var(--primary)}
+h1{font-size:1.25rem;margin:6px 0 2px}
+h2{font-size:1rem;margin:0 0 8px}
+.meta,.hint{font-size:.75rem;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px;margin-top:12px}
+.field{margin:12px 0}
+.field > label{display:block;font-weight:600;font-size:.85rem;margin-bottom:4px}
+input[type=text],input[type=url]{width:100%;padding:8px;border:1px solid var(--border);border-radius:8px;font-size:.9rem}
+.cats{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--border);border-radius:12px;padding:4px 10px;font-size:.8rem;cursor:pointer;user-select:none}
+.chip:has(input:checked){background:var(--primary);color:#fff;border-color:var(--primary)}
+.chip input{display:none}
+.btn{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:6px 14px;font-size:.85rem;cursor:pointer;color:var(--text)}
+.btn:hover{border-color:var(--primary)}
+.btn.main{background:var(--primary);color:#fff;border-color:var(--primary);font-weight:600}
+.btn.small{padding:3px 10px;font-size:.75rem}
+.btn.del{color:var(--bad)}
+.actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:14px}
+.err{color:var(--bad);font-size:.8rem;margin-top:6px}
+.ok{background:#eef2ff;border-radius:8px;padding:10px;font-size:.85rem;margin-top:12px}
+.switch,.field > label.switch{display:inline-flex;font-weight:400;align-items:center;gap:8px;font-size:.85rem;cursor:pointer;user-select:none}
+.switch input{position:absolute;opacity:0;width:0;height:0}
+.switch .knob{position:relative;width:34px;height:20px;border-radius:10px;background:#cbd5e1;transition:background .2s;flex-shrink:0}
+.switch .knob::after{content:'';position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.2);transition:transform .2s}
+.switch input:checked + .knob{background:var(--primary)}
+.switch input:checked + .knob::after{transform:translateX(14px)}
+.list .it{display:flex;gap:10px;align-items:center;border-top:1px solid var(--border);padding:8px 0}
+.list .it:first-child{border-top:0}
+.list .nm{flex:1;min-width:0}
+.list .nm b{font-size:.88rem}
+.list .nm div{font-size:.75rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <a href="index.html">← Calendario</a>
+  <h1>Gestisci palestre</h1>
+  <div class="meta">Aggiungi, cambia o togli le palestre del calendario.</div>
+</header>
+<main>
+  <section class="card" id="formCard">
+    <h2 id="formTitle">Aggiungi una palestra</h2>
+    <div class="field">
+      <label for="link">Link della palestra su Urban Sports</label>
+      <input type="url" id="link" placeholder="https://urbansportsclub.com/en/venues/nome-palestra" autocomplete="off">
+      <div class="hint">Apri la palestra sul sito di Urban Sports e copia l'indirizzo della pagina.</div>
+    </div>
+    <div class="field">
+      <label>Tieni solo queste categorie</label>
+      <div class="cats" id="cats"></div>
+      <div class="hint">Se non scegli niente, tengo tutte le lezioni della palestra.</div>
+    </div>
+    <div class="field">
+      <label for="words">Tieni anche le lezioni con queste parole nel titolo</label>
+      <input type="text" id="words" placeholder="es. pilates, reformer" autocomplete="off">
+      <div class="hint">Separate da una virgola. Facoltativo.</div>
+    </div>
+    <div class="field">
+      <label class="switch"><input type="checkbox" id="allDay"><span class="knob"></span>Orari continui (nascosta finché non accendi l'interruttore)</label>
+    </div>
+    <div class="actions">
+      <button class="btn main" id="send">Invia richiesta</button>
+      <button class="btn" id="reset" hidden>Annulla modifica</button>
+    </div>
+    <div class="err" id="err"></div>
+    <div class="ok" id="ok" hidden>
+      Si è aperta una pagina di GitHub con la richiesta già scritta.<br>
+      <b>Premi il bottone verde "Create"</b> in fondo alla pagina.<br>
+      In un paio di minuti la palestra è nel calendario. Quando è fatto, GitHub ti lascia un commento sulla richiesta.
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Palestre nel calendario</h2>
+    <div class="list" id="list"><div class="hint">Carico…</div></div>
+  </section>
+  <p class="hint">Le richieste fatte da qui: <a id="issues" target="_blank" rel="noopener">vedi su GitHub</a>.</p>
+</main>
+<script>
+const REPO = "Giusteat/plan_26";
+const NONE = "__nessuna__";   // "solo parole nel titolo": nessuna categoria tenuta per intero
+const BASE_CATS = ["Pilates", "Pilates Reformer", "Barre", "Yoga", "Meditation", "Aerial", "Pole Dance", "Dance", "Fitness", "Functional Training"];
+const $ = id => document.getElementById(id);
+const el = (t, c, x) => { const e = document.createElement(t); if (c) e.className = c; if (x !== undefined) e.textContent = x; return e; };
+let venues = [], names = {}, editing = null;
+
+const slugFrom = link => {
+  link = (link || "").trim();
+  const m = link.match(/urbansportsclub\.com\/(?:[a-z]{2}\/)?venues\/([^/?#\s]+)/i);
+  const s = (m ? m[1] : link).replace(/^\/+|\/+$/g, "").toLowerCase();
+  return /^[a-z0-9][a-z0-9-]{0,120}$/.test(s) ? s : null;
+};
+const urlOf = slug => `https://urbansportsclub.com/en/venues/${slug}`;
+const nm = slug => names[slug] || slug;
+
+function describe(v) {
+  const parts = [];
+  const cats = (v.only_categories || []).filter(c => c !== NONE);
+  if (cats.length) parts.push("solo " + cats.join(", "));
+  if ((v.or_title_contains || []).length) parts.push((cats.length ? "più titoli con " : "solo titoli con ") + v.or_title_contains.map(w => `"${w}"`).join(", "));
+  if (v.all_day) parts.push("orari continui");
+  return parts.join(" · ") || "tutte le lezioni";
+}
+
+function buildCats(extra) {
+  const box = $("cats"), chosen = new Set([...box.querySelectorAll("input:checked")].map(i => i.value));
+  box.innerHTML = "";
+  [...new Set([...BASE_CATS, ...extra])].forEach(c => {
+    const l = el("label", "chip"), i = el("input");
+    i.type = "checkbox"; i.value = c; i.checked = chosen.has(c);
+    l.append(i, document.createTextNode(c));
+    box.appendChild(l);
+  });
+}
+
+function fill(v) {
+  editing = v ? v.slug : null;
+  $("formTitle").textContent = v ? `Modifica: ${nm(v.slug)}` : "Aggiungi una palestra";
+  $("link").value = v ? urlOf(v.slug) : "";
+  $("link").readOnly = !!v;
+  const cats = v ? (v.only_categories || []).filter(c => c !== NONE) : [];
+  buildCats(cats);
+  $("cats").querySelectorAll("input").forEach(i => { i.checked = cats.includes(i.value); });
+  $("words").value = v ? (v.or_title_contains || []).join(", ") : "";
+  $("allDay").checked = !!(v && v.all_day);
+  $("reset").hidden = !v;
+  $("err").textContent = ""; $("ok").hidden = true;
+}
+
+function openRequest(action, slug, req) {
+  const verb = { aggiungi: "Aggiungi", modifica: "Modifica", rimuovi: "Togli" }[action];
+  const title = `[palestra] ${verb} ${slug}`;
+  const body = `${verb} la palestra ${urlOf(slug)}\n\nPremi il bottone verde qui sotto per confermare.\n\n<!-- Non modificare il blocco qui sotto -->\n\`\`\`json\n${JSON.stringify({ azione: action, link: urlOf(slug), ...req })}\n\`\`\`\n`;
+  window.open(`https://github.com/${REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`, "_blank", "noopener");
+}
+
+$("send").onclick = () => {
+  $("err").textContent = ""; $("ok").hidden = true;
+  const slug = slugFrom($("link").value);
+  if (!slug) { $("err").textContent = "Il link non sembra giusto. Deve essere tipo https://urbansportsclub.com/en/venues/nome-palestra"; return; }
+  if (!editing && venues.some(v => v.slug === slug)) { $("err").textContent = `${nm(slug)} è già nel calendario. Usa "Modifica" nella lista qui sotto.`; return; }
+  const cats = [...$("cats").querySelectorAll("input:checked")].map(i => i.value);
+  const words = $("words").value.split(",").map(w => w.trim()).filter(Boolean);
+  openRequest(editing ? "modifica" : "aggiungi", slug, { only_categories: cats, or_title_contains: words, all_day: $("allDay").checked });
+  $("ok").hidden = false;
+};
+$("reset").onclick = () => fill(null);
+
+function renderList() {
+  const box = $("list");
+  box.innerHTML = "";
+  [...venues].sort((a, b) => nm(a.slug).localeCompare(nm(b.slug))).forEach(v => {
+    const it = el("div", "it"), n = el("div", "nm");
+    n.append(el("b", null, nm(v.slug)), el("div", null, describe(v)));
+    const ed = el("button", "btn small", "Modifica");
+    ed.onclick = () => { fill(v); $("formCard").scrollIntoView({ behavior: "smooth" }); };
+    const del = el("button", "btn small del", "Togli");
+    del.onclick = () => { if (confirm(`Togliere ${nm(v.slug)} dal calendario?`)) openRequest("rimuovi", v.slug, {}); };
+    it.append(n, ed, del);
+    box.appendChild(it);
+  });
+}
+
+async function init() {
+  $("issues").href = `https://github.com/${REPO}/issues?q=is%3Aissue+%5Bpalestra%5D`;
+  buildCats([]);
+  try {
+    const [v, d] = await Promise.all([fetch("scraper/venues.json", { cache: "no-cache" }), fetch("data/corsi.json", { cache: "no-cache" })]);
+    if (!v.ok) throw new Error("HTTP " + v.status);
+    venues = await v.json();
+    if (d.ok) {
+      const data = await d.json();
+      Object.values(data.venues || {}).forEach(x => { names[x.slug] = x.name; });
+      buildCats([...new Set((data.classes || []).map(c => (c.category || {}).name).filter(Boolean))].sort());
+    }
+  } catch (e) { $("list").innerHTML = ""; $("list").appendChild(el("div", "err", "Impossibile caricare la lista (" + e.message + ")")); return; }
+  renderList();
+}
+init();
+</script>
+</body>
+</html>

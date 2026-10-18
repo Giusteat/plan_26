@@ -1,0 +1,73 @@
+name: Gestisci palestre
+
+# Parte quando apri una richiesta dalla pagina "Gestisci palestre" del sito.
+# Vale solo per le richieste del proprietario del repository.
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: dati
+  cancel-in-progress: false
+
+jobs:
+  richiesta:
+    if: github.event.issue.user.login == github.repository_owner && startsWith(github.event.issue.title, '[palestra]')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installa requests
+        run: pip install requests
+
+      - name: Leggi la richiesta
+        id: req
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: python scraper/richiesta.py
+
+      - name: Scarica gli orari della palestra
+        id: scrape
+        env:
+          ONLY_SLUGS: ${{ steps.req.outputs.slugs || '__nessuna__' }}
+        run: python scraper/scrape.py
+
+      - name: Salva nel repository
+        run: |
+          git config user.name "orari-bot"
+          git config user.email "orari-bot@users.noreply.github.com"
+          git add scraper/venues.json data/corsi.json
+          git diff --cached --quiet || git commit -m "Palestre: richiesta #${{ github.event.issue.number }}"
+          git pull --rebase origin main
+          git push
+
+      - name: Rispondi e chiudi
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ESITO: ${{ steps.req.outputs.esito }}
+        run: |
+          gh issue comment ${{ github.event.issue.number }} --repo ${{ github.repository }} \
+            --body "$ESITO
+          Il calendario si aggiorna tra un paio di minuti."
+          gh issue close ${{ github.event.issue.number }} --repo ${{ github.repository }}
+
+      - name: Avvisa se qualcosa non va
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ESITO: ${{ steps.req.outputs.esito }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          MSG="${ESITO:-❌ Non sono riuscito a scaricare gli orari di questa palestra. Controlla che il link sia giusto.}"
+          gh issue comment ${{ github.event.issue.number }} --repo ${{ github.repository }} \
+            --body "$MSG
+          Niente è stato cambiato. Dettagli: $RUN_URL"
