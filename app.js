@@ -367,9 +367,11 @@ async function init() {
     fav.onclick = () => { S.fav = !S.fav; fav.classList.toggle("active", S.fav); render(); };
     f.appendChild(fav);
     if (classes.some(c => c.allDay)) {
-        const ad = el("button", "btn", "Mostra orari continui");
+        const ad = el("label", "switch"), box = el("input");
+        box.type = "checkbox";
         ad.title = "Studi con un corso ogni ora o accesso tutto il giorno, nascosti di default";
-        ad.onclick = () => { S.allDay = !S.allDay; ad.classList.toggle("active", S.allDay); render(); };
+        box.onchange = () => { S.allDay = box.checked; render(); };
+        ad.append(box, el("span", "knob"), document.createTextNode("Mostra orari continui"));
         f.appendChild(ad);
     }
 

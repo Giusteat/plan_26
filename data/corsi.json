@@ -1252,7 +1252,8 @@
       }
      ]
     }
-   ]
+   ],
+   "allDay": true
   },
   "rostudios-berlin-prenzlauer-berg-studio-2": {
    "slug": "rostudios-berlin-prenzlauer-berg-studio-2",
@@ -1349,7 +1350,8 @@
       }
      ]
     }
-   ]
+   ],
+   "allDay": true
   },
   "soul-sportstudio-pankow": {
    "slug": "soul-sportstudio-pankow",
