@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-17T22:04+02:00",
+ "updated": "2026-10-19T22:40+02:00",
  "venues": {
   "lyra-prenzlauerberg": {
    "slug": "lyra-prenzlauerberg",
@@ -2430,2556 +2430,211 @@
     }
    ],
    "allDay": true
+  },
+  "soulsport": {
+   "slug": "soulsport",
+   "id": 3310,
+   "name": "SOUL sportstudio F'hain",
+   "address": "Gubener Str. 47",
+   "postalCode": "10243",
+   "district": "Friedrichshain-Kreuzberg",
+   "latitude": 52.5121855,
+   "longitude": 13.4486067,
+   "website": "https://www.soulsport.net/",
+   "visitLimits": [
+    {
+     "name": "S",
+     "planName": "Essential",
+     "isAvailableAtVenue": true,
+     "isProvidedByVenue": false,
+     "monthlyLimitVenue": null,
+     "monthlyLimitVenueAddress": null,
+     "categoryLimits": []
+    },
+    {
+     "name": "M",
+     "planName": "Classic",
+     "isAvailableAtVenue": true,
+     "isProvidedByVenue": true,
+     "monthlyLimitVenue": -1,
+     "monthlyLimitVenueAddress": 4,
+     "categoryLimits": [
+      {
+       "id": 1378,
+       "name": "Barre",
+       "limit": 4
+      },
+      {
+       "id": 370,
+       "name": "Live Class",
+       "limit": 0
+      },
+      {
+       "id": 344,
+       "name": "Pilates Reformer",
+       "limit": 4
+      },
+      {
+       "id": 233,
+       "name": "Functional Training",
+       "limit": 4
+      },
+      {
+       "id": 15,
+       "name": "Wellness",
+       "limit": 4
+      },
+      {
+       "id": 13,
+       "name": "Meditation",
+       "limit": 4
+      },
+      {
+       "id": 7,
+       "name": "Dance",
+       "limit": 4
+      },
+      {
+       "id": 6,
+       "name": "Yoga",
+       "limit": 4
+      },
+      {
+       "id": 4,
+       "name": "Pilates",
+       "limit": 4
+      },
+      {
+       "id": 1,
+       "name": "Fitness",
+       "limit": 4
+      }
+     ]
+    },
+    {
+     "name": "L",
+     "planName": "Premium",
+     "isAvailableAtVenue": true,
+     "isProvidedByVenue": true,
+     "monthlyLimitVenue": -1,
+     "monthlyLimitVenueAddress": 8,
+     "categoryLimits": [
+      {
+       "id": 1378,
+       "name": "Barre",
+       "limit": 8
+      },
+      {
+       "id": 370,
+       "name": "Live Class",
+       "limit": 0
+      },
+      {
+       "id": 344,
+       "name": "Pilates Reformer",
+       "limit": 4
+      },
+      {
+       "id": 233,
+       "name": "Functional Training",
+       "limit": 8
+      },
+      {
+       "id": 15,
+       "name": "Wellness",
+       "limit": 8
+      },
+      {
+       "id": 13,
+       "name": "Meditation",
+       "limit": 8
+      },
+      {
+       "id": 7,
+       "name": "Dance",
+       "limit": 8
+      },
+      {
+       "id": 6,
+       "name": "Yoga",
+       "limit": 8
+      },
+      {
+       "id": 4,
+       "name": "Pilates",
+       "limit": 8
+      },
+      {
+       "id": 1,
+       "name": "Fitness",
+       "limit": 8
+      }
+     ]
+    },
+    {
+     "name": "XL",
+     "planName": "Max",
+     "isAvailableAtVenue": true,
+     "isProvidedByVenue": true,
+     "monthlyLimitVenue": -1,
+     "monthlyLimitVenueAddress": 8,
+     "categoryLimits": [
+      {
+       "id": 1378,
+       "name": "Barre",
+       "limit": 8
+      },
+      {
+       "id": 370,
+       "name": "Live Class",
+       "limit": 0
+      },
+      {
+       "id": 344,
+       "name": "Pilates Reformer",
+       "limit": 8
+      },
+      {
+       "id": 233,
+       "name": "Functional Training",
+       "limit": 8
+      },
+      {
+       "id": 15,
+       "name": "Wellness",
+       "limit": 8
+      },
+      {
+       "id": 13,
+       "name": "Meditation",
+       "limit": 8
+      },
+      {
+       "id": 7,
+       "name": "Dance",
+       "limit": 8
+      },
+      {
+       "id": 6,
+       "name": "Yoga",
+       "limit": 8
+      },
+      {
+       "id": 4,
+       "name": "Pilates",
+       "limit": 8
+      },
+      {
+       "id": 1,
+       "name": "Fitness",
+       "limit": 8
+      }
+     ]
+    }
+   ]
   }
  },
  "classes": [
-  {
-   "id": 107174932,
-   "title": "55 Reformer Session",
-   "teacherName": "Your C.",
-   "startDateTimeUTC": "2026-10-17T23:00:00+02:00",
-   "endDateTimeUTC": "2026-10-17T23:55:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 5
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "laudace-studio"
-  },
-  {
-   "id": 107364145,
-   "title": "Reformer Pilates Session",
-   "teacherName": "Your C.",
-   "startDateTimeUTC": "2026-10-18T05:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T06:00:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 5
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "laudace-studio"
-  },
-  {
-   "id": 107208469,
-   "title": "Reformer Pilates Session",
-   "teacherName": "Your C.",
-   "startDateTimeUTC": "2026-10-18T06:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T07:00:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 5
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "laudace-studio"
-  },
-  {
-   "id": 107208546,
-   "title": "Reformer Pilates Session",
-   "teacherName": "Your C.",
-   "startDateTimeUTC": "2026-10-18T07:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T08:00:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 5
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "laudace-studio"
-  },
-  {
-   "id": 107208580,
-   "title": "Reformer Pilates Session",
-   "teacherName": "Your C.",
-   "startDateTimeUTC": "2026-10-18T08:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T09:00:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 5
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "laudace-studio"
-  },
-  {
-   "id": 107179054,
-   "title": "ROFORM STUDIO 1",
-   "teacherName": "Annika J.",
-   "startDateTimeUTC": "2026-10-18T08:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T08:50:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 18
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "rostudios-berlin-prenzlauer-berg"
-  },
-  {
-   "id": 107179095,
-   "title": "ROFORM STUDIO 2",
-   "teacherName": "Juan",
-   "startDateTimeUTC": "2026-10-18T08:30:00+02:00",
-   "endDateTimeUTC": "2026-10-18T09:20:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 15
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
-  },
-  {
-   "id": 107220354,
-   "title": "Strong Pilates (DE) 45 Min",
-   "teacherName": "Nora",
-   "startDateTimeUTC": "2026-10-18T08:45:00+02:00",
-   "endDateTimeUTC": "2026-10-18T09:30:00+02:00",
-   "category": {
-    "id": 4,
-    "name": "Pilates"
-   },
-   "spots": {
-    "max": 14
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "casa-flow"
-  },
-  {
-   "id": 107217888,
-   "title": "Reformer Class",
-   "teacherName": "Ksenia",
-   "startDateTimeUTC": "2026-10-18T09:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T09:45:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 11
-   },
-   "planTypesB2C": [
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "asa-studio"
-  },
-  {
-   "id": 107209066,
-   "title": "1,5 Std. Hale.GYM",
-   "teacherName": "Room",
-   "startDateTimeUTC": "2026-10-18T09:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T10:30:00+02:00",
-   "category": {
-    "id": 1,
-    "name": "Fitness"
-   },
-   "spots": {
-    "max": 14
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "halenow-egym"
-  },
-  {
-   "id": 107209063,
-   "title": "Sunday Glow Pilates EN",
-   "teacherName": "Thalea S.",
-   "startDateTimeUTC": "2026-10-18T09:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T09:45:00+02:00",
-   "category": {
-    "id": 4,
-    "name": "Pilates"
-   },
-   "spots": {
-    "max": 22
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "halenow-prenzlauer-berg"
-  },
-  {
-   "id": 107209067,
-   "title": "Pilates Reformer Beginner DE",
-   "teacherName": "Jill T.",
-   "startDateTimeUTC": "2026-10-18T09:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T09:55:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 12
-   },
-   "planTypesB2C": [
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "halenow-prenzlauer-berg-pilates-reformer"
-  },
-  {
-   "id": 107208834,
-   "title": "Reformer Pilates Session",
-   "teacherName": "Your C.",
-   "startDateTimeUTC": "2026-10-18T09:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T10:00:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 5
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "laudace-studio"
-  },
-  {
-   "id": 107209050,
-   "title": "REFORMER Full Body | Experienced | ENG",
-   "teacherName": "Monroe M.",
-   "startDateTimeUTC": "2026-10-18T09:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T09:45:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 22
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "pilates4all-reformer-pilates-prenzlauer-berg"
-  },
-  {
-   "id": 107179042,
-   "title": "ROFORM STUDIO 1",
-   "teacherName": "Annika J.",
-   "startDateTimeUTC": "2026-10-18T09:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T09:50:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 18
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "rostudios-berlin-prenzlauer-berg"
-  },
-  {
-   "id": 107216486,
-   "title": "PUSH. Wake-up Sunday Pilates",
-   "teacherName": "Mia",
-   "startDateTimeUTC": "2026-10-18T09:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T09:45:00+02:00",
-   "category": {
-    "id": 4,
-    "name": "Pilates"
-   },
-   "spots": {
-    "max": 14
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "studio-berlin"
-  },
-  {
-   "id": 107176598,
-   "title": "Pilates Fusion (Slide & Control)",
-   "teacherName": "Gabriela",
-   "startDateTimeUTC": "2026-10-18T09:15:00+02:00",
-   "endDateTimeUTC": "2026-10-18T10:00:00+02:00",
-   "category": {
-    "id": 4,
-    "name": "Pilates"
-   },
-   "spots": {
-    "max": 22
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "good-moves-studio"
-  },
-  {
-   "id": 107281613,
-   "title": "Hot Pilates",
-   "teacherName": "Vanessa G.",
-   "startDateTimeUTC": "2026-10-18T09:30:00+02:00",
-   "endDateTimeUTC": "2026-10-18T10:20:00+02:00",
-   "category": {
-    "id": 4,
-    "name": "Pilates"
-   },
-   "spots": {
-    "max": 18
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "hot-aura"
-  },
-  {
-   "id": 107179089,
-   "title": "ROFORM STUDIO 2",
-   "teacherName": "Juan",
-   "startDateTimeUTC": "2026-10-18T09:30:00+02:00",
-   "endDateTimeUTC": "2026-10-18T10:20:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 15
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
-  },
-  {
-   "id": 107209508,
-   "title": "BALLET Level 1 | in English | ADULTS",
-   "teacherName": "Andrea R.",
-   "startDateTimeUTC": "2026-10-18T09:30:00+02:00",
-   "endDateTimeUTC": "2026-10-18T10:45:00+02:00",
-   "category": {
-    "id": 1,
-    "name": "Fitness"
-   },
-   "spots": {
-    "max": 10
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "the-center-berlin-studio-2-1"
-  },
-  {
-   "id": 107220350,
-   "title": "Sunday Pilates & Gentle Stretch (DE) 45 Min",
-   "teacherName": "Nora",
-   "startDateTimeUTC": "2026-10-18T09:45:00+02:00",
-   "endDateTimeUTC": "2026-10-18T10:30:00+02:00",
-   "category": {
-    "id": 4,
-    "name": "Pilates"
-   },
-   "spots": {
-    "max": 14
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "casa-flow"
-  },
-  {
-   "id": 107217875,
-   "title": "Reformer Class",
-   "teacherName": "Ksenia",
-   "startDateTimeUTC": "2026-10-18T10:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T10:45:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 11
-   },
-   "planTypesB2C": [
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "asa-studio"
-  },
-  {
-   "id": 107209814,
-   "title": "Morning Mat - Abs & Booty",
-   "teacherName": "Andreia T.",
-   "startDateTimeUTC": "2026-10-18T10:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T10:50:00+02:00",
-   "category": {
-    "id": 4,
-    "name": "Pilates"
-   },
-   "spots": {
-    "max": 12
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "elevate-pilates"
-  },
-  {
-   "id": 107209924,
-   "title": "Reformer Pilates Session",
-   "teacherName": "Your C.",
-   "startDateTimeUTC": "2026-10-18T10:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T11:00:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 5
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "laudace-studio"
-  },
-  {
-   "id": 107209999,
-   "title": "REFORMER Abs & Ass | ENG",
-   "teacherName": "Monroe M.",
-   "startDateTimeUTC": "2026-10-18T10:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T10:45:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 22
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "pilates4all-reformer-pilates-prenzlauer-berg"
-  },
-  {
-   "id": 107179047,
-   "title": "ROFORM STUDIO 1",
-   "teacherName": "Annika J.",
-   "startDateTimeUTC": "2026-10-18T10:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T10:50:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 18
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "rostudios-berlin-prenzlauer-berg"
-  },
-  {
-   "id": 107218498,
-   "title": "Pilates Reformer Beginner (EN)",
-   "teacherName": "Anna",
-   "startDateTimeUTC": "2026-10-18T10:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T10:50:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 9
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "soul-sportstudio-pankow"
-  },
-  {
-   "id": 107216485,
-   "title": "PUSH. Flexibility & Mobility",
-   "teacherName": "David",
-   "startDateTimeUTC": "2026-10-18T10:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T11:00:00+02:00",
-   "category": {
-    "id": 6,
-    "name": "Yoga"
-   },
-   "spots": {
-    "max": 14
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "studio-berlin"
-  },
-  {
-   "id": 107176609,
-   "title": "Strength Circuit",
-   "teacherName": "Alisa",
-   "startDateTimeUTC": "2026-10-18T10:15:00+02:00",
-   "endDateTimeUTC": "2026-10-18T11:00:00+02:00",
-   "category": {
-    "id": 1,
-    "name": "Fitness"
-   },
-   "spots": {
-    "max": 20
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "good-moves-studio"
-  },
-  {
-   "id": 107210907,
-   "title": "Sunday Morning Flow EN",
-   "teacherName": "Verena S.",
-   "startDateTimeUTC": "2026-10-18T10:15:00+02:00",
-   "endDateTimeUTC": "2026-10-18T11:15:00+02:00",
-   "category": {
-    "id": 6,
-    "name": "Yoga"
-   },
-   "spots": {
-    "max": 20
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "halenow-prenzlauer-berg"
-  },
-  {
-   "id": 107210896,
-   "title": "Pilates Reformer Intermediate DE",
-   "teacherName": "Jill T.",
-   "startDateTimeUTC": "2026-10-18T10:15:00+02:00",
-   "endDateTimeUTC": "2026-10-18T11:10:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 12
-   },
-   "planTypesB2C": [
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "halenow-prenzlauer-berg-pilates-reformer"
-  },
-  {
-   "id": 107210913,
-   "title": "1,5 Std. Hale.GYM",
-   "teacherName": "Room",
-   "startDateTimeUTC": "2026-10-18T10:30:00+02:00",
-   "endDateTimeUTC": "2026-10-18T12:00:00+02:00",
-   "category": {
-    "id": 1,
-    "name": "Fitness"
-   },
-   "spots": {
-    "max": 14
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "halenow-egym"
-  },
-  {
-   "id": 107210468,
-   "title": "Pole L0 - L1",
-   "teacherName": "Giovanni G.",
-   "startDateTimeUTC": "2026-10-18T10:30:00+02:00",
-   "endDateTimeUTC": "2026-10-18T11:30:00+02:00",
-   "category": {
-    "id": 135,
-    "name": "Pole Dance"
-   },
-   "spots": {
-    "max": 15
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "lyra-prenzlauerberg"
-  },
-  {
-   "id": 107179070,
-   "title": "ROFORM STUDIO 2",
-   "teacherName": "Tea",
-   "startDateTimeUTC": "2026-10-18T10:30:00+02:00",
-   "endDateTimeUTC": "2026-10-18T11:20:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 15
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
-  },
-  {
-   "id": 107220341,
-   "title": "Good Vibes Vinyasa Yoga (DE) 60 Min",
-   "teacherName": "Suzi",
-   "startDateTimeUTC": "2026-10-18T10:45:00+02:00",
-   "endDateTimeUTC": "2026-10-18T11:45:00+02:00",
-   "category": {
-    "id": 6,
-    "name": "Yoga"
-   },
-   "spots": {
-    "max": 14
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "casa-flow"
-  },
-  {
-   "id": 107217860,
-   "title": "Reformer Class",
-   "teacherName": "Ksenia",
-   "startDateTimeUTC": "2026-10-18T11:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T11:45:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 11
-   },
-   "planTypesB2C": [
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "asa-studio"
-  },
-  {
-   "id": 107210509,
-   "title": "Reformer Pilates Session",
-   "teacherName": "Your C.",
-   "startDateTimeUTC": "2026-10-18T11:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T12:00:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 5
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "laudace-studio"
-  },
-  {
-   "id": 107210883,
-   "title": "REFORMER Full Body | Beginner | ENG",
-   "teacherName": "Nat S.",
-   "startDateTimeUTC": "2026-10-18T11:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T11:45:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 22
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "pilates4all-reformer-pilates-prenzlauer-berg"
-  },
-  {
-   "id": 107179026,
-   "title": "ROFORM STUDIO 1",
-   "teacherName": "Stefanija",
-   "startDateTimeUTC": "2026-10-18T11:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T11:50:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 18
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "rostudios-berlin-prenzlauer-berg"
-  },
-  {
-   "id": 107218460,
-   "title": "Sunrise Reformer Intermediate (EN)",
-   "teacherName": "Anna",
-   "startDateTimeUTC": "2026-10-18T11:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T11:50:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 9
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "soul-sportstudio-pankow"
-  },
-  {
-   "id": 107210377,
-   "title": "BALLET Level 2&3 | in English | ADULTS",
-   "teacherName": "Andrea R.",
-   "startDateTimeUTC": "2026-10-18T11:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T12:30:00+02:00",
-   "category": {
-    "id": 1,
-    "name": "Fitness"
-   },
-   "spots": {
-    "max": 8
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "the-center-berlin-studio-2-1"
-  },
-  {
-   "id": 107212464,
-   "title": "Mat - Intermediate",
-   "teacherName": "Olga G.",
-   "startDateTimeUTC": "2026-10-18T11:10:00+02:00",
-   "endDateTimeUTC": "2026-10-18T12:00:00+02:00",
-   "category": {
-    "id": 4,
-    "name": "Pilates"
-   },
-   "spots": {
-    "max": 12
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "elevate-pilates"
-  },
-  {
-   "id": 107176601,
-   "title": "Power Moves Pilates (EN)",
-   "teacherName": "Roberto",
-   "startDateTimeUTC": "2026-10-18T11:15:00+02:00",
-   "endDateTimeUTC": "2026-10-18T12:00:00+02:00",
-   "category": {
-    "id": 4,
-    "name": "Pilates"
-   },
-   "spots": {
-    "max": 22
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "good-moves-studio"
-  },
-  {
-   "id": 107211782,
-   "title": "Reformer Intermediate - Glutes & Abs EN",
-   "teacherName": "Katrine K.",
-   "startDateTimeUTC": "2026-10-18T11:30:00+02:00",
-   "endDateTimeUTC": "2026-10-18T12:25:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 12
-   },
-   "planTypesB2C": [
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "halenow-prenzlauer-berg-pilates-reformer"
-  },
-  {
-   "id": 107283760,
-   "title": "Hot Techno Pilates",
-   "teacherName": "Victoria L.",
-   "startDateTimeUTC": "2026-10-18T11:30:00+02:00",
-   "endDateTimeUTC": "2026-10-18T12:20:00+02:00",
-   "category": {
-    "id": 4,
-    "name": "Pilates"
-   },
-   "spots": {
-    "max": 10
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "hot-aura"
-  },
-  {
-   "id": 107179092,
-   "title": "ROFORM STUDIO 2",
-   "teacherName": "Tea",
-   "startDateTimeUTC": "2026-10-18T11:30:00+02:00",
-   "endDateTimeUTC": "2026-10-18T12:20:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 15
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
-  },
-  {
-   "id": 107216475,
-   "title": "PUSH. Power Pilates",
-   "teacherName": "Serlina",
-   "startDateTimeUTC": "2026-10-18T11:30:00+02:00",
-   "endDateTimeUTC": "2026-10-18T12:30:00+02:00",
-   "category": {
-    "id": 4,
-    "name": "Pilates"
-   },
-   "spots": {
-    "max": 14
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "studio-berlin"
-  },
-  {
-   "id": 107176620,
-   "title": "Reformer Intermediate (EN)",
-   "teacherName": "Isabella",
-   "startDateTimeUTC": "2026-10-18T11:30:00+02:00",
-   "endDateTimeUTC": "2026-10-18T12:20:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 8
-   },
-   "planTypesB2C": [
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": true,
-   "venue": "via-pilates-pilates-reformer"
-  },
-  {
-   "id": 107211522,
-   "title": "Spinning Pole Flow L1 (Heels Opt.)",
-   "teacherName": "Giovanni G.",
-   "startDateTimeUTC": "2026-10-18T11:40:00+02:00",
-   "endDateTimeUTC": "2026-10-18T12:40:00+02:00",
-   "category": {
-    "id": 135,
-    "name": "Pole Dance"
-   },
-   "spots": {
-    "max": 15
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "lyra-prenzlauerberg"
-  },
-  {
-   "id": 107217849,
-   "title": "Reformer Class",
-   "teacherName": "Jill",
-   "startDateTimeUTC": "2026-10-18T12:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T12:45:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 11
-   },
-   "planTypesB2C": [
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "asa-studio"
-  },
-  {
-   "id": 107219413,
-   "title": "Relaxing Sunday Slow & Soft Flow (DE) 60 Min",
-   "teacherName": "Suzi",
-   "startDateTimeUTC": "2026-10-18T12:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T13:00:00+02:00",
-   "category": {
-    "id": 6,
-    "name": "Yoga"
-   },
-   "spots": {
-    "max": 14
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "casa-flow"
-  },
-  {
-   "id": 107211816,
-   "title": "1,5 Std. Hale.GYM",
-   "teacherName": "Room",
-   "startDateTimeUTC": "2026-10-18T12:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T13:30:00+02:00",
-   "category": {
-    "id": 1,
-    "name": "Fitness"
-   },
-   "spots": {
-    "max": 14
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "halenow-egym"
-  },
-  {
-   "id": 107211797,
-   "title": "Full Body Fusion EN",
-   "teacherName": "Evelyne Z.",
-   "startDateTimeUTC": "2026-10-18T12:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T12:45:00+02:00",
-   "category": {
-    "id": 1,
-    "name": "Fitness"
-   },
-   "spots": {
-    "max": 20
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "halenow-prenzlauer-berg"
-  },
-  {
-   "id": 107211336,
-   "title": "Reformer Pilates Session",
-   "teacherName": "Your C.",
-   "startDateTimeUTC": "2026-10-18T12:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T13:00:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 5
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "laudace-studio"
-  },
-  {
-   "id": 107211864,
-   "title": "REFORMER Build & Burn | ENG",
-   "teacherName": "Nat S.",
-   "startDateTimeUTC": "2026-10-18T12:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T12:45:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 22
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "pilates4all-reformer-pilates-prenzlauer-berg"
-  },
-  {
-   "id": 107179031,
-   "title": "ROFORM STUDIO 1",
-   "teacherName": "Stefanija",
-   "startDateTimeUTC": "2026-10-18T12:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T12:50:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 18
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "rostudios-berlin-prenzlauer-berg"
-  },
-  {
-   "id": 107218788,
-   "title": "Full Body Reformer Intermediate (EN)",
-   "teacherName": "Anna",
-   "startDateTimeUTC": "2026-10-18T12:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T12:50:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 9
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "soul-sportstudio-pankow"
-  },
-  {
-   "id": 107176602,
-   "title": "Pilates Form x Weights (EN)",
-   "teacherName": "Tara",
-   "startDateTimeUTC": "2026-10-18T12:15:00+02:00",
-   "endDateTimeUTC": "2026-10-18T13:00:00+02:00",
-   "category": {
-    "id": 4,
-    "name": "Pilates"
-   },
-   "spots": {
-    "max": 22
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "good-moves-studio"
-  },
-  {
-   "id": 107212467,
-   "title": "Mat - Spinal Strength",
-   "teacherName": "Olga G.",
-   "startDateTimeUTC": "2026-10-18T12:30:00+02:00",
-   "endDateTimeUTC": "2026-10-18T13:20:00+02:00",
-   "category": {
-    "id": 4,
-    "name": "Pilates"
-   },
-   "spots": {
-    "max": 12
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "elevate-pilates"
-  },
-  {
-   "id": 107179094,
-   "title": "ROFORM STUDIO 2",
-   "teacherName": "Pia",
-   "startDateTimeUTC": "2026-10-18T12:30:00+02:00",
-   "endDateTimeUTC": "2026-10-18T13:20:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 15
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
-  },
-  {
-   "id": 107176630,
-   "title": "Reformer Advanced (EN)",
-   "teacherName": "Isabella",
-   "startDateTimeUTC": "2026-10-18T12:30:00+02:00",
-   "endDateTimeUTC": "2026-10-18T13:20:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 8
-   },
-   "planTypesB2C": [
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": true,
-   "venue": "via-pilates-pilates-reformer"
-  },
-  {
-   "id": 107212478,
-   "title": "Pilates Reformer x Strength EN",
-   "teacherName": "Katrine K.",
-   "startDateTimeUTC": "2026-10-18T12:45:00+02:00",
-   "endDateTimeUTC": "2026-10-18T13:40:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 12
-   },
-   "planTypesB2C": [
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "halenow-prenzlauer-berg-pilates-reformer"
-  },
-  {
-   "id": 107212305,
-   "title": "Pole Flying Heels L0",
-   "teacherName": "lara K.",
-   "startDateTimeUTC": "2026-10-18T12:50:00+02:00",
-   "endDateTimeUTC": "2026-10-18T13:50:00+02:00",
-   "category": {
-    "id": 135,
-    "name": "Pole Dance"
-   },
-   "spots": {
-    "max": 15
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "lyra-prenzlauerberg"
-  },
-  {
-   "id": 107212228,
-   "title": "Reformer Pilates Session",
-   "teacherName": "Your C.",
-   "startDateTimeUTC": "2026-10-18T13:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T14:00:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 5
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "laudace-studio"
-  },
-  {
-   "id": 107212507,
-   "title": "REFORMER Full Body | Beginner | DE",
-   "teacherName": "Maya D.",
-   "startDateTimeUTC": "2026-10-18T13:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T13:45:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 22
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "pilates4all-reformer-pilates-prenzlauer-berg"
-  },
-  {
-   "id": 107179049,
-   "title": "ROFORM STUDIO 1",
-   "teacherName": "Abbey",
-   "startDateTimeUTC": "2026-10-18T13:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T13:50:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 18
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "rostudios-berlin-prenzlauer-berg"
-  },
-  {
-   "id": 107218790,
-   "title": "Full Body Reformer - Beginner (EN)",
-   "teacherName": "Merve",
-   "startDateTimeUTC": "2026-10-18T13:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T13:50:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 9
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "soul-sportstudio-pankow"
-  },
-  {
-   "id": 107212879,
-   "title": "PEACH BARRE BURN EN",
-   "teacherName": "Evelyne Z.",
-   "startDateTimeUTC": "2026-10-18T13:15:00+02:00",
-   "endDateTimeUTC": "2026-10-18T14:00:00+02:00",
-   "category": {
-    "id": 1378,
-    "name": "Barre"
-   },
-   "spots": {
-    "max": 18
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "halenow-prenzlauer-berg"
-  },
-  {
-   "id": 107212877,
-   "title": "1,5 Std. Hale.GYM",
-   "teacherName": "Room",
-   "startDateTimeUTC": "2026-10-18T13:30:00+02:00",
-   "endDateTimeUTC": "2026-10-18T15:00:00+02:00",
-   "category": {
-    "id": 1,
-    "name": "Fitness"
-   },
-   "spots": {
-    "max": 14
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "halenow-egym"
-  },
-  {
-   "id": 107285165,
-   "title": "Hot Pilates",
-   "teacherName": "Ghalia S.",
-   "startDateTimeUTC": "2026-10-18T13:30:00+02:00",
-   "endDateTimeUTC": "2026-10-18T14:20:00+02:00",
-   "category": {
-    "id": 4,
-    "name": "Pilates"
-   },
-   "spots": {
-    "max": 18
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "hot-aura"
-  },
-  {
-   "id": 107179076,
-   "title": "ROFORM STUDIO 2",
-   "teacherName": "Pia",
-   "startDateTimeUTC": "2026-10-18T13:30:00+02:00",
-   "endDateTimeUTC": "2026-10-18T14:20:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 15
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
-  },
-  {
-   "id": 107212919,
-   "title": "R'n'B Hip Hop Floor Barre",
-   "teacherName": "Naima S.",
-   "startDateTimeUTC": "2026-10-18T14:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T14:50:00+02:00",
-   "category": {
-    "id": 4,
-    "name": "Pilates"
-   },
-   "spots": {
-    "max": 12
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "elevate-pilates"
-  },
-  {
-   "id": 107212740,
-   "title": "Reformer Pilates Session",
-   "teacherName": "Your C.",
-   "startDateTimeUTC": "2026-10-18T14:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T15:00:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 5
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "laudace-studio"
-  },
-  {
-   "id": 107212792,
-   "title": "Pole L0",
-   "teacherName": "Ana E.",
-   "startDateTimeUTC": "2026-10-18T14:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T15:00:00+02:00",
-   "category": {
-    "id": 135,
-    "name": "Pole Dance"
-   },
-   "spots": {
-    "max": 15
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "lyra-prenzlauerberg"
-  },
-  {
-   "id": 107212923,
-   "title": "REFORMER Full Body | Experienced | DE",
-   "teacherName": "Maya D.",
-   "startDateTimeUTC": "2026-10-18T14:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T14:45:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 22
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "pilates4all-reformer-pilates-prenzlauer-berg"
-  },
-  {
-   "id": 107179038,
-   "title": "ROFORM STUDIO 1",
-   "teacherName": "Abbey",
-   "startDateTimeUTC": "2026-10-18T14:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T14:50:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 18
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "rostudios-berlin-prenzlauer-berg"
-  },
-  {
-   "id": 107218784,
-   "title": "Pilates Reformer Intermediate (EN)",
-   "teacherName": "Merve",
-   "startDateTimeUTC": "2026-10-18T14:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T14:50:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 9
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "soul-sportstudio-pankow"
-  },
-  {
-   "id": 107179082,
-   "title": "ROFORM STUDIO 2",
-   "teacherName": "Pia",
-   "startDateTimeUTC": "2026-10-18T14:30:00+02:00",
-   "endDateTimeUTC": "2026-10-18T15:20:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 15
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
-  },
-  {
-   "id": 107213246,
-   "title": "1,5 Std. Hale.GYM",
-   "teacherName": "Room",
-   "startDateTimeUTC": "2026-10-18T15:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T16:30:00+02:00",
-   "category": {
-    "id": 1,
-    "name": "Fitness"
-   },
-   "spots": {
-    "max": 14
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "halenow-egym"
-  },
-  {
-   "id": 107213155,
-   "title": "Reformer Pilates Session",
-   "teacherName": "Your C.",
-   "startDateTimeUTC": "2026-10-18T15:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T16:00:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 5
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "laudace-studio"
-  },
-  {
-   "id": 107213218,
-   "title": "REFORMER Full Body | Beginner | ENG",
-   "teacherName": "Tea Z.",
-   "startDateTimeUTC": "2026-10-18T15:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T15:45:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 22
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "pilates4all-reformer-pilates-prenzlauer-berg"
-  },
-  {
-   "id": 107179048,
-   "title": "ROFORM STUDIO 1",
-   "teacherName": "Abbey",
-   "startDateTimeUTC": "2026-10-18T15:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T15:50:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 18
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "rostudios-berlin-prenzlauer-berg"
-  },
-  {
-   "id": 107213487,
-   "title": "Pole L1 - L2",
-   "teacherName": "Denny E.",
-   "startDateTimeUTC": "2026-10-18T15:10:00+02:00",
-   "endDateTimeUTC": "2026-10-18T16:10:00+02:00",
-   "category": {
-    "id": 135,
-    "name": "Pole Dance"
-   },
-   "spots": {
-    "max": 15
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "lyra-prenzlauerberg"
-  },
-  {
-   "id": 107179097,
-   "title": "ROFORM STUDIO 2",
-   "teacherName": "Ferhat",
-   "startDateTimeUTC": "2026-10-18T15:30:00+02:00",
-   "endDateTimeUTC": "2026-10-18T16:20:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 15
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
-  },
-  {
-   "id": 107217853,
-   "title": "Reformer Class",
-   "teacherName": "Ksenia",
-   "startDateTimeUTC": "2026-10-18T16:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T16:45:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 11
-   },
-   "planTypesB2C": [
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "asa-studio"
-  },
-  {
-   "id": 107213380,
-   "title": "Reformer Pilates Session",
-   "teacherName": "Your C.",
-   "startDateTimeUTC": "2026-10-18T16:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T17:00:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 5
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "laudace-studio"
-  },
-  {
-   "id": 107213621,
-   "title": "REFORMER Abs & Ass | ENG",
-   "teacherName": "Tea Z.",
-   "startDateTimeUTC": "2026-10-18T16:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T16:45:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 22
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "pilates4all-reformer-pilates-prenzlauer-berg"
-  },
-  {
-   "id": 107179029,
-   "title": "ROFORM STUDIO 1",
-   "teacherName": "Lea M.",
-   "startDateTimeUTC": "2026-10-18T16:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T16:50:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 18
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "rostudios-berlin-prenzlauer-berg"
-  },
-  {
-   "id": 107587731,
-   "title": "Flexibility + Mobility",
-   "teacherName": "Francisca",
-   "startDateTimeUTC": "2026-10-18T16:15:00+02:00",
-   "endDateTimeUTC": "2026-10-18T17:00:00+02:00",
-   "category": {
-    "id": 1,
-    "name": "Fitness"
-   },
-   "spots": {
-    "max": 22
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "good-moves-studio"
-  },
-  {
-   "id": 107213838,
-   "title": "Sensual Pole Heels L0",
-   "teacherName": "Michaela U.",
-   "startDateTimeUTC": "2026-10-18T16:20:00+02:00",
-   "endDateTimeUTC": "2026-10-18T17:20:00+02:00",
-   "category": {
-    "id": 135,
-    "name": "Pole Dance"
-   },
-   "spots": {
-    "max": 15
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "lyra-prenzlauerberg"
-  },
-  {
-   "id": 107213971,
-   "title": "1,5 Std. Hale.GYM",
-   "teacherName": "Room",
-   "startDateTimeUTC": "2026-10-18T16:30:00+02:00",
-   "endDateTimeUTC": "2026-10-18T18:00:00+02:00",
-   "category": {
-    "id": 1,
-    "name": "Fitness"
-   },
-   "spots": {
-    "max": 14
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "halenow-egym"
-  },
-  {
-   "id": 107179102,
-   "title": "ROFORM STUDIO 2",
-   "teacherName": "Ferhat",
-   "startDateTimeUTC": "2026-10-18T16:30:00+02:00",
-   "endDateTimeUTC": "2026-10-18T17:20:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 15
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
-  },
-  {
-   "id": 107217855,
-   "title": "Reformer Class",
-   "teacherName": "Ksenia",
-   "startDateTimeUTC": "2026-10-18T17:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T17:45:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 11
-   },
-   "planTypesB2C": [
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "asa-studio"
-  },
-  {
-   "id": 107213978,
-   "title": "Pilates Sculpt DE",
-   "teacherName": "Charlyn R.",
-   "startDateTimeUTC": "2026-10-18T17:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T17:45:00+02:00",
-   "category": {
-    "id": 4,
-    "name": "Pilates"
-   },
-   "spots": {
-    "max": 20
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "halenow-prenzlauer-berg"
-  },
-  {
-   "id": 107213977,
-   "title": "Pilates Reformer Beginner DE/EN",
-   "teacherName": "Agata K.",
-   "startDateTimeUTC": "2026-10-18T17:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T17:55:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 12
-   },
-   "planTypesB2C": [
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "halenow-prenzlauer-berg-pilates-reformer"
-  },
-  {
-   "id": 107213949,
-   "title": "Reformer Pilates Session",
-   "teacherName": "Your C.",
-   "startDateTimeUTC": "2026-10-18T17:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T18:00:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 5
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "laudace-studio"
-  },
-  {
-   "id": 107179015,
-   "title": "ROFORM STUDIO 1",
-   "teacherName": "Lea M.",
-   "startDateTimeUTC": "2026-10-18T17:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T17:50:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 18
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "rostudios-berlin-prenzlauer-berg"
-  },
-  {
-   "id": 107218781,
-   "title": "FIT Reformer | Beginner (EN)",
-   "teacherName": "Nelly",
-   "startDateTimeUTC": "2026-10-18T17:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T17:50:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 9
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "soul-sportstudio-pankow"
-  },
-  {
-   "id": 107214967,
-   "title": "Mat - Beginner",
-   "teacherName": "Diana S.",
-   "startDateTimeUTC": "2026-10-18T17:10:00+02:00",
-   "endDateTimeUTC": "2026-10-18T18:00:00+02:00",
-   "category": {
-    "id": 4,
-    "name": "Pilates"
-   },
-   "spots": {
-    "max": 12
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "elevate-pilates"
-  },
-  {
-   "id": 107176605,
-   "title": "Power Moves Pilates (EN)",
-   "teacherName": "Abbey",
-   "startDateTimeUTC": "2026-10-18T17:15:00+02:00",
-   "endDateTimeUTC": "2026-10-18T18:00:00+02:00",
-   "category": {
-    "id": 4,
-    "name": "Pilates"
-   },
-   "spots": {
-    "max": 22
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "good-moves-studio"
-  },
-  {
-   "id": 107214339,
-   "title": "Active Stretching (Beginner / Intermediate)",
-   "teacherName": "Michaela U.",
-   "startDateTimeUTC": "2026-10-18T17:30:00+02:00",
-   "endDateTimeUTC": "2026-10-18T18:30:00+02:00",
-   "category": {
-    "id": 1,
-    "name": "Fitness"
-   },
-   "spots": {
-    "max": 16
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "lyra-prenzlauerberg"
-  },
-  {
-   "id": 107179088,
-   "title": "ROFORM STUDIO 2",
-   "teacherName": "Isa",
-   "startDateTimeUTC": "2026-10-18T17:30:00+02:00",
-   "endDateTimeUTC": "2026-10-18T18:20:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 15
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
-  },
-  {
-   "id": 107216483,
-   "title": "REST. Yin & Sound Evening Alchemy",
-   "teacherName": "Christine",
-   "startDateTimeUTC": "2026-10-18T17:30:00+02:00",
-   "endDateTimeUTC": "2026-10-18T18:30:00+02:00",
-   "category": {
-    "id": 6,
-    "name": "Yoga"
-   },
-   "spots": {
-    "max": 14
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "studio-berlin"
-  },
-  {
-   "id": 107214548,
-   "title": "1,5 Std. Hale.GYM",
-   "teacherName": "Room",
-   "startDateTimeUTC": "2026-10-18T18:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T19:30:00+02:00",
-   "category": {
-    "id": 1,
-    "name": "Fitness"
-   },
-   "spots": {
-    "max": 14
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "halenow-egym"
-  },
-  {
-   "id": 107288297,
-   "title": "Hot Pilates",
-   "teacherName": "Vanessa G.",
-   "startDateTimeUTC": "2026-10-18T18:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T18:50:00+02:00",
-   "category": {
-    "id": 4,
-    "name": "Pilates"
-   },
-   "spots": {
-    "max": 18
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "hot-aura"
-  },
-  {
-   "id": 107214336,
-   "title": "Reformer Pilates Session",
-   "teacherName": "Your C.",
-   "startDateTimeUTC": "2026-10-18T18:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T19:00:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 5
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "laudace-studio"
-  },
-  {
-   "id": 107179052,
-   "title": "ROFORM STUDIO 1",
-   "teacherName": "Lea M.",
-   "startDateTimeUTC": "2026-10-18T18:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T18:50:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 18
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "rostudios-berlin-prenzlauer-berg"
-  },
-  {
-   "id": 107215012,
-   "title": "Pilates Reformer Intermediate DE/EN",
-   "teacherName": "Agata K.",
-   "startDateTimeUTC": "2026-10-18T18:15:00+02:00",
-   "endDateTimeUTC": "2026-10-18T19:10:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 12
-   },
-   "planTypesB2C": [
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "halenow-prenzlauer-berg-pilates-reformer"
-  },
-  {
-   "id": 107215340,
-   "title": "Mat - Power Pilates",
-   "teacherName": "Diana S.",
-   "startDateTimeUTC": "2026-10-18T18:20:00+02:00",
-   "endDateTimeUTC": "2026-10-18T19:10:00+02:00",
-   "category": {
-    "id": 4,
-    "name": "Pilates"
-   },
-   "spots": {
-    "max": 12
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "elevate-pilates"
-  },
-  {
-   "id": 107215021,
-   "title": "Aerial Yoga EN",
-   "teacherName": "Harsh M.",
-   "startDateTimeUTC": "2026-10-18T18:30:00+02:00",
-   "endDateTimeUTC": "2026-10-18T19:30:00+02:00",
-   "category": {
-    "id": 92,
-    "name": "Aerial"
-   },
-   "spots": {
-    "max": 10
-   },
-   "planTypesB2C": [
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "halenow-prenzlauer-berg"
-  },
-  {
-   "id": 107179093,
-   "title": "ROFORM STUDIO 2",
-   "teacherName": "Isa",
-   "startDateTimeUTC": "2026-10-18T18:30:00+02:00",
-   "endDateTimeUTC": "2026-10-18T19:20:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 15
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
-  },
-  {
-   "id": 107215141,
-   "title": "Reformer Pilates Session",
-   "teacherName": "Your C.",
-   "startDateTimeUTC": "2026-10-18T19:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T20:00:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 5
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "laudace-studio"
-  },
-  {
-   "id": 107179058,
-   "title": "ROFORM STUDIO 1",
-   "teacherName": "Juan",
-   "startDateTimeUTC": "2026-10-18T19:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T19:50:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 18
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "rostudios-berlin-prenzlauer-berg"
-  },
-  {
-   "id": 107216477,
-   "title": "REST. Deep Gong Bath & Aroma Release",
-   "teacherName": "Desiree",
-   "startDateTimeUTC": "2026-10-18T19:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T20:00:00+02:00",
-   "category": {
-    "id": 13,
-    "name": "Meditation"
-   },
-   "spots": {
-    "max": 15
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "studio-berlin"
-  },
-  {
-   "id": 107215327,
-   "title": "1,5 Std. Hale.GYM",
-   "teacherName": "Room",
-   "startDateTimeUTC": "2026-10-18T19:30:00+02:00",
-   "endDateTimeUTC": "2026-10-18T21:00:00+02:00",
-   "category": {
-    "id": 1,
-    "name": "Fitness"
-   },
-   "spots": {
-    "max": 14
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "halenow-egym"
-  },
-  {
-   "id": 107179103,
-   "title": "ROFORM STUDIO 2",
-   "teacherName": "Isa",
-   "startDateTimeUTC": "2026-10-18T19:30:00+02:00",
-   "endDateTimeUTC": "2026-10-18T20:20:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 15
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
-  },
-  {
-   "id": 107215255,
-   "title": "Reformer Pilates Session",
-   "teacherName": "Your C.",
-   "startDateTimeUTC": "2026-10-18T20:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T21:00:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 5
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "laudace-studio"
-  },
-  {
-   "id": 107179016,
-   "title": "ROFORM STUDIO 1",
-   "teacherName": "Juan",
-   "startDateTimeUTC": "2026-10-18T20:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T20:50:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 18
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "rostudios-berlin-prenzlauer-berg"
-  },
-  {
-   "id": 107215852,
-   "title": "FemaleStrength.Now EN",
-   "teacherName": "Fatima A.",
-   "startDateTimeUTC": "2026-10-18T20:15:00+02:00",
-   "endDateTimeUTC": "2026-10-18T21:00:00+02:00",
-   "category": {
-    "id": 1,
-    "name": "Fitness"
-   },
-   "spots": {
-    "max": 20
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "halenow-prenzlauer-berg"
-  },
-  {
-   "id": 107215821,
-   "title": "Reformer Pilates Session",
-   "teacherName": "Your C.",
-   "startDateTimeUTC": "2026-10-18T21:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T22:00:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 5
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "laudace-studio"
-  },
-  {
-   "id": 107216134,
-   "title": "Reformer Pilates Session",
-   "teacherName": "Your C.",
-   "startDateTimeUTC": "2026-10-18T22:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T23:00:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 5
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "laudace-studio"
-  },
-  {
-   "id": 107216211,
-   "title": "55 Reformer Session",
-   "teacherName": "Your C.",
-   "startDateTimeUTC": "2026-10-18T23:00:00+02:00",
-   "endDateTimeUTC": "2026-10-18T23:55:00+02:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 5
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "laudace-studio"
-  },
   {
    "id": 107364147,
    "title": "Reformer Pilates Session",
@@ -8912,6 +6567,27 @@
    "venue": "soul-sportstudio-pankow"
   },
   {
+   "id": 107314825,
+   "title": "Dance Workout",
+   "teacherName": "Tanni",
+   "startDateTimeUTC": "2026-10-20T10:00:00+02:00",
+   "endDateTimeUTC": "2026-10-20T10:45:00+02:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107281571,
    "title": "BALLET Level 1 | in English | ADULTS",
    "teacherName": "Jarred B.",
@@ -9139,6 +6815,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soul-sportstudio-pankow"
+  },
+  {
+   "id": 107314818,
+   "title": "Mom Dance Flow with Baby",
+   "teacherName": "Tanni",
+   "startDateTimeUTC": "2026-10-20T11:00:00+02:00",
+   "endDateTimeUTC": "2026-10-20T11:45:00+02:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107284733,
@@ -9873,6 +7570,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg"
   },
   {
+   "id": 107315277,
+   "title": "Gentle PILATES Flow (EN)",
+   "teacherName": "Vittorio",
+   "startDateTimeUTC": "2026-10-20T16:00:00+02:00",
+   "endDateTimeUTC": "2026-10-20T16:45:00+02:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107286684,
    "title": "Pole Low Flow L1+ (Heels opt.)",
    "teacherName": "Nani L.",
@@ -10080,6 +7798,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soul-sportstudio-pankow"
+  },
+  {
+   "id": 107314820,
+   "title": "Barre meets Pilates - Shape Up, Werk It (EN)",
+   "teacherName": "Vittorio",
+   "startDateTimeUTC": "2026-10-20T17:00:00+02:00",
+   "endDateTimeUTC": "2026-10-20T17:45:00+02:00",
+   "category": {
+    "id": 1378,
+    "name": "Barre"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107295044,
@@ -10457,6 +8196,27 @@
    "venue": "soul-sportstudio-pankow"
   },
   {
+   "id": 107315266,
+   "title": "Contemporary Pilates - Core & Sculpt (EN)",
+   "teacherName": "Vittorio",
+   "startDateTimeUTC": "2026-10-20T18:00:00+02:00",
+   "endDateTimeUTC": "2026-10-20T18:45:00+02:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107271859,
    "title": "Power Moves Pilates (EN)",
    "teacherName": "Tara",
@@ -10829,6 +8589,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soul-sportstudio-pankow"
+  },
+  {
+   "id": 107315248,
+   "title": "PILATES 360: Abs, Legs & Booty (EN)",
+   "teacherName": "Vittorio",
+   "startDateTimeUTC": "2026-10-20T19:00:00+02:00",
+   "endDateTimeUTC": "2026-10-20T19:45:00+02:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107271380,
@@ -11265,6 +9046,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "good-moves-studio"
+  },
+  {
+   "id": 107315237,
+   "title": "Soulbath Meditation (D)",
+   "teacherName": "Mona",
+   "startDateTimeUTC": "2026-10-20T20:15:00+02:00",
+   "endDateTimeUTC": "2026-10-20T21:00:00+02:00",
+   "category": {
+    "id": 13,
+    "name": "Meditation"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107299130,
@@ -11788,6 +9590,27 @@
    "venue": "soul-sportstudio-pankow"
   },
   {
+   "id": 107377238,
+   "title": "Pilates Reformer Basics (EN)",
+   "teacherName": "Ksenia",
+   "startDateTimeUTC": "2026-10-21T08:00:00+02:00",
+   "endDateTimeUTC": "2026-10-21T08:50:00+02:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107373461,
    "title": "FLOW. Pilates Sculpt + Stretch",
    "teacherName": "Irene",
@@ -12141,6 +9964,27 @@
    "venue": "soul-sportstudio-pankow"
   },
   {
+   "id": 107377128,
+   "title": "Full Body Reformer Flow (EN)",
+   "teacherName": "Ksenia",
+   "startDateTimeUTC": "2026-10-21T09:00:00+02:00",
+   "endDateTimeUTC": "2026-10-21T09:50:00+02:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107295911,
    "title": "Power Moves Pilates (EN)",
    "teacherName": "Maria",
@@ -12264,6 +10108,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soul-sportstudio-pankow"
+  },
+  {
+   "id": 107377267,
+   "title": "Core Control Reformer (EN)",
+   "teacherName": "Jazlyn",
+   "startDateTimeUTC": "2026-10-21T10:00:00+02:00",
+   "endDateTimeUTC": "2026-10-21T10:50:00+02:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107371234,
@@ -12496,6 +10361,27 @@
    "venue": "soul-sportstudio-pankow"
   },
   {
+   "id": 107377254,
+   "title": "Full Body Reformer Beginner (EN)",
+   "teacherName": "Jazlyn",
+   "startDateTimeUTC": "2026-10-21T11:00:00+02:00",
+   "endDateTimeUTC": "2026-10-21T11:50:00+02:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107361635,
    "title": "Pole Flying Heels L2+",
    "teacherName": "Maria B.",
@@ -12702,6 +10588,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soul-sportstudio-pankow"
+  },
+  {
+   "id": 107377141,
+   "title": "Intermediate - Full Body Reformer (EN)",
+   "teacherName": "Jazlyn",
+   "startDateTimeUTC": "2026-10-21T12:00:00+02:00",
+   "endDateTimeUTC": "2026-10-21T12:50:00+02:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107376233,
@@ -13101,6 +11008,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg"
   },
   {
+   "id": 107377133,
+   "title": "Full Body Reformer Beginner (EN)",
+   "teacherName": "Naya",
+   "startDateTimeUTC": "2026-10-21T15:00:00+02:00",
+   "endDateTimeUTC": "2026-10-21T15:50:00+02:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107315338,
    "title": "ROFORM STUDIO 2",
    "teacherName": "Theresa",
@@ -13309,6 +11237,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg"
   },
   {
+   "id": 107377121,
+   "title": "Core Control Reformer (EN)",
+   "teacherName": "Naya",
+   "startDateTimeUTC": "2026-10-21T16:00:00+02:00",
+   "endDateTimeUTC": "2026-10-21T16:50:00+02:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107364775,
    "title": "Spinning Pole L0",
    "teacherName": "Valeria C.",
@@ -13493,6 +11442,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 107377113,
+   "title": "Pilates Reformer Beginner (EN)",
+   "teacherName": "Vittorio",
+   "startDateTimeUTC": "2026-10-21T17:00:00+02:00",
+   "endDateTimeUTC": "2026-10-21T17:50:00+02:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107373479,
@@ -13827,6 +11797,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soul-sportstudio-pankow"
+  },
+  {
+   "id": 107377264,
+   "title": "Reformer Flow & Strength (EN)",
+   "teacherName": "Vittorio",
+   "startDateTimeUTC": "2026-10-21T18:00:00+02:00",
+   "endDateTimeUTC": "2026-10-21T18:50:00+02:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107376820,
@@ -14201,6 +12192,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "good-moves-studio"
+  },
+  {
+   "id": 107377249,
+   "title": "Pilates 360: Abs, Legs & Booty (EN)",
+   "teacherName": "Vittorio",
+   "startDateTimeUTC": "2026-10-21T19:15:00+02:00",
+   "endDateTimeUTC": "2026-10-21T20:00:00+02:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107369147,
@@ -15055,6 +13067,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soul-sportstudio-pankow"
+  },
+  {
+   "id": 107421621,
+   "title": "Pilates 360: Abs, Legs & Booty (EN/D)",
+   "teacherName": "Naya",
+   "startDateTimeUTC": "2026-10-22T08:00:00+02:00",
+   "endDateTimeUTC": "2026-10-22T08:45:00+02:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107376501,
@@ -16784,6 +14817,27 @@
    "venue": "soul-sportstudio-pankow"
   },
   {
+   "id": 107421623,
+   "title": "Full Body Reformer - Beginner (EN)",
+   "teacherName": "Beatrice",
+   "startDateTimeUTC": "2026-10-22T17:00:00+02:00",
+   "endDateTimeUTC": "2026-10-22T17:50:00+02:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107415881,
    "title": "PUSH. Power Pilates",
    "teacherName": "Serlina",
@@ -17074,6 +15128,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soul-sportstudio-pankow"
+  },
+  {
+   "id": 107421636,
+   "title": "Pilates Reformer Beginner (EN)",
+   "teacherName": "Beatrice",
+   "startDateTimeUTC": "2026-10-22T18:00:00+02:00",
+   "endDateTimeUTC": "2026-10-22T18:50:00+02:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107419419,
@@ -17429,6 +15504,27 @@
    "venue": "soul-sportstudio-pankow"
   },
   {
+   "id": 107421625,
+   "title": "FIT Reformer | Beginner (EN)",
+   "teacherName": "Nelly",
+   "startDateTimeUTC": "2026-10-22T19:00:00+02:00",
+   "endDateTimeUTC": "2026-10-22T19:50:00+02:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107376404,
    "title": "Pilates Form x Weights (EN)",
    "teacherName": "Camryn",
@@ -17656,6 +15752,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 107421633,
+   "title": "FIT Reformer | Intermediate (EN)",
+   "teacherName": "Nelly",
+   "startDateTimeUTC": "2026-10-22T20:00:00+02:00",
+   "endDateTimeUTC": "2026-10-22T20:50:00+02:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107415889,
@@ -18222,6 +16339,27 @@
    "venue": "soul-sportstudio-pankow"
   },
   {
+   "id": 107474129,
+   "title": "Sunrise Reformer Intermediate (EN)",
+   "teacherName": "Dicle",
+   "startDateTimeUTC": "2026-10-23T08:00:00+02:00",
+   "endDateTimeUTC": "2026-10-23T08:50:00+02:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107587278,
    "title": "Pilates Form x Weights (EN)",
    "teacherName": "Clara",
@@ -18428,6 +16566,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soul-sportstudio-pankow"
+  },
+  {
+   "id": 107474137,
+   "title": "Spicy Full Body Reformer Intermediate (EN)",
+   "teacherName": "Dicle",
+   "startDateTimeUTC": "2026-10-23T09:00:00+02:00",
+   "endDateTimeUTC": "2026-10-23T09:50:00+02:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107469866,
@@ -18698,6 +16857,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soul-sportstudio-pankow"
+  },
+  {
+   "id": 107474154,
+   "title": "Reformer Abs & Glutes (EN)",
+   "teacherName": "Dicle",
+   "startDateTimeUTC": "2026-10-23T10:00:00+02:00",
+   "endDateTimeUTC": "2026-10-23T10:50:00+02:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107469883,
@@ -19867,6 +18047,27 @@
    "venue": "soul-sportstudio-pankow"
   },
   {
+   "id": 107474157,
+   "title": "Full Body Sculpt Reformer Beginner (EN)",
+   "teacherName": "Beatrice",
+   "startDateTimeUTC": "2026-10-23T16:00:00+02:00",
+   "endDateTimeUTC": "2026-10-23T16:50:00+02:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107464590,
    "title": "Pilates Reformer Intermediate – Glutes & Abs EN",
    "teacherName": "Jessica S.",
@@ -20135,6 +18336,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soul-sportstudio-pankow"
+  },
+  {
+   "id": 107474094,
+   "title": "Basis Reformer Pilates (EN)",
+   "teacherName": "Beatrice",
+   "startDateTimeUTC": "2026-10-23T17:00:00+02:00",
+   "endDateTimeUTC": "2026-10-23T17:50:00+02:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107465783,
@@ -20467,6 +18689,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soul-sportstudio-pankow"
+  },
+  {
+   "id": 107474102,
+   "title": "Reformer Full Body Beginner (EN)",
+   "teacherName": "Beatrice",
+   "startDateTimeUTC": "2026-10-23T18:00:00+02:00",
+   "endDateTimeUTC": "2026-10-23T18:50:00+02:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107469344,
@@ -21719,6 +19962,27 @@
    "venue": "soul-sportstudio-pankow"
   },
   {
+   "id": 107510573,
+   "title": "Barre meets Pilates - Shape Up, Werk It (EN)",
+   "teacherName": "Gustavo",
+   "startDateTimeUTC": "2026-10-24T10:00:00+02:00",
+   "endDateTimeUTC": "2026-10-24T10:45:00+02:00",
+   "category": {
+    "id": 1378,
+    "name": "Barre"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107509569,
    "title": "FLOW. Power Vinyasa",
    "teacherName": "Margo",
@@ -22050,6 +20314,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soul-sportstudio-pankow"
+  },
+  {
+   "id": 107510576,
+   "title": "Pilates 360: Abs, Legs & Booty (EN)",
+   "teacherName": "Gustavo",
+   "startDateTimeUTC": "2026-10-24T11:00:00+02:00",
+   "endDateTimeUTC": "2026-10-24T11:45:00+02:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107503214,
@@ -22759,6 +21044,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg"
   },
   {
+   "id": 107510578,
+   "title": "Reformer Sculpt & Strength",
+   "teacherName": "Nadja",
+   "startDateTimeUTC": "2026-10-24T14:00:00+02:00",
+   "endDateTimeUTC": "2026-10-24T14:50:00+02:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107474054,
    "title": "ROFORM STUDIO 2",
    "teacherName": "Julia H.",
@@ -22924,6 +21230,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 107510575,
+   "title": "Core Control Reformer (EN)",
+   "teacherName": "Nadja",
+   "startDateTimeUTC": "2026-10-24T15:00:00+02:00",
+   "endDateTimeUTC": "2026-10-24T15:50:00+02:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107505118,
@@ -24181,6 +22508,27 @@
    "venue": "soul-sportstudio-pankow"
   },
   {
+   "id": 107552401,
+   "title": "Sunrise Reformer Beginner (EN)",
+   "teacherName": "Nadja",
+   "startDateTimeUTC": "2026-10-25T10:00:00+01:00",
+   "endDateTimeUTC": "2026-10-25T10:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107548755,
    "title": "PUSH. Flexibility & Mobility",
    "teacherName": "Antonietta",
@@ -24450,6 +22798,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soul-sportstudio-pankow"
+  },
+  {
+   "id": 107552398,
+   "title": "Full Body Strength Reformer (EN)",
+   "teacherName": "Nadja",
+   "startDateTimeUTC": "2026-10-25T11:00:00+01:00",
+   "endDateTimeUTC": "2026-10-25T11:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107542510,
@@ -25014,6 +23383,27 @@
    "venue": "soul-sportstudio-pankow"
   },
   {
+   "id": 107552395,
+   "title": "Pilates Reformer Full Body & Sculpt (EN)",
+   "teacherName": "Michelle",
+   "startDateTimeUTC": "2026-10-25T13:00:00+01:00",
+   "endDateTimeUTC": "2026-10-25T13:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107544586,
    "title": "PEACH BARRE BURN EN",
    "teacherName": "Evelyne Z.",
@@ -25222,6 +23612,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soul-sportstudio-pankow"
+  },
+  {
+   "id": 107552392,
+   "title": "Pilates Reformer Beginner (EN)",
+   "teacherName": "Michelle",
+   "startDateTimeUTC": "2026-10-25T14:00:00+01:00",
+   "endDateTimeUTC": "2026-10-25T14:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107510549,
@@ -25893,6 +24304,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg"
   },
   {
+   "id": 107552400,
+   "title": "Pilates Reformer Intermediate (EN)",
+   "teacherName": "Vittorio",
+   "startDateTimeUTC": "2026-10-25T18:00:00+01:00",
+   "endDateTimeUTC": "2026-10-25T18:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107546825,
    "title": "Pilates Reformer Intermediate DE/EN",
    "teacherName": "Agata K.",
@@ -26035,6 +24467,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 107552407,
+   "title": "Full Body Sculpt Reformer Beginner",
+   "teacherName": "Vittorio",
+   "startDateTimeUTC": "2026-10-25T19:00:00+01:00",
+   "endDateTimeUTC": "2026-10-25T19:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107548791,
@@ -26498,6 +24951,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg"
   },
   {
+   "id": 107604776,
+   "title": "Pilates Reformer Beginner (EN)",
+   "teacherName": "Balazs",
+   "startDateTimeUTC": "2026-10-26T08:00:00+01:00",
+   "endDateTimeUTC": "2026-10-26T08:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107549577,
    "title": "Power Moves Pilates (EN)",
    "teacherName": "Gabriela",
@@ -26747,6 +25221,27 @@
    "venue": "soul-sportstudio-pankow"
   },
   {
+   "id": 107604782,
+   "title": "Pilates Reformer Intermediate (EN)",
+   "teacherName": "Balazs",
+   "startDateTimeUTC": "2026-10-26T09:00:00+01:00",
+   "endDateTimeUTC": "2026-10-26T09:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107815346,
    "title": "Power Moves: Glutes & Abs",
    "teacherName": "Gabriela",
@@ -26972,6 +25467,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soul-sportstudio-pankow"
+  },
+  {
+   "id": 107604768,
+   "title": "Reformer Sculpt & Strength (EN)",
+   "teacherName": "Balazs",
+   "startDateTimeUTC": "2026-10-26T10:00:00+01:00",
+   "endDateTimeUTC": "2026-10-26T10:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107587413,
@@ -27350,6 +25866,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg"
   },
   {
+   "id": 107604784,
+   "title": "Spicy Reformer Lunchbreak 🌶️🔥 (EN)",
+   "teacherName": "Gustavo",
+   "startDateTimeUTC": "2026-10-26T12:00:00+01:00",
+   "endDateTimeUTC": "2026-10-26T12:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107600094,
    "title": "PUSH. Power Active Pilates",
    "teacherName": "Serlina",
@@ -27515,6 +26052,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 107604775,
+   "title": "Lunchbreak Reformer - Intermediate (EN)",
+   "teacherName": "Gustavo",
+   "startDateTimeUTC": "2026-10-26T13:00:00+01:00",
+   "endDateTimeUTC": "2026-10-26T13:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107589377,
@@ -27766,6 +26324,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg"
   },
   {
+   "id": 107604770,
+   "title": "Full Body Reformer Beginner (EN)",
+   "teacherName": "Yuan",
+   "startDateTimeUTC": "2026-10-26T15:00:00+01:00",
+   "endDateTimeUTC": "2026-10-26T15:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107552630,
    "title": "ROFORM STUDIO 2",
    "teacherName": "Astrid",
@@ -27888,6 +26467,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 107604779,
+   "title": "Pilates Reformer Beginner (EN)",
+   "teacherName": "Yuan",
+   "startDateTimeUTC": "2026-10-26T16:00:00+01:00",
+   "endDateTimeUTC": "2026-10-26T16:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107592090,
@@ -28076,6 +26676,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 107604769,
+   "title": "Core Control Reformer (EN)",
+   "teacherName": "Yuan",
+   "startDateTimeUTC": "2026-10-26T17:00:00+01:00",
+   "endDateTimeUTC": "2026-10-26T17:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107593843,
@@ -28617,6 +27238,27 @@
    "venue": "soul-sportstudio-pankow"
   },
   {
+   "id": 107604767,
+   "title": "Total Pilates Flow: Strength, Control & Flex (EN)",
+   "teacherName": "Yuan",
+   "startDateTimeUTC": "2026-10-26T18:30:00+01:00",
+   "endDateTimeUTC": "2026-10-26T19:15:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107639701,
    "title": "Reformer Power (EN)",
    "teacherName": "Isabella",
@@ -28928,6 +27570,27 @@
    "venue": "soul-sportstudio-pankow"
   },
   {
+   "id": 107604780,
+   "title": "Pilates 360: Abs, Legs & Booty (EN)",
+   "teacherName": "Anna",
+   "startDateTimeUTC": "2026-10-26T19:30:00+01:00",
+   "endDateTimeUTC": "2026-10-26T20:15:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107595927,
    "title": "BALLET Level 1 | in English | ADULTS",
    "teacherName": "Ted L.",
@@ -29136,6 +27799,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 107604783,
+   "title": "RED LIGHT THERAPY - Deep Stretch & Flexibility",
+   "teacherName": "Anna",
+   "startDateTimeUTC": "2026-10-26T20:30:00+01:00",
+   "endDateTimeUTC": "2026-10-26T21:15:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107600073,
@@ -29701,6 +28385,27 @@
    "venue": "soul-sportstudio-pankow"
   },
   {
+   "id": 107657184,
+   "title": "RED LIGHT THERAPY - Pilates 360: Abs, Legs & Booty (D)",
+   "teacherName": "Constance",
+   "startDateTimeUTC": "2026-10-27T08:00:00+01:00",
+   "endDateTimeUTC": "2026-10-27T08:45:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 9
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107600554,
    "title": "Pilates Form x Weights (EN)",
    "teacherName": "Carelí",
@@ -29950,6 +28655,27 @@
    "venue": "soul-sportstudio-pankow"
   },
   {
+   "id": 107657196,
+   "title": "RED LIGHT THERAPY - Core Power Pilates (D)",
+   "teacherName": "Constance",
+   "startDateTimeUTC": "2026-10-27T09:00:00+01:00",
+   "endDateTimeUTC": "2026-10-27T09:50:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 9
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107655444,
    "title": "FLOW. Flexibility + Mobility",
    "teacherName": "Arlan",
@@ -30135,6 +28861,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soul-sportstudio-pankow"
+  },
+  {
+   "id": 107657210,
+   "title": "Dance Workout",
+   "teacherName": "Tanni",
+   "startDateTimeUTC": "2026-10-27T10:00:00+01:00",
+   "endDateTimeUTC": "2026-10-27T10:45:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107638764,
@@ -30364,6 +29111,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soul-sportstudio-pankow"
+  },
+  {
+   "id": 107657212,
+   "title": "Mom Dance Flow with Baby",
+   "teacherName": "Tanni",
+   "startDateTimeUTC": "2026-10-27T11:00:00+01:00",
+   "endDateTimeUTC": "2026-10-27T11:45:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107641166,
@@ -31119,6 +29887,27 @@
    "venue": "soul-sportstudio-pankow"
   },
   {
+   "id": 107657187,
+   "title": "Gentle PILATES Flow (EN)",
+   "teacherName": "Vittorio",
+   "startDateTimeUTC": "2026-10-27T16:00:00+01:00",
+   "endDateTimeUTC": "2026-10-27T16:45:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107645902,
    "title": "Pole Low Flow L1+ (Heels opt.)",
    "teacherName": "Nani L.",
@@ -31326,6 +30115,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soul-sportstudio-pankow"
+  },
+  {
+   "id": 107657195,
+   "title": "Barre meets Pilates - Shape Up, Werk It (EN)",
+   "teacherName": "Vittorio",
+   "startDateTimeUTC": "2026-10-27T17:00:00+01:00",
+   "endDateTimeUTC": "2026-10-27T17:45:00+01:00",
+   "category": {
+    "id": 1378,
+    "name": "Barre"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107655106,
@@ -31703,6 +30513,27 @@
    "venue": "soul-sportstudio-pankow"
   },
   {
+   "id": 107657200,
+   "title": "Contemporary Pilates - Core & Sculpt (EN)",
+   "teacherName": "Anna",
+   "startDateTimeUTC": "2026-10-27T18:00:00+01:00",
+   "endDateTimeUTC": "2026-10-27T18:45:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107600598,
    "title": "Pilates Form x Weights (EN)",
    "teacherName": "Camryn",
@@ -32054,6 +30885,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soul-sportstudio-pankow"
+  },
+  {
+   "id": 107657194,
+   "title": "PILATES 360: Abs, Legs & Booty (EN)",
+   "teacherName": "Anna",
+   "startDateTimeUTC": "2026-10-27T19:00:00+01:00",
+   "endDateTimeUTC": "2026-10-27T19:45:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107599326,
@@ -32469,6 +31321,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "good-moves-studio"
+  },
+  {
+   "id": 107657206,
+   "title": "Soulbath Meditation (D)",
+   "teacherName": "Mona",
+   "startDateTimeUTC": "2026-10-27T20:15:00+01:00",
+   "endDateTimeUTC": "2026-10-27T21:00:00+01:00",
+   "category": {
+    "id": 13,
+    "name": "Meditation"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107654288,
@@ -33013,6 +31886,27 @@
    "venue": "soul-sportstudio-pankow"
   },
   {
+   "id": 107704242,
+   "title": "Pilates Reformer Basics (EN)",
+   "teacherName": "Ksenia",
+   "startDateTimeUTC": "2026-10-28T08:00:00+01:00",
+   "endDateTimeUTC": "2026-10-28T08:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107701553,
    "title": "FLOW. Pilates Sculpt + Stretch",
    "teacherName": "Irene",
@@ -33366,6 +32260,27 @@
    "venue": "soul-sportstudio-pankow"
   },
   {
+   "id": 107704255,
+   "title": "Full Body Reformer Flow (EN)",
+   "teacherName": "Ksenia",
+   "startDateTimeUTC": "2026-10-28T09:00:00+01:00",
+   "endDateTimeUTC": "2026-10-28T09:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107685508,
    "title": "PILATES mat class | in English | ADULTS",
    "teacherName": "Zahra B.",
@@ -33510,6 +32425,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soul-sportstudio-pankow"
+  },
+  {
+   "id": 107704249,
+   "title": "Core Control Reformer (EN)",
+   "teacherName": "Jazlyn",
+   "startDateTimeUTC": "2026-10-28T10:00:00+01:00",
+   "endDateTimeUTC": "2026-10-28T10:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107698106,
@@ -33763,6 +32699,27 @@
    "venue": "soul-sportstudio-pankow"
   },
   {
+   "id": 107704253,
+   "title": "Full Body Reformer Beginner (EN)",
+   "teacherName": "Jazlyn",
+   "startDateTimeUTC": "2026-10-28T11:00:00+01:00",
+   "endDateTimeUTC": "2026-10-28T11:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107688421,
    "title": "Pole Flying Heels L2+",
    "teacherName": "Maria B.",
@@ -33969,6 +32926,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soul-sportstudio-pankow"
+  },
+  {
+   "id": 107704263,
+   "title": "Intermediate - Full Body Reformer (EN)",
+   "teacherName": "Jazlyn",
+   "startDateTimeUTC": "2026-10-28T12:00:00+01:00",
+   "endDateTimeUTC": "2026-10-28T12:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107701563,
@@ -34368,6 +33346,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg"
   },
   {
+   "id": 107704264,
+   "title": "Full Body Reformer Beginner (EN)",
+   "teacherName": "Yuan",
+   "startDateTimeUTC": "2026-10-28T15:00:00+01:00",
+   "endDateTimeUTC": "2026-10-28T15:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107644313,
    "title": "ROFORM STUDIO 2",
    "teacherName": "Theresa",
@@ -34576,6 +33575,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg"
   },
   {
+   "id": 107704257,
+   "title": "Core Control Reformer (EN)",
+   "teacherName": "Yuan",
+   "startDateTimeUTC": "2026-10-28T16:00:00+01:00",
+   "endDateTimeUTC": "2026-10-28T16:50:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107692218,
    "title": "Spinning Pole L0",
    "teacherName": "Valeria C.",
@@ -34760,6 +33780,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 107704261,
+   "title": "Pilates Reformer Beginner (EN)",
+   "teacherName": "Vittorio",
+   "startDateTimeUTC": "2026-10-28T17:00:00+01:00",
+   "endDateTimeUTC": "2026-10-28T17:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107701556,
@@ -35094,6 +34135,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soul-sportstudio-pankow"
+  },
+  {
+   "id": 107704259,
+   "title": "Reformer Flow & Strength (EN)",
+   "teacherName": "Vittorio",
+   "startDateTimeUTC": "2026-10-28T18:00:00+01:00",
+   "endDateTimeUTC": "2026-10-28T18:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107700934,
@@ -35468,6 +34530,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "good-moves-studio"
+  },
+  {
+   "id": 107704246,
+   "title": "Pilates 360: Abs, Legs & Booty (EN)",
+   "teacherName": "Vittorio",
+   "startDateTimeUTC": "2026-10-28T19:15:00+01:00",
+   "endDateTimeUTC": "2026-10-28T20:00:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107695882,
@@ -36365,6 +35448,27 @@
    "venue": "soul-sportstudio-pankow"
   },
   {
+   "id": 107779300,
+   "title": "Pilates 360: Abs, Legs & Booty (EN/D)",
+   "teacherName": "Constance",
+   "startDateTimeUTC": "2026-10-29T08:00:00+01:00",
+   "endDateTimeUTC": "2026-10-29T08:45:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107702909,
    "title": "Strength Circuit",
    "teacherName": "Liv",
@@ -36653,6 +35757,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soul-sportstudio-pankow"
+  },
+  {
+   "id": 107779284,
+   "title": "Pilates 360: Abs, Legs & Booty (D)",
+   "teacherName": "Constance",
+   "startDateTimeUTC": "2026-10-29T09:00:00+01:00",
+   "endDateTimeUTC": "2026-10-29T09:45:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107746467,
@@ -38155,6 +37280,27 @@
    "venue": "soul-sportstudio-pankow"
   },
   {
+   "id": 107779304,
+   "title": "Full Body Reformer - Beginner (EN)",
+   "teacherName": "Beatrice",
+   "startDateTimeUTC": "2026-10-29T17:00:00+01:00",
+   "endDateTimeUTC": "2026-10-29T17:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107779132,
    "title": "PUSH. Power Pilates",
    "teacherName": "Serlina",
@@ -38445,6 +37591,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soul-sportstudio-pankow"
+  },
+  {
+   "id": 107779306,
+   "title": "Pilates Reformer Beginner (EN)",
+   "teacherName": "Beatrice",
+   "startDateTimeUTC": "2026-10-29T18:00:00+01:00",
+   "endDateTimeUTC": "2026-10-29T18:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107773321,
@@ -38800,6 +37967,27 @@
    "venue": "soul-sportstudio-pankow"
   },
   {
+   "id": 107779278,
+   "title": "FIT Reformer | Beginner (EN)",
+   "teacherName": "Nelly",
+   "startDateTimeUTC": "2026-10-29T19:00:00+01:00",
+   "endDateTimeUTC": "2026-10-29T19:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107702886,
    "title": "Pilates Form x Weights (EN)",
    "teacherName": "Camryn",
@@ -39048,6 +38236,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 107779287,
+   "title": "FIT Reformer | Intermediate (EN)",
+   "teacherName": "Nelly",
+   "startDateTimeUTC": "2026-10-29T20:00:00+01:00",
+   "endDateTimeUTC": "2026-10-29T20:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107777723,
@@ -39614,6 +38823,27 @@
    "venue": "soul-sportstudio-pankow"
   },
   {
+   "id": 107828440,
+   "title": "Sunrise Reformer Intermediate (EN)",
+   "teacherName": "Dicle",
+   "startDateTimeUTC": "2026-10-30T08:00:00+01:00",
+   "endDateTimeUTC": "2026-10-30T08:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107778802,
    "title": "Pilates Form x Weights (EN)",
    "teacherName": "Clara",
@@ -39820,6 +39050,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soul-sportstudio-pankow"
+  },
+  {
+   "id": 107828451,
+   "title": "Spicy Full Body Reformer Intermediate (EN)",
+   "teacherName": "Dicle",
+   "startDateTimeUTC": "2026-10-30T09:00:00+01:00",
+   "endDateTimeUTC": "2026-10-30T09:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107826563,
@@ -41258,6 +40509,27 @@
    "venue": "soul-sportstudio-pankow"
   },
   {
+   "id": 107828448,
+   "title": "Full Body Sculpt Reformer Beginner (EN)",
+   "teacherName": "Beatrice",
+   "startDateTimeUTC": "2026-10-30T16:00:00+01:00",
+   "endDateTimeUTC": "2026-10-30T16:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
    "id": 107820091,
    "title": "Pilates Reformer Intermediate – Glutes & Abs EN",
    "teacherName": "Jessica S.",
@@ -41526,6 +40798,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soul-sportstudio-pankow"
+  },
+  {
+   "id": 107828423,
+   "title": "Basis Reformer Pilates (EN)",
+   "teacherName": "Beatrice",
+   "startDateTimeUTC": "2026-10-30T17:00:00+01:00",
+   "endDateTimeUTC": "2026-10-30T17:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107821005,
@@ -41837,6 +41130,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soul-sportstudio-pankow"
+  },
+  {
+   "id": 107828464,
+   "title": "Reformer Full Body Beginner (EN)",
+   "teacherName": "Beatrice",
+   "startDateTimeUTC": "2026-10-30T18:00:00+01:00",
+   "endDateTimeUTC": "2026-10-30T18:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   },
   {
    "id": 107825570,
@@ -42402,6 +41716,174 @@
    ],
    "isPlusCheckin": false,
    "venue": "laudace-studio"
+  },
+  {
+   "id": 107870080,
+   "title": "Barre meets Pilates - Shape Up, Werk It (EN)",
+   "teacherName": "Gustavo",
+   "startDateTimeUTC": "2026-10-31T10:00:00+01:00",
+   "endDateTimeUTC": "2026-10-31T10:45:00+01:00",
+   "category": {
+    "id": 1378,
+    "name": "Barre"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
+   "id": 107870079,
+   "title": "Pilates 360: Abs, Legs & Booty (EN)",
+   "teacherName": "Gustavo",
+   "startDateTimeUTC": "2026-10-31T11:00:00+01:00",
+   "endDateTimeUTC": "2026-10-31T11:45:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
+   "id": 107870075,
+   "title": "Reformer Sculpt & Strength",
+   "teacherName": "Gustavo",
+   "startDateTimeUTC": "2026-10-31T14:00:00+01:00",
+   "endDateTimeUTC": "2026-10-31T14:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
+   "id": 107870085,
+   "title": "Core Control Reformer (EN)",
+   "teacherName": "Gustavo",
+   "startDateTimeUTC": "2026-10-31T15:00:00+01:00",
+   "endDateTimeUTC": "2026-10-31T15:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
+   "id": 107911825,
+   "title": "Pilates Reformer Full Body & Sculpt (EN)",
+   "teacherName": "Michelle",
+   "startDateTimeUTC": "2026-11-01T13:00:00+01:00",
+   "endDateTimeUTC": "2026-11-01T13:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
+   "id": 107911858,
+   "title": "Pilates Reformer Beginner (EN)",
+   "teacherName": "Michelle",
+   "startDateTimeUTC": "2026-11-01T14:00:00+01:00",
+   "endDateTimeUTC": "2026-11-01T14:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
+   "id": 107911817,
+   "title": "Pilates Reformer Intermediate (EN)",
+   "teacherName": "Vittorio",
+   "startDateTimeUTC": "2026-11-01T18:00:00+01:00",
+   "endDateTimeUTC": "2026-11-01T18:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
+   "id": 107911829,
+   "title": "Full Body Sculpt Reformer Beginner",
+   "teacherName": "Vittorio",
+   "startDateTimeUTC": "2026-11-01T19:00:00+01:00",
+   "endDateTimeUTC": "2026-11-01T19:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
   }
  ]
 }
