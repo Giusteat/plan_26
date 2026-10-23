@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-21T07:41+02:00",
+ "updated": "2026-10-23T14:14+02:00",
  "venues": {
   "lyra-prenzlauerberg": {
    "slug": "lyra-prenzlauerberg",
@@ -2627,6 +2627,73 @@
       {
        "id": 1,
        "name": "Fitness",
+       "limit": 8
+      }
+     ]
+    }
+   ]
+  },
+  "lyra": {
+   "slug": "lyra",
+   "id": 27894,
+   "name": "Lyra Pankow",
+   "address": "Prenzlauer Promenade 47A",
+   "postalCode": "13089",
+   "district": "Pankow",
+   "latitude": 52.5623508,
+   "longitude": 13.42799,
+   "website": "https://lyradance.de/",
+   "visitLimits": [
+    {
+     "name": "S",
+     "planName": "Essential",
+     "isAvailableAtVenue": true,
+     "isProvidedByVenue": false,
+     "monthlyLimitVenue": null,
+     "monthlyLimitVenueAddress": null,
+     "categoryLimits": []
+    },
+    {
+     "name": "M",
+     "planName": "Classic",
+     "isAvailableAtVenue": true,
+     "isProvidedByVenue": true,
+     "monthlyLimitVenue": -1,
+     "monthlyLimitVenueAddress": 4,
+     "categoryLimits": [
+      {
+       "id": 7,
+       "name": "Dance",
+       "limit": 4
+      }
+     ]
+    },
+    {
+     "name": "L",
+     "planName": "Premium",
+     "isAvailableAtVenue": true,
+     "isProvidedByVenue": true,
+     "monthlyLimitVenue": -1,
+     "monthlyLimitVenueAddress": 8,
+     "categoryLimits": [
+      {
+       "id": 7,
+       "name": "Dance",
+       "limit": 8
+      }
+     ]
+    },
+    {
+     "name": "XL",
+     "planName": "Max",
+     "isAvailableAtVenue": true,
+     "isProvidedByVenue": true,
+     "monthlyLimitVenue": -1,
+     "monthlyLimitVenueAddress": 8,
+     "categoryLimits": [
+      {
+       "id": 7,
+       "name": "Dance",
        "limit": 8
       }
      ]
@@ -17424,6 +17491,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
   },
   {
+   "id": 107463394,
+   "title": "Spinning Pole L0",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-10-23T14:45:00+02:00",
+   "endDateTimeUTC": "2026-10-23T15:45:00+02:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107463392,
    "title": "Pole Flying Heels L1+",
    "teacherName": "Jane W.",
@@ -17590,6 +17678,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 107463755,
+   "title": "Pole L1 - L2",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-10-23T15:55:00+02:00",
+   "endDateTimeUTC": "2026-10-23T16:55:00+02:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 11
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 107464644,
@@ -18050,6 +18159,27 @@
    "venue": "soulsport"
   },
   {
+   "id": 107465425,
+   "title": "Spinning Pole Invert Combos L1+",
+   "teacherName": "Angelo R.",
+   "startDateTimeUTC": "2026-10-23T17:05:00+02:00",
+   "endDateTimeUTC": "2026-10-23T18:05:00+02:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107465783,
    "title": "Reformer - Abs & Booty",
    "teacherName": "Adela M.",
@@ -18466,6 +18596,27 @@
    "venue": "halenow-prenzlauer-berg"
   },
   {
+   "id": 107466352,
+   "title": "Intro to Pole Handspring",
+   "teacherName": "Angelo R.",
+   "startDateTimeUTC": "2026-10-23T18:15:00+02:00",
+   "endDateTimeUTC": "2026-10-23T19:15:00+02:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107466790,
    "title": "Reformer - Intermediate",
    "teacherName": "Fran H.",
@@ -18736,6 +18887,27 @@
    "venue": "good-moves-studio"
   },
   {
+   "id": 107467204,
+   "title": "Spinning Pole L1",
+   "teacherName": "Angelo R.",
+   "startDateTimeUTC": "2026-10-23T19:25:00+02:00",
+   "endDateTimeUTC": "2026-10-23T20:25:00+02:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107467365,
    "title": "1,5 Std. Hale.GYM",
    "teacherName": "Room",
@@ -18923,6 +19095,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "berlin-movement-lab"
+  },
+  {
+   "id": 107467598,
+   "title": "Spinning Pole L0",
+   "teacherName": "Angelo R.",
+   "startDateTimeUTC": "2026-10-23T20:35:00+02:00",
+   "endDateTimeUTC": "2026-10-23T21:35:00+02:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 107467593,
@@ -19903,6 +20096,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
   },
   {
+   "id": 107501869,
+   "title": "Sensual Pole Flow L1+ (Heels Opt.)",
+   "teacherName": "Linh D.",
+   "startDateTimeUTC": "2026-10-24T10:40:00+02:00",
+   "endDateTimeUTC": "2026-10-24T11:40:00+02:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107509572,
    "title": "Reformer Class",
    "teacherName": "Jill",
@@ -20235,6 +20449,27 @@
    "venue": "halenow-prenzlauer-berg-pilates-reformer"
   },
   {
+   "id": 107502968,
+   "title": "Pole L0 - L1",
+   "teacherName": "Anastasiia C.",
+   "startDateTimeUTC": "2026-10-24T11:50:00+02:00",
+   "endDateTimeUTC": "2026-10-24T12:50:00+02:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107503383,
    "title": "1,5 Std. Hale.GYM",
    "teacherName": "Room",
@@ -20505,6 +20740,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "laudace-studio"
+  },
+  {
+   "id": 107503820,
+   "title": "Heels Tricks Level 1+",
+   "teacherName": "Anastasiia C.",
+   "startDateTimeUTC": "2026-10-24T13:00:00+02:00",
+   "endDateTimeUTC": "2026-10-24T14:00:00+02:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 107473941,
@@ -20778,6 +21034,27 @@
    "venue": "soulsport"
   },
   {
+   "id": 107504778,
+   "title": "Pole L3 - L4",
+   "teacherName": "Anzhelica L.",
+   "startDateTimeUTC": "2026-10-24T14:10:00+02:00",
+   "endDateTimeUTC": "2026-10-24T15:10:00+02:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107474054,
    "title": "ROFORM STUDIO 2",
    "teacherName": "Julia H.",
@@ -21006,6 +21283,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "berlin-movement-lab"
+  },
+  {
+   "id": 107505119,
+   "title": "Pole Heels “Flow Mastery”",
+   "teacherName": "Anzhelica L.",
+   "startDateTimeUTC": "2026-10-24T15:20:00+02:00",
+   "endDateTimeUTC": "2026-10-24T16:20:00+02:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 107474021,
@@ -22638,6 +22936,27 @@
    "venue": "hot-aura"
   },
   {
+   "id": 107543429,
+   "title": "Pole L0",
+   "teacherName": "Laura K.",
+   "startDateTimeUTC": "2026-10-25T11:30:00+01:00",
+   "endDateTimeUTC": "2026-10-25T12:30:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107510557,
    "title": "ROFORM STUDIO 2",
    "teacherName": "Tea",
@@ -22971,6 +23290,27 @@
    "venue": "via-pilates-pilates-reformer"
   },
   {
+   "id": 107544080,
+   "title": "Spinning Pole L1 - L2",
+   "teacherName": "Laura K.",
+   "startDateTimeUTC": "2026-10-25T12:40:00+01:00",
+   "endDateTimeUTC": "2026-10-25T13:40:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107544233,
    "title": "Pilates Reformer x Strength EN",
    "teacherName": "Katrine K.",
@@ -23199,6 +23539,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 107544498,
+   "title": "Pole Flying Heels L1+",
+   "teacherName": "Laura K.",
+   "startDateTimeUTC": "2026-10-25T13:50:00+01:00",
+   "endDateTimeUTC": "2026-10-25T14:50:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 107544602,
@@ -23453,6 +23814,27 @@
    "venue": "laudace-studio"
   },
   {
+   "id": 107544887,
+   "title": "Open Training - Pole",
+   "teacherName": "Shilpashree M.",
+   "startDateTimeUTC": "2026-10-25T15:00:00+01:00",
+   "endDateTimeUTC": "2026-10-25T16:00:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107544990,
    "title": "REFORMER Full Body | Beginner | ENG",
    "teacherName": "Christian S.",
@@ -23618,6 +24000,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 107545660,
+   "title": "Spinning Pole L0",
+   "teacherName": "Jane W.",
+   "startDateTimeUTC": "2026-10-25T16:10:00+01:00",
+   "endDateTimeUTC": "2026-10-25T17:10:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 107587730,
@@ -23868,6 +24271,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "good-moves-studio"
+  },
+  {
+   "id": 107546256,
+   "title": "Pole L0 - L1",
+   "teacherName": "Jane W.",
+   "startDateTimeUTC": "2026-10-25T17:20:00+01:00",
+   "endDateTimeUTC": "2026-10-25T18:20:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 107546255,
@@ -25622,6 +26046,27 @@
    "venue": "studio-berlin"
   },
   {
+   "id": 107588640,
+   "title": "Pole Flowy Heels L1+",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-10-26T12:10:00+01:00",
+   "endDateTimeUTC": "2026-10-26T13:10:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107549522,
    "title": "Pilates Form x Weights (EN)",
    "teacherName": "Tara",
@@ -25829,6 +26274,27 @@
    "venue": "berliner-pilates-prenzlauer-berg"
   },
   {
+   "id": 107589299,
+   "title": "Pole L0 - L1",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-10-26T13:20:00+01:00",
+   "endDateTimeUTC": "2026-10-26T14:20:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107589364,
    "title": "1,5 Std. Hale.GYM",
    "teacherName": "Room",
@@ -25931,6 +26397,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "laudace-studio"
+  },
+  {
+   "id": 107590428,
+   "title": "Pole L0",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-10-26T14:30:00+01:00",
+   "endDateTimeUTC": "2026-10-26T15:30:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 107600083,
@@ -26682,6 +27169,27 @@
    "venue": "laudace-studio"
   },
   {
+   "id": 107593449,
+   "title": "Spinning Pole L0",
+   "teacherName": "Anastasiia C.",
+   "startDateTimeUTC": "2026-10-26T18:00:00+01:00",
+   "endDateTimeUTC": "2026-10-26T19:00:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107593888,
    "title": "REFORMER Build & Burn | ENG",
    "teacherName": "Theresa H.",
@@ -27097,6 +27605,27 @@
    "venue": "studio-berlin"
   },
   {
+   "id": 107596925,
+   "title": "Pole L2 - L3",
+   "teacherName": "Anastasiia C.",
+   "startDateTimeUTC": "2026-10-26T19:10:00+01:00",
+   "endDateTimeUTC": "2026-10-26T20:10:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107597832,
    "title": "Calisthenics, Gymnastic Rings",
    "teacherName": "Coen",
@@ -27471,6 +28000,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "berlin-movement-lab"
+  },
+  {
+   "id": 107596920,
+   "title": "Pole L1",
+   "teacherName": "Anastasiia C.",
+   "startDateTimeUTC": "2026-10-26T20:20:00+01:00",
+   "endDateTimeUTC": "2026-10-26T21:20:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 107552626,
@@ -29455,6 +30005,27 @@
    "venue": "studio-berlin"
   },
   {
+   "id": 107643937,
+   "title": "Spinning Pole L0",
+   "teacherName": "Valeria C.",
+   "startDateTimeUTC": "2026-10-27T15:45:00+01:00",
+   "endDateTimeUTC": "2026-10-27T16:45:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107644091,
    "title": "Full Body On Beat EN",
    "teacherName": "Franzi R.",
@@ -29663,6 +30234,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 107645548,
+   "title": "Pole L0 - L1",
+   "teacherName": "Valeria C.",
+   "startDateTimeUTC": "2026-10-27T16:55:00+01:00",
+   "endDateTimeUTC": "2026-10-27T17:55:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 107652758,
@@ -30207,6 +30799,27 @@
    "venue": "soulsport"
   },
   {
+   "id": 107648809,
+   "title": "Spinning Pole Combos L1+",
+   "teacherName": "Carla C.",
+   "startDateTimeUTC": "2026-10-27T18:05:00+01:00",
+   "endDateTimeUTC": "2026-10-27T19:05:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107600598,
    "title": "Pilates Form x Weights (EN)",
    "teacherName": "Camryn",
@@ -30684,6 +31297,48 @@
    "venue": "good-moves-studio"
   },
   {
+   "id": 107649862,
+   "title": "Active Stretching (Beginner / Intermediate)",
+   "teacherName": "Ana E.",
+   "startDateTimeUTC": "2026-10-27T19:15:00+01:00",
+   "endDateTimeUTC": "2026-10-27T20:15:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
+   "id": 107650076,
+   "title": "Power to Pole Inverts",
+   "teacherName": "Carla C.",
+   "startDateTimeUTC": "2026-10-27T19:15:00+01:00",
+   "endDateTimeUTC": "2026-10-27T20:15:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107650942,
    "title": "Mat - Strength",
    "teacherName": "Margarita I.",
@@ -31057,6 +31712,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "berlin-movement-lab"
+  },
+  {
+   "id": 107650724,
+   "title": "Pole L0",
+   "teacherName": "Ana E.",
+   "startDateTimeUTC": "2026-10-27T20:25:00+01:00",
+   "endDateTimeUTC": "2026-10-27T21:25:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 107604114,
@@ -32393,6 +33069,27 @@
    "venue": "soulsport"
   },
   {
+   "id": 107688420,
+   "title": "Pole L1",
+   "teacherName": "Laura K.",
+   "startDateTimeUTC": "2026-10-28T11:15:00+01:00",
+   "endDateTimeUTC": "2026-10-28T12:15:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107688421,
    "title": "Pole Flying Heels L2+",
    "teacherName": "Maria B.",
@@ -32664,6 +33361,27 @@
    "venue": "good-moves-studio"
   },
   {
+   "id": 107689111,
+   "title": "Pole L0",
+   "teacherName": "Laura K.",
+   "startDateTimeUTC": "2026-10-28T12:25:00+01:00",
+   "endDateTimeUTC": "2026-10-28T13:25:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107644317,
    "title": "ROFORM STUDIO 2",
    "teacherName": "Abbey",
@@ -32872,6 +33590,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
   },
   {
+   "id": 107689976,
+   "title": "Spinning Pole Flow L1 - L2 (Heels Opt.)",
+   "teacherName": "Laura K.",
+   "startDateTimeUTC": "2026-10-28T13:35:00+01:00",
+   "endDateTimeUTC": "2026-10-28T14:35:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107689960,
    "title": "Reformer Pilates Session",
    "teacherName": "Your C.",
@@ -32933,6 +33672,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 107690978,
+   "title": "Open Training - Pole",
+   "teacherName": "Shilpashree M.",
+   "startDateTimeUTC": "2026-10-28T14:45:00+01:00",
+   "endDateTimeUTC": "2026-10-28T15:45:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 107690486,
@@ -33079,6 +33839,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "halenow-prenzlauer-berg-pilates-reformer"
+  },
+  {
+   "id": 107690981,
+   "title": "Spinning Pole L0 - L1",
+   "teacherName": "Quynh T.",
+   "startDateTimeUTC": "2026-10-28T15:55:00+01:00",
+   "endDateTimeUTC": "2026-10-28T16:55:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 107692513,
@@ -33476,6 +34257,27 @@
    "venue": "studio-berlin"
   },
   {
+   "id": 107693474,
+   "title": "Spinning Pole L1 - L2",
+   "teacherName": "Quynh T.",
+   "startDateTimeUTC": "2026-10-28T17:05:00+01:00",
+   "endDateTimeUTC": "2026-10-28T18:05:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107693954,
    "title": "Reformer - Intermediate",
    "teacherName": "Leah M.",
@@ -33869,6 +34671,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "halenow-prenzlauer-berg-pilates-reformer"
+  },
+  {
+   "id": 107694821,
+   "title": "Pole L1",
+   "teacherName": "Carla C.",
+   "startDateTimeUTC": "2026-10-28T18:15:00+01:00",
+   "endDateTimeUTC": "2026-10-28T19:15:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 107696209,
@@ -34287,6 +35110,27 @@
    "venue": "elevate-pilates"
   },
   {
+   "id": 107695861,
+   "title": "Pole L0",
+   "teacherName": "Carla C.",
+   "startDateTimeUTC": "2026-10-28T19:25:00+01:00",
+   "endDateTimeUTC": "2026-10-28T20:25:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107696245,
    "title": "1,5 Std. Hale.GYM",
    "teacherName": "Room",
@@ -34598,6 +35442,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 107696621,
+   "title": "Pole L0 - L1",
+   "teacherName": "Carla C.",
+   "startDateTimeUTC": "2026-10-28T20:35:00+01:00",
+   "endDateTimeUTC": "2026-10-28T21:35:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 107696617,
@@ -36787,6 +37652,27 @@
    "venue": "halenow-prenzlauer-berg"
   },
   {
+   "id": 107765504,
+   "title": "Pole High Heels Old School L1+",
+   "teacherName": "Anastasiia C.",
+   "startDateTimeUTC": "2026-10-29T16:30:00+01:00",
+   "endDateTimeUTC": "2026-10-29T17:30:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107704327,
    "title": "ROFORM STUDIO 2",
    "teacherName": "Tjasa",
@@ -37118,6 +38004,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 107769233,
+   "title": "Pole Flying Heels L1- L2",
+   "teacherName": "Anastasiia C.",
+   "startDateTimeUTC": "2026-10-29T17:40:00+01:00",
+   "endDateTimeUTC": "2026-10-29T18:40:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 107769652,
@@ -37515,6 +38422,27 @@
    "venue": "hot-aura"
   },
   {
+   "id": 107770453,
+   "title": "Pole L1 - L2",
+   "teacherName": "Anastasiia C.",
+   "startDateTimeUTC": "2026-10-29T18:50:00+01:00",
+   "endDateTimeUTC": "2026-10-29T19:50:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107775578,
    "title": "Reformer Class",
    "teacherName": "Lara",
@@ -37890,6 +38818,27 @@
    "venue": "laudace-studio"
   },
   {
+   "id": 107771524,
+   "title": "Pole L0",
+   "teacherName": "Anastasiia C.",
+   "startDateTimeUTC": "2026-10-29T20:00:00+01:00",
+   "endDateTimeUTC": "2026-10-29T21:00:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107771848,
    "title": "REFORMER Full Body | Experienced | ENG",
    "teacherName": "Livia B.",
@@ -38140,6 +39089,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 107772637,
+   "title": "Open Training - Pole",
+   "teacherName": "Shilpashree M.",
+   "startDateTimeUTC": "2026-10-29T21:10:00+01:00",
+   "endDateTimeUTC": "2026-10-29T22:10:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 107772641,
@@ -39079,6 +40049,27 @@
    "venue": "soul-sportstudio-pankow"
   },
   {
+   "id": 107814938,
+   "title": "Sensual Pole Flow L1+ (Heels Opt.)",
+   "teacherName": "Valeria C.",
+   "startDateTimeUTC": "2026-10-30T10:05:00+01:00",
+   "endDateTimeUTC": "2026-10-30T11:05:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107826491,
    "title": "Calisthenics & Luftakrobatik",
    "teacherName": "Kaleen",
@@ -39347,6 +40338,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "hot-aura"
+  },
+  {
+   "id": 107815652,
+   "title": "Pole L0",
+   "teacherName": "Valeria C.",
+   "startDateTimeUTC": "2026-10-30T11:15:00+01:00",
+   "endDateTimeUTC": "2026-10-30T12:15:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 107779500,
@@ -39639,6 +40651,27 @@
    "venue": "via-pilates-pilates-reformer"
   },
   {
+   "id": 107816656,
+   "title": "Open Training - Pole",
+   "teacherName": "Shilpashree M.",
+   "startDateTimeUTC": "2026-10-30T12:25:00+01:00",
+   "endDateTimeUTC": "2026-10-30T13:25:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107903364,
    "title": "Hot Pilates",
    "teacherName": "Darya",
@@ -39868,6 +40901,27 @@
    "venue": "studio-berlin"
   },
   {
+   "id": 107817361,
+   "title": "Pole L1",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-10-30T13:35:00+01:00",
+   "endDateTimeUTC": "2026-10-30T14:35:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107817362,
    "title": "Pole L0 - L1",
    "teacherName": "lara K.",
@@ -39971,6 +41025,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 107817888,
+   "title": "Spinning Pole L0",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-10-30T14:45:00+01:00",
+   "endDateTimeUTC": "2026-10-30T15:45:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 107817889,
@@ -40139,6 +41214,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 107818758,
+   "title": "Pole L1 - L2",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-10-30T15:55:00+01:00",
+   "endDateTimeUTC": "2026-10-30T16:55:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 11
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 107818896,
@@ -40599,6 +41695,27 @@
    "venue": "soulsport"
   },
   {
+   "id": 107820727,
+   "title": "Spinning Pole Invert Combos L1+",
+   "teacherName": "Angelo R.",
+   "startDateTimeUTC": "2026-10-30T17:05:00+01:00",
+   "endDateTimeUTC": "2026-10-30T18:05:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107821005,
    "title": "Reformer - Abs & Booty",
    "teacherName": "Agata K.",
@@ -41015,6 +42132,27 @@
    "venue": "halenow-prenzlauer-berg"
   },
   {
+   "id": 107821536,
+   "title": "Intro to Pole Handspring",
+   "teacherName": "Angelo R.",
+   "startDateTimeUTC": "2026-10-30T18:15:00+01:00",
+   "endDateTimeUTC": "2026-10-30T19:15:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107821525,
    "title": "Pole L1",
    "teacherName": "Ester A.",
@@ -41244,6 +42382,27 @@
    "venue": "good-moves-studio"
   },
   {
+   "id": 107822184,
+   "title": "Spinning Pole L1",
+   "teacherName": "Angelo R.",
+   "startDateTimeUTC": "2026-10-30T19:25:00+01:00",
+   "endDateTimeUTC": "2026-10-30T20:25:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107822270,
    "title": "1,5 Std. Hale.GYM",
    "teacherName": "Room",
@@ -41431,6 +42590,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "berlin-movement-lab"
+  },
+  {
+   "id": 107822581,
+   "title": "Spinning Pole L0",
+   "teacherName": "Angelo R.",
+   "startDateTimeUTC": "2026-10-30T20:35:00+01:00",
+   "endDateTimeUTC": "2026-10-30T21:35:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 107822576,
@@ -42431,6 +43611,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
   },
   {
+   "id": 107862101,
+   "title": "Sensual Pole Flow L1+ (Heels Opt.)",
+   "teacherName": "Linh D.",
+   "startDateTimeUTC": "2026-10-31T10:40:00+01:00",
+   "endDateTimeUTC": "2026-10-31T11:40:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107867118,
    "title": "Reformer Class",
    "teacherName": "Jill",
@@ -42783,6 +43984,27 @@
    "venue": "halenow-prenzlauer-berg-pilates-reformer"
   },
   {
+   "id": 107863030,
+   "title": "Pole L0 - L1",
+   "teacherName": "Anastasiia C.",
+   "startDateTimeUTC": "2026-10-31T11:50:00+01:00",
+   "endDateTimeUTC": "2026-10-31T12:50:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107867127,
    "title": "Reformer Class",
    "teacherName": "Alina",
@@ -43113,6 +44335,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "laudace-studio"
+  },
+  {
+   "id": 107863700,
+   "title": "Heels Tricks Level 1+",
+   "teacherName": "Anastasiia C.",
+   "startDateTimeUTC": "2026-10-31T13:00:00+01:00",
+   "endDateTimeUTC": "2026-10-31T14:00:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 107828459,
@@ -43802,6 +45045,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "halenow-egym"
+  },
+  {
+   "id": 107865063,
+   "title": "Open Training - Pole",
+   "teacherName": "Shilpashree M.",
+   "startDateTimeUTC": "2026-10-31T16:30:00+01:00",
+   "endDateTimeUTC": "2026-10-31T17:30:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 107828396,
@@ -45184,6 +46448,27 @@
    "venue": "hot-aura"
   },
   {
+   "id": 107903333,
+   "title": "Pole L0",
+   "teacherName": "Laura K.",
+   "startDateTimeUTC": "2026-11-01T11:30:00+01:00",
+   "endDateTimeUTC": "2026-11-01T12:30:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107869980,
    "title": "ROFORM STUDIO 2",
    "teacherName": "Isa",
@@ -45537,6 +46822,27 @@
    "venue": "via-pilates-pilates-reformer"
   },
   {
+   "id": 107903889,
+   "title": "Spinning Pole L1 - L2",
+   "teacherName": "Laura K.",
+   "startDateTimeUTC": "2026-11-01T12:40:00+01:00",
+   "endDateTimeUTC": "2026-11-01T13:40:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107904007,
    "title": "Pilates Reformer x Strength EN",
    "teacherName": "Katrine K.",
@@ -45765,6 +47071,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 107904343,
+   "title": "Pole Flying Heels L1+",
+   "teacherName": "Laura K.",
+   "startDateTimeUTC": "2026-11-01T13:50:00+01:00",
+   "endDateTimeUTC": "2026-11-01T14:50:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 107904397,
@@ -45997,6 +47324,27 @@
    "venue": "laudace-studio"
   },
   {
+   "id": 107904792,
+   "title": "Open Training - Pole",
+   "teacherName": "Shilpashree M.",
+   "startDateTimeUTC": "2026-11-01T15:00:00+01:00",
+   "endDateTimeUTC": "2026-11-01T16:00:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107904886,
    "title": "REFORMER Full Body | Beginner | ENG",
    "teacherName": "Hannah A.",
@@ -46182,6 +47530,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 107905669,
+   "title": "Spinning Pole L0",
+   "teacherName": "Jane W.",
+   "startDateTimeUTC": "2026-11-01T16:10:00+01:00",
+   "endDateTimeUTC": "2026-11-01T17:10:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 107867972,
@@ -46412,6 +47781,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "good-moves-studio"
+  },
+  {
+   "id": 107906096,
+   "title": "Pole L0 - L1",
+   "teacherName": "Jane W.",
+   "startDateTimeUTC": "2026-11-01T17:20:00+01:00",
+   "endDateTimeUTC": "2026-11-01T18:20:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 107906102,
@@ -48205,6 +49595,27 @@
    "venue": "studio-berlin"
   },
   {
+   "id": 107946236,
+   "title": "Pole Flowy Heels L1+",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-11-02T12:10:00+01:00",
+   "endDateTimeUTC": "2026-11-02T13:10:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107911419,
    "title": "Pilates Form x Weights (EN)",
    "teacherName": "Adela",
@@ -48433,6 +49844,27 @@
    "venue": "berliner-pilates-prenzlauer-berg"
   },
   {
+   "id": 107947050,
+   "title": "Pole L0 - L1",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-11-02T13:20:00+01:00",
+   "endDateTimeUTC": "2026-11-02T14:20:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107947108,
    "title": "1,5 Std. Hale.GYM",
    "teacherName": "Room",
@@ -48535,6 +49967,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "laudace-studio"
+  },
+  {
+   "id": 107947880,
+   "title": "Pole L0",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-11-02T14:30:00+01:00",
+   "endDateTimeUTC": "2026-11-02T15:30:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 107955422,
@@ -48890,6 +50343,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soul-sportstudio-pankow"
+  },
+  {
+   "id": 107949663,
+   "title": "Open Training - Pole",
+   "teacherName": "Shilpashree M.",
+   "startDateTimeUTC": "2026-11-02T16:50:00+01:00",
+   "endDateTimeUTC": "2026-11-02T17:50:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 107960422,
@@ -49307,6 +50781,27 @@
    "venue": "laudace-studio"
   },
   {
+   "id": 107950996,
+   "title": "Spinning Pole L0",
+   "teacherName": "Anastasiia C.",
+   "startDateTimeUTC": "2026-11-02T18:00:00+01:00",
+   "endDateTimeUTC": "2026-11-02T19:00:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107951484,
    "title": "REFORMER Build & Burn | ENG",
    "teacherName": "Theresa H.",
@@ -49701,6 +51196,27 @@
    "venue": "studio-berlin"
   },
   {
+   "id": 107954545,
+   "title": "Pole L2",
+   "teacherName": "Anastasiia C.",
+   "startDateTimeUTC": "2026-11-02T19:10:00+01:00",
+   "endDateTimeUTC": "2026-11-02T20:10:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107960610,
    "title": "Calisthenics, Gymnastic Rings",
    "teacherName": "Coen",
@@ -50075,6 +51591,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "berlin-movement-lab"
+  },
+  {
+   "id": 107954548,
+   "title": "Pole L1",
+   "teacherName": "Anastasiia C.",
+   "startDateTimeUTC": "2026-11-02T20:20:00+01:00",
+   "endDateTimeUTC": "2026-11-02T21:20:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 107912086,
@@ -52059,6 +53596,27 @@
    "venue": "studio-berlin"
   },
   {
+   "id": 108000809,
+   "title": "Spinning Pole L0",
+   "teacherName": "Valeria C.",
+   "startDateTimeUTC": "2026-11-03T15:45:00+01:00",
+   "endDateTimeUTC": "2026-11-03T16:45:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 108000907,
    "title": "Full Body On Beat EN",
    "teacherName": "Franzi R.",
@@ -52267,6 +53825,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 108001939,
+   "title": "Pole L0 - L1",
+   "teacherName": "Valeria C.",
+   "startDateTimeUTC": "2026-11-03T16:55:00+01:00",
+   "endDateTimeUTC": "2026-11-03T17:55:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 108012684,
@@ -52810,6 +54389,27 @@
    "venue": "via-pilates-pilates-reformer"
   },
   {
+   "id": 108004487,
+   "title": "Spinning Pole Combos L1+",
+   "teacherName": "Carla C.",
+   "startDateTimeUTC": "2026-11-03T18:05:00+01:00",
+   "endDateTimeUTC": "2026-11-03T19:05:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107959247,
    "title": "Pilates Form x Weights (EN)",
    "teacherName": "Camryn",
@@ -53245,6 +54845,48 @@
    "venue": "good-moves-studio"
   },
   {
+   "id": 108005628,
+   "title": "Power to Pole Inverts",
+   "teacherName": "Carla C.",
+   "startDateTimeUTC": "2026-11-03T19:15:00+01:00",
+   "endDateTimeUTC": "2026-11-03T20:15:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
+   "id": 108005623,
+   "title": "Active Stretching (Beginner / Intermediate)",
+   "teacherName": "Ana E.",
+   "startDateTimeUTC": "2026-11-03T19:15:00+01:00",
+   "endDateTimeUTC": "2026-11-03T20:15:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 108005978,
    "title": "Reformer - Beginner",
    "teacherName": "Nat N.",
@@ -53620,6 +55262,27 @@
    "venue": "berlin-movement-lab"
   },
   {
+   "id": 108006454,
+   "title": "Pole L0",
+   "teacherName": "Ana E.",
+   "startDateTimeUTC": "2026-11-03T20:25:00+01:00",
+   "endDateTimeUTC": "2026-11-03T21:25:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 107961986,
    "title": "ROFORM STUDIO 2",
    "teacherName": "Juan",
@@ -53744,6 +55407,300 @@
    ],
    "isPlusCheckin": false,
    "venue": "laudace-studio"
+  },
+  {
+   "id": 108048987,
+   "title": "Pole L1",
+   "teacherName": "Laura K.",
+   "startDateTimeUTC": "2026-11-04T11:15:00+01:00",
+   "endDateTimeUTC": "2026-11-04T12:15:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
+   "id": 108049661,
+   "title": "Pole L0",
+   "teacherName": "Laura K.",
+   "startDateTimeUTC": "2026-11-04T12:25:00+01:00",
+   "endDateTimeUTC": "2026-11-04T13:25:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
+   "id": 108050135,
+   "title": "Spinning Pole Flow L1 - L2 (Heels Opt.)",
+   "teacherName": "Laura K.",
+   "startDateTimeUTC": "2026-11-04T13:35:00+01:00",
+   "endDateTimeUTC": "2026-11-04T14:35:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
+   "id": 108050936,
+   "title": "Open Training - Pole",
+   "teacherName": "Shilpashree M.",
+   "startDateTimeUTC": "2026-11-04T14:45:00+01:00",
+   "endDateTimeUTC": "2026-11-04T15:45:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
+   "id": 108050817,
+   "title": "Spinning Pole L0 - L1",
+   "teacherName": "Giovanni G.",
+   "startDateTimeUTC": "2026-11-04T15:55:00+01:00",
+   "endDateTimeUTC": "2026-11-04T16:55:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
+   "id": 108053461,
+   "title": "Spinning Pole L1 - L2",
+   "teacherName": "Giovanni G.",
+   "startDateTimeUTC": "2026-11-04T17:05:00+01:00",
+   "endDateTimeUTC": "2026-11-04T18:05:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
+   "id": 108054320,
+   "title": "Pole L1",
+   "teacherName": "Carla C.",
+   "startDateTimeUTC": "2026-11-04T18:15:00+01:00",
+   "endDateTimeUTC": "2026-11-04T19:15:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
+   "id": 108055255,
+   "title": "Pole L0",
+   "teacherName": "Carla C.",
+   "startDateTimeUTC": "2026-11-04T19:25:00+01:00",
+   "endDateTimeUTC": "2026-11-04T20:25:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
+   "id": 108055882,
+   "title": "Pole L0 - L1",
+   "teacherName": "Carla C.",
+   "startDateTimeUTC": "2026-11-04T20:35:00+01:00",
+   "endDateTimeUTC": "2026-11-04T21:35:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
+   "id": 108090714,
+   "title": "Pole High Heels Old School L1+",
+   "teacherName": "Anastasiia C.",
+   "startDateTimeUTC": "2026-11-05T16:30:00+01:00",
+   "endDateTimeUTC": "2026-11-05T17:30:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
+   "id": 108092077,
+   "title": "Pole Flying Heels L1- L2",
+   "teacherName": "Anastasiia C.",
+   "startDateTimeUTC": "2026-11-05T17:40:00+01:00",
+   "endDateTimeUTC": "2026-11-05T18:40:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
+   "id": 108093281,
+   "title": "Pole L1 - L2",
+   "teacherName": "Anastasiia C.",
+   "startDateTimeUTC": "2026-11-05T18:50:00+01:00",
+   "endDateTimeUTC": "2026-11-05T19:50:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
+   "id": 108094297,
+   "title": "Pole L0",
+   "teacherName": "Anastasiia C.",
+   "startDateTimeUTC": "2026-11-05T20:00:00+01:00",
+   "endDateTimeUTC": "2026-11-05T21:00:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
+   "id": 108095431,
+   "title": "Open Training - Pole",
+   "teacherName": "Shilpashree M.",
+   "startDateTimeUTC": "2026-11-05T21:10:00+01:00",
+   "endDateTimeUTC": "2026-11-05T22:10:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   }
  ]
 }
