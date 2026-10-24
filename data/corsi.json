@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-23T14:14+02:00",
+ "updated": "2026-10-24T09:11+02:00",
  "venues": {
   "lyra-prenzlauerberg": {
    "slug": "lyra-prenzlauerberg",
@@ -2691,6 +2691,103 @@
      "monthlyLimitVenue": -1,
      "monthlyLimitVenueAddress": 8,
      "categoryLimits": [
+      {
+       "id": 7,
+       "name": "Dance",
+       "limit": 8
+      }
+     ]
+    }
+   ]
+  },
+  "boogaloo-tanzstudio": {
+   "slug": "boogaloo-tanzstudio",
+   "id": 2617,
+   "name": "Boogaloo Tanzstudio",
+   "address": "Schönhauserallee 99",
+   "postalCode": "10439",
+   "district": "Pankow",
+   "latitude": 52.5542258,
+   "longitude": 13.414181,
+   "website": "https://boogalootanzstudio.de/",
+   "visitLimits": [
+    {
+     "name": "S",
+     "planName": "Essential",
+     "isAvailableAtVenue": true,
+     "isProvidedByVenue": false,
+     "monthlyLimitVenue": null,
+     "monthlyLimitVenueAddress": null,
+     "categoryLimits": []
+    },
+    {
+     "name": "M",
+     "planName": "Classic",
+     "isAvailableAtVenue": true,
+     "isProvidedByVenue": true,
+     "monthlyLimitVenue": -1,
+     "monthlyLimitVenueAddress": 4,
+     "categoryLimits": [
+      {
+       "id": 135,
+       "name": "Pole Dance",
+       "limit": 4
+      },
+      {
+       "id": 7,
+       "name": "Dance",
+       "limit": 4
+      },
+      {
+       "id": 6,
+       "name": "Yoga",
+       "limit": 4
+      }
+     ]
+    },
+    {
+     "name": "L",
+     "planName": "Premium",
+     "isAvailableAtVenue": true,
+     "isProvidedByVenue": true,
+     "monthlyLimitVenue": -1,
+     "monthlyLimitVenueAddress": 8,
+     "categoryLimits": [
+      {
+       "id": 135,
+       "name": "Pole Dance",
+       "limit": 8
+      },
+      {
+       "id": 6,
+       "name": "Yoga",
+       "limit": 8
+      },
+      {
+       "id": 7,
+       "name": "Dance",
+       "limit": 8
+      }
+     ]
+    },
+    {
+     "name": "XL",
+     "planName": "Max",
+     "isAvailableAtVenue": true,
+     "isProvidedByVenue": true,
+     "monthlyLimitVenue": -1,
+     "monthlyLimitVenueAddress": 8,
+     "categoryLimits": [
+      {
+       "id": 6,
+       "name": "Yoga",
+       "limit": 8
+      },
+      {
+       "id": 135,
+       "name": "Pole Dance",
+       "limit": 8
+      },
       {
        "id": 7,
        "name": "Dance",
@@ -20117,6 +20214,27 @@
    "venue": "lyra"
   },
   {
+   "id": 107501976,
+   "title": "Pole L1 - Spinning Beginner",
+   "teacherName": "Lilli L.",
+   "startDateTimeUTC": "2026-10-24T10:50:00+02:00",
+   "endDateTimeUTC": "2026-10-24T11:50:00+02:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 107509572,
    "title": "Reformer Class",
    "teacherName": "Jill",
@@ -20470,6 +20588,27 @@
    "venue": "lyra"
   },
   {
+   "id": 107502876,
+   "title": "Pole L1/2 · Beginners",
+   "teacherName": "Lilli L.",
+   "startDateTimeUTC": "2026-10-24T12:00:00+02:00",
+   "endDateTimeUTC": "2026-10-24T13:00:00+02:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 107503383,
    "title": "1,5 Std. Hale.GYM",
    "teacherName": "Room",
@@ -20784,6 +20923,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg"
   },
   {
+   "id": 107504249,
+   "title": "Pole L0 - Introduction",
+   "teacherName": "Lilli L.",
+   "startDateTimeUTC": "2026-10-24T13:10:00+02:00",
+   "endDateTimeUTC": "2026-10-24T14:10:00+02:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 107473287,
    "title": "Power Moves Pilates (EN)",
    "teacherName": "Sabrina",
@@ -21053,6 +21213,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "lyra"
+  },
+  {
+   "id": 107504687,
+   "title": "Pole Open Level · Heels Flow",
+   "teacherName": "Jin.Linh D.",
+   "startDateTimeUTC": "2026-10-24T14:20:00+02:00",
+   "endDateTimeUTC": "2026-10-24T15:20:00+02:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 6
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 107474054,
@@ -26567,6 +26748,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
   },
   {
+   "id": 107590801,
+   "title": "Pole L0 - Introduction",
+   "teacherName": "Sabine S.",
+   "startDateTimeUTC": "2026-10-26T15:50:00+01:00",
+   "endDateTimeUTC": "2026-10-26T16:50:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 107601787,
    "title": "Reformer Class",
    "teacherName": "Katja",
@@ -26793,6 +26995,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "asa-studio"
+  },
+  {
+   "id": 107592941,
+   "title": "Pole L1 - Spinning Beginner",
+   "teacherName": "Sabine S.",
+   "startDateTimeUTC": "2026-10-26T17:00:00+01:00",
+   "endDateTimeUTC": "2026-10-26T18:00:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 107602900,
@@ -27232,6 +27455,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg"
   },
   {
+   "id": 107594272,
+   "title": "Pole L1/2 - Beginners Experts",
+   "teacherName": "Jin.Linh D.",
+   "startDateTimeUTC": "2026-10-26T18:10:00+01:00",
+   "endDateTimeUTC": "2026-10-26T19:10:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 107549467,
    "title": "Power Moves Pilates (EN)",
    "teacherName": "Indre",
@@ -27668,6 +27912,27 @@
    "venue": "good-moves-studio"
   },
   {
+   "id": 107595719,
+   "title": "Pole L3/4 · Spinning Intermediate",
+   "teacherName": "Lara K.",
+   "startDateTimeUTC": "2026-10-26T19:20:00+01:00",
+   "endDateTimeUTC": "2026-10-26T20:20:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 6
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 107597062,
    "title": "Mat - Sculpt & Sweat Pilates",
    "teacherName": "Olivia T.",
@@ -28021,6 +28286,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "lyra"
+  },
+  {
+   "id": 107596640,
+   "title": "Pole L1 - Beginners",
+   "teacherName": "Lara K.",
+   "startDateTimeUTC": "2026-10-26T20:30:00+01:00",
+   "endDateTimeUTC": "2026-10-26T21:30:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 107552626,
@@ -29273,6 +29559,27 @@
    "venue": "hot-aura"
   },
   {
+   "id": 107639414,
+   "title": "Pole L0 - Spinning Introduction",
+   "teacherName": "Angelko R.",
+   "startDateTimeUTC": "2026-10-27T10:50:00+01:00",
+   "endDateTimeUTC": "2026-10-27T11:50:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 107639403,
    "title": "Reformer Pilates Session",
    "teacherName": "Your C.",
@@ -29417,6 +29724,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "asa-studio"
+  },
+  {
+   "id": 107640331,
+   "title": "Pole L1 - Spinning Beginner",
+   "teacherName": "Angelko R.",
+   "startDateTimeUTC": "2026-10-27T12:00:00+01:00",
+   "endDateTimeUTC": "2026-10-27T13:00:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 107640478,
@@ -29754,6 +30082,27 @@
    "venue": "studio-berlin"
   },
   {
+   "id": 107641758,
+   "title": "Pole L3 · Intermediate",
+   "teacherName": "Angelko R.",
+   "startDateTimeUTC": "2026-10-27T13:10:00+01:00",
+   "endDateTimeUTC": "2026-10-27T14:10:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 6
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 107652253,
    "title": "ASA Mom´s Club / Postnatal Class",
    "teacherName": "Ksenia",
@@ -29877,6 +30226,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "studio-berlin"
+  },
+  {
+   "id": 107760649,
+   "title": "Pole L1/2 - Beginners Experts",
+   "teacherName": "Francesca T.",
+   "startDateTimeUTC": "2026-10-27T14:30:00+01:00",
+   "endDateTimeUTC": "2026-10-27T15:30:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 107643053,
@@ -30024,6 +30394,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "lyra"
+  },
+  {
+   "id": 107760647,
+   "title": "Pole L3 · Intermediate",
+   "teacherName": "Francesca T.",
+   "startDateTimeUTC": "2026-10-27T15:50:00+01:00",
+   "endDateTimeUTC": "2026-10-27T16:50:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 6
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 107644091,
@@ -30820,6 +31211,27 @@
    "venue": "lyra"
   },
   {
+   "id": 107648415,
+   "title": "Pole Open Level · Heels Flow",
+   "teacherName": "Jin.Linh D.",
+   "startDateTimeUTC": "2026-10-27T18:10:00+01:00",
+   "endDateTimeUTC": "2026-10-27T19:10:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 6
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 107600598,
    "title": "Pilates Form x Weights (EN)",
    "teacherName": "Camryn",
@@ -31339,6 +31751,27 @@
    "venue": "lyra"
   },
   {
+   "id": 107649654,
+   "title": "Pole L1 - Spinning Beginner",
+   "teacherName": "Lilli L.",
+   "startDateTimeUTC": "2026-10-27T19:20:00+01:00",
+   "endDateTimeUTC": "2026-10-27T20:20:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 107650942,
    "title": "Mat - Strength",
    "teacherName": "Margarita I.",
@@ -31733,6 +32166,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "lyra"
+  },
+  {
+   "id": 107650565,
+   "title": "Pole L3 · Intermediate",
+   "teacherName": "Lilli L.",
+   "startDateTimeUTC": "2026-10-27T20:30:00+01:00",
+   "endDateTimeUTC": "2026-10-27T21:30:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 6
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 107604114,
@@ -32965,6 +33419,27 @@
    "venue": "studio-berlin"
   },
   {
+   "id": 107687636,
+   "title": "Pole L1/2 · Flow with Experience",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-10-28T10:50:00+01:00",
+   "endDateTimeUTC": "2026-10-28T11:50:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 5
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 107701024,
    "title": "Reformer Class",
    "teacherName": "Alina",
@@ -33150,6 +33625,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "berliner-pilates-prenzlauer-berg"
+  },
+  {
+   "id": 107688444,
+   "title": "Pole L1 - Beginners",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-10-28T12:00:00+01:00",
+   "endDateTimeUTC": "2026-10-28T13:00:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 107688586,
@@ -33528,6 +34024,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg"
   },
   {
+   "id": 107689637,
+   "title": "Pole L3 · Intermediate",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-10-28T13:10:00+01:00",
+   "endDateTimeUTC": "2026-10-28T14:10:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 6
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 107700944,
    "title": "Reformer Evolution",
    "teacherName": "Maja",
@@ -33651,6 +34168,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 107690341,
+   "title": "Pole L0 - Introduction",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-10-28T14:20:00+01:00",
+   "endDateTimeUTC": "2026-10-28T15:20:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 107644323,
@@ -33839,6 +34377,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "halenow-prenzlauer-berg-pilates-reformer"
+  },
+  {
+   "id": 107760652,
+   "title": "Pole L1 - Beginners",
+   "teacherName": "Francesca T.",
+   "startDateTimeUTC": "2026-10-28T15:50:00+01:00",
+   "endDateTimeUTC": "2026-10-28T16:50:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 107690981,
@@ -34130,6 +34689,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "berliner-pilates-prenzlauer-berg"
+  },
+  {
+   "id": 107760646,
+   "title": "Pole L2 · Beginners Experts",
+   "teacherName": "Francesca T.",
+   "startDateTimeUTC": "2026-10-28T17:00:00+01:00",
+   "endDateTimeUTC": "2026-10-28T18:00:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 107692515,
@@ -34612,6 +35192,27 @@
    "venue": "soulsport"
   },
   {
+   "id": 107694273,
+   "title": "Pole L2/3 - Beginners Experts",
+   "teacherName": "Angelko R.",
+   "startDateTimeUTC": "2026-10-28T18:10:00+01:00",
+   "endDateTimeUTC": "2026-10-28T19:10:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 107700934,
    "title": "Reformer Evolution",
    "teacherName": "Sonja M.",
@@ -35069,6 +35670,27 @@
    "venue": "via-pilates-pilates-reformer"
   },
   {
+   "id": 107695581,
+   "title": "Pole L2/3 - Beginners Experts",
+   "teacherName": "Angelko R.",
+   "startDateTimeUTC": "2026-10-28T19:20:00+01:00",
+   "endDateTimeUTC": "2026-10-28T20:20:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 107696219,
    "title": "R'n'B Hip Hop Floor Barre",
    "teacherName": "Naima S.",
@@ -35421,6 +36043,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "elevate-pilates"
+  },
+  {
+   "id": 107696498,
+   "title": "Pole L3/4 · Spinning Intermediate (optional Heels)",
+   "teacherName": "Angelko R.",
+   "startDateTimeUTC": "2026-10-28T20:30:00+01:00",
+   "endDateTimeUTC": "2026-10-28T21:30:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 6
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 107644322,
@@ -36692,6 +37335,27 @@
    "venue": "halenow-prenzlauer-berg"
   },
   {
+   "id": 107748282,
+   "title": "Pole L2 · Beginners Experts",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-10-29T10:50:00+01:00",
+   "endDateTimeUTC": "2026-10-29T11:50:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 107775524,
    "title": "Reformer Class",
    "teacherName": "Joy",
@@ -36835,6 +37499,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "asa-studio"
+  },
+  {
+   "id": 107749095,
+   "title": "Pole L1 - Beginners",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-10-29T12:00:00+01:00",
+   "endDateTimeUTC": "2026-10-29T13:00:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 107749657,
@@ -37171,6 +37856,27 @@
    "venue": "studio-berlin"
   },
   {
+   "id": 107750030,
+   "title": "Pole L1 - Spinning Beginner",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-10-29T13:10:00+01:00",
+   "endDateTimeUTC": "2026-10-29T14:10:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 107755971,
    "title": "Free Community Class - Mat",
    "teacherName": "Sulaf S.",
@@ -37377,6 +38083,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "studio-berlin"
+  },
+  {
+   "id": 107757120,
+   "title": "Pole L2 · Beginners Experts",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-10-29T14:20:00+01:00",
+   "endDateTimeUTC": "2026-10-29T15:20:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 107757311,
@@ -37712,6 +38439,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "berliner-pilates-prenzlauer-berg"
+  },
+  {
+   "id": 107765780,
+   "title": "Pole L3 - Intermediate",
+   "teacherName": "Valeria C.",
+   "startDateTimeUTC": "2026-10-29T17:00:00+01:00",
+   "endDateTimeUTC": "2026-10-29T18:00:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 6
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 107777731,
@@ -38215,6 +38963,27 @@
    "venue": "soulsport"
   },
   {
+   "id": 107770142,
+   "title": "Pole L1/2 - Beginners Experts",
+   "teacherName": "Valeria C.",
+   "startDateTimeUTC": "2026-10-29T18:10:00+01:00",
+   "endDateTimeUTC": "2026-10-29T19:10:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 107773321,
    "title": "Reformer Expertise (Advanced)",
    "teacherName": "Emma R.",
@@ -38670,6 +39439,27 @@
    ],
    "isPlusCheckin": true,
    "venue": "via-pilates-pilates-reformer"
+  },
+  {
+   "id": 107771260,
+   "title": "Pole L2 · Beginners Experts",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-10-29T19:20:00+01:00",
+   "endDateTimeUTC": "2026-10-29T20:20:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 107771741,
@@ -40173,6 +40963,27 @@
    "venue": "berliner-pilates-prenzlauer-berg"
   },
   {
+   "id": 107814897,
+   "title": "Pole L0 - Introduction",
+   "teacherName": "Luigi V.",
+   "startDateTimeUTC": "2026-10-30T10:50:00+01:00",
+   "endDateTimeUTC": "2026-10-30T11:50:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 107824322,
    "title": "Reformer Class",
    "teacherName": "Renata",
@@ -40441,6 +41252,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "berliner-pilates-prenzlauer-berg"
+  },
+  {
+   "id": 107815455,
+   "title": "Pole L1 - Beginners",
+   "teacherName": "Luigi V.",
+   "startDateTimeUTC": "2026-10-30T12:00:00+01:00",
+   "endDateTimeUTC": "2026-10-30T13:00:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 107815793,
@@ -40798,6 +41630,27 @@
    "venue": "soul-sportstudio-pankow"
   },
   {
+   "id": 107817271,
+   "title": "Pole L2 · Beginners Experts",
+   "teacherName": "Luigi V.",
+   "startDateTimeUTC": "2026-10-30T13:10:00+01:00",
+   "endDateTimeUTC": "2026-10-30T14:10:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 107817573,
    "title": "Reformer Align & Control",
    "teacherName": "Leah M.",
@@ -41004,6 +41857,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soul-sportstudio-pankow"
+  },
+  {
+   "id": 107817767,
+   "title": "Pole L0 - Introduction",
+   "teacherName": "Luigi V.",
+   "startDateTimeUTC": "2026-10-30T14:20:00+01:00",
+   "endDateTimeUTC": "2026-10-30T15:20:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 107779504,
@@ -41214,6 +42088,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 107818737,
+   "title": "Pole Choreography",
+   "teacherName": "Pilar.Serenlipia X.",
+   "startDateTimeUTC": "2026-10-30T15:50:00+01:00",
+   "endDateTimeUTC": "2026-10-30T16:50:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 5
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 107818758,
@@ -41567,6 +42462,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "asa-studio"
+  },
+  {
+   "id": 107819562,
+   "title": "Pole L1 - Spinning Beginner",
+   "teacherName": "Pilar.Serenlipia X.",
+   "startDateTimeUTC": "2026-10-30T17:00:00+01:00",
+   "endDateTimeUTC": "2026-10-30T18:00:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 107820104,
@@ -42088,6 +43004,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "studio-berlin"
+  },
+  {
+   "id": 107821395,
+   "title": "Pole L1 - Beginners",
+   "teacherName": "Pilar.Serenlipia X.",
+   "startDateTimeUTC": "2026-10-30T18:10:00+01:00",
+   "endDateTimeUTC": "2026-10-30T19:10:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 107777430,
@@ -43632,6 +44569,27 @@
    "venue": "lyra"
   },
   {
+   "id": 107861964,
+   "title": "Pole L1 - Spinning Beginner",
+   "teacherName": "Lilli L.",
+   "startDateTimeUTC": "2026-10-31T10:50:00+01:00",
+   "endDateTimeUTC": "2026-10-31T11:50:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 107867118,
    "title": "Reformer Class",
    "teacherName": "Jill",
@@ -44025,6 +44983,27 @@
    "venue": "asa-studio"
   },
   {
+   "id": 107862900,
+   "title": "Pole L1/2 · Beginners",
+   "teacherName": "Lilli L.",
+   "startDateTimeUTC": "2026-10-31T12:00:00+01:00",
+   "endDateTimeUTC": "2026-10-31T13:00:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 107863415,
    "title": "1,5 Std. Hale.GYM",
    "teacherName": "Room",
@@ -44379,6 +45358,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg"
   },
   {
+   "id": 107864040,
+   "title": "Pole L0 - Introduction",
+   "teacherName": "Jin.Linh D.",
+   "startDateTimeUTC": "2026-10-31T13:10:00+01:00",
+   "endDateTimeUTC": "2026-10-31T14:10:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 107823855,
    "title": "Power Moves Pilates (EN)",
    "teacherName": "Vanessa",
@@ -44627,6 +45627,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soulsport"
+  },
+  {
+   "id": 107864345,
+   "title": "Pole Open Level · Heels Flow",
+   "teacherName": "Jin.Linh D.",
+   "startDateTimeUTC": "2026-10-31T14:20:00+01:00",
+   "endDateTimeUTC": "2026-10-31T15:20:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 6
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 107828398,
@@ -47261,6 +48282,27 @@
    "venue": "soulsport"
   },
   {
+   "id": 107904587,
+   "title": "Pole L0 - Introduction",
+   "teacherName": "Giovanni G.",
+   "startDateTimeUTC": "2026-11-01T14:10:00+01:00",
+   "endDateTimeUTC": "2026-11-01T15:10:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 107869982,
    "title": "ROFORM STUDIO 2",
    "teacherName": "Pia",
@@ -47406,6 +48448,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "lyra-prenzlauerberg"
+  },
+  {
+   "id": 107905016,
+   "title": "Pole L1 - Beginners",
+   "teacherName": "Giovanni G.",
+   "startDateTimeUTC": "2026-11-01T15:20:00+01:00",
+   "endDateTimeUTC": "2026-11-01T16:20:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 107869986,
@@ -47593,6 +48656,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "lyra-prenzlauerberg"
+  },
+  {
+   "id": 107905472,
+   "title": "L1 - Sensual Flow (opt Heels)",
+   "teacherName": "Giovanni G.",
+   "startDateTimeUTC": "2026-11-01T16:30:00+01:00",
+   "endDateTimeUTC": "2026-11-01T17:30:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 5
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 107905827,
@@ -49969,6 +51053,27 @@
    "venue": "laudace-studio"
   },
   {
+   "id": 107947432,
+   "title": "Pole L1/2 - Beginners Experts",
+   "teacherName": "Anna G.",
+   "startDateTimeUTC": "2026-11-02T14:20:00+01:00",
+   "endDateTimeUTC": "2026-11-02T15:20:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 107947880,
    "title": "Pole L0",
    "teacherName": "Louise H.",
@@ -50135,6 +51240,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 107948428,
+   "title": "Pole L0 - Introduction",
+   "teacherName": "Sabine S.",
+   "startDateTimeUTC": "2026-11-02T15:50:00+01:00",
+   "endDateTimeUTC": "2026-11-02T16:50:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 107960567,
@@ -50384,6 +51510,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "asa-studio"
+  },
+  {
+   "id": 107949471,
+   "title": "Pole L1 - Spinning Beginner",
+   "teacherName": "Sabine S.",
+   "startDateTimeUTC": "2026-11-02T17:00:00+01:00",
+   "endDateTimeUTC": "2026-11-02T18:00:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 107955230,
@@ -50844,6 +51991,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg"
   },
   {
+   "id": 107952022,
+   "title": "Pole L1/2 - Beginners Experts",
+   "teacherName": "Jin.Linh D.",
+   "startDateTimeUTC": "2026-11-02T18:10:00+01:00",
+   "endDateTimeUTC": "2026-11-02T19:10:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 107911426,
    "title": "Power Moves Pilates (EN)",
    "teacherName": "Indre",
@@ -51259,6 +52427,27 @@
    "venue": "good-moves-studio"
   },
   {
+   "id": 107953324,
+   "title": "Pole L3/4 · Spinning Intermediate",
+   "teacherName": "USC",
+   "startDateTimeUTC": "2026-11-02T19:20:00+01:00",
+   "endDateTimeUTC": "2026-11-02T20:20:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 6
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 107953959,
    "title": "Reformer - Beginner",
    "teacherName": "Oliwia D.",
@@ -51612,6 +52801,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "lyra"
+  },
+  {
+   "id": 107954288,
+   "title": "Pole L1 - Beginners",
+   "teacherName": "USC",
+   "startDateTimeUTC": "2026-11-02T20:30:00+01:00",
+   "endDateTimeUTC": "2026-11-02T21:30:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 107912086,
@@ -52885,6 +54095,27 @@
    "venue": "studio-berlin"
   },
   {
+   "id": 107997259,
+   "title": "Pole L0 - Spinning Introduction",
+   "teacherName": "Angelko R.",
+   "startDateTimeUTC": "2026-11-03T10:50:00+01:00",
+   "endDateTimeUTC": "2026-11-03T11:50:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 107997268,
    "title": "Reformer Pilates Session",
    "teacherName": "Your C.",
@@ -53049,6 +54280,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "berliner-pilates-prenzlauer-berg"
+  },
+  {
+   "id": 107998012,
+   "title": "Pole L1 - Spinning Beginner",
+   "teacherName": "Angelko R.",
+   "startDateTimeUTC": "2026-11-03T12:00:00+01:00",
+   "endDateTimeUTC": "2026-11-03T13:00:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 107998115,
@@ -53345,6 +54597,27 @@
    "venue": "studio-berlin"
   },
   {
+   "id": 107999061,
+   "title": "Pole L3 · Intermediate",
+   "teacherName": "Angelko R.",
+   "startDateTimeUTC": "2026-11-03T13:10:00+01:00",
+   "endDateTimeUTC": "2026-11-03T14:10:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 6
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 108007748,
    "title": "ASA Mom´s Club / Postnatal Class",
    "teacherName": "Ksenia",
@@ -53468,6 +54741,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "studio-berlin"
+  },
+  {
+   "id": 107999990,
+   "title": "Pole L1/2 - Beginners Experts",
+   "teacherName": "Francesca T.",
+   "startDateTimeUTC": "2026-11-03T14:30:00+01:00",
+   "endDateTimeUTC": "2026-11-03T15:30:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 108000220,
@@ -53615,6 +54909,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "lyra"
+  },
+  {
+   "id": 108000821,
+   "title": "Pole L3 · Intermediate",
+   "teacherName": "Francesca T.",
+   "startDateTimeUTC": "2026-11-03T15:50:00+01:00",
+   "endDateTimeUTC": "2026-11-03T16:50:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 6
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 108000907,
@@ -53846,6 +55161,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "lyra"
+  },
+  {
+   "id": 108001811,
+   "title": "Pole L1 - Pole Choreography in socks",
+   "teacherName": "USC",
+   "startDateTimeUTC": "2026-11-03T17:00:00+01:00",
+   "endDateTimeUTC": "2026-11-03T18:00:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 5
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 108012684,
@@ -54410,6 +55746,27 @@
    "venue": "lyra"
   },
   {
+   "id": 108004128,
+   "title": "Pole Open Level · Heels Flow",
+   "teacherName": "USC",
+   "startDateTimeUTC": "2026-11-03T18:10:00+01:00",
+   "endDateTimeUTC": "2026-11-03T19:10:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 6
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 107959247,
    "title": "Pilates Form x Weights (EN)",
    "teacherName": "Camryn",
@@ -54887,6 +56244,27 @@
    "venue": "lyra"
   },
   {
+   "id": 108005379,
+   "title": "Pole L1 - Spinning Beginner",
+   "teacherName": "USC",
+   "startDateTimeUTC": "2026-11-03T19:20:00+01:00",
+   "endDateTimeUTC": "2026-11-03T20:20:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 108005978,
    "title": "Reformer - Beginner",
    "teacherName": "Nat N.",
@@ -55283,6 +56661,27 @@
    "venue": "lyra"
   },
   {
+   "id": 108006254,
+   "title": "Pole L3 · Intermediate",
+   "teacherName": "USC",
+   "startDateTimeUTC": "2026-11-03T20:30:00+01:00",
+   "endDateTimeUTC": "2026-11-03T21:30:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 6
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 107961986,
    "title": "ROFORM STUDIO 2",
    "teacherName": "Juan",
@@ -55409,6 +56808,27 @@
    "venue": "laudace-studio"
   },
   {
+   "id": 108048214,
+   "title": "Pole L1/2 · Flow with Experience",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-11-04T10:50:00+01:00",
+   "endDateTimeUTC": "2026-11-04T11:50:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 5
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 108048987,
    "title": "Pole L1",
    "teacherName": "Laura K.",
@@ -55428,6 +56848,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "lyra"
+  },
+  {
+   "id": 108048926,
+   "title": "Pole L1 - Beginners",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-11-04T12:00:00+01:00",
+   "endDateTimeUTC": "2026-11-04T13:00:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 108049661,
@@ -55451,6 +56892,27 @@
    "venue": "lyra"
   },
   {
+   "id": 108050022,
+   "title": "Pole L3 · Intermediate",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-11-04T13:10:00+01:00",
+   "endDateTimeUTC": "2026-11-04T14:10:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 6
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 108050135,
    "title": "Spinning Pole Flow L1 - L2 (Heels Opt.)",
    "teacherName": "Laura K.",
@@ -55470,6 +56932,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "lyra"
+  },
+  {
+   "id": 108068670,
+   "title": "Pole L0 - Introduction",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-11-04T14:20:00+01:00",
+   "endDateTimeUTC": "2026-11-04T15:20:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 108050936,
@@ -55493,6 +56976,27 @@
    "venue": "lyra"
   },
   {
+   "id": 108068665,
+   "title": "Pole L1 - Beginners",
+   "teacherName": "Francesca T.",
+   "startDateTimeUTC": "2026-11-04T15:50:00+01:00",
+   "endDateTimeUTC": "2026-11-04T16:50:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 108050817,
    "title": "Spinning Pole L0 - L1",
    "teacherName": "Giovanni G.",
@@ -55512,6 +57016,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "lyra"
+  },
+  {
+   "id": 108068666,
+   "title": "Pole L2 · Beginners Experts",
+   "teacherName": "Francesca T.",
+   "startDateTimeUTC": "2026-11-04T17:00:00+01:00",
+   "endDateTimeUTC": "2026-11-04T18:00:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 108053461,
@@ -55535,6 +57060,27 @@
    "venue": "lyra"
   },
   {
+   "id": 108068667,
+   "title": "Pole L2 · Beginners Experts",
+   "teacherName": "Dori T.",
+   "startDateTimeUTC": "2026-11-04T18:10:00+01:00",
+   "endDateTimeUTC": "2026-11-04T19:10:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 108054320,
    "title": "Pole L1",
    "teacherName": "Carla C.",
@@ -55554,6 +57100,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "lyra"
+  },
+  {
+   "id": 108068669,
+   "title": "Pole L2/3 - Beginners Experts",
+   "teacherName": "Francesca T.",
+   "startDateTimeUTC": "2026-11-04T19:20:00+01:00",
+   "endDateTimeUTC": "2026-11-04T20:20:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 108055255,
@@ -55577,6 +57144,27 @@
    "venue": "lyra"
   },
   {
+   "id": 108068668,
+   "title": "Pole L3/4 · Spinning Intermediate (optional Heels)",
+   "teacherName": "Francesca T.",
+   "startDateTimeUTC": "2026-11-04T20:30:00+01:00",
+   "endDateTimeUTC": "2026-11-04T21:30:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 6
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 108055882,
    "title": "Pole L0 - L1",
    "teacherName": "Carla C.",
@@ -55596,6 +57184,90 @@
    ],
    "isPlusCheckin": false,
    "venue": "lyra"
+  },
+  {
+   "id": 108086920,
+   "title": "Pole L2 · Beginners Experts",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-11-05T10:50:00+01:00",
+   "endDateTimeUTC": "2026-11-05T11:50:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
+   "id": 108087544,
+   "title": "Pole L1 - Beginners",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-11-05T12:00:00+01:00",
+   "endDateTimeUTC": "2026-11-05T13:00:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
+   "id": 108088439,
+   "title": "Pole L1 - Spinning Beginner",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-11-05T13:10:00+01:00",
+   "endDateTimeUTC": "2026-11-05T14:10:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
+   "id": 108088861,
+   "title": "Pole L2 · Beginners Experts",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-11-05T14:20:00+01:00",
+   "endDateTimeUTC": "2026-11-05T15:20:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 108090714,
@@ -55619,6 +57291,27 @@
    "venue": "lyra"
   },
   {
+   "id": 108090844,
+   "title": "Pole L3 - Intermediate",
+   "teacherName": "Valeria C.",
+   "startDateTimeUTC": "2026-11-05T17:00:00+01:00",
+   "endDateTimeUTC": "2026-11-05T18:00:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 6
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 108092077,
    "title": "Pole Flying Heels L1- L2",
    "teacherName": "Anastasiia C.",
@@ -55638,6 +57331,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "lyra"
+  },
+  {
+   "id": 108092869,
+   "title": "Pole L1/2 - Beginners Experts",
+   "teacherName": "Valeria C.",
+   "startDateTimeUTC": "2026-11-05T18:10:00+01:00",
+   "endDateTimeUTC": "2026-11-05T19:10:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 108093281,
@@ -55661,6 +57375,27 @@
    "venue": "lyra"
   },
   {
+   "id": 108093977,
+   "title": "Pole L2 · Beginners Experts",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-11-05T19:20:00+01:00",
+   "endDateTimeUTC": "2026-11-05T20:20:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 108094297,
    "title": "Pole L0",
    "teacherName": "Anastasiia C.",
@@ -55682,6 +57417,27 @@
    "venue": "lyra"
   },
   {
+   "id": 108094778,
+   "title": "Feminine Twerk",
+   "teacherName": "Katrina M.",
+   "startDateTimeUTC": "2026-11-05T20:30:00+01:00",
+   "endDateTimeUTC": "2026-11-05T21:30:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 7
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 108095431,
    "title": "Open Training - Pole",
    "teacherName": "Shilpashree M.",
@@ -55701,6 +57457,153 @@
    ],
    "isPlusCheckin": false,
    "venue": "lyra"
+  },
+  {
+   "id": 108123885,
+   "title": "Pole L0 - Introduction",
+   "teacherName": "Luigi V.",
+   "startDateTimeUTC": "2026-11-06T10:50:00+01:00",
+   "endDateTimeUTC": "2026-11-06T11:50:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
+   "id": 108124678,
+   "title": "Pole L1 - Beginners",
+   "teacherName": "Luigi V.",
+   "startDateTimeUTC": "2026-11-06T12:00:00+01:00",
+   "endDateTimeUTC": "2026-11-06T13:00:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
+   "id": 108126003,
+   "title": "Pole L2 · Beginners Experts",
+   "teacherName": "Luigi V.",
+   "startDateTimeUTC": "2026-11-06T13:10:00+01:00",
+   "endDateTimeUTC": "2026-11-06T14:10:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
+   "id": 108126562,
+   "title": "Pole L0 - Introduction",
+   "teacherName": "Luigi V.",
+   "startDateTimeUTC": "2026-11-06T14:20:00+01:00",
+   "endDateTimeUTC": "2026-11-06T15:20:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
+   "id": 108127908,
+   "title": "Pole Choreography",
+   "teacherName": "Pilar.Serenlipia X.",
+   "startDateTimeUTC": "2026-11-06T15:50:00+01:00",
+   "endDateTimeUTC": "2026-11-06T16:50:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 5
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
+   "id": 108128920,
+   "title": "Pole L1 - Spinning Beginner",
+   "teacherName": "Pilar.Serenlipia X.",
+   "startDateTimeUTC": "2026-11-06T17:00:00+01:00",
+   "endDateTimeUTC": "2026-11-06T18:00:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
+   "id": 108130598,
+   "title": "Pole L1 - Beginners",
+   "teacherName": "Pilar.Serenlipia X.",
+   "startDateTimeUTC": "2026-11-06T18:10:00+01:00",
+   "endDateTimeUTC": "2026-11-06T19:10:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   }
  ]
 }
