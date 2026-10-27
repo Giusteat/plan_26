@@ -23,8 +23,8 @@ h1 { text-align: center; font-size: 1.25rem; margin: 4px 0 2px; }
     border: 1px solid var(--border); border-radius: 8px; }
 .gh { position: sticky; top: 0; z-index: 10; background: #f1f5f9; padding: 6px 4px; text-align: center; font-weight: 600;
     font-size: .8rem; border-bottom: 2px solid var(--border); border-right: 1px solid var(--border); }
-.gh.we { background: #eceff4; }
-.dc.we { background: #fafbfc; }
+.gh.we { background: #e2e6ee; }
+.dc.we { background: repeating-linear-gradient(135deg, #f1f3f7 0 6px, #e8ebf1 6px 8px); }
 .gh.today { background: #e0e7ff; color: var(--primary); }
 .ts { height: 60px; padding: 4px 6px 0 0; text-align: right; font-size: .68rem; color: var(--muted);
     border-right: 1px solid var(--border); border-bottom: 1px solid var(--grid); }
@@ -182,3 +182,6 @@ footer { text-align: center; margin-top: 14px; display: flex; gap: 8px; justify-
 /* nuovo insegnante in una lezione preferita */
 .nt { color: #b45309; font-size: .78rem; font-weight: 600; margin-top: 3px; }
 .ev .nt { margin-top: 0; }
+
+/* computer: un po' di aria ai lati */
+@media (min-width: 761px) { body { padding: 12px 32px 24px; } }

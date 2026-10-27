@@ -275,7 +275,11 @@ function layout(list) {
             cols[i].push(ev);
             ev.col = i;
         });
-        cl.forEach(ev => { ev.cols = cols.length; });
+        // ogni lezione si allarga verso destra finché non incontra un'altra lezione alla stessa ora
+        cl.forEach(ev => {
+            ev.cols = cols.length; ev.span = 1;
+            for (let k = ev.col + 1; k < cols.length && !cols[k].some(o => o.a < ev.z && o.z > ev.a); k++) ev.span++;
+        });
     });
     return evs;
 }
@@ -308,7 +312,7 @@ function renderGrid(view, list) {
             Object.assign(b.style, {
                 background: bg, color: fg, top: `${((ev.a - startHour * 60) / 60) * HOUR_H}px`,
                 height: `${Math.max(((ev.z - ev.a) / 60) * HOUR_H, 22)}px`,
-                left: `calc(${ev.col * w}% + 1px)`, width: `calc(${w}% - 2px)`
+                left: `calc(${ev.col * w}% + 1px)`, width: `calc(${ev.span * w}% - 2px)`
             });
             b.title = `${ev.name}\n${ev.start}–${ev.end} · ${ev.studio}\n${ev.teacherName || ""}\nAl mese: ${monthlyText(ev)}`;
             b.append(el("div", "t", ev.name), el("div", "s", `${ev.start}–${ev.end} · ${ev.studio}`));
