@@ -131,11 +131,13 @@ footer { text-align: center; margin-top: 14px; display: flex; gap: 8px; justify-
     main { padding: 0; }
     .card { display: flex; gap: 14px; align-items: flex-start; padding: 16px 12px; border-bottom: 1px solid var(--border);
         color: var(--text); text-decoration: none; position: relative; -webkit-tap-highlight-color: rgba(79,70,229,.08); }
-    .card:active { background: #f8fafc; }
+    .card .app { position: absolute; top: 50px; right: 6px; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center;
+        color: var(--primary); border-radius: 8px; }
+    .card .app:active { background: #eef2ff; }
     .pic { position: relative; flex-shrink: 0; width: 76px; height: 76px; border-radius: 8px; overflow: hidden;
         display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; }
     .pic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-    .card .bd { flex: 1; min-width: 0; padding-right: 26px; }
+    .card .bd { flex: 1; min-width: 0; padding-right: 34px; }
     .card .tt { font-weight: 700; font-size: 1.02rem; line-height: 1.25; margin-bottom: 2px; }
     .card .tm { font-size: .92rem; margin-bottom: 3px; }
     .card .ln { display: flex; gap: 6px; align-items: flex-start; font-size: .9rem; line-height: 1.3; margin-top: 2px; }

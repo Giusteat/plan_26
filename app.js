@@ -338,8 +338,7 @@ function renderCards(view, list) {
     if (!items.length) { view.appendChild(el("p", "empty", "Nessun corso con questi filtri.")); return; }
     items.forEach(c => {
         const v = venues[c.venue] || {}, [bg, fg] = colorOf(c);
-        const card = el("a", "card" + (isPast(c, todayIso, nowMin) ? " past" : ""));
-        card.href = CLASS_URL(c.id);
+        const card = el("div", "card" + (isPast(c, todayIso, nowMin) ? " past" : ""));
         card.dataset.start = toMin(c.start);
         const pic = el("div", "pic");
         pic.style.background = bg; pic.style.color = fg;
@@ -363,7 +362,12 @@ function renderCards(view, list) {
         h.onclick = e => { e.preventDefault(); e.stopPropagation(); toggleFav(c); };
         const nt = newTeacherLine(c);
         if (nt) bd.appendChild(nt);
-        card.append(pic, bd, h);
+        // l'app si apre solo dall'icona, non toccando la scheda
+        const app = el("a", "app");
+        app.href = CLASS_URL(c.id);
+        app.setAttribute("aria-label", "Apri su Urban Sports");
+        app.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3h6v6M17 3l-8 8M15 12v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4"/></svg>';
+        card.append(pic, bd, h, app);
         view.appendChild(card);
     });
 }
