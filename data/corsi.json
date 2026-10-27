@@ -2094,7 +2094,7 @@
    "latitude": null,
    "longitude": null,
    "website": "https://www.pilatesstudioberlin.com/",
-   "image": "http://localhost:3000/-/venues/-/opengraph-image.jpg?opengraph-image.1snb-juu0kbyq.jpg",
+   "image": null,
    "visitLimits": [
     {
      "name": "S",

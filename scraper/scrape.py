@@ -131,7 +131,7 @@ def find_image(obj, depth=0, under=False):
 def page_image(text):
     """Foto della pagina (og:image), se c'è."""
     m = re.search(r'"(?:property|name)":"og:image","content":"(https?://[^"]+)"', text)
-    return m.group(1) if m else None
+    return m.group(1) if m and "localhost" not in m.group(1) else None
 
 
 def extract(text):
