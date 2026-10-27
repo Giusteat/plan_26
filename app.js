@@ -206,7 +206,8 @@ function layout(list) {
     });
     return evs;
 }
-const isPast = (c, todayIso, nowMin) => c.date < todayIso || (c.date === todayIso && toMin(c.end) < nowMin);
+// Grigia appena è iniziata: a quel punto non ci si può più andare
+const isPast = (c, todayIso, nowMin) => c.date < todayIso || (c.date === todayIso && toMin(c.start) < nowMin);
 
 function renderGrid(view, list) {
     const n = S.view, now = new Date(), todayIso = iso(now), nowMin = now.getHours() * 60 + now.getMinutes();
