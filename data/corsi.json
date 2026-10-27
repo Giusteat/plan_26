@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-27T13:21+01:00",
+ "updated": "2026-10-27T13:26+01:00",
  "venues": {
   "lyra-prenzlauerberg": {
    "slug": "lyra-prenzlauerberg",
@@ -2901,6 +2901,134 @@
        "id": 7,
        "name": "Dance",
        "limit": 8
+      }
+     ]
+    }
+   ]
+  },
+  "holmes-place-boutique": {
+   "slug": "holmes-place-boutique",
+   "id": 19803,
+   "name": "Holmes Place Boutique Friedrichshain",
+   "address": "Grünbergerstraße 44a",
+   "postalCode": "10245",
+   "district": "Friedrichshain-Kreuzberg",
+   "latitude": 52.5114894,
+   "longitude": 13.4540953,
+   "website": "https://www.holmesplace-boutique.de/",
+   "image": "https://storage.googleapis.com/download/storage/v1/b/usc-pro-uscweb-live-media/o/venues%2Foriginal_1024x576_aakn2ipgzesagmctgc9y_1762768654197336.png?generation=1762768654320357&alt=media",
+   "visitLimits": [
+    {
+     "name": "S",
+     "planName": "Essential",
+     "isAvailableAtVenue": true,
+     "isProvidedByVenue": false,
+     "monthlyLimitVenue": null,
+     "monthlyLimitVenueAddress": null,
+     "categoryLimits": []
+    },
+    {
+     "name": "M",
+     "planName": "Classic",
+     "isAvailableAtVenue": true,
+     "isProvidedByVenue": true,
+     "monthlyLimitVenue": -1,
+     "monthlyLimitVenueAddress": 8,
+     "categoryLimits": [
+      {
+       "id": 4,
+       "name": "Pilates",
+       "limit": 8
+      },
+      {
+       "id": 1,
+       "name": "Fitness",
+       "limit": 8
+      },
+      {
+       "id": 279,
+       "name": "Relaxation",
+       "limit": 8
+      },
+      {
+       "id": 6,
+       "name": "Yoga",
+       "limit": 8
+      },
+      {
+       "id": 224,
+       "name": "Running",
+       "limit": 8
+      }
+     ]
+    },
+    {
+     "name": "L",
+     "planName": "Premium",
+     "isAvailableAtVenue": true,
+     "isProvidedByVenue": true,
+     "monthlyLimitVenue": -1,
+     "monthlyLimitVenueAddress": 8,
+     "categoryLimits": [
+      {
+       "id": 224,
+       "name": "Running",
+       "limit": 8
+      },
+      {
+       "id": 4,
+       "name": "Pilates",
+       "limit": 8
+      },
+      {
+       "id": 279,
+       "name": "Relaxation",
+       "limit": 8
+      },
+      {
+       "id": 1,
+       "name": "Fitness",
+       "limit": 8
+      },
+      {
+       "id": 6,
+       "name": "Yoga",
+       "limit": 8
+      }
+     ]
+    },
+    {
+     "name": "XL",
+     "planName": "Max",
+     "isAvailableAtVenue": true,
+     "isProvidedByVenue": true,
+     "monthlyLimitVenue": -1,
+     "monthlyLimitVenueAddress": -1,
+     "categoryLimits": [
+      {
+       "id": 279,
+       "name": "Relaxation",
+       "limit": -1
+      },
+      {
+       "id": 224,
+       "name": "Running",
+       "limit": -1
+      },
+      {
+       "id": 4,
+       "name": "Pilates",
+       "limit": -1
+      },
+      {
+       "id": 1,
+       "name": "Fitness",
+       "limit": -1
+      },
+      {
+       "id": 6,
+       "name": "Yoga",
+       "limit": -1
       }
      ]
     }
@@ -8340,6 +8468,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
   },
   {
+   "id": 107654035,
+   "title": "Abs & Booty (ENG)",
+   "teacherName": "Lilli K.",
+   "startDateTimeUTC": "2026-10-27T16:55:00+01:00",
+   "endDateTimeUTC": "2026-10-27T17:40:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 107645548,
    "title": "Pole L0 - L1",
    "teacherName": "Valeria C.",
@@ -8714,6 +8863,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 107654111,
+   "title": "Deep Flow: Pilates (ENG)",
+   "teacherName": "Juana",
+   "startDateTimeUTC": "2026-10-27T17:50:00+01:00",
+   "endDateTimeUTC": "2026-10-27T18:35:00+01:00",
+   "category": {
+    "id": 6,
+    "name": "Yoga"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 107652740,
@@ -9218,6 +9388,27 @@
    "venue": "berliner-pilates-prenzlauer-berg"
   },
   {
+   "id": 107654222,
+   "title": "Reformer: On The Mat (ENG)",
+   "teacherName": "Juana",
+   "startDateTimeUTC": "2026-10-27T18:45:00+01:00",
+   "endDateTimeUTC": "2026-10-27T19:30:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 107769404,
    "title": "Hot Pilates",
    "teacherName": "Darya",
@@ -9698,6 +9889,27 @@
    "venue": "lyra-prenzlauerberg"
   },
   {
+   "id": 108050826,
+   "title": "Les Mills BODYPUMP™ (ENG)",
+   "teacherName": "Johanna",
+   "startDateTimeUTC": "2026-10-27T19:45:00+01:00",
+   "endDateTimeUTC": "2026-10-27T20:30:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 24
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 107650203,
    "title": "Glutes & Abs DE",
    "teacherName": "Carolin A.",
@@ -9969,6 +10181,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 107654163,
+   "title": "Les Mills BODYPUMP™ (ENG)",
+   "teacherName": "Johanna",
+   "startDateTimeUTC": "2026-10-27T20:40:00+01:00",
+   "endDateTimeUTC": "2026-10-27T21:25:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 24
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 107650722,
@@ -10264,6 +10497,27 @@
    "venue": "halenow-prenzlauer-berg"
   },
   {
+   "id": 107698125,
+   "title": "Les Mills BODYPUMP™ (DE)",
+   "teacherName": "Jana B.",
+   "startDateTimeUTC": "2026-10-28T07:30:00+01:00",
+   "endDateTimeUTC": "2026-10-28T08:15:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 24
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 107811586,
    "title": "Hot Pilates",
    "teacherName": "Vanessa G.",
@@ -10553,6 +10807,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "halenow-prenzlauer-berg-pilates-reformer"
+  },
+  {
+   "id": 107698153,
+   "title": "Mobility & Stretching (ENG)",
+   "teacherName": "Orsola C.",
+   "startDateTimeUTC": "2026-10-28T08:30:00+01:00",
+   "endDateTimeUTC": "2026-10-28T09:15:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 107702180,
@@ -11349,6 +11624,27 @@
    "venue": "lyra-prenzlauerberg"
   },
   {
+   "id": 107698360,
+   "title": "Deep Flow: Pilates (ENG)",
+   "teacherName": "Marisa L.",
+   "startDateTimeUTC": "2026-10-28T11:30:00+01:00",
+   "endDateTimeUTC": "2026-10-28T12:15:00+01:00",
+   "category": {
+    "id": 6,
+    "name": "Yoga"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 107644316,
    "title": "ROFORM STUDIO 2",
    "teacherName": "Abbey",
@@ -11640,6 +11936,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "lyra"
+  },
+  {
+   "id": 107698356,
+   "title": "Abs & Booty (ENG)",
+   "teacherName": "Marisa L.",
+   "startDateTimeUTC": "2026-10-28T12:30:00+01:00",
+   "endDateTimeUTC": "2026-10-28T13:15:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 108174510,
@@ -12417,6 +12734,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
   },
   {
+   "id": 107698118,
+   "title": "HOT Infrared x Abs & Booty",
+   "teacherName": "Jazlyn",
+   "startDateTimeUTC": "2026-10-28T16:55:00+01:00",
+   "endDateTimeUTC": "2026-10-28T17:40:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 107702928,
    "title": "Reformer Class",
    "teacherName": "Liza",
@@ -12790,6 +13128,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "casa-flow"
+  },
+  {
+   "id": 107698370,
+   "title": "HOT Infrared x Pilates",
+   "teacherName": "Jazlyn",
+   "startDateTimeUTC": "2026-10-28T17:50:00+01:00",
+   "endDateTimeUTC": "2026-10-28T18:35:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 107702936,
@@ -13207,6 +13566,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "halenow-prenzlauer-berg"
+  },
+  {
+   "id": 107698147,
+   "title": "HOT Infrared x Reformer: On the Mat",
+   "teacherName": "Jazlyn",
+   "startDateTimeUTC": "2026-10-28T18:45:00+01:00",
+   "endDateTimeUTC": "2026-10-28T19:30:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 107820852,
@@ -13645,6 +14025,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "lyra-prenzlauerberg"
+  },
+  {
+   "id": 107698131,
+   "title": "HOT Infrared x Abs & Booty",
+   "teacherName": "Nicki R.",
+   "startDateTimeUTC": "2026-10-28T19:45:00+01:00",
+   "endDateTimeUTC": "2026-10-28T20:30:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 107701012,
@@ -14128,6 +14529,27 @@
    "venue": "halenow-prenzlauer-berg"
   },
   {
+   "id": 107773129,
+   "title": "Reformer: On The Mat (ENG)",
+   "teacherName": "Juliette G.",
+   "startDateTimeUTC": "2026-10-29T07:00:00+01:00",
+   "endDateTimeUTC": "2026-10-29T07:45:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 107744752,
    "title": "Reformer Pilates Session",
    "teacherName": "Your C.",
@@ -14335,6 +14757,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "asa-studio"
+  },
+  {
+   "id": 107773062,
+   "title": "Deep Flow: Pilates (ENG)",
+   "teacherName": "Juliette G.",
+   "startDateTimeUTC": "2026-10-29T08:00:00+01:00",
+   "endDateTimeUTC": "2026-10-29T08:45:00+01:00",
+   "category": {
+    "id": 6,
+    "name": "Yoga"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 107859451,
@@ -15566,6 +16009,27 @@
    "venue": "halenow-prenzlauer-berg"
   },
   {
+   "id": 107773065,
+   "title": "HOT Infrared x Pilates",
+   "teacherName": "Emilie B.",
+   "startDateTimeUTC": "2026-10-29T12:30:00+01:00",
+   "endDateTimeUTC": "2026-10-29T13:15:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 107704382,
    "title": "ROFORM STUDIO 2",
    "teacherName": "Lea M.",
@@ -16069,6 +16533,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
   },
   {
+   "id": 107773066,
+   "title": "HOT Infrared x Abs & Booty",
+   "teacherName": "Lilli K.",
+   "startDateTimeUTC": "2026-10-29T16:00:00+01:00",
+   "endDateTimeUTC": "2026-10-29T16:45:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 107760175,
    "title": "Reformer Pilates Session",
    "teacherName": "Your C.",
@@ -16256,6 +16741,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 107773124,
+   "title": "HOT Infrared x Tone Pilates",
+   "teacherName": "Jazlyn",
+   "startDateTimeUTC": "2026-10-29T16:55:00+01:00",
+   "endDateTimeUTC": "2026-10-29T17:40:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 107773319,
@@ -16696,6 +17202,27 @@
    "venue": "halenow-egym"
   },
   {
+   "id": 107773079,
+   "title": "HOT Infrared x Strength Yoga",
+   "teacherName": "Aurora",
+   "startDateTimeUTC": "2026-10-29T18:00:00+01:00",
+   "endDateTimeUTC": "2026-10-29T18:45:00+01:00",
+   "category": {
+    "id": 6,
+    "name": "Yoga"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 107769303,
    "title": "Reformer Pilates Session",
    "teacherName": "Your C.",
@@ -17049,6 +17576,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "lyra"
+  },
+  {
+   "id": 107773120,
+   "title": "HOT Infrared x Stretch & Mobility",
+   "teacherName": "Aurora",
+   "startDateTimeUTC": "2026-10-29T18:55:00+01:00",
+   "endDateTimeUTC": "2026-10-29T19:40:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 107775578,
@@ -18117,6 +18665,27 @@
    "venue": "halenow-prenzlauer-berg-pilates-reformer"
   },
   {
+   "id": 107828200,
+   "title": "Full Body Sculpt (ENG)",
+   "teacherName": "Isabel A.",
+   "startDateTimeUTC": "2026-10-30T08:00:00+01:00",
+   "endDateTimeUTC": "2026-10-30T08:45:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 107900188,
    "title": "Sculpt",
    "teacherName": "Scarlett N.",
@@ -18365,6 +18934,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "halenow-egym"
+  },
+  {
+   "id": 107827764,
+   "title": "Abs & Booty (ENG)",
+   "teacherName": "Isabel A.",
+   "startDateTimeUTC": "2026-10-30T09:00:00+01:00",
+   "endDateTimeUTC": "2026-10-30T09:45:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 107812815,
@@ -19264,6 +19854,27 @@
    "venue": "halenow-egym"
   },
   {
+   "id": 107827784,
+   "title": "Abs & Booty (ENG)",
+   "teacherName": "Lilli K.",
+   "startDateTimeUTC": "2026-10-30T12:00:00+01:00",
+   "endDateTimeUTC": "2026-10-30T12:45:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 107815532,
    "title": "Reformer Pilates Session",
    "teacherName": "Your C.",
@@ -20082,6 +20693,27 @@
    "venue": "elevate-pilates"
   },
   {
+   "id": 107827799,
+   "title": "HOT Infrared x Pilates",
+   "teacherName": "Carelí",
+   "startDateTimeUTC": "2026-10-30T16:00:00+01:00",
+   "endDateTimeUTC": "2026-10-30T16:45:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 107818573,
    "title": "Reformer Pilates Session",
    "teacherName": "Your C.",
@@ -20351,6 +20983,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "casa-flow"
+  },
+  {
+   "id": 107828212,
+   "title": "HOT Infrared x Sculpt",
+   "teacherName": "Carelí",
+   "startDateTimeUTC": "2026-10-30T16:55:00+01:00",
+   "endDateTimeUTC": "2026-10-30T17:40:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 107824311,
@@ -20728,6 +21381,27 @@
    "venue": "berliner-pilates-prenzlauer-berg"
   },
   {
+   "id": 107827817,
+   "title": "HOT Infrared x Abs & Booty",
+   "teacherName": "Carelí",
+   "startDateTimeUTC": "2026-10-30T17:50:00+01:00",
+   "endDateTimeUTC": "2026-10-30T18:35:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 107824319,
    "title": "Reformer Class",
    "teacherName": "Ksenia",
@@ -21102,6 +21776,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "halenow-prenzlauer-berg-pilates-reformer"
+  },
+  {
+   "id": 107827841,
+   "title": "HOT Infrared x Stretch & Mobility",
+   "teacherName": "Carelí",
+   "startDateTimeUTC": "2026-10-30T18:45:00+01:00",
+   "endDateTimeUTC": "2026-10-30T19:30:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 107824332,
@@ -21940,6 +22635,27 @@
    "venue": "halenow-egym"
   },
   {
+   "id": 107866964,
+   "title": "HOT Infrared x Pilates",
+   "teacherName": "Marisa L.",
+   "startDateTimeUTC": "2026-10-31T09:00:00+01:00",
+   "endDateTimeUTC": "2026-10-31T09:45:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 107940037,
    "title": "Classic Pilates",
    "teacherName": "Lotta T.",
@@ -22208,6 +22924,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "elevate-pilates"
+  },
+  {
+   "id": 107866954,
+   "title": "HOT Infrared x Sculpt",
+   "teacherName": "Marisa L.",
+   "startDateTimeUTC": "2026-10-31T10:00:00+01:00",
+   "endDateTimeUTC": "2026-10-31T10:45:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 107860961,
@@ -22606,6 +23343,27 @@
    "venue": "halenow-prenzlauer-berg"
   },
   {
+   "id": 107866947,
+   "title": "HOT Infrared x Power Pilates",
+   "teacherName": "Marisa L.",
+   "startDateTimeUTC": "2026-10-31T11:00:00+01:00",
+   "endDateTimeUTC": "2026-10-31T11:45:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 107861975,
    "title": "Reformer Pilates Session",
    "teacherName": "Your C.",
@@ -23001,6 +23759,27 @@
    "venue": "halenow-egym"
   },
   {
+   "id": 107866953,
+   "title": "HOT Infrared x Abs & Booty",
+   "teacherName": "Marwa",
+   "startDateTimeUTC": "2026-10-31T12:00:00+01:00",
+   "endDateTimeUTC": "2026-10-31T12:45:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 108006288,
    "title": "Hot Barre",
    "teacherName": "Sophie",
@@ -23270,6 +24049,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "lyra-prenzlauerberg"
+  },
+  {
+   "id": 107866961,
+   "title": "HOT Infrared x Stretch & Mobility",
+   "teacherName": "Marwa",
+   "startDateTimeUTC": "2026-10-31T13:00:00+01:00",
+   "endDateTimeUTC": "2026-10-31T13:45:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 107863711,
@@ -24882,6 +25682,27 @@
    "venue": "good-moves-studio"
   },
   {
+   "id": 107908734,
+   "title": "Les Mills BODYPUMP™ (ENG)",
+   "teacherName": "Lena L.",
+   "startDateTimeUTC": "2026-11-01T09:15:00+01:00",
+   "endDateTimeUTC": "2026-11-01T10:00:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 24
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 107994941,
    "title": "Hot Pilates",
    "teacherName": "Pauli",
@@ -25152,6 +25973,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "halenow-prenzlauer-berg-pilates-reformer"
+  },
+  {
+   "id": 107908736,
+   "title": "Les Mills BODYPUMP™ (ENG)",
+   "teacherName": "Lena L.",
+   "startDateTimeUTC": "2026-11-01T10:15:00+01:00",
+   "endDateTimeUTC": "2026-11-01T11:00:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 24
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 107902694,
@@ -26910,6 +27752,27 @@
    "venue": "lyra"
   },
   {
+   "id": 107908738,
+   "title": "HOT Infrared x Abs & Booty",
+   "teacherName": "Marwa",
+   "startDateTimeUTC": "2026-11-01T17:30:00+01:00",
+   "endDateTimeUTC": "2026-11-01T18:15:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 107906102,
    "title": "Active Stretching (Beginner / Intermediate)",
    "teacherName": "Michaela U.",
@@ -27158,6 +28021,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "halenow-prenzlauer-berg"
+  },
+  {
+   "id": 107908797,
+   "title": "HOT Infrared x Stretch & Mobility",
+   "teacherName": "Marwa",
+   "startDateTimeUTC": "2026-11-01T18:30:00+01:00",
+   "endDateTimeUTC": "2026-11-01T19:15:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 107869984,
@@ -27601,6 +28485,27 @@
    "venue": "halenow-prenzlauer-berg"
   },
   {
+   "id": 107960414,
+   "title": "Les Mills BODYPUMP™ (DE)",
+   "teacherName": "Sonja F.",
+   "startDateTimeUTC": "2026-11-02T07:30:00+01:00",
+   "endDateTimeUTC": "2026-11-02T08:15:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 24
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 107912041,
    "title": "ROFORM STUDIO 2",
    "teacherName": "Isa",
@@ -27745,6 +28650,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "good-moves-studio"
+  },
+  {
+   "id": 107960417,
+   "title": "Les Mills BODYPUMP™ (DE)",
+   "teacherName": "Sonja F.",
+   "startDateTimeUTC": "2026-11-02T08:25:00+01:00",
+   "endDateTimeUTC": "2026-11-02T09:10:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 24
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 107961268,
@@ -28391,6 +29317,27 @@
    "venue": "studio-berlin"
   },
   {
+   "id": 107960939,
+   "title": "Full Body Sculpt (ENG)",
+   "teacherName": "Marisa L.",
+   "startDateTimeUTC": "2026-11-02T11:00:00+01:00",
+   "endDateTimeUTC": "2026-11-02T11:45:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 107944740,
    "title": "Reformer Pilates Session",
    "teacherName": "Your C.",
@@ -28619,6 +29566,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "halenow-prenzlauer-berg"
+  },
+  {
+   "id": 107960932,
+   "title": "Deep Flow: Pilates (ENG)",
+   "teacherName": "Marisa L.",
+   "startDateTimeUTC": "2026-11-02T12:00:00+01:00",
+   "endDateTimeUTC": "2026-11-02T12:45:00+01:00",
+   "category": {
+    "id": 6,
+    "name": "Yoga"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 107945323,
@@ -29583,6 +30551,27 @@
    "venue": "lyra"
   },
   {
+   "id": 107961278,
+   "title": "Power Pilates (ENG)",
+   "teacherName": "Allisa G.",
+   "startDateTimeUTC": "2026-11-02T16:55:00+01:00",
+   "endDateTimeUTC": "2026-11-02T17:40:00+01:00",
+   "category": {
+    "id": 6,
+    "name": "Yoga"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 107960422,
    "title": "Reformer Class",
    "teacherName": "Katja",
@@ -29935,6 +30924,27 @@
    ],
    "isPlusCheckin": true,
    "venue": "via-pilates-pilates-reformer"
+  },
+  {
+   "id": 107961277,
+   "title": "Deep Flow: Pilates (ENG)",
+   "teacherName": "Allisa G.",
+   "startDateTimeUTC": "2026-11-02T17:50:00+01:00",
+   "endDateTimeUTC": "2026-11-02T18:35:00+01:00",
+   "category": {
+    "id": 6,
+    "name": "Yoga"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 107960447,
@@ -30372,6 +31382,27 @@
    ],
    "isPlusCheckin": true,
    "venue": "via-pilates-pilates-reformer"
+  },
+  {
+   "id": 107960934,
+   "title": "Abs & Booty (ENG)",
+   "teacherName": "Isabel A.",
+   "startDateTimeUTC": "2026-11-02T18:45:00+01:00",
+   "endDateTimeUTC": "2026-11-02T19:30:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 108286676,
@@ -30855,6 +31886,27 @@
    "venue": "lyra-prenzlauerberg"
   },
   {
+   "id": 107960941,
+   "title": "Les Mills BODYPUMP™ (DE)",
+   "teacherName": "Robert S.",
+   "startDateTimeUTC": "2026-11-02T19:45:00+01:00",
+   "endDateTimeUTC": "2026-11-02T20:30:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 24
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 107954074,
    "title": "Hypnosis & Sound Journey EN",
    "teacherName": "Sarah L.",
@@ -31149,6 +32201,27 @@
    "venue": "studio-berlin"
   },
   {
+   "id": 107960931,
+   "title": "Les Mills BODYPUMP™ (ENG)",
+   "teacherName": "Robert S.",
+   "startDateTimeUTC": "2026-11-02T20:40:00+01:00",
+   "endDateTimeUTC": "2026-11-02T21:25:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 24
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 107954551,
    "title": "Spinning Pole L0",
    "teacherName": "Laura K.",
@@ -31315,6 +32388,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "berlin-movement-lab"
+  },
+  {
+   "id": 108011405,
+   "title": "Les Mills BODYPUMP™ (DE)",
+   "teacherName": "Chris L.",
+   "startDateTimeUTC": "2026-11-03T07:00:00+01:00",
+   "endDateTimeUTC": "2026-11-03T07:45:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 24
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 107993408,
@@ -31524,6 +32618,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 108011393,
+   "title": "Les Mills BODYPUMP™ (ENG)",
+   "teacherName": "Chris L.",
+   "startDateTimeUTC": "2026-11-03T07:55:00+01:00",
+   "endDateTimeUTC": "2026-11-03T08:40:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 24
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 108007675,
@@ -32588,6 +33703,27 @@
    "venue": "halenow-egym"
   },
   {
+   "id": 108011399,
+   "title": "Abs & Booty (ENG)",
+   "teacherName": "Lara J.",
+   "startDateTimeUTC": "2026-11-03T12:00:00+01:00",
+   "endDateTimeUTC": "2026-11-03T12:45:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 108087015,
    "title": "Hot Fusion by Nicci",
    "teacherName": "Nicci H.",
@@ -33427,6 +34563,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
   },
   {
+   "id": 108011402,
+   "title": "Abs & Booty (ENG)",
+   "teacherName": "Georgiana",
+   "startDateTimeUTC": "2026-11-03T16:55:00+01:00",
+   "endDateTimeUTC": "2026-11-03T17:40:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 108001939,
    "title": "Pole L0 - L1",
    "teacherName": "Valeria C.",
@@ -33843,6 +35000,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 108011389,
+   "title": "Deep Flow: Pilates (ENG)",
+   "teacherName": "Georgiana",
+   "startDateTimeUTC": "2026-11-03T17:50:00+01:00",
+   "endDateTimeUTC": "2026-11-03T18:35:00+01:00",
+   "category": {
+    "id": 6,
+    "name": "Yoga"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 108007678,
@@ -34366,6 +35544,27 @@
    "venue": "pilateslab-berlin-bodyinsight-anjak"
   },
   {
+   "id": 108011408,
+   "title": "Reformer: On The Mat (ENG)",
+   "teacherName": "Georgiana",
+   "startDateTimeUTC": "2026-11-03T18:45:00+01:00",
+   "endDateTimeUTC": "2026-11-03T19:30:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 108092147,
    "title": "Hot Pilates",
    "teacherName": "Darya",
@@ -34846,6 +36045,27 @@
    "venue": "lyra-prenzlauerberg"
   },
   {
+   "id": 108050827,
+   "title": "Les Mills BODYPUMP™ (ENG)",
+   "teacherName": "Johanna",
+   "startDateTimeUTC": "2026-11-03T19:45:00+01:00",
+   "endDateTimeUTC": "2026-11-03T20:30:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 24
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 108005834,
    "title": "Glutes & Abs DE",
    "teacherName": "Carolin A.",
@@ -35137,6 +36357,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 108011395,
+   "title": "Les Mills BODYPUMP™ (ENG)",
+   "teacherName": "Johanna",
+   "startDateTimeUTC": "2026-11-03T20:40:00+01:00",
+   "endDateTimeUTC": "2026-11-03T21:25:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 24
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 108006457,
@@ -35432,6 +36673,27 @@
    "venue": "halenow-prenzlauer-berg"
   },
   {
+   "id": 108061698,
+   "title": "Les Mills BODYPUMP™ (DE)",
+   "teacherName": "Jana B.",
+   "startDateTimeUTC": "2026-11-04T07:30:00+01:00",
+   "endDateTimeUTC": "2026-11-04T08:15:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 24
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 108120900,
    "title": "Hot Pilates",
    "teacherName": "Vanessa G.",
@@ -35721,6 +36983,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "halenow-prenzlauer-berg-pilates-reformer"
+  },
+  {
+   "id": 108061077,
+   "title": "Mobility & Stretching (ENG)",
+   "teacherName": "Orsola C.",
+   "startDateTimeUTC": "2026-11-04T08:30:00+01:00",
+   "endDateTimeUTC": "2026-11-04T09:15:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 108059678,
@@ -36517,6 +37800,27 @@
    "venue": "lyra-prenzlauerberg"
   },
   {
+   "id": 108061649,
+   "title": "Deep Flow: Pilates (ENG)",
+   "teacherName": "Orsola C.",
+   "startDateTimeUTC": "2026-11-04T11:30:00+01:00",
+   "endDateTimeUTC": "2026-11-04T12:15:00+01:00",
+   "category": {
+    "id": 6,
+    "name": "Yoga"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 108013988,
    "title": "ROFORM STUDIO 2",
    "teacherName": "Abbey",
@@ -36808,6 +38112,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "lyra"
+  },
+  {
+   "id": 108061664,
+   "title": "Abs & Booty (ENG)",
+   "teacherName": "Lilli K.",
+   "startDateTimeUTC": "2026-11-04T12:30:00+01:00",
+   "endDateTimeUTC": "2026-11-04T13:15:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 108014013,
@@ -37564,6 +38889,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
   },
   {
+   "id": 108062154,
+   "title": "HOT Infrared x Abs & Booty",
+   "teacherName": "Jazlyn",
+   "startDateTimeUTC": "2026-11-04T16:55:00+01:00",
+   "endDateTimeUTC": "2026-11-04T17:40:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 108060871,
    "title": "Reformer Class",
    "teacherName": "Liza",
@@ -37937,6 +39283,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "casa-flow"
+  },
+  {
+   "id": 108061588,
+   "title": "HOT Infrared x Pilates",
+   "teacherName": "Jazlyn",
+   "startDateTimeUTC": "2026-11-04T17:50:00+01:00",
+   "endDateTimeUTC": "2026-11-04T18:35:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 108061120,
@@ -38354,6 +39721,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "halenow-prenzlauer-berg"
+  },
+  {
+   "id": 108062159,
+   "title": "HOT Infrared x Reformer: On the Mat",
+   "teacherName": "Jazlyn",
+   "startDateTimeUTC": "2026-11-04T18:45:00+01:00",
+   "endDateTimeUTC": "2026-11-04T19:30:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 108130050,
@@ -38792,6 +40180,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "lyra-prenzlauerberg"
+  },
+  {
+   "id": 108061700,
+   "title": "HOT Infrared x Abs & Booty",
+   "teacherName": "Lilli K.",
+   "startDateTimeUTC": "2026-11-04T19:45:00+01:00",
+   "endDateTimeUTC": "2026-11-04T20:30:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 108061214,
@@ -39275,6 +40684,27 @@
    "venue": "halenow-prenzlauer-berg"
   },
   {
+   "id": 108100996,
+   "title": "Reformer: On The Mat (ENG)",
+   "teacherName": "Juliette G.",
+   "startDateTimeUTC": "2026-11-05T07:00:00+01:00",
+   "endDateTimeUTC": "2026-11-05T07:45:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 108083574,
    "title": "Reformer Pilates Session",
    "teacherName": "Your C.",
@@ -39482,6 +40912,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "asa-studio"
+  },
+  {
+   "id": 108101062,
+   "title": "Deep Flow: Pilates (ENG)",
+   "teacherName": "Juliette G.",
+   "startDateTimeUTC": "2026-11-05T08:00:00+01:00",
+   "endDateTimeUTC": "2026-11-05T08:45:00+01:00",
+   "category": {
+    "id": 6,
+    "name": "Yoga"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 108167581,
@@ -40713,6 +42164,27 @@
    "venue": "halenow-prenzlauer-berg"
   },
   {
+   "id": 108101034,
+   "title": "HOT Infrared x Pilates",
+   "teacherName": "Emilie B.",
+   "startDateTimeUTC": "2026-11-05T12:30:00+01:00",
+   "endDateTimeUTC": "2026-11-05T13:15:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 108063252,
    "title": "ROFORM STUDIO 2",
    "teacherName": "Lea M.",
@@ -41215,6 +42687,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
   },
   {
+   "id": 108100982,
+   "title": "HOT Infrared x Abs & Booty",
+   "teacherName": "Giovanni R.",
+   "startDateTimeUTC": "2026-11-05T16:00:00+01:00",
+   "endDateTimeUTC": "2026-11-05T16:45:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 108089459,
    "title": "Reformer Pilates Session",
    "teacherName": "Your C.",
@@ -41381,6 +42874,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 108101119,
+   "title": "HOT Infrared x Tone Pilates",
+   "teacherName": "Jazlyn",
+   "startDateTimeUTC": "2026-11-05T16:55:00+01:00",
+   "endDateTimeUTC": "2026-11-05T17:40:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 108095673,
@@ -41822,6 +43336,27 @@
    "venue": "halenow-egym"
   },
   {
+   "id": 108100958,
+   "title": "HOT Infrared x Strength Yoga",
+   "teacherName": "Aurora",
+   "startDateTimeUTC": "2026-11-05T18:00:00+01:00",
+   "endDateTimeUTC": "2026-11-05T18:45:00+01:00",
+   "category": {
+    "id": 6,
+    "name": "Yoga"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 108091681,
    "title": "Reformer Pilates Session",
    "teacherName": "Your C.",
@@ -42216,6 +43751,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "lyra"
+  },
+  {
+   "id": 108101109,
+   "title": "HOT Infrared x Stretch & Mobility",
+   "teacherName": "Aurora",
+   "startDateTimeUTC": "2026-11-05T18:55:00+01:00",
+   "endDateTimeUTC": "2026-11-05T19:40:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 108098745,
@@ -43244,6 +44800,27 @@
    "venue": "halenow-prenzlauer-berg-pilates-reformer"
   },
   {
+   "id": 108138520,
+   "title": "Full Body Sculpt (ENG)",
+   "teacherName": "Lara J.",
+   "startDateTimeUTC": "2026-11-06T08:00:00+01:00",
+   "endDateTimeUTC": "2026-11-06T08:45:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 108235977,
    "title": "Sculpt",
    "teacherName": "Scarlett N.",
@@ -43492,6 +45069,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "halenow-egym"
+  },
+  {
+   "id": 108138637,
+   "title": "Abs & Booty (ENG)",
+   "teacherName": "Lara J.",
+   "startDateTimeUTC": "2026-11-06T09:00:00+01:00",
+   "endDateTimeUTC": "2026-11-06T09:45:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 108122027,
@@ -44413,6 +46011,27 @@
    "venue": "halenow-egym"
   },
   {
+   "id": 108137612,
+   "title": "Abs & Booty (ENG)",
+   "teacherName": "Monica L.",
+   "startDateTimeUTC": "2026-11-06T12:00:00+01:00",
+   "endDateTimeUTC": "2026-11-06T12:45:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 108124953,
    "title": "Reformer Pilates Session",
    "teacherName": "Your C.",
@@ -45231,6 +46850,27 @@
    "venue": "elevate-pilates"
   },
   {
+   "id": 108138583,
+   "title": "HOT Infrared x Pilates",
+   "teacherName": "Carelí",
+   "startDateTimeUTC": "2026-11-06T16:00:00+01:00",
+   "endDateTimeUTC": "2026-11-06T16:45:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 108127989,
    "title": "Reformer Pilates Session",
    "teacherName": "Your C.",
@@ -45500,6 +47140,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "casa-flow"
+  },
+  {
+   "id": 108137729,
+   "title": "HOT Infrared x Sculpt",
+   "teacherName": "Carelí",
+   "startDateTimeUTC": "2026-11-06T16:55:00+01:00",
+   "endDateTimeUTC": "2026-11-06T17:40:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 108138900,
@@ -45875,6 +47536,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "berliner-pilates-prenzlauer-berg"
+  },
+  {
+   "id": 108138833,
+   "title": "HOT Infrared x Abs & Booty",
+   "teacherName": "Carelí",
+   "startDateTimeUTC": "2026-11-06T17:50:00+01:00",
+   "endDateTimeUTC": "2026-11-06T18:35:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 108138878,
@@ -46293,6 +47975,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "halenow-prenzlauer-berg-pilates-reformer"
+  },
+  {
+   "id": 108137648,
+   "title": "HOT Infrared x Stretch & Mobility",
+   "teacherName": "Carelí",
+   "startDateTimeUTC": "2026-11-06T18:45:00+01:00",
+   "endDateTimeUTC": "2026-11-06T19:30:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 108139013,
@@ -47173,6 +48876,27 @@
    "venue": "halenow-egym"
   },
   {
+   "id": 108181929,
+   "title": "HOT Infrared x Pilates",
+   "teacherName": "Isabel A.",
+   "startDateTimeUTC": "2026-11-07T09:00:00+01:00",
+   "endDateTimeUTC": "2026-11-07T09:45:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 108276809,
    "title": "Classic Pilates",
    "teacherName": "Lotta T.",
@@ -47441,6 +49165,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "elevate-pilates"
+  },
+  {
+   "id": 108181982,
+   "title": "HOT Infrared x Sculpt",
+   "teacherName": "Isabel A.",
+   "startDateTimeUTC": "2026-11-07T10:00:00+01:00",
+   "endDateTimeUTC": "2026-11-07T10:45:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 108169180,
@@ -47839,6 +49584,27 @@
    "venue": "halenow-prenzlauer-berg"
   },
   {
+   "id": 108181978,
+   "title": "HOT Infrared x Power Pilates",
+   "teacherName": "Isabel A.",
+   "startDateTimeUTC": "2026-11-07T11:00:00+01:00",
+   "endDateTimeUTC": "2026-11-07T11:45:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 108170374,
    "title": "Reformer Pilates Session",
    "teacherName": "Your C.",
@@ -48214,6 +49980,27 @@
    "venue": "halenow-egym"
   },
   {
+   "id": 108181956,
+   "title": "HOT Infrared x Abs & Booty",
+   "teacherName": "Marwa",
+   "startDateTimeUTC": "2026-11-07T12:00:00+01:00",
+   "endDateTimeUTC": "2026-11-07T12:45:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 108171415,
    "title": "Reformer Pilates Session",
    "teacherName": "Your C.",
@@ -48462,6 +50249,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "lyra-prenzlauerberg"
+  },
+  {
+   "id": 108181972,
+   "title": "HOT Infrared x Stretch & Mobility",
+   "teacherName": "Marwa",
+   "startDateTimeUTC": "2026-11-07T13:00:00+01:00",
+   "endDateTimeUTC": "2026-11-07T13:45:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 108172162,
@@ -50137,6 +51945,27 @@
    "venue": "good-moves-studio"
   },
   {
+   "id": 108247416,
+   "title": "Les Mills BODYPUMP™ (ENG)",
+   "teacherName": "Lena L.",
+   "startDateTimeUTC": "2026-11-08T09:15:00+01:00",
+   "endDateTimeUTC": "2026-11-08T10:00:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 24
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 108197144,
    "title": "ROFORM STUDIO 2",
    "teacherName": "Juan",
@@ -50407,6 +52236,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "halenow-prenzlauer-berg-pilates-reformer"
+  },
+  {
+   "id": 108247432,
+   "title": "Les Mills BODYPUMP™ (ENG)",
+   "teacherName": "Lena L.",
+   "startDateTimeUTC": "2026-11-08T10:15:00+01:00",
+   "endDateTimeUTC": "2026-11-08T11:00:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 24
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 108238386,
@@ -52186,6 +54036,27 @@
    "venue": "lyra"
   },
   {
+   "id": 108247424,
+   "title": "HOT Infrared x Abs & Booty",
+   "teacherName": "Marwa",
+   "startDateTimeUTC": "2026-11-08T17:30:00+01:00",
+   "endDateTimeUTC": "2026-11-08T18:15:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 108242013,
    "title": "Active Stretching (Beginner / Intermediate)",
    "teacherName": "Michaela U.",
@@ -52413,6 +54284,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "halenow-prenzlauer-berg"
+  },
+  {
+   "id": 108247420,
+   "title": "HOT Infrared x Stretch & Mobility",
+   "teacherName": "Marwa",
+   "startDateTimeUTC": "2026-11-08T18:30:00+01:00",
+   "endDateTimeUTC": "2026-11-08T19:15:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 108197261,
@@ -52835,6 +54727,27 @@
    "venue": "halenow-prenzlauer-berg"
   },
   {
+   "id": 108290655,
+   "title": "Les Mills BODYPUMP™ (DE)",
+   "teacherName": "Sonja F.",
+   "startDateTimeUTC": "2026-11-09T07:30:00+01:00",
+   "endDateTimeUTC": "2026-11-09T08:15:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 24
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 108248224,
    "title": "ROFORM STUDIO 2",
    "teacherName": "Isa",
@@ -52979,6 +54892,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "good-moves-studio"
+  },
+  {
+   "id": 108290818,
+   "title": "Les Mills BODYPUMP™ (DE)",
+   "teacherName": "Sonja F.",
+   "startDateTimeUTC": "2026-11-09T08:25:00+01:00",
+   "endDateTimeUTC": "2026-11-09T09:10:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 24
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 108289985,
@@ -53604,6 +55538,27 @@
    "venue": "studio-berlin"
   },
   {
+   "id": 108290675,
+   "title": "Full Body Sculpt (ENG)",
+   "teacherName": "Lilli K.",
+   "startDateTimeUTC": "2026-11-09T11:00:00+01:00",
+   "endDateTimeUTC": "2026-11-09T11:45:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 108278424,
    "title": "Reformer Pilates Session",
    "teacherName": "Your C.",
@@ -53811,6 +55766,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "halenow-prenzlauer-berg"
+  },
+  {
+   "id": 108290732,
+   "title": "Deep Flow: Pilates (ENG)",
+   "teacherName": "Orsola C.",
+   "startDateTimeUTC": "2026-11-09T12:00:00+01:00",
+   "endDateTimeUTC": "2026-11-09T12:45:00+01:00",
+   "category": {
+    "id": 6,
+    "name": "Yoga"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 108279075,
@@ -54733,6 +56709,27 @@
    "venue": "lyra"
   },
   {
+   "id": 108290680,
+   "title": "Power Pilates (ENG)",
+   "teacherName": "Allisa G.",
+   "startDateTimeUTC": "2026-11-09T16:55:00+01:00",
+   "endDateTimeUTC": "2026-11-09T17:40:00+01:00",
+   "category": {
+    "id": 6,
+    "name": "Yoga"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 108292402,
    "title": "Reformer Class",
    "teacherName": "Katja",
@@ -55085,6 +57082,27 @@
    ],
    "isPlusCheckin": true,
    "venue": "via-pilates-pilates-reformer"
+  },
+  {
+   "id": 108290703,
+   "title": "Deep Flow: Pilates (ENG)",
+   "teacherName": "Allisa G.",
+   "startDateTimeUTC": "2026-11-09T17:50:00+01:00",
+   "endDateTimeUTC": "2026-11-09T18:35:00+01:00",
+   "category": {
+    "id": 6,
+    "name": "Yoga"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 108292353,
@@ -55501,6 +57519,27 @@
    ],
    "isPlusCheckin": true,
    "venue": "via-pilates-pilates-reformer"
+  },
+  {
+   "id": 108290685,
+   "title": "Abs & Booty (ENG)",
+   "teacherName": "Isabel A.",
+   "startDateTimeUTC": "2026-11-09T18:45:00+01:00",
+   "endDateTimeUTC": "2026-11-09T19:30:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 108292324,
@@ -55963,6 +58002,27 @@
    "venue": "lyra-prenzlauerberg"
   },
   {
+   "id": 108290820,
+   "title": "Les Mills BODYPUMP™ (DE)",
+   "teacherName": "Robert S.",
+   "startDateTimeUTC": "2026-11-09T19:45:00+01:00",
+   "endDateTimeUTC": "2026-11-09T20:30:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 24
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
    "id": 108287799,
    "title": "Hypnosis & Sound Journey EN",
    "teacherName": "Sarah L.",
@@ -56255,6 +58315,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "studio-berlin"
+  },
+  {
+   "id": 108290792,
+   "title": "Les Mills BODYPUMP™ (ENG)",
+   "teacherName": "Robert S.",
+   "startDateTimeUTC": "2026-11-09T20:40:00+01:00",
+   "endDateTimeUTC": "2026-11-09T21:25:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 24
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
   },
   {
    "id": 108288684,
