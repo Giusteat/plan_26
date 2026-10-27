@@ -39,7 +39,7 @@ const AREA_BTNS = [["casa", "Casa"], ["lavoro", "Lavoro"]];   // filtro zona: un
 const PLANS = [["M", "Classic"], ["L", "Premium"]];   // il piano Max non è considerato
 const DAYS = ["Lun", "Mar", "Mer", "Gio", "Ven", "Sab", "Dom"];
 const HOUR_H = 60;
-const T_MIN = 5 * 60, T_MAX = 23 * 60;   // barra degli orari sul telefono
+const T_MIN = 7 * 60, T_MAX = 22 * 60;   // barra degli orari sul telefono: agli estremi non esclude niente
 const CLASS_URL = id => `https://www.urbansportsclub.com/en/activities?class=${id}`;   // si apre nell'app, se installata
 const ICONS = {
     casa: '<path d="M3 9.5L10 4l7 5.5V17h-4.5v-4.5h-5V17H3z"/>',
@@ -138,7 +138,7 @@ function prep(c) {
 const matches = (c, skip) =>
     c.allDay === S.allDay && (!c.area || c.area === S.area) && (skip === "level" || levelOk(c)) && (skip === "cat" || !S.cat.size || S.cat.has(c.group)) && (skip === "venue" || !S.venue.size || S.venue.has(c.studio)) &&
     (skip === "plan" || !S.plan || c.plans.includes(S.plan)) && (skip === "fav" || !S.fav || favs.has(c.key)) &&
-    (!mobile.matches || ((!S.q || c.text.includes(S.q)) && toMin(c.start) >= S.from && toMin(c.start) <= S.to));
+    (!mobile.matches || ((!S.q || c.text.includes(S.q)) && (S.from <= T_MIN || toMin(c.start) >= S.from) && (S.to >= T_MAX || toMin(c.start) <= S.to)));
 const visible = c => matches(c, null);
 const UI = { cat: new Map(), venue: new Map(), plan: new Map(), fav: null };
 
@@ -335,7 +335,7 @@ function renderGrid(view, list) {
 // che passano tutti i filtri e non sono ancora iniziate; il risultato arriva in data/posti.json.
 const REPO = "Giusteat/plan_26";
 // Si ricorda l'ultima richiesta di ogni giorno (anche chiudendo il sito); i giorni passati si dimenticano.
-const P = { days: (d => d && typeof d === "object" && !d.posti ? d : {})(store.get("posti", null)), busy: false, msg: "" };
+const P = { days: (d => d && typeof d === "object" && !d.posti ? d : {})(store.get("posti", null)), busy: false };
 Object.keys(P.days).forEach(g => { if (g < iso(new Date())) delete P.days[g]; });
 const liveSpots = c => (P.days[c.date] || {}).posti && P.days[c.date].posti[c.id];
 const hhmmOf = isoTime => isoTime ? isoTime.slice(11, 16) : "";
@@ -353,13 +353,13 @@ async function requestSpots() {
     if (P.busy) return;
     const now = new Date(), todayIso = iso(now), nowMin = now.getHours() * 60 + now.getMinutes();
     const ids = classes.filter(c => visible(c) && c.date === iso(S.day) && !isPast(c, todayIso, nowMin)).map(c => c.id);
-    if (!ids.length) { P.msg = "Nessuna lezione da controllare."; render(); return; }
+    if (!ids.length) { alert("Nessuna lezione da controllare in questo giorno."); return; }
     const token = store.get("ghToken", null) || askToken();
     if (!token) return;
     const code = String(Date.now());
     const gh = (path, opt = {}) => fetch(`https://api.github.com/repos/${REPO}/${path}`,
         { ...opt, cache: "no-store", headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json", ...(opt.headers || {}) } });
-    P.busy = true; P.msg = `Chiedo i posti di ${ids.length} lezioni… (circa un minuto)`; render();
+    P.busy = true; render();
     try {
         const r = await gh("actions/workflows/posti.yml/dispatches", { method: "POST",
             body: JSON.stringify({ ref: "main", inputs: { giorno: iso(S.day), lezioni: ids.join(","), richiesta: code } }) });
@@ -370,20 +370,17 @@ async function requestSpots() {
             const f = await gh(`contents/data/posti.json?ref=main&t=${Date.now()}`, { headers: { Accept: "application/vnd.github.raw+json" } });
             if (!f.ok) continue;
             const d = await f.json();
-            if (d.richiesta === code) { P.days[d.giorno] = { aggiornato: d.aggiornato, posti: d.posti }; store.set("posti", P.days); P.msg = ""; return; }
+            if (d.richiesta === code) { P.days[d.giorno] = { aggiornato: d.aggiornato, posti: d.posti }; store.set("posti", P.days); return; }
         }
         throw new Error("GitHub ci sta mettendo troppo, riprova tra poco");
-    } catch (e) { P.msg = "Non riuscito: " + e.message; }
+    } catch (e) { P.busy = false; render(); alert("Posti liberi non riusciti: " + e.message); }
     finally { P.busy = false; render(); }
 }
-function spotsBar() {
-    const bar = el("div", "pbar"), b = el("button", "pbtn", P.busy ? "Attendi…" : "Posti liberi");
+// Pulsante a sinistra degli orari: mostra a che ora sono stati chiesti i posti del giorno guardato
+function spotsButton() {
+    const b = $("pbtn"), day = P.days[iso(S.day)];
     b.disabled = P.busy;
-    b.onclick = requestSpots;
-    const day = P.days[iso(S.day)];
-    const info = P.msg || (day ? `Aggiornati alle ${hhmmOf(day.aggiornato)}` : "");
-    bar.append(b, el("span", "pinfo", info));
-    return bar;
+    b.textContent = P.busy ? "Attendi…" : day ? `Posti ${hhmmOf(day.aggiornato)}` : "Posti liberi";
 }
 
 // ---------- schede del giorno (telefono) ----------
@@ -391,7 +388,6 @@ function renderCards(view, list) {
     const now = new Date(), todayIso = iso(now), nowMin = now.getHours() * 60 + now.getMinutes();
     const items = list.filter(c => c.date === iso(S.day))
         .sort((a, b) => a.start.localeCompare(b.start) || a.studio.localeCompare(b.studio));
-    view.appendChild(spotsBar());
     if (!items.length) { view.appendChild(el("p", "empty", "Nessun corso con questi filtri.")); return; }
     items.forEach(c => {
         const v = venues[c.venue] || {}, [bg, fg] = colorOf(c);
@@ -542,6 +538,7 @@ function render() {
     if (mobile.matches) {
         renderDays();
         renderCards(view, list);
+        spotsButton();
         $("label").textContent = `${dayName(S.day)} ${fmt(S.day)}`;
         $("prev").disabled = S.day <= minDay; $("next").disabled = S.day >= maxDay;
     } else {
@@ -634,10 +631,11 @@ async function init() {
         } catch (e) { alert("Testo non valido."); }
     };
     // ricerca e barra degli orari (telefono)
+    $("pbtn").onclick = requestSpots;
     $("q").oninput = () => { S.q = norm($("q").value.trim()); render(); };
     const fromI = $("from"), toI = $("to"), hhmm = m => `${pad(Math.floor(m / 60))}:${pad(m % 60)}`;
     const saved = store.get("hours", null);
-    if (saved && saved[0] >= T_MIN && saved[1] <= T_MAX && saved[0] < saved[1]) { S.from = saved[0]; S.to = saved[1]; }
+    if (saved && saved[0] < saved[1]) { S.from = Math.max(T_MIN, Math.min(saved[0], T_MAX - 30)); S.to = Math.min(T_MAX, Math.max(saved[1], S.from + 30)); }
     fromI.value = S.from; toI.value = S.to;
     const showHours = () => {
         $("fromL").textContent = hhmm(S.from); $("toL").textContent = hhmm(S.to);

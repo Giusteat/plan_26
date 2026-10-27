@@ -116,7 +116,7 @@ footer { text-align: center; margin-top: 14px; display: flex; gap: 8px; justify-
     .dd { position: static; }
     .panel { position: fixed; left: 12px; right: 12px; top: 120px; max-height: 55vh; font-size: 1rem; }
     .panel label { padding: 8px 0; font-size: .95rem; white-space: normal; }
-    .range { align-items: center; gap: 12px; padding: 4px 16px 6px; font-size: .95rem; }
+    .range { align-items: center; gap: 10px; padding: 4px 12px 6px; font-size: .95rem; }
     .dual { position: relative; flex: 1; height: 28px;
         background: linear-gradient(to right, #e2e8f0 var(--a), var(--primary) var(--a), var(--primary) var(--b), #e2e8f0 var(--b)) center / 100% 5px no-repeat; }
     .dual input { position: absolute; inset: 0; width: 100%; margin: 0; background: none; pointer-events: none; -webkit-appearance: none; appearance: none; }
@@ -146,11 +146,9 @@ footer { text-align: center; margin-top: 14px; display: flex; gap: 8px; justify-
     .card .spots { color: var(--muted); font-size: .85rem; }
     .card .spots.live { color: var(--primary); font-weight: 600; }
     .card .spots.full { color: #b91c1c; font-weight: 600; }
-    .pbar { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-bottom: 1px solid var(--border); }
-    .pbtn { flex-shrink: 0; height: 34px; padding: 0 14px; border-radius: 8px; border: 2px solid var(--primary); background: #fff;
-        color: var(--primary); font-size: .9rem; font-weight: 600; cursor: pointer; }
+    .pbtn { flex-shrink: 0; height: 34px; padding: 0 10px; border-radius: 8px; border: 2px solid var(--primary); background: #fff;
+        color: var(--primary); font-size: .85rem; font-weight: 600; cursor: pointer; white-space: nowrap; }
     .pbtn:disabled { opacity: .5; }
-    .pinfo { font-size: .85rem; color: var(--muted); }
     .card .pair { display: flex; gap: 12px; align-items: center; margin-top: 2px; }
     .card .pair .ln { margin-top: 0; }
     .card .pair .grow { flex: 1; min-width: 0; }
