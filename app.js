@@ -422,7 +422,8 @@ async function init() {
         const seg = el("div", "seg");
         AREA_BTNS.forEach(([v, label]) => {
             const b = el("button", v === S.area ? "on" : "");
-            b.append(icon(v), el("span", null, label));
+            b.appendChild(icon(v));
+            b.title = label; b.setAttribute("aria-label", label);
             b.onclick = () => {
                 S.area = v;
                 seg.querySelectorAll("button").forEach(x => x.classList.toggle("on", x === b));
@@ -432,14 +433,14 @@ async function init() {
         });
         f.appendChild(seg);
     }
-    f.append(multi("Categorie", [...known, ...others], S.cat, UI.cat),
-             multi("Palestre", [...new Set(classes.map(c => c.studio))].sort(), S.venue, UI.venue));
     const fav = el("button", "btn fav");
     fav.innerHTML = '♥<span class="lbl"> Solo preferiti</span>';
     fav.setAttribute("aria-label", "Solo preferiti");
     UI.fav = fav;
     fav.onclick = () => { S.fav = !S.fav; fav.classList.toggle("active", S.fav); render(); };
     f.appendChild(fav);
+    f.append(multi("Categorie", [...known, ...others], S.cat, UI.cat),
+             multi("Palestre", [...new Set(classes.map(c => c.studio))].sort(), S.venue, UI.venue));
     if (classes.some(c => c.allDay)) {
         const ad = el("label", "switch"), box = el("input");
         box.type = "checkbox";
