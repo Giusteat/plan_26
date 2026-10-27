@@ -140,6 +140,12 @@ footer { text-align: center; margin-top: 14px; display: flex; gap: 8px; justify-
     .card .i { flex-shrink: 0; width: 16px; height: 18px; display: inline-flex; align-items: center; }
     .card .i.area { color: var(--primary); }
     .card .spots { color: var(--muted); font-size: .85rem; }
+    .card .pair { display: flex; gap: 12px; align-items: center; margin-top: 2px; }
+    .card .pair .ln { margin-top: 0; }
+    .card .pair .grow { flex: 1; min-width: 0; }
+    .card .pair .grow > span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .card .pair .side { flex-shrink: 0; max-width: 50%; }
+    .card .pair .side > span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .card .heart { position: absolute; top: 10px; right: 6px; font-size: 1.35rem; }
     .card.past { opacity: .45; }
     footer { padding: 0 12px; }

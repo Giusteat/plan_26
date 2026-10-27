@@ -272,13 +272,13 @@ function renderCards(view, list) {
         }
         const bd = el("div", "bd");
         const line = (ic, text, cls) => { const d = el("div", "ln" + (cls ? " " + cls : "")); d.append(ic, el("span", null, text)); return d; };
-        bd.append(el("div", "tt", c.name), el("div", "tm", `${c.start} - ${c.end}`),
-            line(c.area ? icon(c.area, "area") : el("span", "i"), c.studio, "st"),
-            line(icon("persona"), c.teacherName || "–"));
-        const tg = line(icon("tag"), c.group);
+        // due informazioni per riga: la prima si accorcia con "…" se non c'è spazio
+        const pair = (a, b) => { const d = el("div", "pair"); d.append(a); if (b) d.append(b); return d; };
+        const tg = line(icon("tag"), c.group, "grow");
         tg.firstChild.style.color = fg;
-        bd.appendChild(tg);
-        if (c.spots && c.spots.max != null) bd.appendChild(line(icon("posti"), `${c.spots.max} posti`, "spots"));
+        bd.append(el("div", "tt", c.name), el("div", "tm", `${c.start} - ${c.end}`),
+            pair(line(c.area ? icon(c.area, "area") : el("span", "i"), c.studio, "grow"), c.teacherName ? line(icon("persona"), c.teacherName, "side") : null),
+            pair(tg, c.spots && c.spots.max != null ? line(icon("posti"), `${c.spots.max} posti`, "side spots") : null));
         const h = el("button", "heart", favs.has(c.key) ? "♥" : "♡");
         h.setAttribute("aria-label", "Preferito");
         h.onclick = e => { e.preventDefault(); e.stopPropagation(); toggleFav(c); };
