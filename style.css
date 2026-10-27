@@ -131,7 +131,7 @@ footer { text-align: center; margin-top: 14px; display: flex; gap: 8px; justify-
     main { padding: 0; }
     .card { display: flex; gap: 14px; align-items: flex-start; padding: 16px 12px; border-bottom: 1px solid var(--border);
         color: var(--text); text-decoration: none; position: relative; -webkit-tap-highlight-color: rgba(106,153,78,.1); }
-    .card .app { position: absolute; top: 10px; right: 44px; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center;
+    .card .app { position: absolute; top: 10px; right: 4px; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center;
         color: var(--primary); border-radius: 8px; }
     .card .app:active { background: #eef5ea; }
     .pic { position: relative; flex-shrink: 0; width: 76px; height: 76px; border-radius: 8px; overflow: hidden;
@@ -150,7 +150,7 @@ footer { text-align: center; margin-top: 14px; display: flex; gap: 8px; justify-
     .card .pair .grow > span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .card .pair .side { flex-shrink: 0; max-width: 50%; }
     .card .pair .side > span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .card .heart { position: absolute; top: 10px; right: 6px; font-size: 1.35rem; }
+    .card .heart { position: absolute; top: 10px; right: 36px; font-size: 1.35rem; }
     .card.past { opacity: .45; }
     footer { padding: 0 12px; }
 }
