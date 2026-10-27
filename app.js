@@ -334,12 +334,14 @@ function renderGrid(view, list) {
 // Il pulsante fa partire su GitHub .github/workflows/posti.yml solo per le lezioni del giorno guardato
 // che passano tutti i filtri e non sono ancora iniziate; il risultato arriva in data/posti.json.
 const REPO = "Giusteat/plan_26";
-const P = { data: store.get("posti", null), busy: false, msg: "" };
-const liveSpots = c => P.data && P.data.posti && P.data.posti[c.id];
+// Si ricorda l'ultima richiesta di ogni giorno (anche chiudendo il sito); i giorni passati si dimenticano.
+const P = { days: (d => d && typeof d === "object" && !d.posti ? d : {})(store.get("posti", null)), busy: false, msg: "" };
+Object.keys(P.days).forEach(g => { if (g < iso(new Date())) delete P.days[g]; });
+const liveSpots = c => (P.days[c.date] || {}).posti && P.days[c.date].posti[c.id];
 const hhmmOf = isoTime => isoTime ? isoTime.slice(11, 16) : "";
 function spotsText(c) {
     const p = liveSpots(c);
-    if (p && p.free != null) return p.free === 0 ? "Pieno" : `${p.free} liberi su ${p.max}`;
+    if (p && p.free != null) return `${p.free}/${p.max}`;   // liberi/totali
     return c.spots && c.spots.max != null ? `${c.spots.max} posti` : null;
 }
 function askToken() {
@@ -368,7 +370,7 @@ async function requestSpots() {
             const f = await gh(`contents/data/posti.json?ref=main&t=${Date.now()}`, { headers: { Accept: "application/vnd.github.raw+json" } });
             if (!f.ok) continue;
             const d = await f.json();
-            if (d.richiesta === code) { P.data = d; store.set("posti", d); P.msg = ""; return; }
+            if (d.richiesta === code) { P.days[d.giorno] = { aggiornato: d.aggiornato, posti: d.posti }; store.set("posti", P.days); P.msg = ""; return; }
         }
         throw new Error("GitHub ci sta mettendo troppo, riprova tra poco");
     } catch (e) { P.msg = "Non riuscito: " + e.message; }
@@ -378,7 +380,8 @@ function spotsBar() {
     const bar = el("div", "pbar"), b = el("button", "pbtn", P.busy ? "Attendi…" : "Posti liberi");
     b.disabled = P.busy;
     b.onclick = requestSpots;
-    const info = P.msg || (P.data && P.data.giorno === iso(S.day) ? `Aggiornati alle ${hhmmOf(P.data.aggiornato)}` : "");
+    const day = P.days[iso(S.day)];
+    const info = P.msg || (day ? `Aggiornati alle ${hhmmOf(day.aggiornato)}` : "");
     bar.append(b, el("span", "pinfo", info));
     return bar;
 }
@@ -480,7 +483,7 @@ function openSheet(c) {
     const rows = [
         ["Quando", `${DAYS[c.dow]} ${parse(c.date).toLocaleDateString("it-IT", { day: "numeric", month: "long" })}, ${c.start}–${c.end}`],
         ["Insegnante", (c.teacherName || "–") + (newTeacher(c) ? ` (nuovo, prima: ${newTeacher(c)})` : "")], ["Studio", c.studio], ["Indirizzo", addr || "–"], ["Categoria", c.group],
-        ["Posti", (liveSpots(c) ? `${spotsText(c)} (alle ${hhmmOf(P.data.aggiornato)})` : c.spots && c.spots.max != null ? String(c.spots.max) : "–")], ["Al mese", monthly || "–"]
+        ["Posti", (liveSpots(c) ? `${spotsText(c)} (alle ${hhmmOf(P.days[c.date].aggiornato)})` : c.spots && c.spots.max != null ? String(c.spots.max) : "–")], ["Al mese", monthly || "–"]
     ];
     const dl = el("dl");
     rows.forEach(([k, val]) => dl.append(el("dt", null, k), el("dd", null, val)));
