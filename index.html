@@ -5,7 +5,9 @@
     <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fitness Schedule</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- carica sempre l'ultima versione di stile e codice (il browser altrimenti tiene quella vecchia per 10 minuti) -->
+    <script>document.write('<link rel="stylesheet" href="style.css?v=' + Date.now() + '">');</script>
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
 </head>
 <body>
 <header>
@@ -49,6 +51,6 @@
     <button class="btn" id="pasteFav">Incolla preferiti</button>
 </footer>
 <div class="sheet" id="sheet" hidden></div>
-<script src="app.js"></script>
+<script>document.write('<script src="app.js?v=' + Date.now() + '"><\/script>');</script>
 </body>
 </html>

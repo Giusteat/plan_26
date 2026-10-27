@@ -352,12 +352,15 @@ def main():
         print("ERRORE: nessuna palestra scaricata. Il file esistente NON viene toccato.")
         sys.exit(1)
 
-    # Giorni passati di questa settimana (da lunedì a ieri): restano dal file precedente.
+    # Giorni passati di questa settimana (da lunedì a ieri) e lezioni di oggi già iniziate
+    # (Urban Sports non le dà più): restano dal file precedente.
     # Da lunedì prossimo la settimana vecchia sparisce da sola.
     slugs = {v["slug"] for v in venues_cfg}
+    now_str = datetime.now(ZoneInfo("Europe/Berlin")).strftime("%Y-%m-%dT%H:%M")
     for c in old_classes:
         d = c["startDateTimeUTC"][:10]
-        if monday.isoformat() <= d < today.isoformat() and c.get("venue") in slugs:
+        started_today = d == today.isoformat() and c["startDateTimeUTC"][:16] < now_str
+        if (monday.isoformat() <= d < today.isoformat() or started_today) and c.get("venue") in slugs:
             c = {k: v for k, v in c.items() if k not in ("isOnline", "bookingType")}
             classes.setdefault(c["id"], c)
 
