@@ -473,7 +473,7 @@ function render() {
     if (!S.start) return;
     updateAvailability();
     fitHours();
-    const view = $("view");
+    const view = $("view"), y = window.scrollY;   // ridisegnando, la pagina resta dov'era
     view.innerHTML = "";
     const list = classes.filter(visible);
     if (mobile.matches) {
@@ -487,6 +487,7 @@ function render() {
         $("prev").disabled = S.start <= firstStart(); $("next").disabled = S.start >= lastStart();
     }
     document.querySelectorAll("#views .btn").forEach(b => b.classList.toggle("active", Number(b.dataset.v) === S.view));
+    window.scrollTo(0, y);
 }
 
 async function init() {
