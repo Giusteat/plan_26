@@ -286,13 +286,13 @@ function renderCards(view, list) {
     });
 }
 
-// Oggi: porta la vista alle lezioni dall'inizio dell'ora attuale in poi (alle 8:20 → dalle 8:00; le precedenti restano sopra)
+// Oggi: porta la vista alle lezioni che iniziano da adesso in poi (alle 8:20 → dalle 8:20; le precedenti restano sopra)
 function scrollToNow() {
     const headerH = mobile.matches ? document.querySelector("header").offsetHeight : 0;
     let target = null;
     if (mobile.matches) {
-        const now = new Date(), hour = now.getHours() * 60;
-        if (iso(S.day) === iso(now)) target = [...document.querySelectorAll("#view .card")].find(c => Number(c.dataset.start) >= hour);
+        const now = new Date(), nowMin = now.getHours() * 60 + now.getMinutes();
+        if (iso(S.day) === iso(now)) target = [...document.querySelectorAll("#view .card")].find(c => Number(c.dataset.start) >= nowMin);
     } else target = document.querySelector("#view .now");
     if (!target) { window.scrollTo(0, 0); return; }
     const y = target.getBoundingClientRect().top + window.scrollY - headerH - (mobile.matches ? 0 : 120);
