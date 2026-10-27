@@ -106,8 +106,8 @@ footer { text-align: center; margin-top: 14px; display: flex; gap: 8px; justify-
         background: var(--primary); color: #fff; border: 0; border-radius: 8px; padding: 0 14px; font-size: .9rem; white-space: nowrap; }
     .filters .dd summary::after { content: '⌄'; margin: -6px 0 0 2px; }
     .filters .btn:disabled { opacity: .45; }
-    .filters .fav { font-size: 1.1rem; padding: 0 13px; }
-    .filters .fav.active { background: #fff; color: var(--heart); box-shadow: inset 0 0 0 2px var(--primary); }
+    .filters .fav { font-size: 1.1rem; padding: 0 13px; background: #fff; color: var(--primary); box-shadow: inset 0 0 0 2px var(--primary); }
+    .filters .fav.active { background: var(--primary); color: #fff; box-shadow: none; }
     .fav .lbl, .switch .lbl { display: none; }
     .switch .lbs { display: inline; }
     .filters .switch .knob { background: rgba(255,255,255,.35); }
