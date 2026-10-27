@@ -144,3 +144,19 @@ footer { text-align: center; margin-top: 14px; display: flex; gap: 8px; justify-
     .card.past { opacity: .45; }
     footer { padding: 0 12px; }
 }
+
+/* filtro zona: due bottoni attaccati */
+.seg { display: inline-flex; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--card); flex-shrink: 0; }
+.seg button { display: inline-flex; align-items: center; gap: 4px; border: 0; background: none; padding: 4px 10px; font-size: .8rem; cursor: pointer; color: var(--text); }
+.seg button + button { border-left: 1px solid var(--border); }
+.seg button.on { background: var(--primary); color: #fff; }
+.seg .i { display: inline-flex; }
+.seg svg { width: 14px; height: 14px; }
+@media (max-width: 760px) {
+    .filters .seg { height: 38px; border: 2px solid var(--primary); border-radius: 8px; }
+    .filters .seg button { padding: 0 12px; font-size: .9rem; color: var(--primary); }
+    .filters .seg button + button { border-left: 2px solid var(--primary); }
+    .filters .seg button.on { color: #fff; }
+    .filters .seg svg { width: 16px; height: 16px; }
+}
+@media (min-width: 761px) { .filters > .dd:last-child .panel { left: auto; right: 0; } }

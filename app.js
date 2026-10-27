@@ -24,6 +24,7 @@ const COLORS = {
 const KEEP_CAPS = ["USC", "HIIT", "TRX", "DJ", "FLINTA", "HALO"];
 // 5) Icona per zona, secondo il quartiere della palestra su Urban Sports
 const AREAS = { "Pankow": "casa", "Friedrichshain-Kreuzberg": "lavoro" };
+const AREA_BTNS = [["casa", "Casa"], ["lavoro", "Lavoro"]];   // filtro zona: uno acceso alla volta, all'inizio il primo
 // ==============================================================================
 
 const PLANS = [["M", "Classic"], ["L", "Premium"]];   // il piano Max non è considerato
@@ -84,7 +85,8 @@ function effectiveCategory(c) {
 }
 
 let classes = [], venues = {}, startHour = 7, endHour = 22, minDay, maxDay;
-const S = { cat: new Set(), venue: new Set(), plan: (p => PLANS.some(x => x[0] === p) ? p : "")(store.get("plan", "")), fav: false, allDay: false, view: 7, start: null, day: null,
+const S = { cat: new Set(), venue: new Set(), plan: (p => p === "" || PLANS.some(x => x[0] === p) ? p : "M")(store.get("plan2", "M")),
+    area: AREA_BTNS[0][0], fav: false, allDay: false, view: 7, start: null, day: null,
     q: "", from: T_MIN, to: T_MAX };
 const norm = t => (t || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 const favs = new Set(store.get("favs", []));
@@ -110,7 +112,7 @@ function prep(c) {
 }
 // Un corso passa i filtri se li rispetta tutti; "skip" ignora un filtro (serve per capire cosa è ancora scegliibile)
 const matches = (c, skip) =>
-    c.allDay === S.allDay && (skip === "cat" || !S.cat.size || S.cat.has(c.group)) && (skip === "venue" || !S.venue.size || S.venue.has(c.studio)) &&
+    c.allDay === S.allDay && (!c.area || c.area === S.area) && (skip === "cat" || !S.cat.size || S.cat.has(c.group)) && (skip === "venue" || !S.venue.size || S.venue.has(c.studio)) &&
     (skip === "plan" || !S.plan || c.plans.includes(S.plan)) && (skip === "fav" || !S.fav || favs.has(c.key)) &&
     (!mobile.matches || ((!S.q || c.text.includes(S.q)) && toMin(c.start) >= S.from && toMin(c.start) <= S.to));
 const visible = c => matches(c, null);
@@ -172,7 +174,7 @@ function planFilter() {
         const l = el("label"), i = el("input");
         i.type = "radio"; i.name = "plan"; i.checked = S.plan === v;
         UI.plan.set(v, { i, l });
-        i.onchange = () => { S.plan = v; store.set("plan", v); upd(); d.open = false; render(); };
+        i.onchange = () => { S.plan = v; store.set("plan2", v); upd(); d.open = false; render(); };
         l.append(i, document.createTextNode(" " + n));
         p.appendChild(l);
     });
@@ -416,8 +418,22 @@ async function init() {
     const known = GROUPS.map(g => g[0]).filter(g => present.has(g));
     const others = [...present].filter(g => !known.includes(g)).sort();
     const f = $("filters");
+    if (classes.some(c => c.area)) {
+        const seg = el("div", "seg");
+        AREA_BTNS.forEach(([v, label]) => {
+            const b = el("button", v === S.area ? "on" : "");
+            b.append(icon(v), el("span", null, label));
+            b.onclick = () => {
+                S.area = v;
+                seg.querySelectorAll("button").forEach(x => x.classList.toggle("on", x === b));
+                render();
+            };
+            seg.appendChild(b);
+        });
+        f.appendChild(seg);
+    }
     f.append(multi("Categorie", [...known, ...others], S.cat, UI.cat),
-             multi("Palestre", [...new Set(classes.map(c => c.studio))].sort(), S.venue, UI.venue), planFilter());
+             multi("Palestre", [...new Set(classes.map(c => c.studio))].sort(), S.venue, UI.venue));
     const fav = el("button", "btn fav");
     fav.innerHTML = '♥<span class="lbl"> Solo preferiti</span>';
     fav.setAttribute("aria-label", "Solo preferiti");
@@ -432,6 +448,7 @@ async function init() {
         ad.append(box, el("span", "knob"), el("span", "lbl", "Mostra orari continui"), el("span", "lbs", "Orari continui"));
         f.appendChild(ad);
     }
+    f.appendChild(planFilter());
 
     [[1, "1 giorno"], [4, "4 giorni"], [7, "7 giorni"]].forEach(([n, l]) => {
         const b = el("button", "btn", l); b.dataset.v = n; b.onclick = () => setView(n); $("views").appendChild(b);
