@@ -275,12 +275,13 @@ function renderGrid(view, list) {
     view.appendChild(grid);
     grid.appendChild(el("div", "gh"));
     const days = Array.from({ length: n }, (_, i) => addDays(S.start, i));
-    days.forEach(d => grid.appendChild(el("div", "gh" + (iso(d) === todayIso ? " today" : ""), `${dayName(d)} ${d.getDate()}`)));
+    const we = d => d.getDay() % 6 === 0 ? " we" : "";
+    days.forEach(d => grid.appendChild(el("div", "gh" + we(d) + (iso(d) === todayIso ? " today" : ""), `${dayName(d)} ${d.getDate()}`)));
     const cols = [];
     for (let h = startHour; h <= endHour; h++) {
         grid.appendChild(el("div", "ts", `${pad(h)}:00`));
         for (let i = 0; i < n; i++) {
-            const c = el("div", "dc");
+            const c = el("div", "dc" + we(days[i]));
             grid.appendChild(c);
             if (h === startHour) cols[i] = c;
         }
