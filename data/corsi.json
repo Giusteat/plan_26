@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-27T08:27+01:00",
+ "updated": "2026-10-27T13:21+01:00",
  "venues": {
   "lyra-prenzlauerberg": {
    "slug": "lyra-prenzlauerberg",
@@ -2812,6 +2812,89 @@
       {
        "id": 135,
        "name": "Pole Dance",
+       "limit": 8
+      },
+      {
+       "id": 7,
+       "name": "Dance",
+       "limit": 8
+      }
+     ]
+    }
+   ]
+  },
+  "lunatix-dance-base-east-side-mall-1": {
+   "slug": "lunatix-dance-base-east-side-mall-1",
+   "id": 13372,
+   "name": "Lunatix Dance Base East Side Mall",
+   "address": "Tamara-Danz-Str. 11",
+   "postalCode": "10243",
+   "district": "Friedrichshain-Kreuzberg",
+   "latitude": 52.5060818,
+   "longitude": 13.4465683,
+   "website": "https://lunatix-dance.com/kursplan/",
+   "image": "https://storage.googleapis.com/download/storage/v1/b/usc-pro-uscweb-live-media/o/venues%2Foriginal_1024x576_IMG_2685_1581691985403375_admin.jpg?generation=1751974106121558&alt=media",
+   "visitLimits": [
+    {
+     "name": "S",
+     "planName": "Essential",
+     "isAvailableAtVenue": true,
+     "isProvidedByVenue": false,
+     "monthlyLimitVenue": null,
+     "monthlyLimitVenueAddress": null,
+     "categoryLimits": []
+    },
+    {
+     "name": "M",
+     "planName": "Classic",
+     "isAvailableAtVenue": true,
+     "isProvidedByVenue": true,
+     "monthlyLimitVenue": -1,
+     "monthlyLimitVenueAddress": 4,
+     "categoryLimits": [
+      {
+       "id": 7,
+       "name": "Dance",
+       "limit": 4
+      },
+      {
+       "id": 6,
+       "name": "Yoga",
+       "limit": 4
+      }
+     ]
+    },
+    {
+     "name": "L",
+     "planName": "Premium",
+     "isAvailableAtVenue": true,
+     "isProvidedByVenue": true,
+     "monthlyLimitVenue": -1,
+     "monthlyLimitVenueAddress": 8,
+     "categoryLimits": [
+      {
+       "id": 7,
+       "name": "Dance",
+       "limit": 8
+      },
+      {
+       "id": 6,
+       "name": "Yoga",
+       "limit": 8
+      }
+     ]
+    },
+    {
+     "name": "XL",
+     "planName": "Max",
+     "isAvailableAtVenue": true,
+     "isProvidedByVenue": true,
+     "monthlyLimitVenue": -1,
+     "monthlyLimitVenueAddress": 8,
+     "categoryLimits": [
+      {
+       "id": 6,
+       "name": "Yoga",
        "limit": 8
       },
       {
@@ -8340,6 +8423,27 @@
    "venue": "laudace-studio"
   },
   {
+   "id": 107651576,
+   "title": "K-Pop - Beginner",
+   "teacherName": "Yerin K.",
+   "startDateTimeUTC": "2026-10-27T17:00:00+01:00",
+   "endDateTimeUTC": "2026-10-27T18:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
    "id": 107646212,
    "title": "REFORMER Full Body | Beginner | ENG",
    "teacherName": "Tea Z.",
@@ -8694,6 +8798,48 @@
    ],
    "isPlusCheckin": false,
    "venue": "laudace-studio"
+  },
+  {
+   "id": 107651565,
+   "title": "Choreography - Beginner",
+   "teacherName": "Yerin K.",
+   "startDateTimeUTC": "2026-10-27T18:00:00+01:00",
+   "endDateTimeUTC": "2026-10-27T20:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
+   "id": 107651540,
+   "title": "Female Performance (Commercial) - Intermediate",
+   "teacherName": "Kristina A.",
+   "startDateTimeUTC": "2026-10-27T18:00:00+01:00",
+   "endDateTimeUTC": "2026-10-27T19:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
   },
   {
    "id": 107647892,
@@ -9155,6 +9301,27 @@
    "venue": "laudace-studio"
   },
   {
+   "id": 107651568,
+   "title": "Choreography - Intermediate",
+   "teacherName": "Sebastian C.",
+   "startDateTimeUTC": "2026-10-27T19:00:00+01:00",
+   "endDateTimeUTC": "2026-10-27T21:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
    "id": 107649161,
    "title": "REFORMER Full Body | Experienced | ENG",
    "teacherName": "Nat S.",
@@ -9571,6 +9738,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "laudace-studio"
+  },
+  {
+   "id": 107651559,
+   "title": "Reggaeton - Beginner",
+   "teacherName": "Anna",
+   "startDateTimeUTC": "2026-10-27T20:00:00+01:00",
+   "endDateTimeUTC": "2026-10-27T21:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
   },
   {
    "id": 107650244,
@@ -13104,6 +13292,48 @@
    "venue": "laudace-studio"
   },
   {
+   "id": 107698842,
+   "title": "Heels Technique - open level",
+   "teacherName": "Juliane M.",
+   "startDateTimeUTC": "2026-10-28T19:00:00+01:00",
+   "endDateTimeUTC": "2026-10-28T20:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
+   "id": 107698837,
+   "title": "Heels Dance - Beginner",
+   "teacherName": "Juliane M.",
+   "startDateTimeUTC": "2026-10-28T19:00:00+01:00",
+   "endDateTimeUTC": "2026-10-28T20:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
    "id": 107695246,
    "title": "REFORMER Build & Burn | ENG",
    "teacherName": "Donna M.",
@@ -13477,6 +13707,48 @@
    ],
    "isPlusCheckin": false,
    "venue": "laudace-studio"
+  },
+  {
+   "id": 107700437,
+   "title": "Heels Dance - Beginner",
+   "teacherName": "Juliane M.",
+   "startDateTimeUTC": "2026-10-28T20:00:00+01:00",
+   "endDateTimeUTC": "2026-10-28T21:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
+   "id": 107698863,
+   "title": "Frame Up - Beginner",
+   "teacherName": "Maya B.",
+   "startDateTimeUTC": "2026-10-28T20:00:00+01:00",
+   "endDateTimeUTC": "2026-10-28T21:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
   },
   {
    "id": 107696284,
@@ -16862,6 +17134,48 @@
    "venue": "laudace-studio"
   },
   {
+   "id": 107775326,
+   "title": "Choreography - Beginner",
+   "teacherName": "Melisa K.",
+   "startDateTimeUTC": "2026-10-29T19:00:00+01:00",
+   "endDateTimeUTC": "2026-10-29T20:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
+   "id": 107775331,
+   "title": "Hip Hop Adults - Beginner",
+   "teacherName": "Ray",
+   "startDateTimeUTC": "2026-10-29T19:00:00+01:00",
+   "endDateTimeUTC": "2026-10-29T20:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
    "id": 107771065,
    "title": "REFORMER Abs & Ass | ENG",
    "teacherName": "Maya D.",
@@ -17174,6 +17488,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "laudace-studio"
+  },
+  {
+   "id": 107775336,
+   "title": "Choreography - Open Level",
+   "teacherName": "Melisa K.",
+   "startDateTimeUTC": "2026-10-29T20:00:00+01:00",
+   "endDateTimeUTC": "2026-10-29T21:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
   },
   {
    "id": 107771524,
@@ -20101,6 +20436,27 @@
    "venue": "laudace-studio"
   },
   {
+   "id": 107826689,
+   "title": "K-Pop - Beginner",
+   "teacherName": "Suzi",
+   "startDateTimeUTC": "2026-10-30T17:00:00+01:00",
+   "endDateTimeUTC": "2026-10-30T18:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
    "id": 107820017,
    "title": "REFORMER Full Body | Beginner | DE",
    "teacherName": "Kathrin G.",
@@ -20476,6 +20832,27 @@
    "venue": "laudace-studio"
   },
   {
+   "id": 107826675,
+   "title": "Female Performance - Intermediate",
+   "teacherName": "Kristina A.",
+   "startDateTimeUTC": "2026-10-30T18:00:00+01:00",
+   "endDateTimeUTC": "2026-10-30T19:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
    "id": 107821101,
    "title": "REFORMER Full Body | Experienced | ENG",
    "teacherName": "Kathrin G.",
@@ -20808,6 +21185,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "laudace-studio"
+  },
+  {
+   "id": 107826710,
+   "title": "Reggaeton - Beginner",
+   "teacherName": "Anna",
+   "startDateTimeUTC": "2026-10-30T19:00:00+01:00",
+   "endDateTimeUTC": "2026-10-30T20:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
   },
   {
    "id": 107821840,
@@ -29622,6 +30020,27 @@
    "venue": "laudace-studio"
   },
   {
+   "id": 107955377,
+   "title": "Afro Vibes - Beginner",
+   "teacherName": "Melisa K.",
+   "startDateTimeUTC": "2026-11-02T18:00:00+01:00",
+   "endDateTimeUTC": "2026-11-02T19:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 100
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
    "id": 107950996,
    "title": "Spinning Pole L0",
    "teacherName": "Anastasiia C.",
@@ -30038,6 +30457,69 @@
    "venue": "laudace-studio"
   },
   {
+   "id": 107955385,
+   "title": "Heels - Beginner",
+   "teacherName": "Liaboa",
+   "startDateTimeUTC": "2026-11-02T19:00:00+01:00",
+   "endDateTimeUTC": "2026-11-02T20:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
+   "id": 107955389,
+   "title": "High Heels - Beginner",
+   "teacherName": "Chantel B.",
+   "startDateTimeUTC": "2026-11-02T19:00:00+01:00",
+   "endDateTimeUTC": "2026-11-02T20:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
+   "id": 107955384,
+   "title": "Commercial Jazz - Beginner/Intermediate",
+   "teacherName": "Amy",
+   "startDateTimeUTC": "2026-11-02T19:00:00+01:00",
+   "endDateTimeUTC": "2026-11-02T20:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
    "id": 107953010,
    "title": "REFORMER Full Body | Beginner | DE",
    "teacherName": "Michelle W.",
@@ -30413,6 +30895,48 @@
    ],
    "isPlusCheckin": false,
    "venue": "laudace-studio"
+  },
+  {
+   "id": 107955382,
+   "title": "Commercial Jazz - Beginner/Intermediate",
+   "teacherName": "Amy",
+   "startDateTimeUTC": "2026-11-02T20:00:00+01:00",
+   "endDateTimeUTC": "2026-11-02T21:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
+   "id": 107955380,
+   "title": "Commercial - open Level",
+   "teacherName": "Denisa",
+   "startDateTimeUTC": "2026-11-02T20:00:00+01:00",
+   "endDateTimeUTC": "2026-11-02T21:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
   },
   {
    "id": 107954154,
@@ -33007,6 +33531,27 @@
    "venue": "laudace-studio"
   },
   {
+   "id": 108010340,
+   "title": "K-Pop - Beginner",
+   "teacherName": "Yerin K.",
+   "startDateTimeUTC": "2026-11-03T17:00:00+01:00",
+   "endDateTimeUTC": "2026-11-03T18:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
    "id": 108002149,
    "title": "REFORMER Full Body | Beginner | ENG",
    "teacherName": "Tea Z.",
@@ -33402,6 +33947,48 @@
    ],
    "isPlusCheckin": false,
    "venue": "laudace-studio"
+  },
+  {
+   "id": 108010370,
+   "title": "Female Performance (Commercial) - Intermediate",
+   "teacherName": "Kristina A.",
+   "startDateTimeUTC": "2026-11-03T18:00:00+01:00",
+   "endDateTimeUTC": "2026-11-03T19:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
+   "id": 108010361,
+   "title": "Choreography - Beginner",
+   "teacherName": "Yerin K.",
+   "startDateTimeUTC": "2026-11-03T18:00:00+01:00",
+   "endDateTimeUTC": "2026-11-03T20:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
   },
   {
    "id": 108003635,
@@ -33862,6 +34449,27 @@
    "venue": "laudace-studio"
   },
   {
+   "id": 108010366,
+   "title": "Choreography - Intermediate",
+   "teacherName": "Sebastian C.",
+   "startDateTimeUTC": "2026-11-03T19:00:00+01:00",
+   "endDateTimeUTC": "2026-11-03T21:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
    "id": 108005175,
    "title": "REFORMER Full Body | Experienced | ENG",
    "teacherName": "Nat S.",
@@ -34278,6 +34886,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "laudace-studio"
+  },
+  {
+   "id": 108010371,
+   "title": "Reggaeton - Beginner",
+   "teacherName": "Anna",
+   "startDateTimeUTC": "2026-11-03T20:00:00+01:00",
+   "endDateTimeUTC": "2026-11-03T21:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
   },
   {
    "id": 108006025,
@@ -37810,6 +38439,48 @@
    "venue": "laudace-studio"
   },
   {
+   "id": 108059308,
+   "title": "Heels Dance - Beginner",
+   "teacherName": "Juliane M.",
+   "startDateTimeUTC": "2026-11-04T19:00:00+01:00",
+   "endDateTimeUTC": "2026-11-04T20:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
+   "id": 108059294,
+   "title": "Heels Technique - open level",
+   "teacherName": "Juliane M.",
+   "startDateTimeUTC": "2026-11-04T19:00:00+01:00",
+   "endDateTimeUTC": "2026-11-04T20:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
    "id": 108054720,
    "title": "REFORMER Build & Burn | ENG",
    "teacherName": "Donna M.",
@@ -38183,6 +38854,48 @@
    ],
    "isPlusCheckin": false,
    "venue": "laudace-studio"
+  },
+  {
+   "id": 108059327,
+   "title": "Frame Up - Beginner",
+   "teacherName": "Maya B.",
+   "startDateTimeUTC": "2026-11-04T20:00:00+01:00",
+   "endDateTimeUTC": "2026-11-04T21:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
+   "id": 108059323,
+   "title": "Heels Dance - Beginner",
+   "teacherName": "Juliane M.",
+   "startDateTimeUTC": "2026-11-04T20:00:00+01:00",
+   "endDateTimeUTC": "2026-11-04T21:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
   },
   {
    "id": 108055646,
@@ -41568,6 +42281,48 @@
    "venue": "laudace-studio"
   },
   {
+   "id": 108096303,
+   "title": "Choreography - Beginner",
+   "teacherName": "Melisa K.",
+   "startDateTimeUTC": "2026-11-05T19:00:00+01:00",
+   "endDateTimeUTC": "2026-11-05T20:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
+   "id": 108096269,
+   "title": "Hip Hop Adults - Beginner",
+   "teacherName": "Ray",
+   "startDateTimeUTC": "2026-11-05T19:00:00+01:00",
+   "endDateTimeUTC": "2026-11-05T20:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
    "id": 108093785,
    "title": "REFORMER Abs & Ass | ENG",
    "teacherName": "Maya D.",
@@ -41880,6 +42635,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "laudace-studio"
+  },
+  {
+   "id": 108096300,
+   "title": "Choreography - Open Level",
+   "teacherName": "Melisa K.",
+   "startDateTimeUTC": "2026-11-05T20:00:00+01:00",
+   "endDateTimeUTC": "2026-11-05T21:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
   },
   {
    "id": 108094297,
@@ -44809,6 +45585,27 @@
    "venue": "laudace-studio"
   },
   {
+   "id": 108135825,
+   "title": "K-Pop - Beginner",
+   "teacherName": "Suzi",
+   "startDateTimeUTC": "2026-11-06T17:00:00+01:00",
+   "endDateTimeUTC": "2026-11-06T18:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
    "id": 108129331,
    "title": "REFORMER Full Body | Beginner | DE",
    "teacherName": "Kathrin G.",
@@ -45182,6 +45979,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "laudace-studio"
+  },
+  {
+   "id": 108136112,
+   "title": "Female Performance - Intermediate",
+   "teacherName": "Kristina A.",
+   "startDateTimeUTC": "2026-11-06T18:00:00+01:00",
+   "endDateTimeUTC": "2026-11-06T19:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
   },
   {
    "id": 108130382,
@@ -45558,6 +46376,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "laudace-studio"
+  },
+  {
+   "id": 108136012,
+   "title": "Reggaeton - Beginner",
+   "teacherName": "Anna",
+   "startDateTimeUTC": "2026-11-06T19:00:00+01:00",
+   "endDateTimeUTC": "2026-11-06T20:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
   },
   {
    "id": 108131085,
@@ -54331,6 +55170,27 @@
    "venue": "laudace-studio"
   },
   {
+   "id": 108291738,
+   "title": "Afro Vibes - Beginner",
+   "teacherName": "Melisa K.",
+   "startDateTimeUTC": "2026-11-09T18:00:00+01:00",
+   "endDateTimeUTC": "2026-11-09T19:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 100
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
    "id": 108284207,
    "title": "Spinning Pole L0",
    "teacherName": "Anastasiia C.",
@@ -54703,6 +55563,69 @@
    ],
    "isPlusCheckin": false,
    "venue": "laudace-studio"
+  },
+  {
+   "id": 108291763,
+   "title": "Heels - Beginner",
+   "teacherName": "Liaboa",
+   "startDateTimeUTC": "2026-11-09T19:00:00+01:00",
+   "endDateTimeUTC": "2026-11-09T20:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
+   "id": 108291751,
+   "title": "High Heels - Beginner",
+   "teacherName": "Chantel B.",
+   "startDateTimeUTC": "2026-11-09T19:00:00+01:00",
+   "endDateTimeUTC": "2026-11-09T20:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
+   "id": 108291757,
+   "title": "Commercial Jazz - Beginner/Intermediate",
+   "teacherName": "Amy",
+   "startDateTimeUTC": "2026-11-09T19:00:00+01:00",
+   "endDateTimeUTC": "2026-11-09T20:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
   },
   {
    "id": 108286206,
@@ -55080,6 +56003,48 @@
    ],
    "isPlusCheckin": false,
    "venue": "laudace-studio"
+  },
+  {
+   "id": 108291755,
+   "title": "Commercial Jazz - Beginner/Intermediate",
+   "teacherName": "Amy",
+   "startDateTimeUTC": "2026-11-09T20:00:00+01:00",
+   "endDateTimeUTC": "2026-11-09T21:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
+   "id": 108291753,
+   "title": "Commercial - open Level",
+   "teacherName": "Denisa",
+   "startDateTimeUTC": "2026-11-09T20:00:00+01:00",
+   "endDateTimeUTC": "2026-11-09T21:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
   },
   {
    "id": 108288078,
