@@ -26,6 +26,13 @@
         <input type="search" id="q" placeholder="Palestre, lezioni e categorie" autocomplete="off" aria-label="Cerca">
     </label>
     <div class="bar">
+        <div class="nav">
+            <button class="btn" id="prev" aria-label="Precedente">‹</button>
+            <span id="label"></span>
+            <button class="btn" id="next" aria-label="Successivo">›</button>
+            <button class="btn" id="today">Oggi</button>
+        </div>
+        <div class="views" id="views"></div>
         <div class="filters" id="filters"></div>
     </div>
     <div class="range mob">
@@ -38,15 +45,6 @@
     </div>
     <div class="days mob" id="days"></div>
 </header>
-<div class="toolbar">
-    <div class="nav">
-        <button class="btn" id="prev" aria-label="Precedente">‹</button>
-        <span id="label"></span>
-        <button class="btn" id="next" aria-label="Successivo">›</button>
-        <button class="btn" id="today">Oggi</button>
-    </div>
-    <div class="views" id="views"></div>
-</div>
 <main id="view"></main>
 <footer>
     <button class="btn" id="copyFav">Copia preferiti</button>

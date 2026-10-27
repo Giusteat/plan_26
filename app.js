@@ -38,6 +38,7 @@ const AREA_BTNS = [["casa", "Casa"], ["lavoro", "Lavoro"]];   // filtro zona: un
 
 const PLANS = [["M", "Classic"], ["L", "Premium"]];   // il piano Max non è considerato
 const DAYS = ["Lun", "Mar", "Mer", "Gio", "Ven", "Sab", "Dom"];
+const HOUR_H = 60;
 const T_MIN = 5 * 60, T_MAX = 23 * 60;   // barra degli orari sul telefono
 const CLASS_URL = id => `https://www.urbansportsclub.com/en/activities?class=${id}`;   // si apre nell'app, se installata
 const ICONS = {
@@ -92,7 +93,7 @@ function effectiveCategory(c) {
     return (c.category || {}).name || "-";
 }
 
-let classes = [], venues = {}, minDay, maxDay;
+let classes = [], venues = {}, startHour = 7, endHour = 22, minDay, maxDay;
 const S = { cat: new Set(), venue: new Set(), plan: (p => p === "" || PLANS.some(x => x[0] === p) ? p : "M")(store.get("plan2", "M")),
     area: AREA_BTNS[0][0],
     levels: (l => l && typeof l === "object" && !Array.isArray(l) ? l : { "Pole Dance": ["L0"] })(store.get("levels", null)), fav: false, allDay: false, view: 7, start: null, day: null,
@@ -112,6 +113,7 @@ const saveFavs = () => { store.set("favs", [...favs]); store.set("favT", favT); 
 store.get("favs", []).forEach(addFav);
 saveFavs();
 const newTeacher = c => favs.has(c.key) && favT[c.key] && c.teacherName && favT[c.key] !== c.teacherName ? favT[c.key] : null;
+const newTeacherLine = c => { const t = newTeacher(c); return t ? el("div", "nt", `Nuovo insegnante (prima: ${t})`) : null; };
 const mobile = window.matchMedia("(max-width: 760px)");
 
 function prep(c) {
@@ -136,7 +138,7 @@ function prep(c) {
 const matches = (c, skip) =>
     c.allDay === S.allDay && (!c.area || c.area === S.area) && (skip === "level" || levelOk(c)) && (skip === "cat" || !S.cat.size || S.cat.has(c.group)) && (skip === "venue" || !S.venue.size || S.venue.has(c.studio)) &&
     (skip === "plan" || !S.plan || c.plans.includes(S.plan)) && (skip === "fav" || !S.fav || favs.has(c.key)) &&
-    (!S.q || c.text.includes(S.q)) && toMin(c.start) >= S.from && toMin(c.start) <= S.to;
+    (!mobile.matches || ((!S.q || c.text.includes(S.q)) && toMin(c.start) >= S.from && toMin(c.start) <= S.to));
 const visible = c => matches(c, null);
 const UI = { cat: new Map(), venue: new Map(), plan: new Map(), fav: null };
 
@@ -255,53 +257,80 @@ function planFilter() {
 document.addEventListener("click", e =>
     document.querySelectorAll("details.dd[open]").forEach(d => { if (!d.contains(e.target)) d.open = false; }));
 
+// ---------- griglia (computer): 1, 4 o 7 giorni ----------
+function layout(list) {
+    const evs = list.map(c => ({ ...c, a: toMin(c.start), z: toMin(c.end) })).sort((x, y) => x.a - y.a);
+    const clusters = [];
+    let cur = [];
+    evs.forEach(ev => {
+        if (cur.length && ev.a >= Math.max(...cur.map(x => x.z))) { clusters.push(cur); cur = []; }
+        cur.push(ev);
+    });
+    if (cur.length) clusters.push(cur);
+    clusters.forEach(cl => {
+        const cols = [];
+        cl.forEach(ev => {
+            let i = cols.findIndex(col => col[col.length - 1].z <= ev.a);
+            if (i === -1) { cols.push([]); i = cols.length - 1; }
+            cols[i].push(ev);
+            ev.col = i;
+        });
+        cl.forEach(ev => { ev.cols = cols.length; });
+    });
+    return evs;
+}
 // Grigia appena è iniziata: a quel punto non ci si può più andare
 const isPast = (c, todayIso, nowMin) => c.date < todayIso || (c.date === todayIso && toMin(c.start) < nowMin);
-const byTime = (a, b) => a.start.localeCompare(b.start) || a.studio.localeCompare(b.studio);
-const line = (ic, text, cls) => { const d = el("div", "ln" + (cls ? " " + cls : "")); d.append(ic, el("span", null, text)); return d; };
-const heartBtn = c => {
-    const h = el("button", "heart" + (favs.has(c.key) ? "" : " off"), favs.has(c.key) ? "♥" : "♡");
-    h.setAttribute("aria-label", "Preferito");
-    h.onclick = e => { e.preventDefault(); e.stopPropagation(); toggleFav(c); };
-    return h;
-};
-const newTeacherLine = c => { const t = newTeacher(c); return t ? el("div", "nt", `Nuovo insegnante (prima: ${t})`) : null; };
 
-// ---------- settimana (computer): 1, 4 o 7 colonne di schede ----------
-function renderWeek(view, list) {
+function renderGrid(view, list) {
     const n = S.view, now = new Date(), todayIso = iso(now), nowMin = now.getHours() * 60 + now.getMinutes();
-    const wk = el("div", "week");
-    wk.style.gridTemplateColumns = `repeat(${n}, minmax(0, 1fr))`;
-    for (let i = 0; i < n; i++) {
-        const d = addDays(S.start, i), dayIso = iso(d);
-        const col = el("div", "col" + (d.getDay() % 6 === 0 ? " we" : "") + (dayIso === todayIso ? " today" : ""));
-        col.appendChild(el("div", "gh", `${dayName(d)} ${d.getDate()}`));
-        const items = list.filter(c => c.date === dayIso).sort(byTime);
-        if (!items.length) col.appendChild(el("p", "empty", "Nessun corso"));
-        items.forEach(c => {
-            const fg = colorOf(c)[1];
-            const b = el("div", "mini" + (isPast(c, todayIso, nowMin) ? " past" : ""));
-            b.style.borderLeftColor = fg;
-            b.dataset.start = toMin(c.start);
-            b.title = `${c.name}\n${c.group}`;
-            b.append(el("div", "tm", `${c.start} – ${c.end}`), el("div", "tt", c.name),
-                line(c.area ? icon(c.area, "area") : icon("tag"), c.studio));
-            if (c.teacherName) b.appendChild(line(icon("persona"), c.teacherName));
-            const nt = newTeacherLine(c);
-            if (nt) b.appendChild(nt);
-            b.appendChild(heartBtn(c));
-            b.onclick = () => openSheet(c);
-            col.appendChild(b);
-        });
-        wk.appendChild(col);
+    const grid = el("div", "grid");
+    grid.style.gridTemplateColumns = `48px repeat(${n}, minmax(0, 1fr))`;
+    view.appendChild(grid);
+    grid.appendChild(el("div", "gh"));
+    const days = Array.from({ length: n }, (_, i) => addDays(S.start, i));
+    const we = d => d.getDay() % 6 === 0 ? " we" : "";
+    days.forEach(d => grid.appendChild(el("div", "gh" + we(d) + (iso(d) === todayIso ? " today" : ""), `${dayName(d)} ${d.getDate()}`)));
+    const cols = [];
+    for (let h = startHour; h <= endHour; h++) {
+        grid.appendChild(el("div", "ts", `${pad(h)}:00`));
+        for (let i = 0; i < n; i++) {
+            const c = el("div", "dc" + we(days[i]));
+            grid.appendChild(c);
+            if (h === startHour) cols[i] = c;
+        }
     }
-    view.appendChild(wk);
+    days.forEach((d, i) => {
+        const dayIso = iso(d);
+        layout(list.filter(c => c.date === dayIso)).forEach(ev => {
+            const [bg, fg] = colorOf(ev), w = 100 / ev.cols;
+            const b = el("div", "ev" + (isPast(ev, todayIso, nowMin) ? " past" : ""));
+            Object.assign(b.style, {
+                background: bg, color: fg, top: `${((ev.a - startHour * 60) / 60) * HOUR_H}px`,
+                height: `${Math.max(((ev.z - ev.a) / 60) * HOUR_H, 22)}px`,
+                left: `calc(${ev.col * w}% + 1px)`, width: `calc(${w}% - 2px)`
+            });
+            b.title = `${ev.name}\n${ev.start}–${ev.end} · ${ev.studio}\n${ev.teacherName || ""}\nAl mese: ${monthlyText(ev)}`;
+            b.append(el("div", "t", ev.name), el("div", "s", `${ev.start}–${ev.end} · ${ev.studio}`));
+            if (n <= 4 && ev.teacherName) b.appendChild(el("div", "tc", ev.teacherName));
+            if (favs.has(ev.key)) b.appendChild(el("span", "h", "♥"));
+            if (newTeacher(ev)) { b.appendChild(el("div", "tc nt", "Nuovo insegnante")); b.title += `\nNuovo insegnante (prima: ${newTeacher(ev)})`; }
+            b.onclick = () => openSheet(ev);
+            cols[i].appendChild(b);
+        });
+        if (dayIso === todayIso && nowMin >= startHour * 60 && nowMin <= (endHour + 1) * 60) {
+            const line = el("div", "now");
+            line.style.top = `${((nowMin - startHour * 60) / 60) * HOUR_H}px`;
+            cols[i].appendChild(line);
+        }
+    });
 }
 
 // ---------- schede del giorno (telefono) ----------
 function renderCards(view, list) {
     const now = new Date(), todayIso = iso(now), nowMin = now.getHours() * 60 + now.getMinutes();
-    const items = list.filter(c => c.date === iso(S.day)).sort(byTime);
+    const items = list.filter(c => c.date === iso(S.day))
+        .sort((a, b) => a.start.localeCompare(b.start) || a.studio.localeCompare(b.studio));
     if (!items.length) { view.appendChild(el("p", "empty", "Nessun corso con questi filtri.")); return; }
     items.forEach(c => {
         const v = venues[c.venue] || {}, [bg, fg] = colorOf(c);
@@ -317,6 +346,7 @@ function renderCards(view, list) {
             pic.appendChild(img);
         }
         const bd = el("div", "bd");
+        const line = (ic, text, cls) => { const d = el("div", "ln" + (cls ? " " + cls : "")); d.append(ic, el("span", null, text)); return d; };
         // due informazioni per riga: la prima si accorcia con "…" se non c'è spazio
         const pair = (a, b) => { const d = el("div", "pair"); d.append(a); if (b) d.append(b); return d; };
         const tg = line(icon("tag"), c.group, "grow");
@@ -324,23 +354,26 @@ function renderCards(view, list) {
         bd.append(el("div", "tt", c.name), el("div", "tm", `${c.start} - ${c.end}`),
             pair(line(c.area ? icon(c.area, "area") : el("span", "i"), c.studio, "grow"), c.teacherName ? line(icon("persona"), c.teacherName, "side") : null),
             pair(tg, c.spots && c.spots.max != null ? line(icon("posti"), `${c.spots.max} posti`, "side spots") : null));
+        const h = el("button", "heart", favs.has(c.key) ? "♥" : "♡");
+        h.setAttribute("aria-label", "Preferito");
+        h.onclick = e => { e.preventDefault(); e.stopPropagation(); toggleFav(c); };
         const nt = newTeacherLine(c);
         if (nt) bd.appendChild(nt);
-        card.append(pic, bd, heartBtn(c));
+        card.append(pic, bd, h);
         view.appendChild(card);
     });
 }
 
 // Oggi: porta la vista alle lezioni che iniziano da adesso in poi (alle 8:20 → dalle 8:20; le precedenti restano sopra)
 function scrollToNow() {
-    const headerH = mobile.matches ? document.querySelector("header").offsetHeight : 100;   // computer: barra in alto + nome del giorno
-    const now = new Date(), nowMin = now.getHours() * 60 + now.getMinutes();
+    const headerH = mobile.matches ? document.querySelector("header").offsetHeight : 0;
     let target = null;
     if (mobile.matches) {
+        const now = new Date(), nowMin = now.getHours() * 60 + now.getMinutes();
         if (iso(S.day) === iso(now)) target = [...document.querySelectorAll("#view .card")].find(c => Number(c.dataset.start) >= nowMin);
-    } else target = [...document.querySelectorAll("#view .col.today .mini")].find(c => Number(c.dataset.start) >= nowMin);
+    } else target = document.querySelector("#view .now");
     if (!target) { window.scrollTo(0, 0); return; }
-    const y = target.getBoundingClientRect().top + window.scrollY - headerH;
+    const y = target.getBoundingClientRect().top + window.scrollY - headerH - (mobile.matches ? 0 : 120);
     window.scrollTo(0, Math.max(0, y));
 }
 
@@ -425,9 +458,17 @@ function goToday() {
     render();
     scrollToNow();
 }
+// Le ore della griglia seguono i corsi visibili (con l'interruttore acceso: solo gli studi a orari continui)
+function fitHours() {
+    const base = classes.filter(c => c.allDay === S.allDay);
+    if (!base.length) return;
+    startHour = Math.min(7, Math.floor(Math.min(...base.map(c => toMin(c.start))) / 60));
+    endHour = Math.max(22, Math.ceil(Math.max(...base.map(c => toMin(c.end))) / 60) - 1);
+}
 function render() {
     if (!S.start) return;
     updateAvailability();
+    fitHours();
     const view = $("view");
     view.innerHTML = "";
     const list = classes.filter(visible);
@@ -437,7 +478,7 @@ function render() {
         $("label").textContent = `${dayName(S.day)} ${fmt(S.day)}`;
         $("prev").disabled = S.day <= minDay; $("next").disabled = S.day >= maxDay;
     } else {
-        renderWeek(view, list);
+        renderGrid(view, list);
         $("label").textContent = S.view === 1 ? `${dayName(S.start)} ${fmt(S.start)}` : `${fmt(S.start)} – ${fmt(addDays(S.start, S.view - 1))}`;
         $("prev").disabled = S.start <= firstStart(); $("next").disabled = S.start >= lastStart();
     }
@@ -463,6 +504,8 @@ async function init() {
     S.view = [1, 4, 7].includes(v) ? v : 7;
     S.day = clampDay(todayDate());
     S.start = clampStart(S.view === 7 ? mondayOf(new Date()) : todayDate());
+    startHour = Math.min(7, Math.floor(Math.min(...classes.map(c => toMin(c.start))) / 60));
+    endHour = Math.max(22, Math.ceil(Math.max(...classes.map(c => toMin(c.end))) / 60));
 
     const present = new Set(classes.map(c => c.group));
     const known = GROUPS.map(g => g[0]).filter(g => present.has(g));
@@ -472,7 +515,7 @@ async function init() {
         const seg = el("div", "seg");
         AREA_BTNS.forEach(([v, label]) => {
             const b = el("button", v === S.area ? "on" : "");
-            b.append(icon(v), el("span", "lbl", label));
+            b.appendChild(icon(v));
             b.title = label; b.setAttribute("aria-label", label);
             b.onclick = () => {
                 S.area = v;
@@ -522,7 +565,7 @@ async function init() {
             saveFavs(); render();
         } catch (e) { alert("Testo non valido."); }
     };
-    // ricerca e barra degli orari
+    // ricerca e barra degli orari (telefono)
     $("q").oninput = () => { S.q = norm($("q").value.trim()); render(); };
     const fromI = $("from"), toI = $("to"), hhmm = m => `${pad(Math.floor(m / 60))}:${pad(m % 60)}`;
     const saved = store.get("hours", null);
