@@ -375,11 +375,13 @@ function renderCards(view, list) {
 // Oggi: porta la vista alle lezioni che iniziano da adesso in poi (alle 8:20 → dalle 8:20; le precedenti restano sopra)
 function scrollToNow() {
     const headerH = mobile.matches ? document.querySelector("header").offsetHeight : 0;
+    const now = new Date(), nowMin = now.getHours() * 60 + now.getMinutes();
     let target = null;
     if (mobile.matches) {
-        const now = new Date(), nowMin = now.getHours() * 60 + now.getMinutes();
         if (iso(S.day) === iso(now)) target = [...document.querySelectorAll("#view .card")].find(c => Number(c.dataset.start) >= nowMin);
     } else target = document.querySelector("#view .now");
+    // oggi senza più lezioni da fare: si va all'ultima
+    if (!target && mobile.matches && iso(S.day) === iso(now)) target = [...document.querySelectorAll("#view .card")].pop();
     if (!target) { window.scrollTo(0, 0); return; }
     const y = target.getBoundingClientRect().top + window.scrollY - headerH - (mobile.matches ? 0 : 120);
     window.scrollTo(0, Math.max(0, y));
@@ -601,4 +603,5 @@ async function init() {
     scrollToNow();
     setInterval(render, 60000);
 }
+if ("scrollRestoration" in history) history.scrollRestoration = "manual";   // ricaricando decide scrollToNow, non il browser
 init();

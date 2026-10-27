@@ -1,4 +1,4 @@
-:root { --bg:#f8f9fa; --card:#fff; --text:#212529; --muted:#6c757d; --primary:#4f46e5; --border:#e5e7eb; --grid:#e2e8f0; --now:#ea4335; --heart:#e11d48; }
+:root { --bg:#f8f9fa; --card:#fff; --text:#212529; --muted:#6c757d; --primary:#6a994e; --border:#e5e7eb; --grid:#e2e8f0; --now:#ea4335; --heart:#e11d48; }
 * { box-sizing: border-box; }
 body { margin: 0; padding: 8px 12px 24px; background: var(--bg); color: var(--text);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
@@ -25,7 +25,7 @@ h1 { text-align: center; font-size: 1.25rem; margin: 4px 0 2px; }
     font-size: .8rem; border-bottom: 2px solid var(--border); border-right: 1px solid var(--border); }
 .gh.we { background: #e9ecf2; }
 .dc.we { background: repeating-linear-gradient(135deg, #fafbfc 0 6px, #f1f3f6 6px 8px); }
-.gh.today { background: #e0e7ff; color: var(--primary); }
+.gh.today { background: #e6f0df; color: var(--primary); }
 .ts { height: 60px; padding: 4px 6px 0 0; text-align: right; font-size: .68rem; color: var(--muted);
     border-right: 1px solid var(--border); border-bottom: 1px solid var(--grid); }
 .dc { position: relative; height: 60px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--grid); }
@@ -130,15 +130,15 @@ footer { text-align: center; margin-top: 14px; display: flex; gap: 8px; justify-
     .dy.on { color: var(--primary); border-bottom-color: var(--primary); font-weight: 600; }
     main { padding: 0; }
     .card { display: flex; gap: 14px; align-items: flex-start; padding: 16px 12px; border-bottom: 1px solid var(--border);
-        color: var(--text); text-decoration: none; position: relative; -webkit-tap-highlight-color: rgba(79,70,229,.08); }
-    .card .app { position: absolute; top: 50px; right: 6px; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center;
+        color: var(--text); text-decoration: none; position: relative; -webkit-tap-highlight-color: rgba(106,153,78,.1); }
+    .card .app { position: absolute; top: 10px; right: 44px; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center;
         color: var(--primary); border-radius: 8px; }
-    .card .app:active { background: #eef2ff; }
+    .card .app:active { background: #eef5ea; }
     .pic { position: relative; flex-shrink: 0; width: 76px; height: 76px; border-radius: 8px; overflow: hidden;
         display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; }
     .pic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-    .card .bd { flex: 1; min-width: 0; padding-right: 34px; }
-    .card .tt { font-weight: 700; font-size: 1.02rem; line-height: 1.25; margin-bottom: 2px; }
+    .card .bd { flex: 1; min-width: 0; }
+    .card .tt { padding-right: 74px; font-weight: 700; font-size: 1.02rem; line-height: 1.25; margin-bottom: 2px; }
     .card .tm { font-size: .92rem; margin-bottom: 3px; }
     .card .ln { display: flex; gap: 6px; align-items: flex-start; font-size: .9rem; line-height: 1.3; margin-top: 2px; }
     .card .i { flex-shrink: 0; width: 16px; height: 18px; display: inline-flex; align-items: center; }
