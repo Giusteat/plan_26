@@ -104,8 +104,38 @@ def value_after(text, key):
     return obj
 
 
+IMAGE_KEY = re.compile(r"image|photo|picture|cover|thumbnail", re.I)
+IMAGE_URL = re.compile(r"^https?://\S+\.(?:jpe?g|png|webp)(?:\?\S*)?$", re.I)
+
+
+def find_image(obj, depth=0, under=False):
+    """Cerca la prima foto (un link a jpg/png/webp sotto una chiave tipo "image") dentro i dati."""
+    if depth > 5:
+        return None
+    if isinstance(obj, str):
+        return obj if under and IMAGE_URL.match(obj) else None
+    if isinstance(obj, dict):
+        items = list(obj.items())
+    elif isinstance(obj, list):
+        items = [(None, v) for v in obj[:5]]
+    else:
+        return None
+    for k, v in items:
+        inside = under or (k is not None and bool(IMAGE_KEY.search(k)) and "logo" not in k.lower())
+        found = find_image(v, depth + 1, inside)
+        if found:
+            return found
+    return None
+
+
+def page_image(text):
+    """Foto della pagina (og:image), se c'è."""
+    m = re.search(r'"(?:property|name)":"og:image","content":"(https?://[^"]+)"', text)
+    return m.group(1) if m else None
+
+
 def extract(text):
-    """Ritorna (corsi, limiti_visite, sito_web) oppure None se mancano gli orari."""
+    """Ritorna (corsi, limiti_visite, sito_web, foto) oppure None se mancano gli orari."""
     text = normalize(text)
     activities = value_after(text, '"activities":')
     if not isinstance(activities, dict) or not isinstance(activities.get("classes"), list):
@@ -117,10 +147,10 @@ def extract(text):
         m = re.search(r'"href":"(https?://[^"]+)"', text[k:k + 3000])
         if m:
             website = m.group(1)
-    return activities["classes"], limits, website
+    return activities["classes"], limits, website, page_image(text)
 
 
-def build_venue(slug, item, limits, website):
+def build_venue(slug, item, limits, website, image=None):
     """Dati della palestra, salvati una volta sola."""
     v = (item or {}).get("venue") or {}
     loc = v.get("location") or {}
@@ -143,6 +173,7 @@ def build_venue(slug, item, limits, website):
         "latitude": loc.get("latitude"),
         "longitude": loc.get("longitude"),
         "website": website,
+        "image": find_image(v) or find_image(item) or image,
         "visitLimits": visit_limits,
     }
 
@@ -267,9 +298,9 @@ def main():
             else:
                 consecutive_fail = 0
                 ok_days += 1
-                items, limits, website = result
+                items, limits, website, image = result
                 if extra is None:
-                    extra = (limits, website)
+                    extra = (limits, website, image)
                 for item in items:
                     try:
                         c = convert(item, slug)
@@ -294,7 +325,9 @@ def main():
                     classes[c["id"]] = c
 
         if extra is not None:
-            venues_out[slug] = build_venue(slug, first_item, extra[0], extra[1])
+            venues_out[slug] = build_venue(slug, first_item, *extra)
+            if not venues_out[slug]["image"]:
+                print(f"[{slug}] foto non trovata")
         elif slug in old_venues:
             venues_out[slug] = old_venues[slug]
         if cfg.get("all_day") and slug in venues_out:

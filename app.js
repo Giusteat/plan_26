@@ -22,11 +22,27 @@ const COLORS = {
 };
 // 4) Titoli: parole che restano tutte maiuscole
 const KEEP_CAPS = ["USC", "HIIT", "TRX", "DJ", "FLINTA", "HALO"];
+// 5) Icona per zona, secondo il quartiere della palestra su Urban Sports
+const AREAS = { "Pankow": "casa", "Friedrichshain-Kreuzberg": "lavoro" };
 // ==============================================================================
 
 const PLANS = [["M", "Classic"], ["L", "Premium"]];   // il piano Max non è considerato
 const DAYS = ["Lun", "Mar", "Mer", "Gio", "Ven", "Sab", "Dom"];
 const HOUR_H = 60;
+const T_MIN = 5 * 60, T_MAX = 23 * 60;   // barra degli orari sul telefono
+const CLASS_URL = id => `https://www.urbansportsclub.com/en/activities?class=${id}`;   // si apre nell'app, se installata
+const ICONS = {
+    casa: '<path d="M3 9.5L10 4l7 5.5V17h-4.5v-4.5h-5V17H3z"/>',
+    lavoro: '<rect x="2.5" y="6.5" width="15" height="10" rx="1.5"/><path d="M7 6.5V4.5h6v2M2.5 11h15"/>',
+    persona: '<circle cx="10" cy="5" r="2.2"/><path d="M5 17l3-6v-2.5h4V11l3 6M7 9.5l3 1 3-1"/>',
+    tag: '<path d="M3 3h6.5l7.5 7.5-6.5 6.5L3 9.5z"/><circle cx="6.5" cy="6.5" r="1.2"/>',
+    posti: '<circle cx="7" cy="7" r="2.5"/><circle cx="14" cy="7.5" r="2"/><path d="M2.5 16c0-2.8 2-4.5 4.5-4.5s4.5 1.7 4.5 4.5M12.5 12c2.3-.4 4.5.9 4.5 3.5"/>'
+};
+const icon = (name, cls) => {
+    const sp = el("span", "i" + (cls ? " " + cls : ""));
+    sp.innerHTML = `<svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">${ICONS[name]}</svg>`;
+    return sp;
+};
 const GROUP_OF = {};
 GROUPS.forEach(([g, cats]) => cats.forEach(c => { GROUP_OF[c] = g; }));
 
@@ -68,7 +84,9 @@ function effectiveCategory(c) {
 }
 
 let classes = [], venues = {}, startHour = 7, endHour = 22, minDay, maxDay;
-const S = { cat: new Set(), venue: new Set(), plan: (p => PLANS.some(x => x[0] === p) ? p : "")(store.get("plan", "")), fav: false, allDay: false, view: 7, start: null, day: null };
+const S = { cat: new Set(), venue: new Set(), plan: (p => PLANS.some(x => x[0] === p) ? p : "")(store.get("plan", "")), fav: false, allDay: false, view: 7, start: null, day: null,
+    q: "", from: T_MIN, to: T_MAX };
+const norm = t => (t || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 const favs = new Set(store.get("favs", []));
 const mobile = window.matchMedia("(max-width: 760px)");
 
@@ -86,12 +104,15 @@ function prep(c) {
     c.name = formatTitle(c.title);
     c.plans = c.planTypesB2C || [];
     c.key = [c.venue, c.title, c.dow, c.start, c.teacherName || ""].join("|");
+    c.area = AREAS[(venues[c.venue] || {}).district] || null;
+    c.text = norm([c.name, c.title, c.studio, c.group, c.cat, c.teacherName].join(" "));
     return c;
 }
 // Un corso passa i filtri se li rispetta tutti; "skip" ignora un filtro (serve per capire cosa è ancora scegliibile)
 const matches = (c, skip) =>
     c.allDay === S.allDay && (skip === "cat" || !S.cat.size || S.cat.has(c.group)) && (skip === "venue" || !S.venue.size || S.venue.has(c.studio)) &&
-    (skip === "plan" || !S.plan || c.plans.includes(S.plan)) && (skip === "fav" || !S.fav || favs.has(c.key));
+    (skip === "plan" || !S.plan || c.plans.includes(S.plan)) && (skip === "fav" || !S.fav || favs.has(c.key)) &&
+    (!mobile.matches || ((!S.q || c.text.includes(S.q)) && toMin(c.start) >= S.from && toMin(c.start) <= S.to));
 const visible = c => matches(c, null);
 const UI = { cat: new Map(), venue: new Map(), plan: new Map(), fav: null };
 
@@ -227,24 +248,52 @@ function renderGrid(view, list) {
     });
 }
 
-// ---------- lista del giorno (telefono) ----------
-function renderDay(view, list) {
+// ---------- schede del giorno (telefono) ----------
+function renderCards(view, list) {
     const now = new Date(), todayIso = iso(now), nowMin = now.getHours() * 60 + now.getMinutes();
     const items = list.filter(c => c.date === iso(S.day))
         .sort((a, b) => a.start.localeCompare(b.start) || a.studio.localeCompare(b.studio));
     if (!items.length) { view.appendChild(el("p", "empty", "Nessun corso con questi filtri.")); return; }
     items.forEach(c => {
-        const row = el("div", "row" + (isPast(c, todayIso, nowMin) ? " past" : ""));
-        row.style.borderLeftColor = colorOf(c)[1];
+        const v = venues[c.venue] || {}, [bg, fg] = colorOf(c);
+        const card = el("a", "card" + (isPast(c, todayIso, nowMin) ? " past" : ""));
+        card.href = CLASS_URL(c.id);
+        const pic = el("div", "pic");
+        pic.style.background = bg; pic.style.color = fg;
+        pic.textContent = c.studio.replace(/[^A-Za-zÄÖÜäöü0-9]/g, "").slice(0, 2).toUpperCase();
+        if (v.image) {
+            const img = el("img"); img.src = v.image; img.alt = ""; img.loading = "lazy";
+            img.onerror = () => img.remove();
+            pic.appendChild(img);
+        }
         const bd = el("div", "bd");
-        bd.append(el("div", "tt", c.name), el("div", "sub", `${c.studio} · ${c.teacherName || "–"}`));
+        const line = (ic, text, cls) => { const d = el("div", "ln" + (cls ? " " + cls : "")); d.append(ic, el("span", null, text)); return d; };
+        bd.append(el("div", "tt", c.name), el("div", "tm", `${c.start} - ${c.end}`),
+            line(c.area ? icon(c.area, "area") : el("span", "i"), c.studio, "st"),
+            line(icon("persona"), c.teacherName || "–"));
+        const tg = line(icon("tag"), c.group);
+        tg.firstChild.style.color = fg;
+        bd.appendChild(tg);
+        if (c.spots && c.spots.max != null) bd.appendChild(line(icon("posti"), `${c.spots.max} posti`, "spots"));
         const h = el("button", "heart", favs.has(c.key) ? "♥" : "♡");
         h.setAttribute("aria-label", "Preferito");
-        h.onclick = e => { e.stopPropagation(); toggleFav(c); };
-        row.append(el("div", "tm", `${c.start}–${c.end}`), bd, h);
-        row.onclick = () => openSheet(c);
-        view.appendChild(row);
+        h.onclick = e => { e.preventDefault(); e.stopPropagation(); toggleFav(c); };
+        card.append(pic, bd, h);
+        view.appendChild(card);
     });
+}
+
+// Giorni in fila sul telefono: da oggi all'ultimo giorno scaricato
+function renderDays() {
+    const box = $("days"), t = todayDate();
+    box.innerHTML = "";
+    for (let d = t < minDay ? minDay : t; d <= maxDay; d = addDays(d, 1)) {
+        const day = d, b = el("button", "dy" + (iso(day) === iso(S.day) ? " on" : ""), iso(day) === iso(t) ? "Oggi" : `${dayName(day)} ${day.getDate()}`);
+        b.onclick = () => { S.day = day; render(); };
+        box.appendChild(b);
+    }
+    const on = box.querySelector(".on");
+    if (on) box.scrollLeft = Math.max(0, on.offsetLeft - box.clientWidth / 2 + on.offsetWidth / 2);
 }
 
 // ---------- scheda del corso ----------
@@ -284,7 +333,7 @@ function openSheet(c) {
     heart.onclick = () => { toggleFav(c); label(); };
     links.appendChild(heart);
     const link = (href, text) => { const a = el("a", null, text); a.href = href; a.target = "_blank"; a.rel = "noopener"; links.appendChild(a); };
-    link(`https://urbansportsclub.com/en/venues/${encodeURIComponent(c.venue)}`, "Apri su Urban Sports");
+    link(CLASS_URL(c.id), "Apri su Urban Sports");
     if (v.website && /^https?:\/\//.test(v.website)) link(v.website, "Sito dello studio");
     box.append(x, el("h2", null, c.name), dl, links);
     sh.appendChild(box);
@@ -329,7 +378,8 @@ function render() {
     view.innerHTML = "";
     const list = classes.filter(visible);
     if (mobile.matches) {
-        renderDay(view, list);
+        renderDays();
+        renderCards(view, list);
         $("label").textContent = `${dayName(S.day)} ${fmt(S.day)}`;
         $("prev").disabled = S.day <= minDay; $("next").disabled = S.day >= maxDay;
     } else {
@@ -367,8 +417,10 @@ async function init() {
     const others = [...present].filter(g => !known.includes(g)).sort();
     const f = $("filters");
     f.append(multi("Categorie", [...known, ...others], S.cat, UI.cat),
-             multi("Studi", [...new Set(classes.map(c => c.studio))].sort(), S.venue, UI.venue), planFilter());
-    const fav = el("button", "btn", "♥ Solo preferiti");
+             multi("Palestre", [...new Set(classes.map(c => c.studio))].sort(), S.venue, UI.venue), planFilter());
+    const fav = el("button", "btn fav");
+    fav.innerHTML = '♥<span class="lbl"> Solo preferiti</span>';
+    fav.setAttribute("aria-label", "Solo preferiti");
     UI.fav = fav;
     fav.onclick = () => { S.fav = !S.fav; fav.classList.toggle("active", S.fav); render(); };
     f.appendChild(fav);
@@ -377,7 +429,7 @@ async function init() {
         box.type = "checkbox";
         ad.title = "Studi con un corso ogni ora o accesso tutto il giorno, nascosti di default";
         box.onchange = () => { S.allDay = box.checked; render(); };
-        ad.append(box, el("span", "knob"), document.createTextNode("Mostra orari continui"));
+        ad.append(box, el("span", "knob"), el("span", "lbl", "Mostra orari continui"), el("span", "lbs", "Orari continui"));
         f.appendChild(ad);
     }
 
@@ -399,6 +451,28 @@ async function init() {
             store.set("favs", [...favs]); render();
         } catch (e) { alert("Testo non valido."); }
     };
+    // ricerca e barra degli orari (telefono)
+    $("q").oninput = () => { S.q = norm($("q").value.trim()); render(); };
+    const fromI = $("from"), toI = $("to"), hhmm = m => `${pad(Math.floor(m / 60))}:${pad(m % 60)}`;
+    const saved = store.get("hours", null);
+    if (saved && saved[0] >= T_MIN && saved[1] <= T_MAX && saved[0] < saved[1]) { S.from = saved[0]; S.to = saved[1]; }
+    fromI.value = S.from; toI.value = S.to;
+    const showHours = () => {
+        $("fromL").textContent = hhmm(S.from); $("toL").textContent = hhmm(S.to);
+        const p = m => ((m - T_MIN) / (T_MAX - T_MIN)) * 100;
+        $("dual").style.setProperty("--a", p(S.from) + "%"); $("dual").style.setProperty("--b", p(S.to) + "%");
+    };
+    const onHours = which => {
+        let a = Number(fromI.value), b = Number(toI.value);
+        if (a > b - 30) { if (which === "from") a = b - 30; else b = a + 30; fromI.value = a; toI.value = b; }
+        S.from = a; S.to = b; store.set("hours", [a, b]); showHours(); render();
+    };
+    fromI.oninput = () => onHours("from"); toI.oninput = () => onHours("to");
+    showHours();
+    // sul telefono i menu si aprono sotto la fila dei filtri, a tutta larghezza
+    document.querySelectorAll("details.dd").forEach(d => d.addEventListener("toggle", () => {
+        if (d.open && mobile.matches) d.querySelector(".panel").style.top = (d.querySelector("summary").getBoundingClientRect().bottom + 6) + "px";
+    }));
     mobile.addEventListener("change", render);
     render();
     setInterval(render, 60000);
