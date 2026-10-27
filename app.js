@@ -260,6 +260,7 @@ function renderCards(view, list) {
         const v = venues[c.venue] || {}, [bg, fg] = colorOf(c);
         const card = el("a", "card" + (isPast(c, todayIso, nowMin) ? " past" : ""));
         card.href = CLASS_URL(c.id);
+        card.dataset.start = toMin(c.start);
         const pic = el("div", "pic");
         pic.style.background = bg; pic.style.color = fg;
         pic.textContent = c.studio.replace(/[^A-Za-zÄÖÜäöü0-9]/g, "").slice(0, 2).toUpperCase();
@@ -285,13 +286,26 @@ function renderCards(view, list) {
     });
 }
 
+// Oggi: porta la vista alle lezioni dall'inizio dell'ora attuale in poi (alle 8:20 → dalle 8:00; le precedenti restano sopra)
+function scrollToNow() {
+    const headerH = mobile.matches ? document.querySelector("header").offsetHeight : 0;
+    let target = null;
+    if (mobile.matches) {
+        const now = new Date(), hour = now.getHours() * 60;
+        if (iso(S.day) === iso(now)) target = [...document.querySelectorAll("#view .card")].find(c => Number(c.dataset.start) >= hour);
+    } else target = document.querySelector("#view .now");
+    if (!target) { window.scrollTo(0, 0); return; }
+    const y = target.getBoundingClientRect().top + window.scrollY - headerH - (mobile.matches ? 0 : 120);
+    window.scrollTo(0, Math.max(0, y));
+}
+
 // Giorni in fila sul telefono: da oggi all'ultimo giorno scaricato
 function renderDays() {
     const box = $("days"), t = todayDate();
     box.innerHTML = "";
     for (let d = t < minDay ? minDay : t; d <= maxDay; d = addDays(d, 1)) {
         const day = d, b = el("button", "dy" + (iso(day) === iso(S.day) ? " on" : ""), iso(day) === iso(t) ? "Oggi" : `${dayName(day)} ${day.getDate()}`);
-        b.onclick = () => { S.day = day; render(); };
+        b.onclick = () => { S.day = day; render(); scrollToNow(); };
         box.appendChild(b);
     }
     const on = box.querySelector(".on");
@@ -364,6 +378,7 @@ function goToday() {
     S.day = clampDay(todayDate());
     S.start = clampStart(S.view === 7 ? mondayOf(new Date()) : todayDate());
     render();
+    scrollToNow();
 }
 // Le ore della griglia seguono i corsi visibili (con l'interruttore acceso: solo gli studi a orari continui)
 function fitHours() {
@@ -493,6 +508,7 @@ async function init() {
     }));
     mobile.addEventListener("change", render);
     render();
+    scrollToNow();
     setInterval(render, 60000);
 }
 init();

@@ -86,8 +86,8 @@ footer { text-align: center; margin-top: 14px; display: flex; gap: 8px; justify-
 .fav .lbl, .switch .lbs { display: inline; }
 .switch .lbs { display: none; }
 @media (max-width: 760px) {
-    body { padding: 6px 0 24px; background: #fff; }
-    header { position: sticky; top: 0; z-index: 40; background: #fff; padding: 0 0 2px; border-bottom: 1px solid var(--border); }
+    body { padding: 0 0 24px; background: #fff; }
+    header { position: sticky; top: 0; z-index: 40; background: #fff; padding: 8px 0 2px; border-bottom: 1px solid var(--border); }
     .top { margin: 2px 0 6px; padding: 0 44px; }
     .top h1 { font-size: 1rem; }
     .top .meta { display: none; }
