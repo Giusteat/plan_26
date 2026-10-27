@@ -24,6 +24,15 @@ const COLORS = {
 const KEEP_CAPS = ["USC", "HIIT", "TRX", "DJ", "FLINTA", "HALO"];
 // 5) Icona per zona, secondo il quartiere della palestra su Urban Sports
 const AREAS = { "Pankow": "casa", "Friedrichshain-Kreuzberg": "lavoro" };
+// 6) Livelli per attività, letti dal titolo. La Pole usa i numeri delle palestre (L0–L4), le altre tre livelli.
+const LEVEL_ACTS = ["Pole Dance", "Pilates Reformer", "Pilates", "Fitness", "Functional Training", "Dance"];
+const LEVELS_NUM = ["L0", "L1", "L2", "L3", "L4"];
+const LEVELS_WORD = [["B", "Beginner"], ["I", "Intermediate"], ["A", "Advanced"]];
+const LEVEL_WORDS = [
+    [/\b(beginners?|foundations?|basics?|intro(duction)?|anf[äa]nger)\b/i, "B", [0, 1]],
+    [/\b(intermediate|experienced|mittel)\b/i, "I", [2, 3]],
+    [/\b(advanced|fortgeschritten)\b/i, "A", [4]]
+];
 const AREA_BTNS = [["casa", "Casa"], ["lavoro", "Lavoro"]];   // filtro zona: uno acceso alla volta, all'inizio il primo
 // ==============================================================================
 
@@ -86,7 +95,8 @@ function effectiveCategory(c) {
 
 let classes = [], venues = {}, startHour = 7, endHour = 22, minDay, maxDay;
 const S = { cat: new Set(), venue: new Set(), plan: (p => p === "" || PLANS.some(x => x[0] === p) ? p : "M")(store.get("plan2", "M")),
-    area: AREA_BTNS[0][0], fav: false, allDay: false, view: 7, start: null, day: null,
+    area: AREA_BTNS[0][0],
+    levels: (l => l && typeof l === "object" && !Array.isArray(l) ? l : { "Pole Dance": ["L0"] })(store.get("levels", null)), fav: false, allDay: false, view: 7, start: null, day: null,
     q: "", from: T_MIN, to: T_MAX };
 const norm = t => (t || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 const favs = new Set(store.get("favs", []));
@@ -107,16 +117,37 @@ function prep(c) {
     c.plans = c.planTypesB2C || [];
     c.key = [c.venue, c.title, c.dow, c.start, c.teacherName || ""].join("|");
     c.area = AREAS[(venues[c.venue] || {}).district] || null;
+    c.levels = levelsOf(c);
     c.text = norm([c.name, c.title, c.studio, c.group, c.cat, c.teacherName].join(" "));
     return c;
 }
 // Un corso passa i filtri se li rispetta tutti; "skip" ignora un filtro (serve per capire cosa è ancora scegliibile)
 const matches = (c, skip) =>
-    c.allDay === S.allDay && (!c.area || c.area === S.area) && (skip === "cat" || !S.cat.size || S.cat.has(c.group)) && (skip === "venue" || !S.venue.size || S.venue.has(c.studio)) &&
+    c.allDay === S.allDay && (!c.area || c.area === S.area) && (skip === "level" || levelOk(c)) && (skip === "cat" || !S.cat.size || S.cat.has(c.group)) && (skip === "venue" || !S.venue.size || S.venue.has(c.studio)) &&
     (skip === "plan" || !S.plan || c.plans.includes(S.plan)) && (skip === "fav" || !S.fav || favs.has(c.key)) &&
     (!mobile.matches || ((!S.q || c.text.includes(S.q)) && toMin(c.start) >= S.from && toMin(c.start) <= S.to));
 const visible = c => matches(c, null);
 const UI = { cat: new Map(), venue: new Map(), plan: new Map(), fav: null };
+
+// Livelli di una lezione dal titolo: null = per tutti (nessun livello scritto, oppure "open level")
+function levelsOf(c) {
+    const t = c.title;
+    if (!LEVEL_ACTS.includes(c.cat) || /open level|all levels?|alle level/i.test(t)) return null;
+    const nums = new Set();
+    for (const m of t.matchAll(/\b(?:L|Level\s?)(\d)\b(?:\s*[-–/]\s*L?(\d)\b)?(\+)?/gi)) {
+        const a = Number(m[1]), b = m[3] ? 4 : Number(m[2] ?? m[1]);
+        for (let n = a; n <= Math.min(b, 4); n++) nums.add(n);
+    }
+    const out = new Set();
+    if (c.cat === "Pole Dance") {
+        if (!nums.size) LEVEL_WORDS.forEach(([re, , ns]) => { if (re.test(t)) ns.forEach(n => nums.add(n)); });
+        nums.forEach(n => out.add("L" + n));
+    } else {
+        LEVEL_WORDS.forEach(([re, code, ns]) => { if (re.test(t) || ns.some(n => nums.has(n))) out.add(code); });
+    }
+    return out.size ? out : null;
+}
+const levelOk = c => { const sel = S.levels[c.cat]; return !sel || !sel.length || !c.levels || sel.some(x => c.levels.has(x)); };
 
 // Le voci che non darebbero nessun corso diventano grigie e non cliccabili (quelle già scelte restano cliccabili)
 function updateAvailability() {
@@ -164,6 +195,34 @@ function multi(label, items, set, reg) {
         l.append(i, document.createTextNode(" " + name));
         p.appendChild(l);
     });
+    return d;
+}
+// Livello: per ogni attività si accendono uno o più livelli; niente acceso = tutti
+function levelFilter(acts) {
+    const d = el("details", "dd"), s = el("summary"), p = el("div", "panel lv");
+    d.append(s, p);
+    const upd = () => { const n = acts.filter(a => (S.levels[a] || []).length).length; s.textContent = "Livello" + (n ? ` (${n})` : ""); };
+    acts.forEach(a => {
+        const row = el("div", "lvrow"), chips = el("div", "lvchips");
+        row.append(el("div", "lvname", a), chips);
+        (a === "Pole Dance" ? LEVELS_NUM.map(x => [x, x]) : LEVELS_WORD).forEach(([code, label]) => {
+            const b = el("button", "lvchip", label);
+            const on = () => (S.levels[a] || []).includes(code);
+            b.classList.toggle("on", on());
+            b.onclick = e => {
+                e.preventDefault();
+                const cur = new Set(S.levels[a] || []);
+                cur.has(code) ? cur.delete(code) : cur.add(code);
+                S.levels = { ...S.levels, [a]: [...cur] };
+                store.set("levels", S.levels);
+                b.classList.toggle("on", on()); upd(); render();
+            };
+            chips.appendChild(b);
+        });
+        p.appendChild(row);
+    });
+    p.appendChild(el("div", "lvhint", "Niente acceso = tutti i livelli. Le lezioni senza livello nel titolo si vedono sempre."));
+    upd();
     return d;
 }
 function planFilter() {
@@ -457,6 +516,8 @@ async function init() {
     f.appendChild(fav);
     f.append(multi("Categorie", [...known, ...others], S.cat, UI.cat),
              multi("Palestre", [...new Set(classes.map(c => c.studio))].sort(), S.venue, UI.venue));
+    const acts = LEVEL_ACTS.filter(a => classes.some(c => c.cat === a && c.levels));
+    if (acts.length) f.appendChild(levelFilter(acts));
     if (classes.some(c => c.allDay)) {
         const ad = el("label", "switch"), box = el("input");
         box.type = "checkbox";

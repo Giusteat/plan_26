@@ -166,3 +166,13 @@ footer { text-align: center; margin-top: 14px; display: flex; gap: 8px; justify-
     .filters .seg svg { width: 20px; height: 20px; }
 }
 @media (min-width: 761px) { .filters > .dd:last-child .panel { left: auto; right: 0; } }
+
+/* filtro livello */
+.panel.lv { min-width: 300px; }
+.lvrow { padding: 6px 0; border-bottom: 1px solid var(--border); }
+.lvname { font-size: .8rem; color: var(--muted); margin-bottom: 4px; }
+.lvchips { display: flex; flex-wrap: wrap; gap: 6px; }
+.lvchip { border: 1px solid var(--border); background: var(--card); color: var(--text); border-radius: 12px; padding: 4px 10px; font-size: .8rem; cursor: pointer; }
+.lvchip.on { background: var(--primary); border-color: var(--primary); color: #fff; }
+.lvhint { font-size: .72rem; color: var(--muted); padding-top: 8px; white-space: normal; }
+@media (max-width: 760px) { .lvchip { padding: 7px 14px; font-size: .9rem; } .lvname { font-size: .85rem; } }
