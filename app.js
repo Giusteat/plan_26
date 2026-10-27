@@ -204,6 +204,7 @@ function multi(label, items, set, reg) {
         i.onchange = () => {
             i.checked ? set.add(name) : set.delete(name);
             s.textContent = label + (set.size ? ` (${set.size})` : "");
+            s.classList.toggle("on", set.size > 0);
             render();
         };
         l.append(i, document.createTextNode(" " + name));
@@ -215,7 +216,7 @@ function multi(label, items, set, reg) {
 function levelFilter(acts) {
     const d = el("details", "dd"), s = el("summary"), p = el("div", "panel lv");
     d.append(s, p);
-    const upd = () => { const n = acts.filter(a => (S.levels[a] || []).length).length; s.textContent = "Livello" + (n ? ` (${n})` : ""); };
+    const upd = () => { const n = acts.filter(a => (S.levels[a] || []).length).length; s.textContent = "Livello" + (n ? ` (${n})` : ""); s.classList.toggle("on", n > 0); };
     acts.forEach(a => {
         const row = el("div", "lvrow"), chips = el("div", "lvchips");
         row.append(el("div", "lvname", a), chips);
@@ -242,7 +243,7 @@ function levelFilter(acts) {
 function planFilter() {
     const d = el("details", "dd"), s = el("summary"), p = el("div", "panel");
     d.append(s, p);
-    const upd = () => { s.textContent = "Piano: " + (S.plan ? PLANS.find(x => x[0] === S.plan)[1] : "tutti"); };
+    const upd = () => { s.textContent = "Piano: " + (S.plan ? PLANS.find(x => x[0] === S.plan)[1] : "tutti"); s.classList.toggle("on", !!S.plan); };
     [["", "Tutti"], ...PLANS].forEach(([v, n]) => {
         const l = el("label"), i = el("input");
         i.type = "radio"; i.name = "plan"; i.checked = S.plan === v;
@@ -605,7 +606,7 @@ async function init() {
         const ad = el("label", "switch"), box = el("input");
         box.type = "checkbox";
         ad.title = "Studi con un corso ogni ora o accesso tutto il giorno, nascosti di default";
-        box.onchange = () => { S.allDay = box.checked; render(); };
+        box.onchange = () => { S.allDay = box.checked; ad.classList.toggle("on", box.checked); render(); };
         ad.append(box, el("span", "knob"), el("span", "lbl", "Mostra orari continui"), el("span", "lbs", "Orari continui"));
         f.appendChild(ad);
     }
