@@ -17,3 +17,5 @@
 
 ## Dati
 - `pilates-studio-berlin` non ha dati (nome e indirizzo vuoti): forse il link non è più valido.
+
+- **Posti liberi in tempo reale** (scartata per ora): Urban Sports li dà senza login (`spots.free`), ma non accetta richieste dal sito (niente CORS) → servirebbe un "ponte" (no). Aggiornarli ogni 1–2 ore: dato vecchio e lavoro sprecato (no).
