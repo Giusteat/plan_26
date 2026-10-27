@@ -23,8 +23,8 @@ h1 { text-align: center; font-size: 1.25rem; margin: 4px 0 2px; }
     border: 1px solid var(--border); border-radius: 8px; }
 .gh { position: sticky; top: 0; z-index: 10; background: #f1f5f9; padding: 6px 4px; text-align: center; font-weight: 600;
     font-size: .8rem; border-bottom: 2px solid var(--border); border-right: 1px solid var(--border); }
-.gh.we { background: #e2e6ee; }
-.dc.we { background: repeating-linear-gradient(135deg, #f1f3f7 0 6px, #e8ebf1 6px 8px); }
+.gh.we { background: #e9ecf2; }
+.dc.we { background: repeating-linear-gradient(135deg, #fafbfc 0 6px, #f1f3f6 6px 8px); }
 .gh.today { background: #e0e7ff; color: var(--primary); }
 .ts { height: 60px; padding: 4px 6px 0 0; text-align: right; font-size: .68rem; color: var(--muted);
     border-right: 1px solid var(--border); border-bottom: 1px solid var(--grid); }
