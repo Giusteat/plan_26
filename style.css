@@ -144,6 +144,13 @@ footer { text-align: center; margin-top: 14px; display: flex; gap: 8px; justify-
     .card .i { flex-shrink: 0; width: 16px; height: 18px; display: inline-flex; align-items: center; }
     .card .i.area { color: var(--primary); }
     .card .spots { color: var(--muted); font-size: .85rem; }
+    .card .spots.live { color: var(--primary); font-weight: 600; }
+    .card .spots.full { color: #b91c1c; font-weight: 600; }
+    .pbar { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-bottom: 1px solid var(--border); }
+    .pbtn { flex-shrink: 0; height: 34px; padding: 0 14px; border-radius: 8px; border: 2px solid var(--primary); background: #fff;
+        color: var(--primary); font-size: .9rem; font-weight: 600; cursor: pointer; }
+    .pbtn:disabled { opacity: .5; }
+    .pinfo { font-size: .85rem; color: var(--muted); }
     .card .pair { display: flex; gap: 12px; align-items: center; margin-top: 2px; }
     .card .pair .ln { margin-top: 0; }
     .card .pair .grow { flex: 1; min-width: 0; }

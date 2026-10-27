@@ -1,0 +1,50 @@
+name: Posti liberi
+
+# Parte dal pulsante "Posti liberi" del sito (con la chiave GitHub salvata sul telefono).
+on:
+  workflow_dispatch:
+    inputs:
+      giorno:
+        description: "Giorno (AAAA-MM-GG)"
+        required: true
+      lezioni:
+        description: "Id delle lezioni, separati da virgola"
+        required: true
+      richiesta:
+        description: "Codice della richiesta (lo usa il sito per riconoscere la risposta)"
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: posti
+  cancel-in-progress: true
+
+jobs:
+  posti:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installa requests
+        run: pip install requests
+
+      - name: Scarica i posti
+        env:
+          GIORNO: ${{ inputs.giorno }}
+          LEZIONI: ${{ inputs.lezioni }}
+          RICHIESTA: ${{ inputs.richiesta }}
+        run: python scraper/posti.py
+
+      - name: Salva
+        run: |
+          git config user.name "orari-bot"
+          git config user.email "orari-bot@users.noreply.github.com"
+          git add data/posti.json
+          git diff --cached --quiet || git commit -m "Posti liberi"
+          for i in 1 2 3; do git pull --rebase origin main && git push && break; sleep 3; done

@@ -21,6 +21,7 @@
 | `confronto.html` + `confronto.json` | Confronto prezzi Urban Sports / Wellhub (prezzi scritti a mano nel json). |
 | `scraper/scrape.py` | Scarica 14 giorni di orari da Urban Sports (endpoint RSC di Next.js, senza login) → `data/corsi.json`. Env: `FORCE=true`, `ONLY_SLUGS=a,b`. |
 | `scraper/venues.json` | Palestre: `slug`, opzionali `only_categories`, `or_title_contains`, `all_day`. |
+| `scraper/posti.py` + `.github/workflows/posti.yml` | Posti liberi a richiesta: il pulsante "Posti liberi" (telefono) lancia il workflow con la chiave GitHub salvata nel browser (`ghToken`), solo per le lezioni del giorno guardato che passano i filtri e non sono iniziate → `data/posti.json`. |
 | `scraper/richiesta.py` | Legge la issue di gestisci.html e aggiorna venues.json. |
 | `.github/workflows/aggiorna.yml` | Scraper ogni 5 giorni o a mano (`forza`). |
 | `.github/workflows/palestre.yml` | Parte su issue `[palestra]` del proprietario: richiesta.py + scrape solo di quella palestra. |
@@ -33,6 +34,7 @@
 - `updateAvailability()`: voci dei filtri grigie e in fondo.
 - Filtri: `multi`, `levelFilter`, `planFilter`; costruiti in `init()` in quest'ordine: zona, ♥, Categorie, Palestre, Livello, Orari continui, Piano.
 - Telefono: `renderCards`, `renderDays`, `scrollToNow` (all'apertura va alla prima lezione non iniziata, o all'ultima se oggi sono finite). Computer: `layout`, `renderGrid`, `openSheet`.
+- Posti liberi: `requestSpots`, `spotsBar`, `spotsText` (oggetto `P`, salvato in `posti`).
 - Lezione grigia (`isPast`) appena inizia. Telefono: l'app Urban Sports si apre solo dall'icona accanto al cuore (`CLASS_URL(id)`), non toccando la scheda.
 
 ## Dati (`data/corsi.json`)

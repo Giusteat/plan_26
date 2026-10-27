@@ -330,11 +330,65 @@ function renderGrid(view, list) {
     });
 }
 
+// ---------- posti liberi a richiesta (telefono) ----------
+// Il pulsante fa partire su GitHub .github/workflows/posti.yml solo per le lezioni del giorno guardato
+// che passano tutti i filtri e non sono ancora iniziate; il risultato arriva in data/posti.json.
+const REPO = "Giusteat/plan_26";
+const P = { data: store.get("posti", null), busy: false, msg: "" };
+const liveSpots = c => P.data && P.data.posti && P.data.posti[c.id];
+const hhmmOf = isoTime => isoTime ? isoTime.slice(11, 16) : "";
+function spotsText(c) {
+    const p = liveSpots(c);
+    if (p && p.free != null) return p.free === 0 ? "Pieno" : `${p.free} liberi su ${p.max}`;
+    return c.spots && c.spots.max != null ? `${c.spots.max} posti` : null;
+}
+function askToken() {
+    const t = prompt("Incolla la chiave GitHub (resta salvata solo su questo telefono):");
+    if (t && t.trim()) { store.set("ghToken", t.trim()); return t.trim(); }
+    return null;
+}
+async function requestSpots() {
+    if (P.busy) return;
+    const now = new Date(), todayIso = iso(now), nowMin = now.getHours() * 60 + now.getMinutes();
+    const ids = classes.filter(c => visible(c) && c.date === iso(S.day) && !isPast(c, todayIso, nowMin)).map(c => c.id);
+    if (!ids.length) { P.msg = "Nessuna lezione da controllare."; render(); return; }
+    const token = store.get("ghToken", null) || askToken();
+    if (!token) return;
+    const code = String(Date.now());
+    const gh = (path, opt = {}) => fetch(`https://api.github.com/repos/${REPO}/${path}`,
+        { ...opt, cache: "no-store", headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json", ...(opt.headers || {}) } });
+    P.busy = true; P.msg = `Chiedo i posti di ${ids.length} lezioni… (circa un minuto)`; render();
+    try {
+        const r = await gh("actions/workflows/posti.yml/dispatches", { method: "POST",
+            body: JSON.stringify({ ref: "main", inputs: { giorno: iso(S.day), lezioni: ids.join(","), richiesta: code } }) });
+        if (r.status === 401) { store.set("ghToken", null); throw new Error("chiave non valida, riprova e incollala di nuovo"); }
+        if (!r.ok) throw new Error(`GitHub ha risposto ${r.status}`);
+        for (let i = 0; i < 40; i++) {   // fino a ~4 minuti
+            await new Promise(ok => setTimeout(ok, 6000));
+            const f = await gh(`contents/data/posti.json?ref=main&t=${Date.now()}`, { headers: { Accept: "application/vnd.github.raw+json" } });
+            if (!f.ok) continue;
+            const d = await f.json();
+            if (d.richiesta === code) { P.data = d; store.set("posti", d); P.msg = ""; return; }
+        }
+        throw new Error("GitHub ci sta mettendo troppo, riprova tra poco");
+    } catch (e) { P.msg = "Non riuscito: " + e.message; }
+    finally { P.busy = false; render(); }
+}
+function spotsBar() {
+    const bar = el("div", "pbar"), b = el("button", "pbtn", P.busy ? "Attendi…" : "Posti liberi");
+    b.disabled = P.busy;
+    b.onclick = requestSpots;
+    const info = P.msg || (P.data && P.data.giorno === iso(S.day) ? `Aggiornati alle ${hhmmOf(P.data.aggiornato)}` : "");
+    bar.append(b, el("span", "pinfo", info));
+    return bar;
+}
+
 // ---------- schede del giorno (telefono) ----------
 function renderCards(view, list) {
     const now = new Date(), todayIso = iso(now), nowMin = now.getHours() * 60 + now.getMinutes();
     const items = list.filter(c => c.date === iso(S.day))
         .sort((a, b) => a.start.localeCompare(b.start) || a.studio.localeCompare(b.studio));
+    view.appendChild(spotsBar());
     if (!items.length) { view.appendChild(el("p", "empty", "Nessun corso con questi filtri.")); return; }
     items.forEach(c => {
         const v = venues[c.venue] || {}, [bg, fg] = colorOf(c);
@@ -356,7 +410,7 @@ function renderCards(view, list) {
         tg.firstChild.style.color = fg;
         bd.append(el("div", "tt", c.name), el("div", "tm", `${c.start} - ${c.end}`),
             pair(line(c.area ? icon(c.area, "area") : el("span", "i"), c.studio, "grow"), c.teacherName ? line(icon("persona"), c.teacherName, "side") : null),
-            pair(tg, c.spots && c.spots.max != null ? line(icon("posti"), `${c.spots.max} posti`, "side spots") : null));
+            pair(tg, spotsText(c) ? line(icon("posti"), spotsText(c), "side spots" + (liveSpots(c) ? (liveSpots(c).free === 0 ? " full" : " live") : "")) : null));
         const h = el("button", "heart", favs.has(c.key) ? "♥" : "♡");
         h.setAttribute("aria-label", "Preferito");
         h.onclick = e => { e.preventDefault(); e.stopPropagation(); toggleFav(c); };
@@ -426,7 +480,7 @@ function openSheet(c) {
     const rows = [
         ["Quando", `${DAYS[c.dow]} ${parse(c.date).toLocaleDateString("it-IT", { day: "numeric", month: "long" })}, ${c.start}–${c.end}`],
         ["Insegnante", (c.teacherName || "–") + (newTeacher(c) ? ` (nuovo, prima: ${newTeacher(c)})` : "")], ["Studio", c.studio], ["Indirizzo", addr || "–"], ["Categoria", c.group],
-        ["Posti", c.spots && c.spots.max != null ? String(c.spots.max) : "–"], ["Al mese", monthly || "–"]
+        ["Posti", (liveSpots(c) ? `${spotsText(c)} (alle ${hhmmOf(P.data.aggiornato)})` : c.spots && c.spots.max != null ? String(c.spots.max) : "–")], ["Al mese", monthly || "–"]
     ];
     const dl = el("dl");
     rows.forEach(([k, val]) => dl.append(el("dt", null, k), el("dd", null, val)));
