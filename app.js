@@ -337,8 +337,11 @@ function renderGrid(view, list) {
 const REPO = "Giusteat/plan_26";
 // Si ricorda l'ultima richiesta di ogni giorno (anche chiudendo il sito); i giorni passati si dimenticano.
 const P = { days: (d => d && typeof d === "object" && !d.posti ? d : {})(store.get("posti", null)), busy: false };
-Object.keys(P.days).forEach(g => { if (g < iso(new Date())) delete P.days[g]; });
-const liveSpots = c => (P.days[c.date] || {}).posti && P.days[c.date].posti[c.id];
+// Dopo 2 ore i posti non contano più: si dimenticano
+const SPOTS_TTL = 2 * 60 * 60 * 1000;
+const freshDay = g => { const d = P.days[g]; if (d && Date.now() - Date.parse(d.aggiornato) > SPOTS_TTL) { delete P.days[g]; store.set("posti", P.days); } return P.days[g]; };
+Object.keys(P.days).forEach(freshDay);
+const liveSpots = c => (freshDay(c.date) || {}).posti && P.days[c.date].posti[c.id];
 const hhmmOf = isoTime => isoTime ? isoTime.slice(11, 16) : "";
 function spotsText(c) {
     const p = liveSpots(c);
@@ -379,7 +382,7 @@ async function requestSpots() {
 }
 // Pulsante a sinistra degli orari: mostra a che ora sono stati chiesti i posti del giorno guardato
 function spotsButton() {
-    const b = $("pbtn"), day = P.days[iso(S.day)];
+    const b = $("pbtn"), day = freshDay(iso(S.day));
     b.disabled = P.busy;
     b.textContent = P.busy ? "Attendi…" : day ? `Posti ${hhmmOf(day.aggiornato)}` : "Posti liberi";
 }
@@ -387,10 +390,17 @@ function spotsButton() {
 // ---------- schede del giorno (telefono) ----------
 function renderCards(view, list) {
     const now = new Date(), todayIso = iso(now), nowMin = now.getHours() * 60 + now.getMinutes();
-    const items = list.filter(c => c.date === iso(S.day))
-        .sort((a, b) => a.start.localeCompare(b.start) || a.studio.localeCompare(b.studio));
+    // Con la ricerca: tutte le lezioni da oggi in poi, divise per giorno; senza: solo il giorno scelto
+    const items = list.filter(c => S.q ? c.date >= todayIso : c.date === iso(S.day))
+        .sort((a, b) => a.date.localeCompare(b.date) || a.start.localeCompare(b.start) || a.studio.localeCompare(b.studio));
     if (!items.length) { view.appendChild(el("p", "empty", "Nessun corso con questi filtri.")); return; }
+    let lastDate = null;
     items.forEach(c => {
+        if (S.q && c.date !== lastDate) {
+            lastDate = c.date;
+            const d = parse(c.date);
+            view.appendChild(el("div", "dayhead", c.date === todayIso ? "Oggi" : `${DAYS[c.dow]} ${d.toLocaleDateString("it-IT", { day: "numeric", month: "long" })}`));
+        }
         const v = venues[c.venue] || {}, [bg, fg] = colorOf(c);
         const card = el("div", "card" + (isPast(c, todayIso, nowMin) ? " past" : ""));
         card.dataset.start = toMin(c.start);
@@ -446,8 +456,8 @@ function renderDays() {
     const box = $("days"), t = todayDate();
     box.innerHTML = "";
     for (let d = t < minDay ? minDay : t; d <= maxDay; d = addDays(d, 1)) {
-        const day = d, b = el("button", "dy" + (iso(day) === iso(S.day) ? " on" : ""), iso(day) === iso(t) ? "Oggi" : `${dayName(day)} ${day.getDate()}`);
-        b.onclick = () => { S.day = day; render(); scrollToNow(); };
+        const day = d, b = el("button", "dy" + (!S.q && iso(day) === iso(S.day) ? " on" : ""), iso(day) === iso(t) ? "Oggi" : `${dayName(day)} ${day.getDate()}`);
+        b.onclick = () => { S.day = day; if (S.q) { S.q = ""; $("q").value = ""; } render(); scrollToNow(); };
         box.appendChild(b);
     }
     const on = box.querySelector(".on");
@@ -633,7 +643,7 @@ async function init() {
     };
     // ricerca e barra degli orari (telefono)
     $("pbtn").onclick = requestSpots;
-    $("q").oninput = () => { S.q = norm($("q").value.trim()); render(); };
+    $("q").oninput = () => { S.q = norm($("q").value.trim()); render(); if (S.q) window.scrollTo(0, 0); else scrollToNow(); };
     const fromI = $("from"), toI = $("to"), hhmm = m => `${pad(Math.floor(m / 60))}:${pad(m % 60)}`;
     const saved = store.get("hours", null);
     if (saved && saved[0] < saved[1]) { S.from = Math.max(T_MIN, Math.min(saved[0], T_MAX - 30)); S.to = Math.min(T_MAX, Math.max(saved[1], S.from + 30)); }

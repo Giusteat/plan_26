@@ -33,8 +33,8 @@
 - `matches(c, skip)`: tutti i filtri (orari continui, zona, livello, categoria, palestra, piano, preferiti; sul telefono anche ricerca e orari).
 - `updateAvailability()`: voci dei filtri grigie e in fondo.
 - Filtri: `multi`, `levelFilter`, `planFilter`; costruiti in `init()` in quest'ordine: zona, ♥, Categorie, Palestre, Livello, Orari continui, Piano.
-- Telefono: `renderCards`, `renderDays`, `scrollToNow` (all'apertura va alla prima lezione non iniziata, o all'ultima se oggi sono finite). Computer: `layout`, `renderGrid`, `openSheet`.
-- Posti liberi: pulsante `#pbtn` a sinistra degli orari, `requestSpots`, `spotsButton`, `spotsText` (oggetto `P`, salvato in `posti`).
+- Telefono: `renderCards` (con la ricerca mostra tutti i giorni da oggi, con titolo del giorno), `renderDays`, `scrollToNow` (all'apertura va alla prima lezione non iniziata, o all'ultima se oggi sono finite). Computer: `layout`, `renderGrid`, `openSheet`.
+- Posti liberi: pulsante `#pbtn` a sinistra degli orari, `requestSpots`, `spotsButton`, `spotsText` (oggetto `P`, salvato in `posti`, un risultato per giorno, dimenticato dopo 2 ore: `freshDay`).
 - Lezione grigia (`isPast`) appena inizia. Telefono: l'app Urban Sports si apre solo dall'icona accanto al cuore (`CLASS_URL(id)`), non toccando la scheda.
 
 ## Dati (`data/corsi.json`)
