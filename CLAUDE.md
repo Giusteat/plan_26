@@ -30,12 +30,13 @@
 - In cima: **REGOLE modificabili** — `CATEGORY_RULES`, `GROUPS`, `COLORS`, `KEEP_CAPS`, `AREAS` (quartiere → casa/lavoro), `LEVEL_ACTS`/`LEVEL_WORDS` (livelli letti dal titolo), `AREA_BTNS`.
 - `prep(c)`: arricchisce ogni lezione (date, studio, cat, group, area, levels, key preferito, text per ricerca).
 - Preferiti: `favs` (chiave studio|titolo|giorno|ora) + `favT` (insegnante ricordato → "Nuovo insegnante"). Salvati nel browser: copia/incolla per passarli fra dispositivi.
+- Pianificate: `agenda` (stessa chiave dei preferiti, ricorrenti); pulsante calendario nei filtri = agenda (`S.agenda`: `matches` ignora tutti gli altri filtri, schede da oggi divise per giorno). Non piaciute: `bad` (chiave studio|titolo|insegnante, scheda sbiadita). Icone sulla riga dell'orario: `cardIcons`.
 - `matches(c, skip)`: tutti i filtri (orari continui, zona, livello, categoria, palestra, piano, preferiti; sul telefono anche ricerca e orari).
 - `updateAvailability()`: voci dei filtri grigie e in fondo.
-- Filtri: `multi`, `levelFilter`, `planFilter`; costruiti in `init()` in quest'ordine: zona, ♥, Categorie, Palestre, Livello, Orari continui, Piano.
+- Filtri: `multi`, `levelFilter`, `planFilter`; costruiti in `init()` in quest'ordine: ♥, Pianificate, Categorie, Palestre, Livello, Orari continui, Piano, zona.
 - Telefono: `renderCards` (con la ricerca mostra tutti i giorni da oggi, con titolo del giorno), `renderDays`, `scrollToNow` (all'apertura va alla prima lezione non iniziata, o all'ultima se oggi sono finite). Computer: `layout`, `renderGrid`, `openSheet`.
 - Posti liberi: pulsante `#pbtn` a sinistra degli orari, `requestSpots`, `spotsButton`, `spotsText` (oggetto `P`, salvato in `posti`, un risultato per giorno, dimenticato dopo 2 ore: `freshDay`).
-- Lezione grigia (`isPast`) appena inizia. Telefono: l'app Urban Sports si apre solo dall'icona accanto al cuore (`CLASS_URL(id)`), non toccando la scheda.
+- Lezione grigia (`isPast`) appena inizia. Telefono: toccare la scheda non fa niente; l'app Urban Sports si apre solo dall'icona (`CLASS_URL(id)`).
 
 ## Dati (`data/corsi.json`)
 `{updated, venues: {slug: {name, address, postalCode, district, latitude, longitude, website, image, visitLimits, allDay?}}, classes: [{id, title, teacherName, startDateTimeUTC (in realtà ora di Berlino), endDateTimeUTC, category{id,name}, spots{max}, planTypesB2C, isPlusCheckin, venue}]}`.

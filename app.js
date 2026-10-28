@@ -109,6 +109,10 @@ function addFav(k) {
     favs.add(key);
     if (t && !favT[key]) favT[key] = t;
 }
+// Pianificate: ricorrenti come i preferiti (stessa chiave). Non piaciute: stessa lezione, studio e insegnante, in qualsiasi giorno.
+const agenda = new Set(store.get("agenda", []));
+const bad = new Set(store.get("bad", []));
+const badKey = c => [c.venue, c.title, c.teacherName || ""].join("|");
 const saveFavs = () => { store.set("favs", [...favs]); store.set("favT", favT); };
 store.get("favs", []).forEach(addFav);
 saveFavs();
@@ -135,12 +139,12 @@ function prep(c) {
     return c;
 }
 // Un corso passa i filtri se li rispetta tutti; "skip" ignora un filtro (serve per capire cosa è ancora scegliibile)
-const matches = (c, skip) =>
+const matches = (c, skip) => S.agenda ? agenda.has(c.key) :
     c.allDay === S.allDay && (!c.area || c.area === S.area) && (skip === "level" || levelOk(c)) && (skip === "cat" || !S.cat.size || S.cat.has(c.group)) && (skip === "venue" || !S.venue.size || S.venue.has(c.studio)) &&
     (skip === "plan" || !S.plan || c.plans.includes(S.plan)) && (skip === "fav" || !S.fav || favs.has(c.key)) &&
     (!mobile.matches || ((!S.q || c.text.includes(S.q)) && (S.from <= T_MIN || toMin(c.start) >= S.from) && (S.to >= T_MAX || toMin(c.start) <= S.to)));
 const visible = c => matches(c, null);
-const UI = { cat: new Map(), venue: new Map(), plan: new Map(), fav: null };
+const UI = { cat: new Map(), venue: new Map(), plan: new Map(), fav: null, agenda: null };
 
 // Livelli di una lezione dal titolo: null = per tutti (nessun livello scritto, oppure "open level")
 function levelsOf(c) {
@@ -185,6 +189,14 @@ function updateAvailability() {
 }
 const byName = (a, b) => a.localeCompare(b, "it", { sensitivity: "base" });
 const colorOf = c => COLORS[c.cat] || ["#e5e7eb", "#374151"];
+
+function toggleSet(set, k, name) {
+    set.has(k) ? set.delete(k) : set.add(k);
+    store.set(name, [...set]);
+    render();
+}
+const toggleAgenda = c => toggleSet(agenda, c.key, "agenda");
+const toggleBad = c => toggleSet(bad, badKey(c), "bad");
 
 function toggleFav(c) {
     if (favs.has(c.key)) { favs.delete(c.key); delete favT[c.key]; }
@@ -318,7 +330,8 @@ function renderGrid(view, list) {
             b.title = `${ev.name}\n${ev.start}–${ev.end} · ${ev.studio}\n${ev.teacherName || ""}\nAl mese: ${monthlyText(ev)}`;
             b.append(el("div", "t", ev.name), el("div", "s", `${ev.start}–${ev.end} · ${ev.studio}`));
             if (n <= 4 && ev.teacherName) b.appendChild(el("div", "tc", ev.teacherName));
-            if (favs.has(ev.key)) b.appendChild(el("span", "h", "♥"));
+            if (favs.has(ev.key) || agenda.has(ev.key)) b.appendChild(el("span", "h", (agenda.has(ev.key) ? "📅" : "") + (favs.has(ev.key) ? "♥" : "")));
+            if (bad.has(badKey(ev))) { b.classList.add("bad"); b.firstChild.textContent = "💔 " + ev.name; }
             if (newTeacher(ev)) { b.appendChild(el("div", "tc nt", "Nuovo insegnante")); b.title += `\nNuovo insegnante (prima: ${newTeacher(ev)})`; }
             b.onclick = () => openSheet(ev);
             cols[i].appendChild(b);
@@ -387,22 +400,48 @@ function spotsButton() {
     b.textContent = P.busy ? "Attendi…" : day ? `Posti ${hhmmOf(day.aggiornato)}` : "Posti liberi";
 }
 
+// Quattro icone sulla riga dell'orario: preferito, non piaciuta, pianificata, apri nell'app
+const SVG = (path, fill) => `<svg width="22" height="22" viewBox="0 0 20 20" fill="${fill ? "currentColor" : "none"}" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${path}</svg>`;
+const HEART = "M10 16.5S3.5 12.6 3.5 8.2A3.3 3.3 0 0 1 10 6.6a3.3 3.3 0 0 1 6.5 1.6c0 4.4-6.5 8.3-6.5 8.3z";
+function cardIcons(c) {
+    const box = el("div", "icons");
+    const btn = (cls, label, on, html, toggle) => {
+        const b = el("button", "ic " + cls + (on ? " on" : ""));
+        b.setAttribute("aria-label", label); b.title = label;
+        b.innerHTML = html;
+        b.onclick = e => { e.preventDefault(); e.stopPropagation(); toggle(c); };
+        box.appendChild(b);
+    };
+    const isBad = bad.has(badKey(c)), isPlan = agenda.has(c.key);
+    btn("fv", "Preferito", favs.has(c.key), SVG(`<path d="${HEART}"/>`, favs.has(c.key)), toggleFav);
+    btn("bd", "Non mi è piaciuta", isBad, SVG(`<path d="${HEART}"${isBad ? ' fill="currentColor"' : ""}/><path d="M8 8.5l4 4M12 8.5l-4 4" stroke="${isBad ? "#fff" : "currentColor"}"/>`), toggleBad);
+    btn("pl", "Pianifica (ogni settimana)", isPlan, SVG(`<rect x="3" y="4.5" width="14" height="12.5" rx="2"${isPlan ? ' fill="currentColor"' : ""}/><path d="M3 8.5h14" stroke="${isPlan ? "#fff" : "currentColor"}"/><path d="M7 2.5v4M13 2.5v4"/>`), toggleAgenda);
+    const app = el("a", "ic app");
+    app.href = CLASS_URL(c.id);
+    app.setAttribute("aria-label", "Apri su Urban Sports");
+    app.onclick = e => e.stopPropagation();
+    app.innerHTML = SVG('<path d="M11 3h6v6M17 3l-8 8M15 12v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4"/>');
+    box.appendChild(app);
+    return box;
+}
+
 // ---------- schede del giorno (telefono) ----------
 function renderCards(view, list) {
     const now = new Date(), todayIso = iso(now), nowMin = now.getHours() * 60 + now.getMinutes();
-    // Con la ricerca: tutte le lezioni da oggi in poi, divise per giorno; senza: solo il giorno scelto
-    const items = list.filter(c => S.q ? c.date >= todayIso : c.date === iso(S.day))
+    // Con la ricerca o in agenda: tutte le lezioni da oggi in poi, divise per giorno; senza: solo il giorno scelto
+    const all = S.q || S.agenda;
+    const items = list.filter(c => all ? c.date >= todayIso : c.date === iso(S.day))
         .sort((a, b) => a.date.localeCompare(b.date) || a.start.localeCompare(b.start) || a.studio.localeCompare(b.studio));
-    if (!items.length) { view.appendChild(el("p", "empty", "Nessun corso con questi filtri.")); return; }
+    if (!items.length) { view.appendChild(el("p", "empty", S.agenda ? "Nessuna lezione pianificata. Tocca una scheda e scegli \"Pianifica\"." : "Nessun corso con questi filtri.")); return; }
     let lastDate = null;
     items.forEach(c => {
-        if (S.q && c.date !== lastDate) {
+        if (all && c.date !== lastDate) {
             lastDate = c.date;
             const d = parse(c.date);
             view.appendChild(el("div", "dayhead", c.date === todayIso ? "Oggi" : `${DAYS[c.dow]} ${d.toLocaleDateString("it-IT", { day: "numeric", month: "long" })}`));
         }
         const v = venues[c.venue] || {}, [bg, fg] = colorOf(c);
-        const card = el("div", "card" + (isPast(c, todayIso, nowMin) ? " past" : ""));
+        const card = el("div", "card" + (isPast(c, todayIso, nowMin) ? " past" : "") + (bad.has(badKey(c)) ? " bad" : ""));
         card.dataset.start = toMin(c.start);
         const pic = el("div", "pic");
         pic.style.background = bg; pic.style.color = fg;
@@ -418,20 +457,14 @@ function renderCards(view, list) {
         const pair = (a, b) => { const d = el("div", "pair"); d.append(a); if (b) d.append(b); return d; };
         const tg = line(icon("tag"), c.group, "grow");
         tg.firstChild.style.color = fg;
-        bd.append(el("div", "tt", c.name), el("div", "tm", `${c.start} - ${c.end}`),
+        const tm = el("div", "tm");
+        tm.append(el("span", null, `${c.start} - ${c.end}`), cardIcons(c));
+        bd.append(el("div", "tt", c.name), tm,
             pair(line(c.area ? icon(c.area, "area") : el("span", "i"), c.studio, "grow"), c.teacherName ? line(icon("persona"), c.teacherName, "side") : null),
             pair(tg, spotsText(c) ? line(icon("posti"), spotsText(c), "side spots" + (liveSpots(c) ? (liveSpots(c).free === 0 ? " full" : " live") : "")) : null));
-        const h = el("button", "heart", favs.has(c.key) ? "♥" : "♡");
-        h.setAttribute("aria-label", "Preferito");
-        h.onclick = e => { e.preventDefault(); e.stopPropagation(); toggleFav(c); };
         const nt = newTeacherLine(c);
         if (nt) bd.appendChild(nt);
-        // l'app si apre solo dall'icona, non toccando la scheda
-        const app = el("a", "app");
-        app.href = CLASS_URL(c.id);
-        app.setAttribute("aria-label", "Apri su Urban Sports");
-        app.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3h6v6M17 3l-8 8M15 12v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4"/></svg>';
-        card.append(pic, bd, h, app);
+        card.append(pic, bd);
         view.appendChild(card);
     });
 }
@@ -456,8 +489,8 @@ function renderDays() {
     const box = $("days"), t = todayDate();
     box.innerHTML = "";
     for (let d = t < minDay ? minDay : t; d <= maxDay; d = addDays(d, 1)) {
-        const day = d, b = el("button", "dy" + (!S.q && iso(day) === iso(S.day) ? " on" : ""), iso(day) === iso(t) ? "Oggi" : `${dayName(day)} ${day.getDate()}`);
-        b.onclick = () => { S.day = day; if (S.q) { S.q = ""; $("q").value = ""; } render(); scrollToNow(); };
+        const day = d, b = el("button", "dy" + (!S.q && !S.agenda && iso(day) === iso(S.day) ? " on" : ""), iso(day) === iso(t) ? "Oggi" : `${dayName(day)} ${day.getDate()}`);
+        b.onclick = () => { S.day = day; if (S.q) { S.q = ""; $("q").value = ""; } if (S.agenda) UI.agenda.click(); render(); scrollToNow(); };
         box.appendChild(b);
     }
     const on = box.querySelector(".on");
@@ -494,16 +527,22 @@ function openSheet(c) {
     ];
     const dl = el("dl");
     rows.forEach(([k, val]) => dl.append(el("dt", null, k), el("dd", null, val)));
+    // azioni: ogni pulsante si accende/spegne
+    const acts = el("div", "acts");
+    const act = (on, onText, offText, toggle) => {
+        const b = el("button", "act");
+        const upd = () => { b.textContent = on() ? onText : offText; b.classList.toggle("on", on()); };
+        b.onclick = () => { toggle(c); upd(); };
+        upd(); acts.appendChild(b);
+    };
+    act(() => agenda.has(c.key), `📅 Pianificata ogni ${DAYS[c.dow].toLowerCase()}`, "📅 Pianifica", toggleAgenda);
+    act(() => favs.has(c.key), "♥ Nei preferiti", "♡ Preferito", toggleFav);
+    act(() => bad.has(badKey(c)), "💔 Non mi è piaciuta", "💔 Non mi è piaciuta?", toggleBad);
     const links = el("div", "links");
-    const heart = el("button", "btn");
-    const label = () => { heart.textContent = favs.has(c.key) ? "♥ Nei preferiti" : "♡ Aggiungi ai preferiti"; };
-    label();
-    heart.onclick = () => { toggleFav(c); label(); };
-    links.appendChild(heart);
     const link = (href, text) => { const a = el("a", null, text); a.href = href; a.target = "_blank"; a.rel = "noopener"; links.appendChild(a); };
     link(CLASS_URL(c.id), "Apri su Urban Sports");
     if (v.website && /^https?:\/\//.test(v.website)) link(v.website, "Sito dello studio");
-    box.append(x, el("h2", null, c.name), dl, links);
+    box.append(x, el("h2", null, c.name), dl, acts, links);
     sh.appendChild(box);
 }
 $("sheet").addEventListener("click", e => { if (e.target === $("sheet")) closeSheet(); });
@@ -587,6 +626,32 @@ async function init() {
     const known = GROUPS.map(g => g[0]).filter(g => present.has(g));
     const others = [...present].filter(g => !known.includes(g)).sort();
     const f = $("filters");
+    const fav = el("button", "btn fav");
+    fav.innerHTML = '♥<span class="lbl"> Solo preferiti</span>';
+    fav.setAttribute("aria-label", "Solo preferiti");
+    UI.fav = fav;
+    fav.onclick = () => { S.fav = !S.fav; fav.classList.toggle("active", S.fav); render(); };
+    f.appendChild(fav);
+    // agenda: solo le lezioni pianificate, ignorando tutti gli altri filtri
+    const ag = el("button", "btn fav agenda");
+    ag.innerHTML = '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4.5" width="14" height="12.5" rx="2"/><path d="M3 8.5h14M7 2.5v4M13 2.5v4"/></svg><span class="lbl"> Pianificate</span>';
+    ag.setAttribute("aria-label", "Pianificate");
+    UI.agenda = ag;
+    ag.onclick = () => { S.agenda = !S.agenda; ag.classList.toggle("active", S.agenda); f.classList.toggle("agenda-on", S.agenda); render(); window.scrollTo(0, 0); };
+    f.appendChild(ag);
+    f.append(multi("Categorie", [...known, ...others], S.cat, UI.cat),
+             multi("Palestre", [...new Set(classes.map(c => c.studio))].sort(), S.venue, UI.venue));
+    const acts = LEVEL_ACTS.filter(a => classes.some(c => c.cat === a && c.levels));
+    if (acts.length) f.appendChild(levelFilter(acts));
+    if (classes.some(c => c.allDay)) {
+        const ad = el("label", "switch"), box = el("input");
+        box.type = "checkbox";
+        ad.title = "Studi con un corso ogni ora o accesso tutto il giorno, nascosti di default";
+        box.onchange = () => { S.allDay = box.checked; ad.classList.toggle("on", box.checked); render(); };
+        ad.append(box, el("span", "knob"), el("span", "lbl", "Mostra orari continui"), el("span", "lbs", "Orari continui"));
+        f.appendChild(ad);
+    }
+    f.appendChild(planFilter());
     if (classes.some(c => c.area)) {
         const seg = el("div", "seg");
         AREA_BTNS.forEach(([v, label]) => {
@@ -602,25 +667,6 @@ async function init() {
         });
         f.appendChild(seg);
     }
-    const fav = el("button", "btn fav");
-    fav.innerHTML = '♥<span class="lbl"> Solo preferiti</span>';
-    fav.setAttribute("aria-label", "Solo preferiti");
-    UI.fav = fav;
-    fav.onclick = () => { S.fav = !S.fav; fav.classList.toggle("active", S.fav); render(); };
-    f.appendChild(fav);
-    f.append(multi("Categorie", [...known, ...others], S.cat, UI.cat),
-             multi("Palestre", [...new Set(classes.map(c => c.studio))].sort(), S.venue, UI.venue));
-    const acts = LEVEL_ACTS.filter(a => classes.some(c => c.cat === a && c.levels));
-    if (acts.length) f.appendChild(levelFilter(acts));
-    if (classes.some(c => c.allDay)) {
-        const ad = el("label", "switch"), box = el("input");
-        box.type = "checkbox";
-        ad.title = "Studi con un corso ogni ora o accesso tutto il giorno, nascosti di default";
-        box.onchange = () => { S.allDay = box.checked; ad.classList.toggle("on", box.checked); render(); };
-        ad.append(box, el("span", "knob"), el("span", "lbl", "Mostra orari continui"), el("span", "lbs", "Orari continui"));
-        f.appendChild(ad);
-    }
-    f.appendChild(planFilter());
 
     [[1, "1 giorno"], [4, "4 giorni"], [7, "7 giorni"]].forEach(([n, l]) => {
         const b = el("button", "btn", l); b.dataset.v = n; b.onclick = () => setView(n); $("views").appendChild(b);
