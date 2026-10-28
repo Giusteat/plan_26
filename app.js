@@ -400,9 +400,32 @@ function spotsButton() {
     b.textContent = P.busy ? "Attendi…" : day ? `Posti ${hhmmOf(day.aggiornato)}` : "Posti liberi";
 }
 
-// Quattro icone sulla riga del titolo: preferito, non piaciuta, pianificata, apri nell'app
+// Tre icone sulla riga del titolo: preferito, pianificata, apri nell'app ("non mi è piaciuta": tenendo premuta la scheda)
 const SVG = (path, fill) => `<svg width="20" height="20" viewBox="0 0 20 20" fill="${fill ? "currentColor" : "none"}" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${path}</svg>`;
-const HEART = "M10 16.5S3.5 12.6 3.5 8.2A3.3 3.3 0 0 1 10 6.6a3.3 3.3 0 0 1 6.5 1.6c0 4.4-6.5 8.3-6.5 8.3z";
+// Tenendo premuta una scheda: piccolo riquadro per segnare (o togliere) "non mi è piaciuta"
+function onLongPress(elm, fn) {
+    let t = null, x0 = 0, y0 = 0;
+    const stop = () => { clearTimeout(t); t = null; };
+    elm.addEventListener("touchstart", e => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; stop(); t = setTimeout(() => { t = null; fn(); }, 550); }, { passive: true });
+    elm.addEventListener("touchmove", e => { if (Math.abs(e.touches[0].clientX - x0) + Math.abs(e.touches[0].clientY - y0) > 10) stop(); }, { passive: true });
+    elm.addEventListener("touchend", stop);
+    elm.addEventListener("touchcancel", stop);
+    elm.addEventListener("contextmenu", e => { e.preventDefault(); if (!("ontouchstart" in window)) fn(); });
+}
+function openBadMenu(c) {
+    const sh = $("sheet"), isBad = bad.has(badKey(c));
+    sh.innerHTML = ""; sh.hidden = false;
+    const box = el("div", "box small");
+    const sub = [c.studio, c.teacherName].filter(Boolean).join(" · ");
+    const yes = el("button", "act" + (isBad ? "" : " on"), isBad ? "Togli 💔" : "💔 Non mi è piaciuta");
+    yes.onclick = () => { closeSheet(); toggleBad(c); };
+    const no = el("button", "act", "Annulla");
+    no.onclick = closeSheet;
+    const acts = el("div", "acts");
+    acts.append(yes, no);
+    box.append(el("h2", null, c.name), el("p", "hint", sub + (isBad ? "" : " — vale per tutti i giorni")), acts);
+    sh.appendChild(box);
+}
 function cardIcons(c) {
     const box = el("div", "icons");
     const btn = (cls, label, on, html, toggle) => {
@@ -412,9 +435,8 @@ function cardIcons(c) {
         b.onclick = e => { e.preventDefault(); e.stopPropagation(); toggle(c); };
         box.appendChild(b);
     };
-    const isBad = bad.has(badKey(c)), isPlan = agenda.has(c.key);
+    const isPlan = agenda.has(c.key);
     btn("fv", "Preferito", favs.has(c.key), favs.has(c.key) ? "♥" : "♡", toggleFav);
-    btn("bd", "Non mi è piaciuta", isBad, SVG(`<path d="${HEART}"${isBad ? ' fill="currentColor"' : ""}/><path d="M8 8.5l4 4M12 8.5l-4 4" stroke="${isBad ? "#fff" : "currentColor"}"/>`), toggleBad);
     btn("pl", "Pianifica (ogni settimana)", isPlan, SVG(`<rect x="3" y="4.5" width="14" height="12.5" rx="2"${isPlan ? ' fill="currentColor"' : ""}/><path d="M3 8.5h14" stroke="${isPlan ? "#fff" : "currentColor"}"/><path d="M7 2.5v4M13 2.5v4"/>`), toggleAgenda);
     const app = el("a", "ic app");
     app.href = CLASS_URL(c.id);
@@ -443,6 +465,7 @@ function renderCards(view, list) {
         const v = venues[c.venue] || {}, [bg, fg] = colorOf(c);
         const card = el("div", "card" + (isPast(c, todayIso, nowMin) ? " past" : "") + (bad.has(badKey(c)) ? " bad" : ""));
         card.dataset.start = toMin(c.start);
+        onLongPress(card, () => openBadMenu(c));
         const pic = el("div", "pic");
         pic.style.background = bg; pic.style.color = fg;
         pic.textContent = c.studio.replace(/[^A-Za-zÄÖÜäöü0-9]/g, "").slice(0, 2).toUpperCase();
@@ -459,7 +482,7 @@ function renderCards(view, list) {
         tg.firstChild.style.color = fg;
         // riga del titolo: titolo (accorciato con "…") e icone a destra
         const top = el("div", "top1");
-        top.append(el("div", "tt", c.name), cardIcons(c));
+        top.append(el("div", "tt", (bad.has(badKey(c)) ? "💔 " : "") + c.name), cardIcons(c));
         bd.append(top, el("div", "tm", `${c.start} - ${c.end}`),
             pair(line(c.area ? icon(c.area, "area") : el("span", "i"), c.studio, "grow"), c.teacherName ? line(icon("persona"), c.teacherName, "side") : null),
             pair(tg, spotsText(c) ? line(icon("posti"), spotsText(c), "side spots" + (liveSpots(c) ? (liveSpots(c).free === 0 ? " full" : " live") : "")) : null));

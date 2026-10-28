@@ -146,8 +146,6 @@ footer { text-align: center; margin-top: 14px; display: flex; gap: 8px; justify-
         padding: 0; border-radius: 8px; cursor: pointer; color: var(--primary); }
     .ic:active { background: #eef5ea; }
     .ic.fv { color: var(--heart); font-size: 1.3rem; line-height: 1; }
-    .ic.bd { color: #9ca3af; }
-    .ic.bd.on { color: #4b5563; }
     .card .ln { display: flex; gap: 6px; align-items: flex-start; font-size: .9rem; line-height: 1.3; margin-top: 2px; }
     .card .i { flex-shrink: 0; width: 16px; height: 18px; display: inline-flex; align-items: center; }
     .card .i.area { color: var(--primary); }
@@ -202,7 +200,10 @@ footer { text-align: center; margin-top: 14px; display: flex; gap: 8px; justify-
 @media (min-width: 761px) { body { padding: 12px 32px 24px; } }
 
 /* pianificate, non piaciute, azioni nella scheda */
-.card.bad, .ev.bad { opacity: .45; }
+/* non piaciuta: titolo barrato (il grigio è per le lezioni passate) */
+.card.bad .tt, .ev.bad .t { text-decoration: line-through; text-decoration-thickness: 2px; }
+.card { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+.box .hint { margin: -4px 0 14px; color: var(--muted); font-size: .85rem; }
 .acts { display: flex; flex-direction: column; gap: 8px; margin: 0 0 14px; }
 .act { height: 44px; border-radius: 10px; border: 2px solid var(--primary); background: #fff; color: var(--primary);
     font-size: .95rem; font-weight: 600; cursor: pointer; text-align: left; padding: 0 14px; }
