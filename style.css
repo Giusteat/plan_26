@@ -200,8 +200,9 @@ footer { text-align: center; margin-top: 14px; display: flex; gap: 8px; justify-
 @media (min-width: 761px) { body { padding: 12px 32px 24px; } }
 
 /* pianificate, non piaciute, azioni nella scheda */
-/* non piaciuta: titolo barrato (il grigio è per le lezioni passate) */
-.card.bad .tt, .ev.bad .t { text-decoration: line-through; text-decoration-thickness: 2px; }
+/* non piaciuta: grigia come le passate, con il cuore barrato */
+.card.bad, .ev.bad { opacity: .45; }
+.ic.nb { color: #6b7280; }
 .card { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
 .box .hint { margin: -4px 0 14px; color: var(--muted); font-size: .85rem; }
 .acts { display: flex; flex-direction: column; gap: 8px; margin: 0 0 14px; }

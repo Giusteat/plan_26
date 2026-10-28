@@ -196,7 +196,8 @@ function toggleSet(set, k, name) {
     render();
 }
 const toggleAgenda = c => toggleSet(agenda, c.key, "agenda");
-const toggleBad = c => toggleSet(bad, badKey(c), "bad");
+// una lezione non piaciuta non si pianifica più
+const toggleBad = c => { if (!bad.has(badKey(c)) && agenda.delete(c.key)) store.set("agenda", [...agenda]); toggleSet(bad, badKey(c), "bad"); };
 
 function toggleFav(c) {
     if (favs.has(c.key)) { favs.delete(c.key); delete favT[c.key]; }
@@ -331,7 +332,7 @@ function renderGrid(view, list) {
             b.append(el("div", "t", ev.name), el("div", "s", `${ev.start}–${ev.end} · ${ev.studio}`));
             if (n <= 4 && ev.teacherName) b.appendChild(el("div", "tc", ev.teacherName));
             if (favs.has(ev.key) || agenda.has(ev.key)) b.appendChild(el("span", "h", (agenda.has(ev.key) ? "📅" : "") + (favs.has(ev.key) ? "♥" : "")));
-            if (bad.has(badKey(ev))) { b.classList.add("bad"); b.firstChild.textContent = "💔 " + ev.name; }
+            if (bad.has(badKey(ev))) b.classList.add("bad");
             if (newTeacher(ev)) { b.appendChild(el("div", "tc nt", "Nuovo insegnante")); b.title += `\nNuovo insegnante (prima: ${newTeacher(ev)})`; }
             b.onclick = () => openSheet(ev);
             cols[i].appendChild(b);
@@ -417,7 +418,7 @@ function openBadMenu(c) {
     sh.innerHTML = ""; sh.hidden = false;
     const box = el("div", "box small");
     const sub = [c.studio, c.teacherName].filter(Boolean).join(" · ");
-    const yes = el("button", "act" + (isBad ? "" : " on"), isBad ? "Togli 💔" : "💔 Non mi è piaciuta");
+    const yes = el("button", "act" + (isBad ? "" : " on"), isBad ? "Mi piace di nuovo" : "Non mi è piaciuta");
     yes.onclick = () => { closeSheet(); toggleBad(c); };
     const no = el("button", "act", "Annulla");
     no.onclick = closeSheet;
@@ -436,8 +437,12 @@ function cardIcons(c) {
         box.appendChild(b);
     };
     const isPlan = agenda.has(c.key);
+    if (bad.has(badKey(c))) {   // non piaciuta: solo cuore barrato (toccandolo si può togliere) e apri
+        btn("nb", "Non mi è piaciuta", true, SVG('<path d="M10 16.5S3.5 12.6 3.5 8.2A3.3 3.3 0 0 1 10 6.6a3.3 3.3 0 0 1 6.5 1.6c0 4.4-6.5 8.3-6.5 8.3z"/><path d="M3 3l14 14"/>'), openBadMenu);
+    } else {
     btn("fv", "Preferito", favs.has(c.key), favs.has(c.key) ? "♥" : "♡", toggleFav);
     btn("pl", "Pianifica (ogni settimana)", isPlan, SVG(`<rect x="3" y="4.5" width="14" height="12.5" rx="2"${isPlan ? ' fill="currentColor"' : ""}/><path d="M3 8.5h14" stroke="${isPlan ? "#fff" : "currentColor"}"/><path d="M7 2.5v4M13 2.5v4"/>`), toggleAgenda);
+    }
     const app = el("a", "ic app");
     app.href = CLASS_URL(c.id);
     app.setAttribute("aria-label", "Apri su Urban Sports");
@@ -482,7 +487,7 @@ function renderCards(view, list) {
         tg.firstChild.style.color = fg;
         // riga del titolo: titolo (accorciato con "…") e icone a destra
         const top = el("div", "top1");
-        top.append(el("div", "tt", (bad.has(badKey(c)) ? "💔 " : "") + c.name), cardIcons(c));
+        top.append(el("div", "tt", c.name), cardIcons(c));
         bd.append(top, el("div", "tm", `${c.start} - ${c.end}`),
             pair(line(c.area ? icon(c.area, "area") : el("span", "i"), c.studio, "grow"), c.teacherName ? line(icon("persona"), c.teacherName, "side") : null),
             pair(tg, spotsText(c) ? line(icon("posti"), spotsText(c), "side spots" + (liveSpots(c) ? (liveSpots(c).free === 0 ? " full" : " live") : "")) : null));
@@ -561,7 +566,7 @@ function openSheet(c) {
     };
     act(() => agenda.has(c.key), `📅 Pianificata ogni ${DAYS[c.dow].toLowerCase()}`, "📅 Pianifica", toggleAgenda);
     act(() => favs.has(c.key), "♥ Nei preferiti", "♡ Preferito", toggleFav);
-    act(() => bad.has(badKey(c)), "💔 Non mi è piaciuta", "💔 Non mi è piaciuta?", toggleBad);
+    act(() => bad.has(badKey(c)), "Non mi è piaciuta (tocca per togliere)", "Non mi è piaciuta", toggleBad);
     const links = el("div", "links");
     const link = (href, text) => { const a = el("a", null, text); a.href = href; a.target = "_blank"; a.rel = "noopener"; links.appendChild(a); };
     link(CLASS_URL(c.id), "Apri su Urban Sports");
