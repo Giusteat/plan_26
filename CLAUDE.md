@@ -30,7 +30,7 @@
 - In cima: **REGOLE modificabili** — `CATEGORY_RULES`, `GROUPS`, `COLORS`, `KEEP_CAPS`, `AREAS` (quartiere → casa/lavoro), `LEVEL_ACTS`/`LEVEL_WORDS` (livelli letti dal titolo), `AREA_BTNS`.
 - `prep(c)`: arricchisce ogni lezione (date, studio, cat, group, area, levels, key preferito, text per ricerca).
 - Preferiti: `favs` (chiave studio|titolo|giorno|ora) + `favT` (insegnante ricordato → "Nuovo insegnante"). Salvati nel browser: copia/incolla per passarli fra dispositivi.
-- Pianificate: `agenda` (stessa chiave dei preferiti, ricorrenti); pulsante calendario nei filtri = agenda (`S.agenda`: `matches` ignora tutti gli altri filtri, schede da oggi divise per giorno). Non piaciute: `bad` (chiave studio|titolo|insegnante, scheda sbiadita). Icone sulla riga dell'orario: `cardIcons`.
+- Pianificate: `agenda` (stessa chiave dei preferiti, ricorrenti); pulsante calendario nei filtri = agenda (`S.agenda`: `matches` ignora tutti gli altri filtri, schede da oggi divise per giorno). Non piaciute: `bad` (chiave studio|titolo|insegnante, scheda sbiadita). Icone sulla riga del titolo (titolo accorciato con …): `cardIcons`.
 - `matches(c, skip)`: tutti i filtri (orari continui, zona, livello, categoria, palestra, piano, preferiti; sul telefono anche ricerca e orari).
 - `updateAvailability()`: voci dei filtri grigie e in fondo.
 - Filtri: `multi`, `levelFilter`, `planFilter`; costruiti in `init()` in quest'ordine: ♥, Pianificate, Categorie, Palestre, Livello, Orari continui, Piano, zona.

@@ -400,8 +400,8 @@ function spotsButton() {
     b.textContent = P.busy ? "Attendi…" : day ? `Posti ${hhmmOf(day.aggiornato)}` : "Posti liberi";
 }
 
-// Quattro icone sulla riga dell'orario: preferito, non piaciuta, pianificata, apri nell'app
-const SVG = (path, fill) => `<svg width="22" height="22" viewBox="0 0 20 20" fill="${fill ? "currentColor" : "none"}" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${path}</svg>`;
+// Quattro icone sulla riga del titolo: preferito, non piaciuta, pianificata, apri nell'app
+const SVG = (path, fill) => `<svg width="20" height="20" viewBox="0 0 20 20" fill="${fill ? "currentColor" : "none"}" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${path}</svg>`;
 const HEART = "M10 16.5S3.5 12.6 3.5 8.2A3.3 3.3 0 0 1 10 6.6a3.3 3.3 0 0 1 6.5 1.6c0 4.4-6.5 8.3-6.5 8.3z";
 function cardIcons(c) {
     const box = el("div", "icons");
@@ -413,7 +413,7 @@ function cardIcons(c) {
         box.appendChild(b);
     };
     const isBad = bad.has(badKey(c)), isPlan = agenda.has(c.key);
-    btn("fv", "Preferito", favs.has(c.key), SVG(`<path d="${HEART}"/>`, favs.has(c.key)), toggleFav);
+    btn("fv", "Preferito", favs.has(c.key), favs.has(c.key) ? "♥" : "♡", toggleFav);
     btn("bd", "Non mi è piaciuta", isBad, SVG(`<path d="${HEART}"${isBad ? ' fill="currentColor"' : ""}/><path d="M8 8.5l4 4M12 8.5l-4 4" stroke="${isBad ? "#fff" : "currentColor"}"/>`), toggleBad);
     btn("pl", "Pianifica (ogni settimana)", isPlan, SVG(`<rect x="3" y="4.5" width="14" height="12.5" rx="2"${isPlan ? ' fill="currentColor"' : ""}/><path d="M3 8.5h14" stroke="${isPlan ? "#fff" : "currentColor"}"/><path d="M7 2.5v4M13 2.5v4"/>`), toggleAgenda);
     const app = el("a", "ic app");
@@ -457,9 +457,10 @@ function renderCards(view, list) {
         const pair = (a, b) => { const d = el("div", "pair"); d.append(a); if (b) d.append(b); return d; };
         const tg = line(icon("tag"), c.group, "grow");
         tg.firstChild.style.color = fg;
-        const tm = el("div", "tm");
-        tm.append(el("span", null, `${c.start} - ${c.end}`), cardIcons(c));
-        bd.append(el("div", "tt", c.name), tm,
+        // riga del titolo: titolo (accorciato con "…") e icone a destra
+        const top = el("div", "top1");
+        top.append(el("div", "tt", c.name), cardIcons(c));
+        bd.append(top, el("div", "tm", `${c.start} - ${c.end}`),
             pair(line(c.area ? icon(c.area, "area") : el("span", "i"), c.studio, "grow"), c.teacherName ? line(icon("persona"), c.teacherName, "side") : null),
             pair(tg, spotsText(c) ? line(icon("posti"), spotsText(c), "side spots" + (liveSpots(c) ? (liveSpots(c).free === 0 ? " full" : " live") : "")) : null));
         const nt = newTeacherLine(c);

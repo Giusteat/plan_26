@@ -138,12 +138,14 @@ footer { text-align: center; margin-top: 14px; display: flex; gap: 8px; justify-
     .pic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
     .card .bd { flex: 1; min-width: 0; }
     .card .tt { font-weight: 700; font-size: 1.02rem; line-height: 1.25; margin-bottom: 2px; }
-    .card .tm { font-size: .92rem; margin-bottom: 3px; display: flex; align-items: center; justify-content: space-between; gap: 6px; }
-    .icons { display: flex; gap: 2px; margin: -6px -6px -6px 0; }
-    .ic { width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; border: 0; background: none;
+    .card .tm { font-size: .92rem; margin-bottom: 3px; }
+    .card .top1 { display: flex; align-items: center; gap: 4px; margin-bottom: 2px; }
+    .card .top1 .tt { flex: 1; min-width: 0; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .icons { display: flex; flex-shrink: 0; margin: -6px -6px -6px 0; }
+    .ic { width: 28px; height: 32px; display: inline-flex; align-items: center; justify-content: center; border: 0; background: none;
         padding: 0; border-radius: 8px; cursor: pointer; color: var(--primary); }
     .ic:active { background: #eef5ea; }
-    .ic.fv { color: var(--heart); }
+    .ic.fv { color: var(--heart); font-size: 1.3rem; line-height: 1; }
     .ic.bd { color: #9ca3af; }
     .ic.bd.on { color: #4b5563; }
     .card .ln { display: flex; gap: 6px; align-items: flex-start; font-size: .9rem; line-height: 1.3; margin-top: 2px; }
