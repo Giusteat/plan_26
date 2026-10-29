@@ -12,7 +12,6 @@
   {"slug": "mysenses", "only_categories": ["Pilates"], "or_title_contains": ["pilates"]},
   {"slug": "rostudios-berlin-prenzlauer-berg", "all_day": true},
   {"slug": "rostudios-berlin-prenzlauer-berg-studio-2", "all_day": true},
-  {"slug": "soul-sportstudio-pankow"},
   {"slug": "pilates4all-reformer-pilates-prenzlauer-berg"},
   {"slug": "asa-studio"},
   {"slug": "via-pilates-pilates-reformer"},
