@@ -110,7 +110,9 @@ function addFav(k) {
     if (t && !favT[key]) favT[key] = t;
 }
 // Pianificate: ricorrenti come i preferiti (stessa chiave). Non piaciute: stessa lezione, studio e insegnante, in qualsiasi giorno.
-const agenda = new Set(store.get("agenda", []));
+const agenda = new Set(store.get("agenda", []));   // ogni settimana (chiave del preferito)
+const once = new Set(store.get("once", []));       // solo quella data (id della lezione)
+const planned = c => once.has(c.id) || agenda.has(c.key);
 const bad = new Set(store.get("bad", []));
 const badKey = c => [c.venue, c.title, c.teacherName || ""].join("|");
 const saveFavs = () => { store.set("favs", [...favs]); store.set("favT", favT); };
@@ -139,7 +141,7 @@ function prep(c) {
     return c;
 }
 // Un corso passa i filtri se li rispetta tutti; "skip" ignora un filtro (serve per capire cosa è ancora scegliibile)
-const matches = (c, skip) => S.agenda ? agenda.has(c.key) :
+const matches = (c, skip) => S.agenda ? planned(c) :
     c.allDay === S.allDay && (!c.area || c.area === S.area) && (skip === "level" || levelOk(c)) && (skip === "cat" || !S.cat.size || S.cat.has(c.group)) && (skip === "venue" || !S.venue.size || S.venue.has(c.studio)) &&
     (skip === "plan" || !S.plan || c.plans.includes(S.plan)) && (skip === "fav" || !S.fav || favs.has(c.key)) &&
     (!mobile.matches || ((!S.q || c.text.includes(S.q)) && (S.from <= T_MIN || toMin(c.start) >= S.from) && (S.to >= T_MAX || toMin(c.start) <= S.to)));
@@ -196,8 +198,13 @@ function toggleSet(set, k, name) {
     render();
 }
 const toggleAgenda = c => toggleSet(agenda, c.key, "agenda");
+// 📅 sulla scheda: solo quella data; se è già pianificata ogni settimana apre il riquadro per toglierla
+const toggleOnce = c => agenda.has(c.key) ? openBadMenu(c) : toggleSet(once, c.id, "once");
 // una lezione non piaciuta non si pianifica più
-const toggleBad = c => { if (!bad.has(badKey(c)) && agenda.delete(c.key)) store.set("agenda", [...agenda]); toggleSet(bad, badKey(c), "bad"); };
+const toggleBad = c => {
+    if (!bad.has(badKey(c))) { agenda.delete(c.key); once.delete(c.id); store.set("agenda", [...agenda]); store.set("once", [...once]); }
+    toggleSet(bad, badKey(c), "bad");
+};
 
 function toggleFav(c) {
     if (favs.has(c.key)) { favs.delete(c.key); delete favT[c.key]; }
@@ -331,7 +338,7 @@ function renderGrid(view, list) {
             b.title = `${ev.name}\n${ev.start}–${ev.end} · ${ev.studio}\n${ev.teacherName || ""}\nAl mese: ${monthlyText(ev)}`;
             b.append(el("div", "t", ev.name), el("div", "s", `${ev.start}–${ev.end} · ${ev.studio}`));
             if (n <= 4 && ev.teacherName) b.appendChild(el("div", "tc", ev.teacherName));
-            if (favs.has(ev.key) || agenda.has(ev.key)) b.appendChild(el("span", "h", (agenda.has(ev.key) ? "📅" : "") + (favs.has(ev.key) ? "♥" : "")));
+            if (favs.has(ev.key) || planned(ev)) b.appendChild(el("span", "h", (planned(ev) ? "📅" : "") + (favs.has(ev.key) ? "♥" : "")));
             if (bad.has(badKey(ev))) b.classList.add("bad");
             if (newTeacher(ev)) { b.appendChild(el("div", "tc nt", "Nuovo insegnante")); b.title += `\nNuovo insegnante (prima: ${newTeacher(ev)})`; }
             b.onclick = () => openSheet(ev);
@@ -418,13 +425,12 @@ function openBadMenu(c) {
     sh.innerHTML = ""; sh.hidden = false;
     const box = el("div", "box small");
     const sub = [c.studio, c.teacherName].filter(Boolean).join(" · ");
-    const yes = el("button", "act" + (isBad ? "" : " on"), isBad ? "Mi piace di nuovo" : "Non mi è piaciuta");
-    yes.onclick = () => { closeSheet(); toggleBad(c); };
-    const no = el("button", "act", "Annulla");
-    no.onclick = closeSheet;
     const acts = el("div", "acts");
-    acts.append(yes, no);
-    box.append(el("h2", null, c.name), el("p", "hint", sub + (isBad ? "" : " — vale per tutti i giorni")), acts);
+    const act = (text, fn) => { const b = el("button", "act", text); b.onclick = () => { closeSheet(); if (fn) fn(c); }; acts.appendChild(b); };
+    if (!isBad) act(agenda.has(c.key) ? `Togli 📅 ogni ${DAYS[c.dow].toLowerCase()}` : `📅 Ogni ${DAYS[c.dow].toLowerCase()} alle ${c.start}`, toggleAgenda);
+    act(isBad ? "Mi piace di nuovo" : "Non mi è piaciuta", toggleBad);
+    act("Annulla", null);
+    box.append(el("h2", null, c.name), el("p", "hint", sub), acts);
     sh.appendChild(box);
 }
 function cardIcons(c) {
@@ -436,12 +442,12 @@ function cardIcons(c) {
         b.onclick = e => { e.preventDefault(); e.stopPropagation(); toggle(c); };
         box.appendChild(b);
     };
-    const isPlan = agenda.has(c.key);
+    const isPlan = planned(c), rec = agenda.has(c.key);
     if (bad.has(badKey(c))) {   // non piaciuta: solo cuore barrato (toccandolo si può togliere) e apri
         btn("nb", "Non mi è piaciuta", true, SVG('<path d="M10 16.5S3.5 12.6 3.5 8.2A3.3 3.3 0 0 1 10 6.6a3.3 3.3 0 0 1 6.5 1.6c0 4.4-6.5 8.3-6.5 8.3z"/><path d="M3 3l14 14"/>'), openBadMenu);
     } else {
     btn("fv", "Preferito", favs.has(c.key), favs.has(c.key) ? "♥" : "♡", toggleFav);
-    btn("pl", "Pianifica (ogni settimana)", isPlan, SVG(`<rect x="3" y="4.5" width="14" height="12.5" rx="2"${isPlan ? ' fill="currentColor"' : ""}/><path d="M3 8.5h14" stroke="${isPlan ? "#fff" : "currentColor"}"/><path d="M7 2.5v4M13 2.5v4"/>`), toggleAgenda);
+    btn("pl" + (rec ? " rec" : ""), rec ? "Pianificata ogni settimana" : "Pianifica questa data", isPlan, SVG(`<rect x="3" y="4.5" width="14" height="12.5" rx="2"${isPlan ? ' fill="currentColor"' : ""}/><path d="M3 8.5h14" stroke="${isPlan ? "#fff" : "currentColor"}"/><path d="M7 2.5v4M13 2.5v4"/>`), toggleOnce);
     }
     const app = el("a", "ic app");
     app.href = CLASS_URL(c.id);
@@ -564,7 +570,8 @@ function openSheet(c) {
         b.onclick = () => { toggle(c); upd(); };
         upd(); acts.appendChild(b);
     };
-    act(() => agenda.has(c.key), `📅 Pianificata ogni ${DAYS[c.dow].toLowerCase()}`, "📅 Pianifica", toggleAgenda);
+    act(() => once.has(c.id), "📅 Pianificata questa data", "📅 Pianifica questa data", c => toggleSet(once, c.id, "once"));
+    act(() => agenda.has(c.key), `📅 Pianificata ogni ${DAYS[c.dow].toLowerCase()}`, `📅 Ogni ${DAYS[c.dow].toLowerCase()}`, toggleAgenda);
     act(() => favs.has(c.key), "♥ Nei preferiti", "♡ Preferito", toggleFav);
     act(() => bad.has(badKey(c)), "Non mi è piaciuta (tocca per togliere)", "Non mi è piaciuta", toggleBad);
     const links = el("div", "links");
@@ -639,6 +646,10 @@ async function init() {
     } catch (err) { meta.textContent = "Impossibile caricare gli orari (" + err.message + ")"; return; }
     venues = data.venues || {};
     classes = (data.classes || []).map(prep);
+    // pianificate per una data: si dimenticano quando la lezione è passata o non c'è più
+    const todayIso = iso(new Date()), future = new Set(classes.filter(c => c.date >= todayIso).map(c => c.id));
+    [...once].forEach(id => { if (!future.has(id)) once.delete(id); });
+    store.set("once", [...once]);
     meta.textContent = "Aggiornato " + new Date(data.updated).toLocaleString("it-IT", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
     if (!classes.length) { meta.textContent += " · nessun corso nel file"; return; }
 

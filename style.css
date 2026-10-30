@@ -212,3 +212,7 @@ footer { text-align: center; margin-top: 14px; display: flex; gap: 8px; justify-
 .agenda { display: inline-flex; align-items: center; }
 /* in agenda gli altri filtri non contano: si vedono spenti */
 .filters.agenda-on > :not(.agenda) { opacity: .35; pointer-events: none; }
+/* pianificata ogni settimana: piccola freccia circolare sul calendario */
+.ic.pl.rec { position: relative; }
+.ic.pl.rec::after { content: "↻"; position: absolute; right: 0; bottom: 1px; font-size: .7rem; font-weight: 700; line-height: 1;
+    background: #fff; color: var(--primary); border-radius: 50%; padding: 0 1px; }
