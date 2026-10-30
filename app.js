@@ -466,11 +466,19 @@ function renderCards(view, list) {
     const items = list.filter(c => all ? c.date >= todayIso : c.date === iso(S.day))
         .sort((a, b) => a.date.localeCompare(b.date) || a.start.localeCompare(b.start) || a.studio.localeCompare(b.studio));
     if (!items.length) { view.appendChild(el("p", "empty", S.agenda ? "Nessuna lezione pianificata. Tocca una scheda e scegli \"Pianifica\"." : "Nessun corso con questi filtri.")); return; }
-    let lastDate = null;
+    let lastDate = null, lastWeek = null;
     items.forEach(c => {
         if (all && c.date !== lastDate) {
             lastDate = c.date;
             const d = parse(c.date);
+            // nuova settimana (da lunedì): fascia scura con il nome della settimana
+            const mon = iso(mondayOf(d));
+            if (mon !== lastWeek) {
+                const n = Math.round((mondayOf(d) - mondayOf(now)) / (7 * 864e5));
+                const range = `${fmt(mondayOf(d))} – ${fmt(addDays(mondayOf(d), 6))}`;
+                view.appendChild(el("div", "weekhead", n === 0 ? `Questa settimana · ${range}` : n === 1 ? `Prossima settimana · ${range}` : `Settimana ${range}`));
+                lastWeek = mon;
+            }
             view.appendChild(el("div", "dayhead", c.date === todayIso ? "Oggi" : `${DAYS[c.dow]} ${d.toLocaleDateString("it-IT", { day: "numeric", month: "long" })}`));
         }
         const v = venues[c.venue] || {}, [bg, fg] = colorOf(c);
