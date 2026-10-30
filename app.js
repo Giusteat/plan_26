@@ -474,9 +474,7 @@ function renderCards(view, list) {
             // agenda, nuova settimana (da lunedì): fascia verde con le date della settimana
             const mon = iso(mondayOf(d));
             if (S.agenda && mon !== lastWeek) {
-                const n = Math.round((mondayOf(d) - mondayOf(now)) / (7 * 864e5));
-                const range = `${fmt(mondayOf(d))} – ${fmt(addDays(mondayOf(d), 6))}`;
-                view.appendChild(el("div", "weekhead", n === 0 ? range : n === 1 ? `Prossima settimana · ${range}` : `Settimana ${range}`));
+                view.appendChild(el("div", "weekhead", `${fmt(mondayOf(d))} – ${fmt(addDays(mondayOf(d), 6))}`));
                 lastWeek = mon;
             }
             view.appendChild(el("div", "dayhead", c.date === todayIso ? "Oggi" : `${DAYS[c.dow]} ${d.toLocaleDateString("it-IT", { day: "numeric", month: "long" })}`));
