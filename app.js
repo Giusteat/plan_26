@@ -121,6 +121,8 @@ saveFavs();
 const newTeacher = c => favs.has(c.key) && favT[c.key] && c.teacherName && favT[c.key] !== c.teacherName ? favT[c.key] : null;
 const newTeacherLine = c => { const t = newTeacher(c); return t ? el("div", "nt", `Nuovo insegnante (prima: ${t})`) : null; };
 const mobile = window.matchMedia("(max-width: 760px)");
+// Schede come sul telefono: sempre sul telefono, e sul computer nella vista Giorno (la vista Settimana è la griglia)
+const useCards = () => mobile.matches || S.view === 1;
 
 function prep(c) {
     c.date = c.startDateTimeUTC.slice(0, 10);
@@ -144,7 +146,7 @@ function prep(c) {
 const matches = (c, skip) => S.agenda ? planned(c) :
     c.allDay === S.allDay && (!c.area || c.area === S.area) && (skip === "level" || levelOk(c)) && (skip === "cat" || !S.cat.size || S.cat.has(c.group)) && (skip === "venue" || !S.venue.size || S.venue.has(c.studio)) &&
     (skip === "plan" || !S.plan || c.plans.includes(S.plan)) && (skip === "fav" || !S.fav || favs.has(c.key)) &&
-    (!mobile.matches || ((!S.q || c.text.includes(S.q)) && (S.from <= T_MIN || toMin(c.start) >= S.from) && (S.to >= T_MAX || toMin(c.start) <= S.to)));
+    (!useCards() || ((!S.q || c.text.includes(S.q)) && (S.from <= T_MIN || toMin(c.start) >= S.from) && (S.to >= T_MAX || toMin(c.start) <= S.to)));
 const visible = c => matches(c, null);
 const UI = { cat: new Map(), venue: new Map(), plan: new Map(), fav: null, agenda: null };
 
@@ -466,10 +468,12 @@ function renderCards(view, list) {
     const items = list.filter(c => all ? c.date >= todayIso : c.date === iso(S.day))
         .sort((a, b) => a.date.localeCompare(b.date) || a.start.localeCompare(b.start) || a.studio.localeCompare(b.studio));
     if (!items.length) { view.appendChild(el("p", "empty", S.agenda ? "Nessuna lezione pianificata. Tocca una scheda e scegli \"Pianifica\"." : "Nessun corso con questi filtri.")); return; }
-    let lastDate = null, lastWeek = null;
+    // computer: le lezioni che iniziano alla stessa ora stanno affiancate; una riga sottile per ogni ora tonda
+    const wide = !mobile.matches;
+    let lastDate = null, lastWeek = null, lastHour = null, lastStart = null, slot = null;
     items.forEach(c => {
         if (all && c.date !== lastDate) {
-            lastDate = c.date;
+            lastDate = c.date; lastHour = lastStart = null;
             const d = parse(c.date);
             // agenda, nuova settimana (da lunedì): fascia verde con le date della settimana
             const mon = iso(mondayOf(d));
@@ -506,22 +510,26 @@ function renderCards(view, list) {
         const nt = newTeacherLine(c);
         if (nt) bd.appendChild(nt);
         card.append(pic, bd);
-        view.appendChild(card);
+        if (!wide) { view.appendChild(card); return; }
+        const h = c.start.slice(0, 2);
+        if (h !== lastHour) { view.appendChild(el("div", "hourhead", `${h}:00`)); lastHour = h; lastStart = null; }
+        if (c.start !== lastStart) { slot = el("div", "slot"); view.appendChild(slot); lastStart = c.start; }
+        slot.appendChild(card);
     });
 }
 
 // Oggi: porta la vista alle lezioni che iniziano da adesso in poi (alle 8:20 → dalle 8:20; le precedenti restano sopra)
 function scrollToNow() {
-    const headerH = mobile.matches ? document.querySelector("header").offsetHeight : 0;
+    const headerH = useCards() ? document.querySelector("header").offsetHeight : 0;
     const now = new Date(), nowMin = now.getHours() * 60 + now.getMinutes();
     let target = null;
-    if (mobile.matches) {
+    if (useCards()) {
         if (iso(S.day) === iso(now)) target = [...document.querySelectorAll("#view .card")].find(c => Number(c.dataset.start) >= nowMin);
     } else target = document.querySelector("#view .now");
     // oggi senza più lezioni da fare: si va all'ultima
-    if (!target && mobile.matches && iso(S.day) === iso(now)) target = [...document.querySelectorAll("#view .card")].pop();
+    if (!target && useCards() && iso(S.day) === iso(now)) target = [...document.querySelectorAll("#view .card")].pop();
     if (!target) { window.scrollTo(0, 0); return; }
-    const y = target.getBoundingClientRect().top + window.scrollY - headerH - (mobile.matches ? 0 : 120);
+    const y = target.getBoundingClientRect().top + window.scrollY - headerH - (useCards() ? 0 : 120);
     window.scrollTo(0, Math.max(0, y));
 }
 
@@ -597,14 +605,13 @@ const lastStart = () => { if (S.view === 7) return mondayOf(maxDay); const d = a
 const clampStart = d => { const a = firstStart(), b = lastStart(); return d < a ? a : d > b ? b : d; };
 
 function step(n) {
-    if (mobile.matches) S.day = clampDay(addDays(S.day, n)); else S.start = clampStart(addDays(S.start, S.view * n));
+    if (useCards()) S.day = clampDay(addDays(S.day, n)); else S.start = clampStart(addDays(S.start, S.view * n));
     render();
 }
 function setView(n) {
     const prev = S.view; S.view = n; store.set("view", n);
-    if (n === 7) S.start = mondayOf(S.start);
-    else if (prev === 7) { const t = todayDate(); if (t >= S.start && t <= addDays(S.start, 6)) S.start = t; }
-    S.start = clampStart(S.start);
+    if (n === 7) S.start = clampStart(mondayOf(S.day));   // la settimana del giorno che guardavi
+    else if (prev === 7) { const t = todayDate(); S.day = clampDay(t >= S.start && t <= addDays(S.start, 6) ? t : S.start); }
     render();
 }
 function goToday() {
@@ -627,7 +634,9 @@ function render() {
     const view = $("view"), y = window.scrollY;   // ridisegnando, la pagina resta dov'era
     view.innerHTML = "";
     const list = classes.filter(visible);
-    if (mobile.matches) {
+    document.documentElement.classList.toggle("m", useCards());
+    document.documentElement.classList.toggle("wide", !mobile.matches);
+    if (useCards()) {
         renderDays();
         renderCards(view, list);
         spotsButton();
@@ -661,8 +670,7 @@ async function init() {
 
     const dates = classes.map(c => c.date).sort();
     minDay = parse(dates[0]); maxDay = parse(dates[dates.length - 1]);
-    const v = store.get("view", 7);
-    S.view = [1, 4, 7].includes(v) ? v : 7;
+    S.view = store.get("view", 1) === 7 ? 7 : 1;
     S.day = clampDay(todayDate());
     S.start = clampStart(S.view === 7 ? mondayOf(new Date()) : todayDate());
     startHour = Math.min(7, Math.floor(Math.min(...classes.map(c => toMin(c.start))) / 60));
@@ -714,7 +722,7 @@ async function init() {
         f.appendChild(seg);
     }
 
-    [[1, "1 giorno"], [4, "4 giorni"], [7, "7 giorni"]].forEach(([n, l]) => {
+    [[1, "Giorno"], [7, "Settimana"]].forEach(([n, l]) => {
         const b = el("button", "btn", l); b.dataset.v = n; b.onclick = () => setView(n); $("views").appendChild(b);
     });
     $("prev").onclick = () => step(-1); $("next").onclick = () => step(1); $("today").onclick = goToday;
