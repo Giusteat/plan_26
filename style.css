@@ -221,19 +221,36 @@ footer { text-align: center; margin-top: 14px; display: flex; gap: 8px; justify-
 .ic.pl.rec::after { content: "↻"; position: absolute; right: 0; bottom: 1px; font-size: .7rem; font-weight: 700; line-height: 1;
     background: #fff; color: var(--primary); border-radius: 50%; padding: 0 1px; }
 
-/* ---------- computer, vista Giorno: schede del telefono affiancate ---------- */
-.m.wide header { padding: 10px 24px 2px; }
-.m.wide .top { max-width: none; }
-.m.wide .search { max-width: 560px; margin: 0 auto 10px; }
-.m.wide .bar { display: flex; align-items: center; gap: 10px; }
-.m.wide .filters { flex: 1; flex-wrap: wrap; overflow: visible; }
-.m.wide .views { display: flex; padding-right: 12px; }
-.m.wide .views .btn { height: 34px; border-radius: 8px; font-size: .9rem; padding: 0 14px; }
-.m.wide .range { max-width: 700px; }
+/* ---------- computer: stessa testata del telefono, più compatta ---------- */
+.m.wide header { padding: 8px 20px 0; }
+.m.wide .top { margin: 0 0 8px; }
+.m.wide .row1 { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
+.m.wide .row1 .search { margin: 0; width: 240px; height: 34px; padding: 0 12px; gap: 8px; flex-shrink: 0; }
+.m.wide .row1 .search input { font-size: .85rem; }
+.m.wide .filters { padding: 0; flex-wrap: wrap; overflow: visible; gap: 6px; }
+.m.wide .filters .btn, .m.wide .filters .dd summary, .m.wide .filters .switch { height: 32px; padding: 0 10px; font-size: .82rem; }
+.m.wide .filters .seg { height: 32px; }
+.m.wide .filters .seg button { padding: 0 10px; }
+.m.wide .filters .seg svg { width: 17px; height: 17px; }
+.m.wide #views { display: inline-flex; height: 32px; border: 2px solid var(--primary); border-radius: 8px; }
+.m.wide #views button { padding: 0 12px; font-size: .82rem; color: var(--primary); font-weight: 600; }
+.m.wide #views button + button { border-left: 2px solid var(--primary); }
+.m.wide #views button.on { color: #fff; }
+.m.wide .pbtn { height: 32px; font-size: .82rem; }
+.m.wide .pbtn[hidden] { display: none; }
+.m.wide .row2 { display: flex; align-items: center; gap: 16px; }
+.m.wide .row2 .range { display: flex; flex: 0 0 340px; padding: 0; font-size: .85rem; }
+.m.wide .row2 .days { flex: 1; padding: 0; }
+.m.wide .dy { font-size: .85rem; padding: 7px 9px 8px; }
 .m.wide .dd { position: relative; }
 .m.wide .panel { position: absolute; left: 0; right: auto; top: 110%; width: max-content; max-width: 360px; }
 .m.wide main { padding: 0 24px; }
+.m.wide.week header { position: static; }
+.m.wide.week main { padding: 12px 20px 0; }
+.m.wide.week .empty { padding: 8px 0 12px; }
+/* vista Giorno: schede del telefono affiancate, una riga per orario d'inizio */
 .m.wide .hourhead { margin: 14px 0 4px; padding: 2px 0; border-bottom: 1px solid var(--border); color: var(--muted); font-size: .8rem; font-weight: 600; }
 .m.wide .slot { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 0 16px; }
 .m.wide .slot .card { border-bottom: 1px solid var(--border); }
 .m.wide .weekhead, .m.wide .dayhead { margin-left: -24px; margin-right: -24px; padding-left: 24px; }
+.wide footer { display: none; }   /* copia/incolla preferiti: solo sul telefono */

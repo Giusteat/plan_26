@@ -16,7 +16,7 @@
 ## File
 | File | Cosa fa |
 |---|---|
-| `index.html` + `app.js` + `style.css` | Calendario. Telefono (≤760px): ricerca, filtri, barra orari, giorni, schede. Computer: vista Giorno = come il telefono, schede affiancate per orario d'inizio; vista Settimana = griglia oraria. |
+| `index.html` + `app.js` + `style.css` | Calendario. Telefono (≤760px): ricerca, filtri, barra orari, giorni, schede. Computer: stessa testata del telefono ma compatta (riga 1: ricerca, Giorno/Settimana, filtri, Casa/Lavoro, Posti liberi; riga 2: orari + giorni/settimane), niente ♥/📅. Giorno = schede affiancate per orario d'inizio; Settimana = griglia oraria, vuota finché non scegli palestra/categoria o cerchi. |
 | `gestisci.html` | Pagina "Gestisci palestre": apre una issue `[palestra] ...` su GitHub. |
 | `confronto.html` + `confronto.json` | Confronto prezzi Urban Sports / Wellhub (prezzi scritti a mano nel json). |
 | `scraper/scrape.py` | Scarica 14 giorni di orari da Urban Sports (endpoint RSC di Next.js, senza login) → `data/corsi.json`. Env: `FORCE=true`, `ONLY_SLUGS=a,b`. |
@@ -31,10 +31,10 @@
 - `prep(c)`: arricchisce ogni lezione (date, studio, cat, group, area, levels, key preferito, text per ricerca).
 - Preferiti: `favs` (chiave studio|titolo|giorno|ora) + `favT` (insegnante ricordato → "Nuovo insegnante"). Salvati nel browser: copia/incolla per passarli fra dispositivi.
 - Pianificate: `once` (id, solo quella data: tocco sul 📅; si puliscono quando passate) e `agenda` (chiave del preferito, ogni settimana: dal riquadro a pressione lunga; icona con ↻); `planned(c)`. Pulsante calendario nei filtri = agenda (`S.agenda`: `matches` ignora tutti gli altri filtri, schede da oggi divise per giorno). Non piaciute: `bad` (chiave studio|titolo|insegnante, scheda grigia, icone solo cuore barrato e apri, non si pianifica più), si segnano tenendo premuta la scheda (`onLongPress` → `openBadMenu`, dove c'è anche "Ogni settimana"). Icone sulla riga del titolo (♡, 📅, ↗; titolo accorciato con …): `cardIcons`.
-- `matches(c, skip)`: tutti i filtri (orari continui, zona, livello, categoria, palestra, piano, preferiti; sul telefono anche ricerca e orari).
+- `matches(c, skip)`: tutti i filtri (orari continui, zona, livello, categoria, palestra, piano, preferiti, ricerca, orari).
 - `updateAvailability()`: voci dei filtri grigie e in fondo.
 - Filtri: `multi`, `levelFilter`, `planFilter`; costruiti in `init()` in quest'ordine: ♥, Pianificate, Categorie, Palestre, Livello, Orari continui, Piano, zona.
-- Telefono: `renderCards` (con la ricerca o in agenda mostra tutti i giorni da oggi con titolo del giorno; in agenda anche fascia verde per settimana, da lunedì), `renderDays`, `scrollToNow` (all'apertura va alla prima lezione non iniziata, o all'ultima se oggi sono finite). Computer: `useCards()` (telefono o vista Giorno → classe `.m` su <html>, gli stili del telefono in style.css sono `.m …`; sul computer anche `.wide`, righe `.slot` per orario e `.hourhead` per ora tonda); vista Settimana: `layout`, `renderGrid`, `openSheet`.
+- Telefono: `renderCards` (con la ricerca o in agenda mostra tutti i giorni da oggi con titolo del giorno; in agenda anche fascia verde per settimana, da lunedì), `renderDays`, `scrollToNow` (all'apertura va alla prima lezione non iniziata, o all'ultima se oggi sono finite). Computer: `useCards()` (telefono o vista Giorno). <html> ha sempre `.m` (gli stili del telefono in style.css sono `.m …`), sul computer anche `.wide` (righe `.row1`/`.row2` create in `init`) e in Settimana `.week`; righe `.slot` per orario e `.hourhead` per ora tonda); vista Settimana: `layout`, `renderGrid`, `openSheet`.
 - Posti liberi: pulsante `#pbtn` a sinistra degli orari, `requestSpots`, `spotsButton`, `spotsText` (oggetto `P`, salvato in `posti`, un risultato per giorno, dimenticato dopo 2 ore: `freshDay`).
 - Lezione grigia (`isPast`) appena inizia. Telefono: toccare la scheda non fa niente; l'app Urban Sports si apre solo dall'icona (`CLASS_URL(id)`).
 

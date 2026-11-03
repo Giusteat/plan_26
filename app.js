@@ -146,7 +146,7 @@ function prep(c) {
 const matches = (c, skip) => S.agenda ? planned(c) :
     c.allDay === S.allDay && (!c.area || c.area === S.area) && (skip === "level" || levelOk(c)) && (skip === "cat" || !S.cat.size || S.cat.has(c.group)) && (skip === "venue" || !S.venue.size || S.venue.has(c.studio)) &&
     (skip === "plan" || !S.plan || c.plans.includes(S.plan)) && (skip === "fav" || !S.fav || favs.has(c.key)) &&
-    (!useCards() || ((!S.q || c.text.includes(S.q)) && (S.from <= T_MIN || toMin(c.start) >= S.from) && (S.to >= T_MAX || toMin(c.start) <= S.to)));
+    (true && ((!S.q || c.text.includes(S.q)) && (S.from <= T_MIN || toMin(c.start) >= S.from) && (S.to >= T_MAX || toMin(c.start) <= S.to)));
 const visible = c => matches(c, null);
 const UI = { cat: new Map(), venue: new Map(), plan: new Map(), fav: null, agenda: null };
 
@@ -406,6 +406,7 @@ async function requestSpots() {
 // Pulsante a sinistra degli orari: mostra a che ora sono stati chiesti i posti del giorno guardato
 function spotsButton() {
     const b = $("pbtn"), day = freshDay(iso(S.day));
+    b.hidden = !useCards();
     b.disabled = P.busy;
     b.textContent = P.busy ? "Attendi…" : day ? `Posti ${hhmmOf(day.aggiornato)}` : "Posti liberi";
 }
@@ -445,7 +446,8 @@ function cardIcons(c) {
         box.appendChild(b);
     };
     const isPlan = planned(c), rec = agenda.has(c.key);
-    if (bad.has(badKey(c))) {   // non piaciuta: solo cuore barrato (toccandolo si può togliere) e apri
+    if (!mobile.matches) { /* computer: solo "apri" */ }
+    else if (bad.has(badKey(c))) {   // non piaciuta: solo cuore barrato (toccandolo si può togliere) e apri
         btn("nb", "Non mi è piaciuta", true, SVG('<path d="M10 16.5S3.5 12.6 3.5 8.2A3.3 3.3 0 0 1 10 6.6a3.3 3.3 0 0 1 6.5 1.6c0 4.4-6.5 8.3-6.5 8.3z"/><path d="M3 3l14 14"/>'), openBadMenu);
     } else {
     btn("fv", "Preferito", favs.has(c.key), favs.has(c.key) ? "♥" : "♡", toggleFav);
@@ -486,7 +488,7 @@ function renderCards(view, list) {
         const v = venues[c.venue] || {}, [bg, fg] = colorOf(c);
         const card = el("div", "card" + (isPast(c, todayIso, nowMin) ? " past" : "") + (bad.has(badKey(c)) ? " bad" : ""));
         card.dataset.start = toMin(c.start);
-        onLongPress(card, () => openBadMenu(c));
+        if (mobile.matches) onLongPress(card, () => openBadMenu(c));
         const pic = el("div", "pic");
         pic.style.background = bg; pic.style.color = fg;
         pic.textContent = c.studio.replace(/[^A-Za-zÄÖÜäöü0-9]/g, "").slice(0, 2).toUpperCase();
@@ -525,7 +527,7 @@ function scrollToNow() {
     let target = null;
     if (useCards()) {
         if (iso(S.day) === iso(now)) target = [...document.querySelectorAll("#view .card")].find(c => Number(c.dataset.start) >= nowMin);
-    } else target = document.querySelector("#view .now");
+    } else if (S.cat.size || S.venue.size || S.q) target = document.querySelector("#view .now");
     // oggi senza più lezioni da fare: si va all'ultima
     if (!target && useCards() && iso(S.day) === iso(now)) target = [...document.querySelectorAll("#view .card")].pop();
     if (!target) { window.scrollTo(0, 0); return; }
@@ -537,6 +539,14 @@ function scrollToNow() {
 function renderDays() {
     const box = $("days"), t = todayDate();
     box.innerHTML = "";
+    if (!useCards()) {   // vista Settimana: al posto dei giorni, le settimane
+        for (let m = mondayOf(minDay); m <= maxDay; m = addDays(m, 7)) {
+            const mon = m, b = el("button", "dy" + (iso(mon) === iso(S.start) ? " on" : ""), `${fmt(mon)} – ${fmt(addDays(mon, 6))}`);
+            b.onclick = () => { S.start = mon; render(); };
+            box.appendChild(b);
+        }
+        return;
+    }
     for (let d = t < minDay ? minDay : t; d <= maxDay; d = addDays(d, 1)) {
         const day = d, b = el("button", "dy" + (!S.q && !S.agenda && iso(day) === iso(S.day) ? " on" : ""), iso(day) === iso(t) ? "Oggi" : `${dayName(day)} ${day.getDate()}`);
         b.onclick = () => { S.day = day; if (S.q) { S.q = ""; $("q").value = ""; } if (S.agenda) UI.agenda.click(); render(); scrollToNow(); };
@@ -592,7 +602,7 @@ function openSheet(c) {
     const link = (href, text) => { const a = el("a", null, text); a.href = href; a.target = "_blank"; a.rel = "noopener"; links.appendChild(a); };
     link(CLASS_URL(c.id), "Apri su Urban Sports");
     if (v.website && /^https?:\/\//.test(v.website)) link(v.website, "Sito dello studio");
-    box.append(x, el("h2", null, c.name), dl, acts, links);
+    box.append(x, el("h2", null, c.name), dl, ...(mobile.matches ? [acts] : []), links);
     sh.appendChild(box);
 }
 $("sheet").addEventListener("click", e => { if (e.target === $("sheet")) closeSheet(); });
@@ -634,20 +644,24 @@ function render() {
     const view = $("view"), y = window.scrollY;   // ridisegnando, la pagina resta dov'era
     view.innerHTML = "";
     const list = classes.filter(visible);
-    document.documentElement.classList.toggle("m", useCards());
+    document.documentElement.classList.add("m");
     document.documentElement.classList.toggle("wide", !mobile.matches);
+    document.documentElement.classList.toggle("week", !useCards());
+    renderDays();
+    spotsButton();
     if (useCards()) {
-        renderDays();
         renderCards(view, list);
-        spotsButton();
         $("label").textContent = `${dayName(S.day)} ${fmt(S.day)}`;
         $("prev").disabled = S.day <= minDay; $("next").disabled = S.day >= maxDay;
     } else {
-        renderGrid(view, list);
+        // Settimana: vuota finché non scegli una palestra o una categoria (o cerchi qualcosa)
+        const chosen = S.cat.size || S.venue.size || S.q;
+        if (!chosen) view.appendChild(el("p", "empty", "Scegli una palestra o una categoria per vedere la settimana."));
+        renderGrid(view, chosen ? list : []);
         $("label").textContent = S.view === 1 ? `${dayName(S.start)} ${fmt(S.start)}` : `${fmt(S.start)} – ${fmt(addDays(S.start, S.view - 1))}`;
         $("prev").disabled = S.start <= firstStart(); $("next").disabled = S.start >= lastStart();
     }
-    document.querySelectorAll("#views .btn").forEach(b => b.classList.toggle("active", Number(b.dataset.v) === S.view));
+    document.querySelectorAll("#views button").forEach(b => b.classList.toggle("on", Number(b.dataset.v) === S.view));
     window.scrollTo(0, y);
 }
 
@@ -680,6 +694,7 @@ async function init() {
     const known = GROUPS.map(g => g[0]).filter(g => present.has(g));
     const others = [...present].filter(g => !known.includes(g)).sort();
     const f = $("filters");
+    if (mobile.matches) {   // ♥ e 📅 solo sul telefono: sono salvati lì e non passano al computer
     const fav = el("button", "btn fav");
     fav.innerHTML = '♥<span class="lbl"> Solo preferiti</span>';
     fav.setAttribute("aria-label", "Solo preferiti");
@@ -693,6 +708,7 @@ async function init() {
     UI.agenda = ag;
     ag.onclick = () => { S.agenda = !S.agenda; ag.classList.toggle("active", S.agenda); f.classList.toggle("agenda-on", S.agenda); render(); window.scrollTo(0, 0); };
     f.appendChild(ag);
+    }
     f.append(multi("Categorie", [...known, ...others], S.cat, UI.cat),
              multi("Palestre", [...new Set(classes.map(c => c.studio))].sort(), S.venue, UI.venue));
     const acts = LEVEL_ACTS.filter(a => classes.some(c => c.cat === a && c.levels));
@@ -723,7 +739,7 @@ async function init() {
     }
 
     [[1, "Giorno"], [7, "Settimana"]].forEach(([n, l]) => {
-        const b = el("button", "btn", l); b.dataset.v = n; b.onclick = () => setView(n); $("views").appendChild(b);
+        const b = el("button", null, l); b.dataset.v = n; b.onclick = () => { setView(n); scrollToNow(); }; $("views").appendChild(b);
     });
     $("prev").onclick = () => step(-1); $("next").onclick = () => step(1); $("today").onclick = goToday;
     const favExport = () => [...favs].map(k => k + "|" + (favT[k] || ""));
@@ -764,7 +780,15 @@ async function init() {
     document.querySelectorAll("details.dd").forEach(d => d.addEventListener("toggle", () => {
         if (d.open && mobile.matches) d.querySelector(".panel").style.top = (d.querySelector("summary").getBoundingClientRect().bottom + 6) + "px";
     }));
-    mobile.addEventListener("change", render);
+    mobile.addEventListener("change", () => location.reload());   // telefono ↔ computer: la testata cambia forma
+    // computer: una riga con ricerca, Giorno/Settimana, filtri, Casa/Lavoro e Posti liberi; sotto orari e giorni
+    if (!mobile.matches) {
+        const h = document.querySelector("header"), row1 = el("div", "row1"), row2 = el("div", "row2");
+        $("views").classList.add("seg");
+        row1.append(document.querySelector("label.search"), $("views"), $("filters"), $("pbtn"));
+        row2.append(document.querySelector(".range"), $("days"));
+        h.append(row1, row2);
+    }
     render();
     scrollToNow();
     setInterval(render, 60000);
