@@ -2,7 +2,10 @@ name: Aggiorna orari
 
 on:
   schedule:
-    - cron: "0 5 */5 * *"   # ogni 5 giorni, alle 5:00 UTC
+    # ogni mattina alle 8 di Berlino: 6:00 UTC (ora legale) e 7:00 UTC (ora solare).
+    # Quella che cade prima delle 8 si ferma; la seconda in estate si ferma da sola (dati di meno di 12 ore).
+    - cron: "0 6 * * *"
+    - cron: "0 7 * * *"
   workflow_dispatch:         # permette di lanciarlo a mano dal sito GitHub
     inputs:
       forza:
@@ -33,7 +36,12 @@ jobs:
       - name: Scarica gli orari
         env:
           FORCE: ${{ inputs.forza }}
-        run: python scraper/scrape.py
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$(TZ=Europe/Berlin date +%-H)" -lt 8 ]; then
+            echo "A Berlino non sono ancora le 8: aspetto il prossimo giro."
+            exit 0
+          fi
+          python scraper/scrape.py
 
       - name: Salva i dati nel repository
         run: |
