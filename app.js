@@ -610,25 +610,14 @@ document.addEventListener("keydown", e => { if (e.key === "Escape") closeSheet()
 
 // ---------- navigazione e rendering ----------
 const clampDay = d => d < minDay ? minDay : d > maxDay ? maxDay : d;
-const firstStart = () => S.view === 7 ? mondayOf(minDay) : minDay;
-const lastStart = () => { if (S.view === 7) return mondayOf(maxDay); const d = addDays(maxDay, -(S.view - 1)); return d < minDay ? minDay : d; };
-const clampStart = d => { const a = firstStart(), b = lastStart(); return d < a ? a : d > b ? b : d; };
+// S.start = lunedì della settimana mostrata nella vista Settimana
+const clampStart = d => { const a = mondayOf(minDay), b = mondayOf(maxDay); return d < a ? a : d > b ? b : d; };
 
-function step(n) {
-    if (useCards()) S.day = clampDay(addDays(S.day, n)); else S.start = clampStart(addDays(S.start, S.view * n));
-    render();
-}
 function setView(n) {
     const prev = S.view; S.view = n; store.set("view", n);
     if (n === 7) S.start = clampStart(mondayOf(S.day));   // la settimana del giorno che guardavi
     else if (prev === 7) { const t = todayDate(); S.day = clampDay(t >= S.start && t <= addDays(S.start, 6) ? t : S.start); }
     render();
-}
-function goToday() {
-    S.day = clampDay(todayDate());
-    S.start = clampStart(S.view === 7 ? mondayOf(new Date()) : todayDate());
-    render();
-    scrollToNow();
 }
 // Le ore della griglia seguono i corsi visibili (con l'interruttore acceso: solo gli studi a orari continui)
 function fitHours() {
@@ -651,15 +640,11 @@ function render() {
     spotsButton();
     if (useCards()) {
         renderCards(view, list);
-        $("label").textContent = `${dayName(S.day)} ${fmt(S.day)}`;
-        $("prev").disabled = S.day <= minDay; $("next").disabled = S.day >= maxDay;
     } else {
         // Settimana: vuota finché non scegli una palestra o una categoria (o cerchi qualcosa)
         const chosen = S.cat.size || S.venue.size || S.q;
         if (!chosen) view.appendChild(el("p", "empty", "Scegli una palestra o una categoria per vedere la settimana."));
         renderGrid(view, chosen ? list : []);
-        $("label").textContent = S.view === 1 ? `${dayName(S.start)} ${fmt(S.start)}` : `${fmt(S.start)} – ${fmt(addDays(S.start, S.view - 1))}`;
-        $("prev").disabled = S.start <= firstStart(); $("next").disabled = S.start >= lastStart();
     }
     document.querySelectorAll("#views button").forEach(b => b.classList.toggle("on", Number(b.dataset.v) === S.view));
     window.scrollTo(0, y);
@@ -686,7 +671,7 @@ async function init() {
     minDay = parse(dates[0]); maxDay = parse(dates[dates.length - 1]);
     S.view = store.get("view", 1) === 7 ? 7 : 1;
     S.day = clampDay(todayDate());
-    S.start = clampStart(S.view === 7 ? mondayOf(new Date()) : todayDate());
+    S.start = clampStart(mondayOf(new Date()));
     startHour = Math.min(7, Math.floor(Math.min(...classes.map(c => toMin(c.start))) / 60));
     endHour = Math.max(22, Math.ceil(Math.max(...classes.map(c => toMin(c.end))) / 60));
 
@@ -741,7 +726,6 @@ async function init() {
     [[1, "Giorno"], [7, "Settimana"]].forEach(([n, l]) => {
         const b = el("button", null, l); b.dataset.v = n; b.onclick = () => { setView(n); scrollToNow(); }; $("views").appendChild(b);
     });
-    $("prev").onclick = () => step(-1); $("next").onclick = () => step(1); $("today").onclick = goToday;
     const favExport = () => [...favs].map(k => k + "|" + (favT[k] || ""));
     $("copyFav").onclick = async () => {
         try { await navigator.clipboard.writeText(JSON.stringify(favExport())); alert("Preferiti copiati. Incollali sull'altro dispositivo."); }

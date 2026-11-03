@@ -21,7 +21,7 @@
 | `confronto.html` + `confronto.json` | Confronto prezzi Urban Sports / Wellhub (prezzi scritti a mano nel json). |
 | `scraper/scrape.py` | Scarica 14 giorni di orari da Urban Sports (endpoint RSC di Next.js, senza login) → `data/corsi.json`. Env: `FORCE=true`, `ONLY_SLUGS=a,b`. |
 | `scraper/venues.json` | Palestre: `slug`, opzionali `only_categories`, `or_title_contains`, `all_day`. |
-| `scraper/posti.py` + `.github/workflows/posti.yml` | Posti liberi a richiesta: il pulsante "Posti liberi" (telefono) lancia il workflow con la chiave GitHub salvata nel browser (`ghToken`), solo per le lezioni del giorno guardato che passano i filtri e non sono iniziate → `data/posti.json`. |
+| `scraper/posti.py` + `.github/workflows/posti.yml` | Posti liberi a richiesta: il pulsante "Posti liberi" (telefono e computer in vista Giorno) lancia il workflow con la chiave GitHub salvata nel browser (`ghToken`), solo per le lezioni del giorno guardato che passano i filtri e non sono iniziate → `data/posti.json`. |
 | `scraper/richiesta.py` | Legge la issue di gestisci.html e aggiorna venues.json. |
 | `.github/workflows/aggiorna.yml` | Scraper ogni mattina alle 8 di Berlino (due cron UTC, quella prima delle 8 si ferma) o a mano (`forza`). |
 | `.github/workflows/palestre.yml` | Parte su issue `[palestra]` del proprietario: richiesta.py + scrape solo di quella palestra. |
@@ -29,7 +29,7 @@
 ## Mappa di `app.js`
 - In cima: **REGOLE modificabili** — `CATEGORY_RULES`, `GROUPS`, `COLORS`, `KEEP_CAPS`, `AREAS` (quartiere → casa/lavoro), `LEVEL_ACTS`/`LEVEL_WORDS` (livelli letti dal titolo), `AREA_BTNS`.
 - `prep(c)`: arricchisce ogni lezione (date, studio, cat, group, area, levels, key preferito, text per ricerca).
-- Preferiti: `favs` (chiave studio|titolo|giorno|ora) + `favT` (insegnante ricordato → "Nuovo insegnante"). Salvati nel browser: copia/incolla per passarli fra dispositivi.
+- Preferiti: `favs` (chiave studio|titolo|giorno|ora) + `favT` (insegnante ricordato → "Nuovo insegnante"). Salvati nel browser del telefono (`localStorage`): sul computer ♥/📅/💔 non ci sono (non si sincronizzano, vedi IDEE.md).
 - Pianificate: `once` (id, solo quella data: tocco sul 📅; si puliscono quando passate) e `agenda` (chiave del preferito, ogni settimana: dal riquadro a pressione lunga; icona con ↻); `planned(c)`. Pulsante calendario nei filtri = agenda (`S.agenda`: `matches` ignora tutti gli altri filtri, schede da oggi divise per giorno). Non piaciute: `bad` (chiave studio|titolo|insegnante, scheda grigia, icone solo cuore barrato e apri, non si pianifica più), si segnano tenendo premuta la scheda (`onLongPress` → `openBadMenu`, dove c'è anche "Ogni settimana"). Icone sulla riga del titolo (♡, 📅, ↗; titolo accorciato con …): `cardIcons`.
 - `matches(c, skip)`: tutti i filtri (orari continui, zona, livello, categoria, palestra, piano, preferiti, ricerca, orari).
 - `updateAvailability()`: voci dei filtri grigie e in fondo.
@@ -37,6 +37,22 @@
 - Telefono: `renderCards` (con la ricerca o in agenda mostra tutti i giorni da oggi con titolo del giorno; in agenda anche fascia verde per settimana, da lunedì), `renderDays`, `scrollToNow` (all'apertura va alla prima lezione non iniziata, o all'ultima se oggi sono finite). Computer: `useCards()` (telefono o vista Giorno). <html> ha sempre `.m` (gli stili del telefono in style.css sono `.m …`), sul computer anche `.wide` (righe `.row1`/`.row2` create in `init`) e in Settimana `.week`; righe `.slot` per orario e `.hourhead` per ora tonda); vista Settimana: `layout`, `renderGrid`, `openSheet`.
 - Posti liberi: pulsante `#pbtn` a sinistra degli orari, `requestSpots`, `spotsButton`, `spotsText` (oggetto `P`, salvato in `posti`, un risultato per giorno, dimenticato dopo 2 ore: `freshDay`).
 - Lezione grigia (`isPast`) appena inizia. Telefono: toccare la scheda non fa niente; l'app Urban Sports si apre solo dall'icona (`CLASS_URL(id)`).
+
+## Scelte già prese con l'utente (non rimetterle in discussione senza motivo)
+- Si usa soprattutto il **telefono**: è il riferimento, il computer lo segue.
+- Colore principale **salvia** `#6a994e` (diverso dal blu dell'app Urban Sports). Filtri **bianchi con bordo verde se spenti, verdi pieni se accesi**; vale anche per ♥ e 📅.
+- Scheda telefono: titolo su una riga con "…", a destra le icone **♡ 📅 ↗** piccole e vicine. Toccare la scheda non fa niente. Pressione lunga = riquadro con "📅 Ogni [giorno]" e "Non mi è piaciuta".
+- ♥ = lezioni che piacciono (ricorrenti, filtro normale). 📅 tocco = solo quella data; 📅 "ogni settimana" = ricorrente (icona con ↻). Agenda = pulsante calendario nei filtri, ignora tutti gli altri filtri, fasce verdi per settimana con **solo le date** ("2 nov – 8 nov").
+- Non piaciuta = scheda **grigia** (no barrato, no 💔 nel titolo), icone solo cuore barrato + ↗, non pianificabile.
+- Posti liberi: **solo a richiesta** dal pulsante, scritti "5/15", dimenticati dopo 2 ore. Niente "ponte" esterno, niente aggiornamenti automatici frequenti.
+- Barra orari 7–22 (agli estremi non esclude niente). Ricerca = tutti i giorni da oggi. Weekend nella griglia: righine molto chiare.
+- Computer: Giorno (schede affiancate per orario) / Settimana (griglia, vuota finché non scegli palestra o categoria). Niente vista a 4 giorni.
+
+## Sicurezza (controllata)
+- La chiave GitHub (`ghToken`) sta solo nel browser del telefono. Permessi minimi: Actions read/write, Contents read-only, solo plan_26. Mai scriverla nel codice o in chat; se il telefono si perde, cancellarla su github.com/settings/personal-access-tokens.
+- Nessuno script esterno nella pagina; i dati scaricati si mostrano solo con `textContent` (gli `innerHTML` contengono solo icone fisse).
+- Workflow: i valori dall'esterno (issue, input) passano sempre da `env:`, mai dentro `run:`; palestre.yml parte solo per issue del proprietario e gli slug sono controllati con una regex in richiesta.py.
+- Il repository e il sito sono pubblici: dentro ci sono solo orari e posti, niente dati personali.
 
 ## Dati (`data/corsi.json`)
 `{updated, venues: {slug: {name, address, postalCode, district, latitude, longitude, website, image, visitLimits, allDay?}}, classes: [{id, title, teacherName, startDateTimeUTC (in realtà ora di Berlino), endDateTimeUTC, category{id,name}, spots{max}, planTypesB2C, isPlusCheckin, venue}]}`.

@@ -6,8 +6,7 @@ header, main, footer { margin: 0 auto; }
 h1 { text-align: center; font-size: 1.25rem; margin: 4px 0 2px; }
 .meta { text-align: center; font-size: .7rem; color: var(--muted); margin-bottom: 8px; }
 .bar { display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; align-items: center; margin-bottom: 8px; }
-.nav, .filters { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
-#label { font-weight: 600; font-size: .9rem; min-width: 130px; text-align: center; }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
 .btn, .dd summary { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 4px 10px;
     font-size: .8rem; cursor: pointer; color: var(--text); list-style: none; user-select: none; }
 .dd summary::-webkit-details-marker { display: none; }
@@ -101,7 +100,7 @@ footer { text-align: center; margin-top: 14px; display: flex; gap: 8px; justify-
 .m .search { align-items: center; gap: 10px; margin: 0 12px 10px; padding: 0 16px; height: 44px; border-radius: 22px; background: #f1f3f6; color: var(--muted); }
 .m .search input { flex: 1; min-width: 0; border: 0; background: none; font-size: 1rem; color: var(--text); outline: none; }
 .m .bar { display: block; margin: 0 0 8px; }
-.m .nav, .m .views { display: none; }
+.m .views { display: none; }
 .m .filters { flex-wrap: nowrap; overflow-x: auto; padding: 0 12px; gap: 8px; scrollbar-width: none; }
 .m .filters::-webkit-scrollbar { display: none; }
 .m .filters .btn, .m .filters .dd summary, .m .filters .switch { flex-shrink: 0; height: 38px; display: inline-flex; align-items: center; gap: 6px;
