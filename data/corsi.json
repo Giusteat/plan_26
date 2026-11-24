@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T18:43+01:00",
+ "updated": "2026-11-24T21:45+01:00",
  "venues": {
   "lyra-prenzlauerberg": {
    "slug": "lyra-prenzlauerberg",
@@ -2877,6 +2877,89 @@
        "id": 6,
        "name": "Yoga",
        "limit": -1
+      }
+     ]
+    }
+   ]
+  },
+  "24535": {
+   "slug": "24535",
+   "id": 24535,
+   "name": "HOUSE OF DANCE - BERLIN PrenzlauerBerg",
+   "address": "Bernhard-Lichtenberg-Straße 1",
+   "postalCode": "10407",
+   "district": "Pankow",
+   "latitude": 52.5366062,
+   "longitude": 13.4343585,
+   "website": "https://houseofdance-berlin.de/",
+   "image": "https://storage.googleapis.com/download/storage/v1/b/usc-pro-uscweb-live-media/o/venues%2Foriginal_2964x1667_Bild%201_1722581627897378_admin.jpeg?generation=1751987130762148&alt=media",
+   "visitLimits": [
+    {
+     "name": "S",
+     "planName": "Essential",
+     "isAvailableAtVenue": true,
+     "isProvidedByVenue": false,
+     "monthlyLimitVenue": null,
+     "monthlyLimitVenueAddress": null,
+     "categoryLimits": []
+    },
+    {
+     "name": "M",
+     "planName": "Classic",
+     "isAvailableAtVenue": true,
+     "isProvidedByVenue": true,
+     "monthlyLimitVenue": -1,
+     "monthlyLimitVenueAddress": 4,
+     "categoryLimits": [
+      {
+       "id": 4,
+       "name": "Pilates",
+       "limit": 4
+      },
+      {
+       "id": 7,
+       "name": "Dance",
+       "limit": 4
+      }
+     ]
+    },
+    {
+     "name": "L",
+     "planName": "Premium",
+     "isAvailableAtVenue": true,
+     "isProvidedByVenue": true,
+     "monthlyLimitVenue": -1,
+     "monthlyLimitVenueAddress": 8,
+     "categoryLimits": [
+      {
+       "id": 4,
+       "name": "Pilates",
+       "limit": 8
+      },
+      {
+       "id": 7,
+       "name": "Dance",
+       "limit": 8
+      }
+     ]
+    },
+    {
+     "name": "XL",
+     "planName": "Max",
+     "isAvailableAtVenue": true,
+     "isProvidedByVenue": true,
+     "monthlyLimitVenue": -1,
+     "monthlyLimitVenueAddress": 8,
+     "categoryLimits": [
+      {
+       "id": 4,
+       "name": "Pilates",
+       "limit": 8
+      },
+      {
+       "id": 7,
+       "name": "Dance",
+       "limit": 8
       }
      ]
     }
@@ -13186,6 +13269,27 @@
    "venue": "holmes-place-boutique"
   },
   {
+   "id": 109060847,
+   "title": "Female Choreo (Beginner / Intermediate)",
+   "teacherName": "Cheyenne",
+   "startDateTimeUTC": "2026-11-25T17:00:00+01:00",
+   "endDateTimeUTC": "2026-11-25T18:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
+  },
+  {
    "id": 109055046,
    "title": "Power Sculpt (Pilates)",
    "teacherName": "Silvia",
@@ -13581,6 +13685,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "holmes-place-boutique"
+  },
+  {
+   "id": 109060430,
+   "title": "Twerk‘n blast (Open Level)",
+   "teacherName": "Pauline",
+   "startDateTimeUTC": "2026-11-25T18:00:00+01:00",
+   "endDateTimeUTC": "2026-11-25T19:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
   },
   {
    "id": 109055169,
@@ -14022,6 +14147,27 @@
    "venue": "holmes-place-boutique"
   },
   {
+   "id": 109061090,
+   "title": "Heels Choreo (Beginner)",
+   "teacherName": "Charly",
+   "startDateTimeUTC": "2026-11-25T19:00:00+01:00",
+   "endDateTimeUTC": "2026-11-25T20:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
+  },
+  {
    "id": 109055260,
    "title": "Mat Pilates",
    "teacherName": "Olga",
@@ -14335,6 +14481,27 @@
    "venue": "lyra"
   },
   {
+   "id": 109061176,
+   "title": "Feminine Twerk Flow",
+   "teacherName": "Pauline",
+   "startDateTimeUTC": "2026-11-25T19:30:00+01:00",
+   "endDateTimeUTC": "2026-11-25T20:30:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
+  },
+  {
    "id": 109053238,
    "title": "Barre - R'n'B Hip Hop Floor Barre",
    "teacherName": "Naima S.",
@@ -14479,6 +14646,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "holmes-place-boutique"
+  },
+  {
+   "id": 109061472,
+   "title": "Heels (Intermediate)",
+   "teacherName": "Charly",
+   "startDateTimeUTC": "2026-11-25T20:00:00+01:00",
+   "endDateTimeUTC": "2026-11-25T21:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
   },
   {
    "id": 109055248,
@@ -16072,6 +16260,27 @@
    "venue": "lyra"
   },
   {
+   "id": 109113442,
+   "title": "Midday Yoga Flow✨",
+   "teacherName": "Judith",
+   "startDateTimeUTC": "2026-11-26T12:00:00+01:00",
+   "endDateTimeUTC": "2026-11-26T13:00:00+01:00",
+   "category": {
+    "id": 6,
+    "name": "Yoga"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
+  },
+  {
    "id": 109118806,
    "title": "ASA Mom´s Club / Prenatal Class",
    "teacherName": "Alexa",
@@ -17516,6 +17725,27 @@
    "venue": "halenow-prenzlauer-berg"
   },
   {
+   "id": 109113440,
+   "title": "Commercial (Beginner)",
+   "teacherName": "Maria",
+   "startDateTimeUTC": "2026-11-26T18:00:00+01:00",
+   "endDateTimeUTC": "2026-11-26T19:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 2
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
+  },
+  {
    "id": 109119549,
    "title": "Reformer Class",
    "teacherName": "Alina",
@@ -17996,6 +18226,27 @@
    "venue": "holmes-place-boutique"
   },
   {
+   "id": 109113439,
+   "title": "Commercial (Intermediate)",
+   "teacherName": "Maria",
+   "startDateTimeUTC": "2026-11-26T19:00:00+01:00",
+   "endDateTimeUTC": "2026-11-26T20:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
+  },
+  {
    "id": 109121597,
    "title": "Functional Training — the no-nonsense breakdown 💪",
    "teacherName": "Christopher",
@@ -18434,6 +18685,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "mysenses"
+  },
+  {
+   "id": 109115184,
+   "title": "Jazz (Beginner)",
+   "teacherName": "Marlene",
+   "startDateTimeUTC": "2026-11-26T20:00:00+01:00",
+   "endDateTimeUTC": "2026-11-26T21:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
   },
   {
    "id": 109111672,
@@ -21788,6 +22060,27 @@
    "venue": "holmes-place-boutique"
   },
   {
+   "id": 109164969,
+   "title": "Commercial (Intermediate)",
+   "teacherName": "Liv",
+   "startDateTimeUTC": "2026-11-27T18:00:00+01:00",
+   "endDateTimeUTC": "2026-11-27T19:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
+  },
+  {
    "id": 109166117,
    "title": "Reformer Class",
    "teacherName": "Ksenia",
@@ -22186,6 +22479,27 @@
    "venue": "holmes-place-boutique"
   },
   {
+   "id": 109164884,
+   "title": "Ü30 Dance & Fitness",
+   "teacherName": "Cheyenne",
+   "startDateTimeUTC": "2026-11-27T19:00:00+01:00",
+   "endDateTimeUTC": "2026-11-27T20:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
+  },
+  {
    "id": 109166169,
    "title": "End of Week Power Reformer",
    "teacherName": "Ksenia",
@@ -22541,6 +22855,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 109164907,
+   "title": "Yin Yoga mit ätherischen Ölen",
+   "teacherName": "Christina",
+   "startDateTimeUTC": "2026-11-27T20:15:00+01:00",
+   "endDateTimeUTC": "2026-11-27T21:15:00+01:00",
+   "category": {
+    "id": 6,
+    "name": "Yoga"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
   },
   {
    "id": 109163663,
@@ -24341,6 +24676,27 @@
    "venue": "lyra-prenzlauerberg"
   },
   {
+   "id": 109210988,
+   "title": "Girly Hip Hop (Beginner)",
+   "teacherName": "Milena",
+   "startDateTimeUTC": "2026-11-28T13:00:00+01:00",
+   "endDateTimeUTC": "2026-11-28T14:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
+  },
+  {
    "id": 109212932,
    "title": "HOT Infrared x Stretch & Mobility | Black Week Special ✨Bring your Person for FREE",
    "teacherName": "Marwa H.",
@@ -24507,6 +24863,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 109210961,
+   "title": "Heels (Beginner)",
+   "teacherName": "Lioba",
+   "startDateTimeUTC": "2026-11-28T14:00:00+01:00",
+   "endDateTimeUTC": "2026-11-28T15:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
   },
   {
    "id": 109212762,
@@ -31001,6 +31378,27 @@
    "venue": "holmes-place-boutique"
   },
   {
+   "id": 109308786,
+   "title": "Twerk - Latin Vibes (Open Level)",
+   "teacherName": "Alma",
+   "startDateTimeUTC": "2026-11-30T17:00:00+01:00",
+   "endDateTimeUTC": "2026-11-30T18:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
+  },
+  {
    "id": 109310325,
    "title": "Power Sculpt (Pilates)",
    "teacherName": "Alexandra A.",
@@ -31375,6 +31773,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "holmes-place-boutique"
+  },
+  {
+   "id": 109308783,
+   "title": "Commercial (Beginner)",
+   "teacherName": "Fabio",
+   "startDateTimeUTC": "2026-11-30T18:00:00+01:00",
+   "endDateTimeUTC": "2026-11-30T19:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
   },
   {
    "id": 109310387,
@@ -32025,6 +32444,27 @@
    "venue": "studio-berlin"
   },
   {
+   "id": 109308782,
+   "title": "Yoga - Hatha Flow am Abend - all level",
+   "teacherName": "Franzi",
+   "startDateTimeUTC": "2026-11-30T19:05:00+01:00",
+   "endDateTimeUTC": "2026-11-30T20:05:00+01:00",
+   "category": {
+    "id": 6,
+    "name": "Yoga"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
+  },
+  {
    "id": 109306190,
    "title": "Pole L2 Intermediate",
    "teacherName": "Anastasiia C.",
@@ -32421,6 +32861,48 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 109308784,
+   "title": "Reggaeton (open level)",
+   "teacherName": "Javiera",
+   "startDateTimeUTC": "2026-11-30T20:05:00+01:00",
+   "endDateTimeUTC": "2026-11-30T21:05:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
+  },
+  {
+   "id": 109308781,
+   "title": "Tribal Fusion Belly Dance (Open Level)",
+   "teacherName": "Valentina",
+   "startDateTimeUTC": "2026-11-30T20:15:00+01:00",
+   "endDateTimeUTC": "2026-11-30T21:15:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
   },
   {
    "id": 109313475,
@@ -34853,6 +35335,27 @@
    "venue": "lyra"
   },
   {
+   "id": 109394961,
+   "title": "Hip Hop (Beginner)",
+   "teacherName": "Laura",
+   "startDateTimeUTC": "2026-12-01T17:00:00+01:00",
+   "endDateTimeUTC": "2026-12-01T18:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
+  },
+  {
    "id": 109395189,
    "title": "Barre",
    "teacherName": "Alina Y.",
@@ -35290,6 +35793,48 @@
    ],
    "isPlusCheckin": false,
    "venue": "holmes-place-boutique"
+  },
+  {
+   "id": 109394975,
+   "title": "Female Choreo (Beginner) ü30",
+   "teacherName": "Cheyenne",
+   "startDateTimeUTC": "2026-12-01T18:00:00+01:00",
+   "endDateTimeUTC": "2026-12-01T19:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
+  },
+  {
+   "id": 109395072,
+   "title": "Commercial (Beginner)",
+   "teacherName": "Laura",
+   "startDateTimeUTC": "2026-12-01T18:00:00+01:00",
+   "endDateTimeUTC": "2026-12-01T19:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
   },
   {
    "id": 109395062,
@@ -35835,6 +36380,27 @@
    "venue": "hot-aura"
   },
   {
+   "id": 109395039,
+   "title": "Lyrical Contemporary (Beginner)",
+   "teacherName": "Léonie N.",
+   "startDateTimeUTC": "2026-12-01T19:00:00+01:00",
+   "endDateTimeUTC": "2026-12-01T20:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
+  },
+  {
    "id": 109395248,
    "title": "Functional Training — the no-nonsense breakdown 💪",
    "teacherName": "Christopher",
@@ -36314,6 +36880,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "holmes-place-boutique"
+  },
+  {
+   "id": 109395079,
+   "title": "Commercial (Intermediate)",
+   "teacherName": "Laura",
+   "startDateTimeUTC": "2026-12-01T20:00:00+01:00",
+   "endDateTimeUTC": "2026-12-01T21:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
   },
   {
    "id": 109389257,
@@ -39270,6 +39857,27 @@
    "venue": "holmes-place-boutique"
   },
   {
+   "id": 109421882,
+   "title": "Female Choreo (Beginner / Intermediate)",
+   "teacherName": "Cheyenne",
+   "startDateTimeUTC": "2026-12-02T17:00:00+01:00",
+   "endDateTimeUTC": "2026-12-02T18:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
+  },
+  {
    "id": 109419149,
    "title": "Power Sculpt (Pilates)",
    "teacherName": "Alexandra A.",
@@ -39686,6 +40294,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "holmes-place-boutique"
+  },
+  {
+   "id": 109421740,
+   "title": "Twerk‘n blast (Open Level)",
+   "teacherName": "Pauline",
+   "startDateTimeUTC": "2026-12-02T18:00:00+01:00",
+   "endDateTimeUTC": "2026-12-02T19:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
   },
   {
    "id": 109419080,
@@ -40148,6 +40777,27 @@
    "venue": "hot-aura"
   },
   {
+   "id": 109421856,
+   "title": "Heels Choreo (Beginner)",
+   "teacherName": "Charly",
+   "startDateTimeUTC": "2026-12-02T19:00:00+01:00",
+   "endDateTimeUTC": "2026-12-02T20:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
+  },
+  {
    "id": 109419125,
    "title": "Mat Pilates",
    "teacherName": "Olga",
@@ -40441,6 +41091,27 @@
    "venue": "lyra"
   },
   {
+   "id": 109421727,
+   "title": "Feminine Twerk Flow",
+   "teacherName": "Pauline",
+   "startDateTimeUTC": "2026-12-02T19:30:00+01:00",
+   "endDateTimeUTC": "2026-12-02T20:30:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
+  },
+  {
    "id": 109415258,
    "title": "Barre - R'n'B Hip Hop Floor Barre",
    "teacherName": "Naima S.",
@@ -40585,6 +41256,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "holmes-place-boutique"
+  },
+  {
+   "id": 109423373,
+   "title": "Heels (Intermediate)",
+   "teacherName": "Charly",
+   "startDateTimeUTC": "2026-12-02T20:00:00+01:00",
+   "endDateTimeUTC": "2026-12-02T21:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
   },
   {
    "id": 109418895,
@@ -43622,6 +44314,27 @@
    "venue": "halenow-prenzlauer-berg"
   },
   {
+   "id": 109473507,
+   "title": "Commercial (Beginner)",
+   "teacherName": "Maria",
+   "startDateTimeUTC": "2026-12-03T18:00:00+01:00",
+   "endDateTimeUTC": "2026-12-03T19:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 2
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
+  },
+  {
    "id": 109475387,
    "title": "Reformer Class",
    "teacherName": "Lara",
@@ -44081,6 +44794,27 @@
    "venue": "holmes-place-boutique"
   },
   {
+   "id": 109473522,
+   "title": "Commercial (Intermediate)",
+   "teacherName": "Maria",
+   "startDateTimeUTC": "2026-12-03T19:00:00+01:00",
+   "endDateTimeUTC": "2026-12-03T20:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
+  },
+  {
    "id": 109475372,
    "title": "Functional Training — the no-nonsense breakdown 💪",
    "teacherName": "Christopher",
@@ -44498,6 +45232,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "lyra-prenzlauerberg"
+  },
+  {
+   "id": 109473511,
+   "title": "Jazz (Beginner)",
+   "teacherName": "Marlene",
+   "startDateTimeUTC": "2026-12-03T20:00:00+01:00",
+   "endDateTimeUTC": "2026-12-03T21:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
   },
   {
    "id": 109467451,
@@ -47975,6 +48730,27 @@
    "venue": "holmes-place-boutique"
   },
   {
+   "id": 109547086,
+   "title": "Commercial (Intermediate)",
+   "teacherName": "Liv",
+   "startDateTimeUTC": "2026-12-04T18:00:00+01:00",
+   "endDateTimeUTC": "2026-12-04T19:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
+  },
+  {
    "id": 109548727,
    "title": "Reformer Class",
    "teacherName": "Ksenia",
@@ -48394,6 +49170,27 @@
    "venue": "holmes-place-boutique"
   },
   {
+   "id": 109547080,
+   "title": "Ü30 Dance & Fitness",
+   "teacherName": "Cheyenne",
+   "startDateTimeUTC": "2026-12-04T19:00:00+01:00",
+   "endDateTimeUTC": "2026-12-04T20:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
+  },
+  {
    "id": 109548745,
    "title": "End of Week Power Reformer",
    "teacherName": "Ksenia",
@@ -48749,6 +49546,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 109547065,
+   "title": "Yin Yoga mit ätherischen Ölen",
+   "teacherName": "Christina",
+   "startDateTimeUTC": "2026-12-04T20:15:00+01:00",
+   "endDateTimeUTC": "2026-12-04T21:15:00+01:00",
+   "category": {
+    "id": 6,
+    "name": "Yoga"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
   },
   {
    "id": 109545167,
@@ -50485,6 +51303,27 @@
    "venue": "lyra-prenzlauerberg"
   },
   {
+   "id": 109582810,
+   "title": "Girly Hip Hop (Beginner)",
+   "teacherName": "Milena",
+   "startDateTimeUTC": "2026-12-05T13:00:00+01:00",
+   "endDateTimeUTC": "2026-12-05T14:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
+  },
+  {
    "id": 109583232,
    "title": "HOT Infrared x Stretch & Mobility",
    "teacherName": "Marwa H.",
@@ -50609,6 +51448,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 109582807,
+   "title": "Heels (Beginner)",
+   "teacherName": "Lioba",
+   "startDateTimeUTC": "2026-12-05T14:00:00+01:00",
+   "endDateTimeUTC": "2026-12-05T15:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
   },
   {
    "id": 109581186,
@@ -56767,6 +57627,27 @@
    "venue": "holmes-place-boutique"
   },
   {
+   "id": 109657405,
+   "title": "Twerk - Latin Vibes (Open Level)",
+   "teacherName": "Alma",
+   "startDateTimeUTC": "2026-12-07T17:00:00+01:00",
+   "endDateTimeUTC": "2026-12-07T18:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
+  },
+  {
    "id": 109661795,
    "title": "Power Sculpt (Pilates)",
    "teacherName": "Alexandra A.",
@@ -57120,6 +58001,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "holmes-place-boutique"
+  },
+  {
+   "id": 109657389,
+   "title": "Commercial (Beginner)",
+   "teacherName": "Fabio",
+   "startDateTimeUTC": "2026-12-07T18:00:00+01:00",
+   "endDateTimeUTC": "2026-12-07T19:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
   },
   {
    "id": 109661755,
@@ -57770,6 +58672,27 @@
    "venue": "studio-berlin"
   },
   {
+   "id": 109657379,
+   "title": "Yoga - Hatha Flow am Abend - all level",
+   "teacherName": "Franzi",
+   "startDateTimeUTC": "2026-12-07T19:05:00+01:00",
+   "endDateTimeUTC": "2026-12-07T20:05:00+01:00",
+   "category": {
+    "id": 6,
+    "name": "Yoga"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
+  },
+  {
    "id": 109654380,
    "title": "Pole L2 Intermediate",
    "teacherName": "Anastasiia C.",
@@ -58145,6 +59068,48 @@
    ],
    "isPlusCheckin": false,
    "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 109657403,
+   "title": "Reggaeton (open level)",
+   "teacherName": "Javiera",
+   "startDateTimeUTC": "2026-12-07T20:05:00+01:00",
+   "endDateTimeUTC": "2026-12-07T21:05:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
+  },
+  {
+   "id": 109657370,
+   "title": "Tribal Fusion Belly Dance (Open Level)",
+   "teacherName": "Valentina",
+   "startDateTimeUTC": "2026-12-07T20:15:00+01:00",
+   "endDateTimeUTC": "2026-12-07T21:15:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
   },
   {
    "id": 109660896,
