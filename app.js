@@ -113,6 +113,7 @@ function addFav(k) {
 const agenda = new Set(store.get("agenda", []));   // ogni settimana (chiave del preferito)
 const once = new Set(store.get("once", []));       // solo quella data (id della lezione)
 const planned = c => once.has(c.id) || agenda.has(c.key);
+const booked = new Set(store.get("booked", []));   // lezioni ricorrenti già prenotate (id), tolte dal banner
 const bad = new Set(store.get("bad", []));
 const badKey = c => [c.venue, c.title, c.teacherName || ""].join("|");
 const saveFavs = () => { store.set("favs", [...favs]); store.set("favT", favT); };
@@ -639,8 +640,30 @@ function fitHours() {
     startHour = Math.min(7, Math.floor(Math.min(...base.map(c => toMin(c.start))) / 60));
     endHour = Math.max(22, Math.ceil(Math.max(...base.map(c => toMin(c.end))) / 60) - 1);
 }
+// Banner "Da prenotare": lezioni ricorrenti (📅 ogni settimana) già aperte alle prenotazioni e non ancora segnate come fatte
+let remindOpen = false;
+function renderRemind() {
+    const box = $("remind"), now = new Date(), todayIso = iso(now), nowMin = now.getHours() * 60 + now.getMinutes();
+    const list = classes.filter(c => agenda.has(c.key) && !bad.has(badKey(c)) && !booked.has(c.id) && !isPast(c, todayIso, nowMin))
+        .sort((a, b) => a.date.localeCompare(b.date) || a.start.localeCompare(b.start));
+    box.innerHTML = ""; box.hidden = !list.length;
+    if (!list.length) return;
+    const head = el("button", "remindhead", `🔔 Da prenotare (${list.length}) ${remindOpen ? "▲" : "▼"}`);
+    head.onclick = () => { remindOpen = !remindOpen; renderRemind(); };
+    box.appendChild(head);
+    if (!remindOpen) return;
+    list.forEach(c => {
+        const row = el("div", "remindrow");
+        const a = el("a", "remindlink", `${c.title} · ${c.studio} · ${DAYS[c.dow]} ${parse(c.date).toLocaleDateString("it-IT", { day: "numeric", month: "short" })} ${c.start}`);
+        a.href = CLASS_URL(c.id); a.target = "_blank"; a.rel = "noopener";
+        const done = el("button", "reminddone", "Fatto");
+        done.onclick = () => { booked.add(c.id); store.set("booked", [...booked]); renderRemind(); };
+        row.append(a, done); box.appendChild(row);
+    });
+}
 function render() {
     if (!S.start) return;
+    renderRemind();
     updateAvailability();
     fitHours();
     const view = $("view"), y = window.scrollY;   // ridisegnando, la pagina resta dov'era

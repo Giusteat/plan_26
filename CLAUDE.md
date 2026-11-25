@@ -35,6 +35,7 @@
 - `updateAvailability()`: voci dei filtri grigie e in fondo.
 - Filtri: `multi`, `levelFilter`, `planFilter`; costruiti in `init()` in quest'ordine: ♥, Pianificate, Categorie, Palestre, Livello, Orari continui, Piano, zona.
 - Telefono: `renderCards` (con la ricerca o in agenda mostra tutti i giorni da oggi con titolo del giorno; in agenda anche fascia verde per settimana, da lunedì), `renderDays`, `scrollToNow` (all'apertura va alla prima lezione non iniziata, o all'ultima se oggi sono finite). Computer: `useCards()` (telefono o vista Giorno). <html> ha sempre `.m` (gli stili del telefono in style.css sono `.m …`), sul computer anche `.wide` (righe `.row1`/`.row2` create in `init`) e in Settimana `.week`; righe `.slot` per orario e `.hourhead` per ora tonda); vista Settimana: `layout`, `renderGrid`, `openSheet`.
+- Banner "Da prenotare" (`renderRemind`, in `<header>`, `#remind`): lezioni dell’agenda ricorrente già aperte e non segnate "Fatto" (`booked`, id); il titolo apre Urban Sports.
 - Posti liberi: pulsante `#pbtn` a sinistra degli orari, `requestSpots`, `spotsButton`, `spotsText` (oggetto `P`, salvato in `posti`, un risultato per giorno, dimenticato dopo 2 ore: `freshDay`).
 - Lezione grigia (`isPast`) appena inizia. Telefono: toccare la scheda non fa niente; l'app Urban Sports si apre solo dall'icona (`CLASS_URL(id)`).
 

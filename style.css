@@ -253,3 +253,9 @@ footer { text-align: center; margin-top: 14px; display: flex; gap: 8px; justify-
 .m.wide .slot .card { border-bottom: 1px solid var(--border); }
 .m.wide .weekhead, .m.wide .dayhead { margin-left: -24px; margin-right: -24px; padding-left: 24px; }
 .wide footer { display: none; }   /* copia/incolla preferiti: solo sul telefono */
+
+.remind { margin: 6px 8px 6px; max-height: 45vh; overflow-y: auto; border: 2px solid var(--primary); border-radius: 10px; background: #fff; overflow: hidden; }
+.remind .remindhead { width: 100%; text-align: left; padding: 10px 12px; font: inherit; font-weight: 700; color: #fff; background: var(--primary); border: 0; }
+.remind .remindrow { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-top: 1px solid var(--border); }
+.remind .remindlink { flex: 1; color: var(--text); text-decoration: none; font-size: .9rem; }
+.remind .reminddone { flex-shrink: 0; padding: 6px 10px; border-radius: 8px; border: 2px solid var(--primary); background: #fff; color: var(--primary); font: inherit; font-weight: 600; }
