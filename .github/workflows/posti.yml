@@ -4,9 +4,6 @@ name: Posti liberi
 on:
   workflow_dispatch:
     inputs:
-      giorno:
-        description: "Giorno (AAAA-MM-GG)"
-        required: true
       lezioni:
         description: "Id delle lezioni, separati da virgola"
         required: true
@@ -36,7 +33,6 @@ jobs:
 
       - name: Scarica i posti
         env:
-          GIORNO: ${{ inputs.giorno }}
           LEZIONI: ${{ inputs.lezioni }}
           RICHIESTA: ${{ inputs.richiesta }}
         run: python scraper/posti.py

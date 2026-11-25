@@ -376,10 +376,15 @@ function askToken() {
     if (t && t.trim()) { store.set("ghToken", t.trim()); return t.trim(); }
     return null;
 }
+// Lezioni a cui servono i posti: quelle del giorno guardato, o di tutti i giorni se si vede la ricerca/agenda
+function spotsTargets() {
+    const now = new Date(), todayIso = iso(now), nowMin = now.getHours() * 60 + now.getMinutes();
+    return classes.filter(c => visible(c) && (S.q || S.agenda ? c.date >= todayIso : c.date === iso(S.day)) && !isPast(c, todayIso, nowMin));
+}
 async function requestSpots() {
     if (P.busy) return;
     const now = new Date(), todayIso = iso(now), nowMin = now.getHours() * 60 + now.getMinutes();
-    const ids = classes.filter(c => visible(c) && c.date === iso(S.day) && !isPast(c, todayIso, nowMin)).map(c => c.id);
+    const ids = spotsTargets().map(c => c.id);
     if (!ids.length) { alert("Nessuna lezione da controllare in questo giorno."); return; }
     const token = store.get("ghToken", null) || askToken();
     if (!token) return;
@@ -389,15 +394,19 @@ async function requestSpots() {
     P.busy = true; render();
     try {
         const r = await gh("actions/workflows/posti.yml/dispatches", { method: "POST",
-            body: JSON.stringify({ ref: "main", inputs: { giorno: iso(S.day), lezioni: ids.join(","), richiesta: code } }) });
+            body: JSON.stringify({ ref: "main", inputs: { lezioni: ids.join(","), richiesta: code } }) });
         if (r.status === 401) { store.set("ghToken", null); throw new Error("chiave non valida, riprova e incollala di nuovo"); }
         if (!r.ok) throw new Error(`GitHub ha risposto ${r.status}`);
-        for (let i = 0; i < 40; i++) {   // fino a ~4 minuti
+        for (let i = 0; i < 60; i++) {   // fino a ~6 minuti
             await new Promise(ok => setTimeout(ok, 6000));
             const f = await gh(`contents/data/posti.json?ref=main&t=${Date.now()}`, { headers: { Accept: "application/vnd.github.raw+json" } });
             if (!f.ok) continue;
             const d = await f.json();
-            if (d.richiesta === code) { P.days[d.giorno] = { aggiornato: d.aggiornato, posti: d.posti }; store.set("posti", P.days); return; }
+            if (d.richiesta === code) {
+                (d.giorni || []).forEach(g => { P.days[g] = { aggiornato: d.aggiornato, posti: {} }; });
+                classes.forEach(c => { if (d.posti[c.id] && P.days[c.date]) P.days[c.date].posti[c.id] = d.posti[c.id]; });
+                store.set("posti", P.days); return;
+            }
         }
         throw new Error("GitHub ci sta mettendo troppo, riprova tra poco");
     } catch (e) { P.busy = false; render(); alert("Posti liberi non riusciti: " + e.message); }
@@ -405,7 +414,11 @@ async function requestSpots() {
 }
 // Pulsante a sinistra degli orari: mostra a che ora sono stati chiesti i posti del giorno guardato
 function spotsButton() {
-    const b = $("pbtn"), day = freshDay(iso(S.day));
+    const b = $("pbtn");
+    // giorni guardati: uno solo, o tutti quelli delle schede se c'è la ricerca/agenda
+    const days = [...new Set(spotsTargets().map(c => c.date))];
+    const fresh = (days.length ? days : [iso(S.day)]).map(freshDay);
+    const all = fresh.every(Boolean), day = all ? fresh.reduce((a, b) => a.aggiornato > b.aggiornato ? a : b) : null;
     b.hidden = !useCards();
     b.disabled = P.busy;
     b.textContent = P.busy ? "Attendi…" : day ? `Posti ${hhmmOf(day.aggiornato)}` : "Posti liberi";

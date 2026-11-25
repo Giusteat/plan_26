@@ -21,7 +21,7 @@
 | `confronto.html` + `confronto.json` | Confronto prezzi Urban Sports / Wellhub (prezzi scritti a mano nel json). |
 | `scraper/scrape.py` | Scarica 14 giorni di orari da Urban Sports (endpoint RSC di Next.js, senza login) → `data/corsi.json`. Env: `FORCE=true`, `ONLY_SLUGS=a,b`. |
 | `scraper/venues.json` | Palestre: `slug`, opzionali `only_categories`, `or_title_contains`, `all_day`. |
-| `scraper/posti.py` + `.github/workflows/posti.yml` | Posti liberi a richiesta: il pulsante "Posti liberi" (telefono e computer in vista Giorno) lancia il workflow con la chiave GitHub salvata nel browser (`ghToken`), solo per le lezioni del giorno guardato che passano i filtri e non sono iniziate → `data/posti.json`. |
+| `scraper/posti.py` + `.github/workflows/posti.yml` | Posti liberi a richiesta: il pulsante "Posti liberi" (telefono e computer in vista Giorno) lancia il workflow con la chiave GitHub salvata nel browser (`ghToken`), per le lezioni del giorno guardato (o di tutti i giorni mostrati, con ricerca o agenda) che passano i filtri e non sono iniziate → `data/posti.json`. |
 | `scraper/richiesta.py` | Legge la issue di gestisci.html e aggiorna venues.json. |
 | `.github/workflows/aggiorna.yml` | Scraper ogni mattina alle 8 di Berlino (due cron UTC, quella prima delle 8 si ferma) o a mano (`forza`). |
 | `.github/workflows/palestre.yml` | Parte su issue `[palestra]` del proprietario: richiesta.py + scrape solo di quella palestra. |
