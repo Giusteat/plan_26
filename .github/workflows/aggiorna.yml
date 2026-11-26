@@ -2,14 +2,16 @@ name: Aggiorna orari
 
 on:
   schedule:
-    # ogni mattina alle 8 di Berlino: 6:00 UTC (ora legale) e 7:00 UTC (ora solare).
-    # Quella che cade prima delle 8 si ferma; la seconda in estate si ferma da sola (dati di meno di 12 ore).
+    # ogni mattina verso le 6 di Berlino: 4:00 UTC (ora legale) e 5:00 UTC (ora solare).
+    # La terza (6:00 UTC) è di riserva se GitHub salta le altre. Quelle che arrivano dopo si fermano da sole
+    # (dati di meno di 6 ore).
+    - cron: "0 4 * * *"
+    - cron: "0 5 * * *"
     - cron: "0 6 * * *"
-    - cron: "0 7 * * *"
   workflow_dispatch:         # permette di lanciarlo a mano dal sito GitHub
     inputs:
       forza:
-        description: "Scarica comunque, anche se i dati hanno meno di 12 ore"
+        description: "Scarica comunque, anche se i dati hanno meno di 6 ore"
         type: boolean
         default: false
 

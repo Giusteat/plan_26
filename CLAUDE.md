@@ -23,7 +23,7 @@
 | `scraper/venues.json` | Palestre: `slug`, opzionali `only_categories`, `or_title_contains`, `all_day`. |
 | `scraper/posti.py` + `.github/workflows/posti.yml` | Posti liberi a richiesta: il pulsante "Posti liberi" (telefono e computer in vista Giorno) lancia il workflow con la chiave GitHub salvata nel browser (`ghToken`), per le lezioni del giorno guardato (o di tutti i giorni mostrati, con ricerca o agenda) che passano i filtri e non sono iniziate → `data/posti.json`. |
 | `scraper/richiesta.py` | Legge la issue di gestisci.html e aggiorna venues.json. |
-| `.github/workflows/aggiorna.yml` | Scraper ogni mattina alle 8 di Berlino (due cron UTC, quella prima delle 8 si ferma) o a mano (`forza`). |
+| `.github/workflows/aggiorna.yml` | Scraper ogni mattina verso le 6 di Berlino (tre cron UTC: 4, 5 e 6; quelle dopo la prima si fermano, dati di meno di 6 ore) o a mano (`forza`). |
 | `.github/workflows/palestre.yml` | Parte su issue `[palestra]` del proprietario: richiesta.py + scrape solo di quella palestra. |
 
 ## Mappa di `app.js`

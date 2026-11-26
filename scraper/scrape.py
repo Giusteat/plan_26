@@ -29,7 +29,7 @@ OUT_FILE = ROOT / "data" / "corsi.json"
 BASE_URL = "https://urbansportsclub.com/en/venues/"
 DAYS_AHEAD = 14             # quanti giorni scaricare (oggi incluso)
 PAUSE_SECONDS = (2.0, 4.0)  # pausa casuale tra una richiesta e l'altra
-MIN_AGE_HOURS = 12          # se i dati sono più recenti, non si scarica di nuovo (salvo FORCE=true)
+MIN_AGE_HOURS = 6           # se i dati sono più recenti, non si scarica di nuovo (salvo FORCE=true)
 
 HEADERS = {
     "User-Agent": (
