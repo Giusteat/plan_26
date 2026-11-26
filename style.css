@@ -259,3 +259,5 @@ footer { text-align: center; margin-top: 14px; display: flex; gap: 8px; justify-
 .remind .remindrow { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-top: 1px solid var(--border); }
 .remind .remindlink { flex: 1; color: var(--text); text-decoration: none; font-size: .9rem; }
 .remind .reminddone { flex-shrink: 0; padding: 6px 10px; border-radius: 8px; border: 2px solid var(--primary); background: #fff; color: var(--primary); font: inherit; font-weight: 600; }
+.ico.left2 { right: auto; left: 34px; border: 0; background: none; cursor: pointer; padding: 0; }
+.m .ico.left2 { left: 48px; }
