@@ -655,7 +655,7 @@ function renderRemind() {
     list.forEach(c => {
         const row = el("div", "remindrow");
         const a = el("a", "remindlink", `${c.title} · ${c.studio} · ${DAYS[c.dow]} ${parse(c.date).toLocaleDateString("it-IT", { day: "numeric", month: "short" })} ${c.start}`);
-        a.href = CLASS_URL(c.id); a.target = "_blank"; a.rel = "noopener";
+        a.href = CLASS_URL(c.id);   // senza _blank, come l’icona ↗: così si apre nell’app Urban Sports
         const done = el("button", "reminddone", "Fatto");
         done.onclick = () => { booked.add(c.id); store.set("booked", [...booked]); renderRemind(); };
         row.append(a, done); box.appendChild(row);
