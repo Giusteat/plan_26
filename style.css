@@ -236,7 +236,7 @@ footer { text-align: center; margin-top: 14px; display: flex; gap: 8px; justify-
 .m.wide #views button + button { border-left: 2px solid var(--primary); }
 .m.wide #views button.on { color: #fff; }
 .m.wide .pbtn { height: 32px; font-size: .82rem; }
-.m.wide .pbtn[hidden] { display: none; }
+.m.wide .pgroup[hidden], .pbtn[hidden] { display: none; }
 .m.wide .row2 { display: flex; align-items: center; gap: 16px; }
 .m.wide .row2 .range { display: flex; flex: 0 0 340px; padding: 0; font-size: .85rem; }
 .m.wide .row2 .days { flex: 1; padding: 0; }
@@ -261,3 +261,7 @@ footer { text-align: center; margin-top: 14px; display: flex; gap: 8px; justify-
 .remind .reminddone { flex-shrink: 0; padding: 6px 10px; border-radius: 8px; border: 2px solid var(--primary); background: #fff; color: var(--primary); font: inherit; font-weight: 600; }
 .ico.left2 { right: auto; left: 34px; border: 0; background: none; cursor: pointer; padding: 0; }
 .m .ico.left2 { left: 48px; }
+.m .pgroup { display: inline-flex; flex-shrink: 0; }
+.m .pgroup .pbtn.split { border-radius: 8px 0 0 8px; padding: 0 8px; }
+.m .pgroup .pfilter { border-radius: 0 8px 8px 0; border-left-width: 0; padding: 0 8px; }
+.m .pgroup .pfilter.on { background: var(--primary); color: #fff; }

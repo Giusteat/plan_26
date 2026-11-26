@@ -94,7 +94,7 @@ function effectiveCategory(c) {
 }
 
 let classes = [], venues = {}, startHour = 7, endHour = 22, minDay, maxDay;
-const S = { cat: new Set(), venue: new Set(), plan: (p => p === "" || PLANS.some(x => x[0] === p) ? p : "M")(store.get("plan2", "M")),
+const S = { hideFull: store.get("hideFull", false) === true, cat: new Set(), venue: new Set(), plan: (p => p === "" || PLANS.some(x => x[0] === p) ? p : "M")(store.get("plan2", "M")),
     area: AREA_BTNS[0][0],
     levels: (l => l && typeof l === "object" && !Array.isArray(l) ? l : { "Pole Dance": ["L0"] })(store.get("levels", null)), fav: false, allDay: false, view: 7, start: null, day: null,
     q: "", from: T_MIN, to: T_MAX };
@@ -147,6 +147,7 @@ function prep(c) {
 const matches = (c, skip) => S.agenda ? planned(c) :
     c.allDay === S.allDay && (!c.area || c.area === S.area) && (skip === "level" || levelOk(c)) && (skip === "cat" || !S.cat.size || S.cat.has(c.group)) && (skip === "venue" || !S.venue.size || S.venue.has(c.studio)) &&
     (skip === "plan" || !S.plan || c.plans.includes(S.plan)) && (skip === "fav" || !S.fav || favs.has(c.key)) &&
+    (!S.hideFull || !(liveSpots(c) && liveSpots(c).free === 0)) &&
     (true && ((!S.q || c.text.includes(S.q)) && (S.from <= T_MIN || toMin(c.start) >= S.from) && (S.to >= T_MAX || toMin(c.start) <= S.to)));
 const visible = c => matches(c, null);
 const UI = { cat: new Map(), venue: new Map(), plan: new Map(), fav: null, agenda: null };
@@ -420,9 +421,13 @@ function spotsButton() {
     const days = [...new Set(spotsTargets().map(c => c.date))];
     const fresh = (days.length ? days : [iso(S.day)]).map(freshDay);
     const all = fresh.every(Boolean), day = all ? fresh.reduce((a, b) => a.aggiornato > b.aggiornato ? a : b) : null;
-    b.hidden = !useCards();
+    const g = $("pgroup"), f = $("pfilter");
+    g.hidden = !useCards();
     b.disabled = P.busy;
-    b.textContent = P.busy ? "Attendi…" : day ? `Posti ${hhmmOf(day.aggiornato)}` : "Posti liberi";
+    b.textContent = P.busy ? "Attendi…" : day ? `⟳ ${hhmmOf(day.aggiornato)}` : "Vedi posti";
+    b.classList.toggle("split", !!day);
+    f.hidden = !day;
+    f.classList.toggle("on", S.hideFull);
 }
 
 // Tre icone sulla riga del titolo: preferito, pianificata, apri nell'app ("non mi è piaciuta": tenendo premuta la scheda)
@@ -779,6 +784,7 @@ async function init() {
     };
     // ricerca e barra degli orari (telefono)
     $("pbtn").onclick = requestSpots;
+    $("pfilter").onclick = () => { S.hideFull = !S.hideFull; store.set("hideFull", S.hideFull); render(); };
     $("q").oninput = () => { S.q = norm($("q").value.trim()); render(); if (S.q) window.scrollTo(0, 0); else scrollToNow(); };
     const fromI = $("from"), toI = $("to"), hhmm = m => `${pad(Math.floor(m / 60))}:${pad(m % 60)}`;
     const saved = store.get("hours", null);
@@ -805,7 +811,7 @@ async function init() {
     if (!mobile.matches) {
         const h = document.querySelector("header"), row1 = el("div", "row1"), row2 = el("div", "row2");
         $("views").classList.add("seg");
-        row1.append(document.querySelector("label.search"), $("views"), $("filters"), $("pbtn"));
+        row1.append(document.querySelector("label.search"), $("views"), $("filters"), $("pgroup"));
         row2.append(document.querySelector(".range"), $("days"));
         h.append(row1, row2);
     }

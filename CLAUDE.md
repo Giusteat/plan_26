@@ -21,7 +21,7 @@
 | `confronto.html` + `confronto.json` | Confronto prezzi Urban Sports / Wellhub (prezzi scritti a mano nel json). |
 | `scraper/scrape.py` | Scarica 14 giorni di orari da Urban Sports (endpoint RSC di Next.js, senza login) → `data/corsi.json`. Env: `FORCE=true`, `ONLY_SLUGS=a,b`. |
 | `scraper/venues.json` | Palestre: `slug`, opzionali `only_categories`, `or_title_contains`, `all_day`. |
-| `scraper/posti.py` + `.github/workflows/posti.yml` | Posti liberi a richiesta: il pulsante "Posti liberi" (telefono e computer in vista Giorno) lancia il workflow con la chiave GitHub salvata nel browser (`ghToken`), per le lezioni del giorno guardato (o di tutti i giorni mostrati, con ricerca o agenda) che passano i filtri e non sono iniziate → `data/posti.json`. |
+| `scraper/posti.py` + `.github/workflows/posti.yml` | Posti liberi a richiesta: il pulsante "Vedi posti" (con "⟳ ora | Non piene": nasconde le lezioni a 0 posti; telefono e computer in vista Giorno) lancia il workflow con la chiave GitHub salvata nel browser (`ghToken`), per le lezioni del giorno guardato (o di tutti i giorni mostrati, con ricerca o agenda) che passano i filtri e non sono iniziate → `data/posti.json`. |
 | `scraper/richiesta.py` | Legge la issue di gestisci.html e aggiorna venues.json. |
 | `.github/workflows/aggiorna.yml` | Scraper ogni mattina verso le 6 di Berlino (tre cron UTC: 4, 5 e 6; quelle dopo la prima si fermano, dati di meno di 6 ore) o a mano (`forza`). |
 | `.github/workflows/palestre.yml` | Parte su issue `[palestra]` del proprietario: richiesta.py + scrape solo di quella palestra. |
@@ -36,7 +36,7 @@
 - Filtri: `multi`, `levelFilter`, `planFilter`; costruiti in `init()` in quest'ordine: ♥, Pianificate, Categorie, Palestre, Livello, Orari continui, Piano, zona.
 - Telefono: `renderCards` (con la ricerca o in agenda mostra tutti i giorni da oggi con titolo del giorno; in agenda anche fascia verde per settimana, da lunedì), `renderDays`, `scrollToNow` (all'apertura va alla prima lezione non iniziata, o all'ultima se oggi sono finite). Computer: `useCards()` (telefono o vista Giorno). <html> ha sempre `.m` (gli stili del telefono in style.css sono `.m …`), sul computer anche `.wide` (righe `.row1`/`.row2` create in `init`) e in Settimana `.week`; righe `.slot` per orario e `.hourhead` per ora tonda); vista Settimana: `layout`, `renderGrid`, `openSheet`.
 - Banner "Da prenotare" (`renderRemind`, in `<header>`, `#remind`): lezioni dell’agenda ricorrente già aperte e non segnate "Fatto" (`booked`, id); il titolo apre Urban Sports.
-- Posti liberi: pulsante `#pbtn` a sinistra degli orari, `requestSpots`, `spotsButton`, `spotsText` (oggetto `P`, salvato in `posti`, un risultato per giorno, dimenticato dopo 2 ore: `freshDay`).
+- Posti liberi: pulsante `#pbtn` + interruttore `#pfilter` (`S.hideFull`) nel gruppo `#pgroup`, a sinistra degli orari, `requestSpots`, `spotsButton`, `spotsText` (oggetto `P`, salvato in `posti`, un risultato per giorno, dimenticato dopo 2 ore: `freshDay`).
 - Lezione grigia (`isPast`) appena inizia. Telefono: toccare la scheda non fa niente; l'app Urban Sports si apre solo dall'icona (`CLASS_URL(id)`).
 
 ## Scelte già prese con l'utente (non rimetterle in discussione senza motivo)
