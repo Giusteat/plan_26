@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T15:01+01:00",
+ "updated": "2026-11-28T14:11+01:00",
  "venues": {
   "lyra-prenzlauerberg": {
    "slug": "lyra-prenzlauerberg",
@@ -24932,27 +24932,6 @@
    "venue": "laudace-studio"
   },
   {
-   "id": 109207423,
-   "title": "REFORMER Build & Burn | ENG",
-   "teacherName": "Monroe M.",
-   "startDateTimeUTC": "2026-11-28T17:00:00+01:00",
-   "endDateTimeUTC": "2026-11-28T17:45:00+01:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 22
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "pilates4all-reformer-pilates-prenzlauer-berg"
-  },
-  {
    "id": 109183620,
    "title": "ROFORM STUDIO 1",
    "teacherName": "Lea M.",
@@ -25854,27 +25833,6 @@
    "venue": "asa-studio"
   },
   {
-   "id": 109271391,
-   "title": "Reformer - Sculpt",
-   "teacherName": "Simona D.",
-   "startDateTimeUTC": "2026-11-29T10:00:00+01:00",
-   "endDateTimeUTC": "2026-11-29T10:50:00+01:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 15
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "elevate-pilates"
-  },
-  {
    "id": 109271390,
    "title": "Mat- Abs & Booty",
    "teacherName": "Lena W.",
@@ -25886,6 +25844,27 @@
    },
    "spots": {
     "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109271391,
+   "title": "Reformer - Sculpt",
+   "teacherName": "Simona D.",
+   "startDateTimeUTC": "2026-11-29T10:00:00+01:00",
+   "endDateTimeUTC": "2026-11-29T10:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 15
    },
    "planTypesB2C": [
     "M",
@@ -26294,27 +26273,6 @@
    "venue": "the-center-berlin-studio-2-1"
   },
   {
-   "id": 109273674,
-   "title": "Mat - Intermediate",
-   "teacherName": "Lena W.",
-   "startDateTimeUTC": "2026-11-29T11:10:00+01:00",
-   "endDateTimeUTC": "2026-11-29T12:00:00+01:00",
-   "category": {
-    "id": 4,
-    "name": "Pilates"
-   },
-   "spots": {
-    "max": 12
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "elevate-pilates"
-  },
-  {
    "id": 109273675,
    "title": "Reformer - Beginner",
    "teacherName": "Rani B.",
@@ -26326,6 +26284,27 @@
    },
    "spots": {
     "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109273674,
+   "title": "Mat - Intermediate",
+   "teacherName": "Lena W.",
+   "startDateTimeUTC": "2026-11-29T11:10:00+01:00",
+   "endDateTimeUTC": "2026-11-29T12:00:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 12
    },
    "planTypesB2C": [
     "M",
@@ -26672,7 +26651,7 @@
   {
    "id": 109212423,
    "title": "Pilates Form x Weights (EN)",
-   "teacherName": "Sara",
+   "teacherName": "Carla",
    "startDateTimeUTC": "2026-11-29T12:15:00+01:00",
    "endDateTimeUTC": "2026-11-29T13:00:00+01:00",
    "category": {
@@ -26920,27 +26899,6 @@
    "venue": "soulsport"
   },
   {
-   "id": 109274643,
-   "title": "PEACH BARRE BURN EN",
-   "teacherName": "Paloma D.",
-   "startDateTimeUTC": "2026-11-29T13:15:00+01:00",
-   "endDateTimeUTC": "2026-11-29T14:00:00+01:00",
-   "category": {
-    "id": 1378,
-    "name": "Barre"
-   },
-   "spots": {
-    "max": 18
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "halenow-prenzlauer-berg"
-  },
-  {
    "id": 109274631,
    "title": "1,5 Std. Hale.GYM",
    "teacherName": "Room",
@@ -27025,27 +26983,6 @@
    "venue": "lyra"
   },
   {
-   "id": 109274666,
-   "title": "Reformer - Free Practice",
-   "teacherName": "Naima S.",
-   "startDateTimeUTC": "2026-11-29T14:00:00+01:00",
-   "endDateTimeUTC": "2026-11-29T15:00:00+01:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 8
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "elevate-pilates"
-  },
-  {
    "id": 109274670,
    "title": "Barre - R'n'B Hip Hop Floor Barre",
    "teacherName": "Olga G.",
@@ -27057,6 +26994,27 @@
    },
    "spots": {
     "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109274666,
+   "title": "Reformer - Free Practice",
+   "teacherName": "Naima S.",
+   "startDateTimeUTC": "2026-11-29T14:00:00+01:00",
+   "endDateTimeUTC": "2026-11-29T15:00:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 8
    },
    "planTypesB2C": [
     "M",
@@ -27665,7 +27623,7 @@
     "name": "Pilates Reformer"
    },
    "spots": {
-    "max": 12
+    "max": 11
    },
    "planTypesB2C": [
     "M",
@@ -27759,27 +27717,6 @@
    "venue": "rostudios-berlin-prenzlauer-berg"
   },
   {
-   "id": 109276692,
-   "title": "Reformer - Lower Body Sculpt (DE/EN)",
-   "teacherName": "Bennay M.",
-   "startDateTimeUTC": "2026-11-29T17:10:00+01:00",
-   "endDateTimeUTC": "2026-11-29T18:00:00+01:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 15
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "elevate-pilates"
-  },
-  {
    "id": 109276688,
    "title": "Mat - Beginner",
    "teacherName": "Diana S.",
@@ -27791,6 +27728,27 @@
    },
    "spots": {
     "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109276692,
+   "title": "Reformer - Lower Body Sculpt (DE/EN)",
+   "teacherName": "Bennay M.",
+   "startDateTimeUTC": "2026-11-29T17:10:00+01:00",
+   "endDateTimeUTC": "2026-11-29T18:00:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 15
    },
    "planTypesB2C": [
     "M",
@@ -28409,7 +28367,7 @@
   },
   {
    "id": 109284609,
-   "title": "LISTEN. Ambient Electronic Nap - USC + 10 Euros",
+   "title": "LISTEN. Ambient Electronic Nap",
    "teacherName": "Jocelyn",
    "startDateTimeUTC": "2026-11-29T20:30:00+01:00",
    "endDateTimeUTC": "2026-11-29T23:30:00+01:00",
@@ -28767,7 +28725,7 @@
   {
    "id": 109292862,
    "title": "REFORMER Full Body | Beginner | ENG",
-   "teacherName": "Romy J.",
+   "teacherName": "Nathanaëlle S.",
    "startDateTimeUTC": "2026-11-30T08:00:00+01:00",
    "endDateTimeUTC": "2026-11-30T08:45:00+01:00",
    "category": {
@@ -29080,7 +29038,7 @@
   {
    "id": 109293555,
    "title": "REFORMER Abs & Ass | ENG",
-   "teacherName": "Romy J.",
+   "teacherName": "Nathanaëlle S.",
    "startDateTimeUTC": "2026-11-30T09:00:00+01:00",
    "endDateTimeUTC": "2026-11-30T09:45:00+01:00",
    "category": {
@@ -29410,6 +29368,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "soulsport"
+  },
+  {
+   "id": 109923209,
+   "title": "Open Training - Pole",
+   "teacherName": "Shilpashree M.",
+   "startDateTimeUTC": "2026-11-30T10:15:00+01:00",
+   "endDateTimeUTC": "2026-11-30T11:15:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra-prenzlauerberg"
   },
   {
    "id": 109295615,
@@ -31403,7 +31382,7 @@
   {
    "id": 109303496,
    "title": "Pole L1/2 - Beginners Experts",
-   "teacherName": "Giovanni G.",
+   "teacherName": "Leonie V.",
    "startDateTimeUTC": "2026-11-30T18:10:00+01:00",
    "endDateTimeUTC": "2026-11-30T19:10:00+01:00",
    "category": {
@@ -31735,27 +31714,6 @@
    "venue": "laudace-studio"
   },
   {
-   "id": 109312981,
-   "title": "Commercial Jazz - Beginner/Intermediate",
-   "teacherName": "Amy",
-   "startDateTimeUTC": "2026-11-30T19:00:00+01:00",
-   "endDateTimeUTC": "2026-11-30T20:00:00+01:00",
-   "category": {
-    "id": 7,
-    "name": "Dance"
-   },
-   "spots": {
-    "max": 15
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "lunatix-dance-base-east-side-mall-1"
-  },
-  {
    "id": 109312939,
    "title": "High Heels - Beginner",
    "teacherName": "Chantel B.",
@@ -31767,6 +31725,27 @@
    },
    "spots": {
     "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
+   "id": 109312981,
+   "title": "Commercial Jazz - Beginner/Intermediate",
+   "teacherName": "Amy",
+   "startDateTimeUTC": "2026-11-30T19:00:00+01:00",
+   "endDateTimeUTC": "2026-11-30T20:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
    },
    "planTypesB2C": [
     "M",
@@ -31926,7 +31905,7 @@
   {
    "id": 109305794,
    "title": "Pole L3/4 · Spinning Intermediate",
-   "teacherName": "USC",
+   "teacherName": "Leonie V.",
    "startDateTimeUTC": "2026-11-30T19:20:00+01:00",
    "endDateTimeUTC": "2026-11-30T20:20:00+01:00",
    "category": {
@@ -32175,27 +32154,6 @@
    "venue": "laudace-studio"
   },
   {
-   "id": 109312861,
-   "title": "Commercial - open Level",
-   "teacherName": "Denisa",
-   "startDateTimeUTC": "2026-11-30T20:00:00+01:00",
-   "endDateTimeUTC": "2026-11-30T21:00:00+01:00",
-   "category": {
-    "id": 7,
-    "name": "Dance"
-   },
-   "spots": {
-    "max": 15
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "lunatix-dance-base-east-side-mall-1"
-  },
-  {
    "id": 109312953,
    "title": "Commercial Jazz - Beginner/Intermediate",
    "teacherName": "Amy",
@@ -32207,6 +32165,27 @@
    },
    "spots": {
     "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
+   "id": 109312861,
+   "title": "Commercial - open Level",
+   "teacherName": "Denisa",
+   "startDateTimeUTC": "2026-11-30T20:00:00+01:00",
+   "endDateTimeUTC": "2026-11-30T21:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
    },
    "planTypesB2C": [
     "M",
@@ -32387,7 +32366,7 @@
   {
    "id": 109307031,
    "title": "Pole L1 - Beginners",
-   "teacherName": "USC",
+   "teacherName": "Leonie V.",
    "startDateTimeUTC": "2026-11-30T20:30:00+01:00",
    "endDateTimeUTC": "2026-11-30T21:30:00+01:00",
    "category": {
@@ -32867,27 +32846,6 @@
    "venue": "holmes-place-boutique"
   },
   {
-   "id": 109395377,
-   "title": "Reformer Class",
-   "teacherName": "Renata",
-   "startDateTimeUTC": "2026-12-01T08:00:00+01:00",
-   "endDateTimeUTC": "2026-12-01T08:45:00+01:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 12
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "asa-studio"
-  },
-  {
    "id": 109395114,
    "title": "Mat Pilates",
    "teacherName": "Silvia",
@@ -32899,6 +32857,27 @@
    },
    "spots": {
     "max": 11
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "asa-studio"
+  },
+  {
+   "id": 109395377,
+   "title": "Reformer Class",
+   "teacherName": "Renata",
+   "startDateTimeUTC": "2026-12-01T08:00:00+01:00",
+   "endDateTimeUTC": "2026-12-01T08:45:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
    },
    "planTypesB2C": [
     "M",
@@ -33076,27 +33055,6 @@
    "venue": "good-moves-studio"
   },
   {
-   "id": 109379067,
-   "title": "Reformer - Abs & Booty",
-   "teacherName": "Kyra J.",
-   "startDateTimeUTC": "2026-12-01T08:30:00+01:00",
-   "endDateTimeUTC": "2026-12-01T09:20:00+01:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 15
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "elevate-pilates"
-  },
-  {
    "id": 109379065,
    "title": "Barre - Power",
    "teacherName": "Olga G.",
@@ -33108,6 +33066,27 @@
    },
    "spots": {
     "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109379067,
+   "title": "Reformer - Abs & Booty",
+   "teacherName": "Kyra J.",
+   "startDateTimeUTC": "2026-12-01T08:30:00+01:00",
+   "endDateTimeUTC": "2026-12-01T09:20:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 15
    },
    "planTypesB2C": [
     "M",
@@ -33139,27 +33118,6 @@
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
   },
   {
-   "id": 109395446,
-   "title": "Reformer Class",
-   "teacherName": "Renata",
-   "startDateTimeUTC": "2026-12-01T09:00:00+01:00",
-   "endDateTimeUTC": "2026-12-01T09:45:00+01:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 12
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "asa-studio"
-  },
-  {
    "id": 109395264,
    "title": "Mat Pilates",
    "teacherName": "Silvia",
@@ -33171,6 +33129,27 @@
    },
    "spots": {
     "max": 11
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "asa-studio"
+  },
+  {
+   "id": 109395446,
+   "title": "Reformer Class",
+   "teacherName": "Renata",
+   "startDateTimeUTC": "2026-12-01T09:00:00+01:00",
+   "endDateTimeUTC": "2026-12-01T09:45:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
    },
    "planTypesB2C": [
     "M",
@@ -33663,7 +33642,7 @@
   {
    "id": 109380771,
    "title": "Pole L0 - Spinning Introduction",
-   "teacherName": "Angelko R.",
+   "teacherName": "Leonie V.",
    "startDateTimeUTC": "2026-12-01T10:50:00+01:00",
    "endDateTimeUTC": "2026-12-01T11:50:00+01:00",
    "category": {
@@ -33809,7 +33788,7 @@
   {
    "id": 109381574,
    "title": "Pole L1 - Spinning Beginner",
-   "teacherName": "Angelko R.",
+   "teacherName": "Leonie V.",
    "startDateTimeUTC": "2026-12-01T12:00:00+01:00",
    "endDateTimeUTC": "2026-12-01T13:00:00+01:00",
    "category": {
@@ -34017,6 +33996,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
   },
   {
+   "id": 109923180,
+   "title": "Sensual Pole Flow L0 (Heels Opt.)",
+   "teacherName": "Giovanni G.",
+   "startDateTimeUTC": "2026-12-01T12:35:00+01:00",
+   "endDateTimeUTC": "2026-12-01T13:35:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 109382189,
    "title": "Pole Low Flow L0 (Heels opt.)",
    "teacherName": "Laura K.",
@@ -34124,7 +34124,7 @@
   {
    "id": 109382707,
    "title": "Pole L3 · Intermediate",
-   "teacherName": "Angelko R.",
+   "teacherName": "Leonie V.",
    "startDateTimeUTC": "2026-12-01T13:10:00+01:00",
    "endDateTimeUTC": "2026-12-01T14:10:00+01:00",
    "category": {
@@ -34271,7 +34271,7 @@
   {
    "id": 109383263,
    "title": "Pole L1/2 - Beginners Experts",
-   "teacherName": "Francesca T.",
+   "teacherName": "Leonie V.",
    "startDateTimeUTC": "2026-12-01T14:30:00+01:00",
    "endDateTimeUTC": "2026-12-01T15:30:00+01:00",
    "category": {
@@ -34288,6 +34288,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "boogaloo-tanzstudio"
+  },
+  {
+   "id": 109923178,
+   "title": "Spinning Pole L1 Advanced Beginners",
+   "teacherName": "Giovanni G.",
+   "startDateTimeUTC": "2026-12-01T14:35:00+01:00",
+   "endDateTimeUTC": "2026-12-01T15:35:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 109383398,
@@ -34615,7 +34636,7 @@
     "name": "Pilates"
    },
    "spots": {
-    "max": 8
+    "max": 9
    },
    "planTypesB2C": [
     "M",
@@ -35338,27 +35359,6 @@
    "venue": "laudace-studio"
   },
   {
-   "id": 109393738,
-   "title": "Female Performance (Commercial) - Intermediate",
-   "teacherName": "Kristina A.",
-   "startDateTimeUTC": "2026-12-01T18:00:00+01:00",
-   "endDateTimeUTC": "2026-12-01T19:00:00+01:00",
-   "category": {
-    "id": 7,
-    "name": "Dance"
-   },
-   "spots": {
-    "max": 20
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "lunatix-dance-base-east-side-mall-1"
-  },
-  {
    "id": 109393766,
    "title": "Choreography - Beginner",
    "teacherName": "Yerin K.",
@@ -35370,6 +35370,27 @@
    },
    "spots": {
     "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
+   "id": 109393738,
+   "title": "Female Performance (Commercial) - Intermediate",
+   "teacherName": "Kristina A.",
+   "startDateTimeUTC": "2026-12-01T18:00:00+01:00",
+   "endDateTimeUTC": "2026-12-01T19:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 20
    },
    "planTypesB2C": [
     "M",
@@ -35711,6 +35732,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "studio-berlin"
+  },
+  {
+   "id": 109860748,
+   "title": "Pilates - stark und beweglich (kl. Gewichte)",
+   "teacherName": "Nadine",
+   "startDateTimeUTC": "2026-12-01T18:40:00+01:00",
+   "endDateTimeUTC": "2026-12-01T19:30:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 5
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "pilateslab-berlin-bodyinsight-anjak"
   },
   {
    "id": 109397055,
@@ -36255,6 +36297,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "holmes-place-boutique"
+  },
+  {
+   "id": 109860746,
+   "title": "Pilates Kleingeräte",
+   "teacherName": "Nadine",
+   "startDateTimeUTC": "2026-12-01T19:45:00+01:00",
+   "endDateTimeUTC": "2026-12-01T20:40:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 3
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "pilateslab-berlin-bodyinsight-anjak"
   },
   {
    "id": 109395079,
@@ -38299,7 +38362,7 @@
     "name": "Pilates"
    },
    "spots": {
-    "max": 7
+    "max": 8
    },
    "planTypesB2C": [
     "M",
@@ -38855,6 +38918,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
   },
   {
+   "id": 109859335,
+   "title": "REST. Yin Ceremony",
+   "teacherName": "Lisa",
+   "startDateTimeUTC": "2026-12-02T15:30:00+01:00",
+   "endDateTimeUTC": "2026-12-02T16:30:00+01:00",
+   "category": {
+    "id": 6,
+    "name": "Yoga"
+   },
+   "spots": {
+    "max": 14
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "studio-berlin"
+  },
+  {
    "id": 109409368,
    "title": "REFORM.NOW Sculpt EN",
    "teacherName": "Savina C.",
@@ -39252,6 +39336,27 @@
    "venue": "berliner-pilates-prenzlauer-berg"
   },
   {
+   "id": 109860066,
+   "title": "Handstand / Handstands Combos",
+   "teacherName": "Isabel R.",
+   "startDateTimeUTC": "2026-12-02T17:00:00+01:00",
+   "endDateTimeUTC": "2026-12-02T18:00:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
    "id": 109410369,
    "title": "REFORM.NOW Basic EN",
    "teacherName": "Savina C.",
@@ -39378,7 +39483,7 @@
   },
   {
    "id": 109411428,
-   "title": "Spinning Pole L1 - L2 Lower Intermediate",
+   "title": "Pole L1 - L2 Lower Intermediate",
    "teacherName": "Giovanni G.",
    "startDateTimeUTC": "2026-12-02T17:05:00+01:00",
    "endDateTimeUTC": "2026-12-02T18:05:00+01:00",
@@ -39778,7 +39883,7 @@
   {
    "id": 109412466,
    "title": "Pole L2 · Beginners Experts",
-   "teacherName": "Angelko R.",
+   "teacherName": "Isabel R.",
    "startDateTimeUTC": "2026-12-02T18:10:00+01:00",
    "endDateTimeUTC": "2026-12-02T19:10:00+01:00",
    "category": {
@@ -41378,7 +41483,7 @@
     "name": "Pilates"
    },
    "spots": {
-    "max": 7
+    "max": 8
    },
    "planTypesB2C": [
     "M",
@@ -43917,6 +44022,27 @@
    "venue": "elevate-pilates"
   },
   {
+   "id": 109860745,
+   "title": "Pilates & kl. Gewichte",
+   "teacherName": "Anja",
+   "startDateTimeUTC": "2026-12-03T18:25:00+01:00",
+   "endDateTimeUTC": "2026-12-03T19:15:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 3
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "pilateslab-berlin-bodyinsight-anjak"
+  },
+  {
    "id": 109466031,
    "title": "Spinning Pole L1 Advanced Beginners",
    "teacherName": "Angelko R.",
@@ -44190,27 +44316,6 @@
    "venue": "laudace-studio"
   },
   {
-   "id": 109475910,
-   "title": "Choreography - Beginner",
-   "teacherName": "Melisa K.",
-   "startDateTimeUTC": "2026-12-03T19:00:00+01:00",
-   "endDateTimeUTC": "2026-12-03T20:00:00+01:00",
-   "category": {
-    "id": 7,
-    "name": "Dance"
-   },
-   "spots": {
-    "max": 15
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "lunatix-dance-base-east-side-mall-1"
-  },
-  {
    "id": 109475900,
    "title": "Hip Hop Adults - Beginner",
    "teacherName": "Ray",
@@ -44222,6 +44327,27 @@
    },
    "spots": {
     "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
+   "id": 109475910,
+   "title": "Choreography - Beginner",
+   "teacherName": "Melisa K.",
+   "startDateTimeUTC": "2026-12-03T19:00:00+01:00",
+   "endDateTimeUTC": "2026-12-03T20:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
    },
    "planTypesB2C": [
     "M",
@@ -44399,27 +44525,6 @@
    "venue": "berlin-movement-lab"
   },
   {
-   "id": 109468007,
-   "title": "Mat - Beginner",
-   "teacherName": "Simona D.",
-   "startDateTimeUTC": "2026-12-03T19:30:00+01:00",
-   "endDateTimeUTC": "2026-12-03T20:20:00+01:00",
-   "category": {
-    "id": 4,
-    "name": "Pilates"
-   },
-   "spots": {
-    "max": 12
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "elevate-pilates"
-  },
-  {
    "id": 109468001,
    "title": "Reformer - Sculpt",
    "teacherName": "Rani B.",
@@ -44431,6 +44536,27 @@
    },
    "spots": {
     "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109468007,
+   "title": "Mat - Beginner",
+   "teacherName": "Simona D.",
+   "startDateTimeUTC": "2026-12-03T19:30:00+01:00",
+   "endDateTimeUTC": "2026-12-03T20:20:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 12
    },
    "planTypesB2C": [
     "M",
@@ -45279,6 +45405,27 @@
    "venue": "pilates4all-reformer-pilates-prenzlauer-berg"
   },
   {
+   "id": 109860744,
+   "title": "Pilates",
+   "teacherName": "Anja",
+   "startDateTimeUTC": "2026-12-04T08:00:00+01:00",
+   "endDateTimeUTC": "2026-12-04T08:55:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 3
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "pilateslab-berlin-bodyinsight-anjak"
+  },
+  {
    "id": 109492344,
    "title": "ROFORM STUDIO 1",
    "teacherName": "Eva",
@@ -45992,7 +46139,7 @@
   {
    "id": 109537579,
    "title": "Pole L0 - Introduction",
-   "teacherName": "Luigi V.",
+   "teacherName": "Leonie V.",
    "startDateTimeUTC": "2026-12-04T10:50:00+01:00",
    "endDateTimeUTC": "2026-12-04T11:50:00+01:00",
    "category": {
@@ -46243,7 +46390,7 @@
   {
    "id": 109538300,
    "title": "Pole L1 - Beginners",
-   "teacherName": "Luigi V.",
+   "teacherName": "Leonie V.",
    "startDateTimeUTC": "2026-12-04T12:00:00+01:00",
    "endDateTimeUTC": "2026-12-04T13:00:00+01:00",
    "category": {
@@ -46662,7 +46809,7 @@
   {
    "id": 109539550,
    "title": "Pole L2 · Beginners Experts",
-   "teacherName": "Luigi V.",
+   "teacherName": "Leonie V.",
    "startDateTimeUTC": "2026-12-04T13:10:00+01:00",
    "endDateTimeUTC": "2026-12-04T14:10:00+01:00",
    "category": {
@@ -46851,7 +46998,7 @@
   {
    "id": 109539999,
    "title": "Pole L0 - Introduction",
-   "teacherName": "Luigi V.",
+   "teacherName": "Leonie V.",
    "startDateTimeUTC": "2026-12-04T14:20:00+01:00",
    "endDateTimeUTC": "2026-12-04T15:20:00+01:00",
    "category": {
@@ -48819,13 +48966,13 @@
   },
   {
    "id": 109545162,
-   "title": "Intro to Spinning Pole L0",
-   "teacherName": "Angelko R.",
+   "title": "Open Training - Pole",
+   "teacherName": "Shilpashree M.",
    "startDateTimeUTC": "2026-12-04T20:35:00+01:00",
    "endDateTimeUTC": "2026-12-04T21:35:00+01:00",
    "category": {
-    "id": 135,
-    "name": "Pole Dance"
+    "id": 1,
+    "name": "Fitness"
    },
    "spots": {
     "max": 13
@@ -49845,7 +49992,7 @@
   {
    "id": 109572742,
    "title": "Pole L1 - Spinning Beginner",
-   "teacherName": "USC",
+   "teacherName": "Cleo.thefairy X.",
    "startDateTimeUTC": "2026-12-05T10:50:00+01:00",
    "endDateTimeUTC": "2026-12-05T11:50:00+01:00",
    "category": {
@@ -50283,7 +50430,7 @@
   {
    "id": 109574039,
    "title": "Pole L1/2 · Beginners",
-   "teacherName": "USC",
+   "teacherName": "Cleo.thefairy X.",
    "startDateTimeUTC": "2026-12-05T12:00:00+01:00",
    "endDateTimeUTC": "2026-12-05T13:00:00+01:00",
    "category": {
@@ -52292,27 +52439,6 @@
    "venue": "asa-studio"
   },
   {
-   "id": 109597587,
-   "title": "Mat- Abs & Booty",
-   "teacherName": "Lena W.",
-   "startDateTimeUTC": "2026-12-06T10:00:00+01:00",
-   "endDateTimeUTC": "2026-12-06T10:50:00+01:00",
-   "category": {
-    "id": 4,
-    "name": "Pilates"
-   },
-   "spots": {
-    "max": 12
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "elevate-pilates"
-  },
-  {
    "id": 109597584,
    "title": "Reformer - Sculpt",
    "teacherName": "Simona D.",
@@ -52324,6 +52450,27 @@
    },
    "spots": {
     "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109597587,
+   "title": "Mat- Abs & Booty",
+   "teacherName": "Lena W.",
+   "startDateTimeUTC": "2026-12-06T10:00:00+01:00",
+   "endDateTimeUTC": "2026-12-06T10:50:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 12
    },
    "planTypesB2C": [
     "M",
@@ -55766,6 +55913,27 @@
    "venue": "soulsport"
   },
   {
+   "id": 109923208,
+   "title": "Open Training - Pole",
+   "teacherName": "Shilpashree M.",
+   "startDateTimeUTC": "2026-12-07T10:15:00+01:00",
+   "endDateTimeUTC": "2026-12-07T11:15:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra-prenzlauerberg"
+  },
+  {
    "id": 109645119,
    "title": "1,5 Std. Hale.GYM",
    "teacherName": "Room",
@@ -55994,6 +56162,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "berliner-pilates-prenzlauer-berg"
+  },
+  {
+   "id": 109858699,
+   "title": "Pole L0 - Spinning Introduction",
+   "teacherName": "Cleo.thefairy X.",
+   "startDateTimeUTC": "2026-12-07T12:00:00+01:00",
+   "endDateTimeUTC": "2026-12-07T13:00:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 109645744,
@@ -56287,6 +56476,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "lyra-prenzlauerberg"
+  },
+  {
+   "id": 109860062,
+   "title": "Flying Heels",
+   "teacherName": "Cleo.thefairy X.",
+   "startDateTimeUTC": "2026-12-07T13:00:00+01:00",
+   "endDateTimeUTC": "2026-12-07T14:00:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
   },
   {
    "id": 109753487,
@@ -59074,27 +59284,6 @@
    "venue": "holmes-place-boutique"
   },
   {
-   "id": 109739911,
-   "title": "Reformer Class",
-   "teacherName": "Renata",
-   "startDateTimeUTC": "2026-12-08T08:00:00+01:00",
-   "endDateTimeUTC": "2026-12-08T08:45:00+01:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 12
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "asa-studio"
-  },
-  {
    "id": 109739971,
    "title": "Mat Pilates",
    "teacherName": "Silvia",
@@ -59106,6 +59295,27 @@
    },
    "spots": {
     "max": 11
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "asa-studio"
+  },
+  {
+   "id": 109739911,
+   "title": "Reformer Class",
+   "teacherName": "Renata",
+   "startDateTimeUTC": "2026-12-08T08:00:00+01:00",
+   "endDateTimeUTC": "2026-12-08T08:45:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
    },
    "planTypesB2C": [
     "M",
@@ -59847,6 +60057,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
   },
   {
+   "id": 109923501,
+   "title": "FLOW. Prenatal Gentle Flow",
+   "teacherName": "Loren",
+   "startDateTimeUTC": "2026-12-08T10:30:00+01:00",
+   "endDateTimeUTC": "2026-12-08T11:30:00+01:00",
+   "category": {
+    "id": 6,
+    "name": "Yoga"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "studio-berlin"
+  },
+  {
    "id": 109804186,
    "title": "Hot Pilates",
    "teacherName": "Pauli",
@@ -60224,6 +60455,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
   },
   {
+   "id": 109923179,
+   "title": "Sensual Pole Flow L0 (Heels Opt.)",
+   "teacherName": "Giovanni G.",
+   "startDateTimeUTC": "2026-12-08T12:35:00+01:00",
+   "endDateTimeUTC": "2026-12-08T13:35:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 109728228,
    "title": "Pole Low Flow L0 (Heels opt.)",
    "teacherName": "Linh D.",
@@ -60495,6 +60747,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "boogaloo-tanzstudio"
+  },
+  {
+   "id": 109923177,
+   "title": "Spinning Pole L1 Advanced Beginners",
+   "teacherName": "Giovanni G.",
+   "startDateTimeUTC": "2026-12-08T14:35:00+01:00",
+   "endDateTimeUTC": "2026-12-08T15:35:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
   },
   {
    "id": 109729419,
@@ -61189,27 +61462,6 @@
    "venue": "studio-berlin"
   },
   {
-   "id": 109732379,
-   "title": "Mat - Prenatal Pilates",
-   "teacherName": "Katia S.",
-   "startDateTimeUTC": "2026-12-08T17:10:00+01:00",
-   "endDateTimeUTC": "2026-12-08T18:00:00+01:00",
-   "category": {
-    "id": 4,
-    "name": "Pilates"
-   },
-   "spots": {
-    "max": 12
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "elevate-pilates"
-  },
-  {
    "id": 109732384,
    "title": "Reformer - Abs & Booty",
    "teacherName": "Aimee P.",
@@ -61221,6 +61473,27 @@
    },
    "spots": {
     "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109732379,
+   "title": "Mat - Prenatal Pilates",
+   "teacherName": "Katia S.",
+   "startDateTimeUTC": "2026-12-08T17:10:00+01:00",
+   "endDateTimeUTC": "2026-12-08T18:00:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 12
    },
    "planTypesB2C": [
     "M",
@@ -61566,27 +61839,6 @@
    "venue": "laudace-studio"
   },
   {
-   "id": 109742840,
-   "title": "Choreography - Beginner",
-   "teacherName": "Yerin K.",
-   "startDateTimeUTC": "2026-12-08T18:00:00+01:00",
-   "endDateTimeUTC": "2026-12-08T20:00:00+01:00",
-   "category": {
-    "id": 7,
-    "name": "Dance"
-   },
-   "spots": {
-    "max": 15
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "lunatix-dance-base-east-side-mall-1"
-  },
-  {
    "id": 109742709,
    "title": "Female Performance (Commercial) - Intermediate",
    "teacherName": "Kristina A.",
@@ -61598,6 +61850,27 @@
    },
    "spots": {
     "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
+   "id": 109742840,
+   "title": "Choreography - Beginner",
+   "teacherName": "Yerin K.",
+   "startDateTimeUTC": "2026-12-08T18:00:00+01:00",
+   "endDateTimeUTC": "2026-12-08T20:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
    },
    "planTypesB2C": [
     "M",
@@ -62234,27 +62507,6 @@
    "venue": "good-moves-studio"
   },
   {
-   "id": 109735108,
-   "title": "Power to Pole Inverts",
-   "teacherName": "Valeria C.",
-   "startDateTimeUTC": "2026-12-08T19:15:00+01:00",
-   "endDateTimeUTC": "2026-12-08T20:15:00+01:00",
-   "category": {
-    "id": 135,
-    "name": "Pole Dance"
-   },
-   "spots": {
-    "max": 13
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "lyra"
-  },
-  {
    "id": 109735100,
    "title": "Active Stretching (Beginner / Intermediate)",
    "teacherName": "Ana E.",
@@ -62276,9 +62528,30 @@
    "venue": "lyra"
   },
   {
+   "id": 109735108,
+   "title": "Power to Pole Inverts",
+   "teacherName": "Valeria C.",
+   "startDateTimeUTC": "2026-12-08T19:15:00+01:00",
+   "endDateTimeUTC": "2026-12-08T20:15:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
    "id": 109734461,
    "title": "Pole L1 - Spinning Beginner",
-   "teacherName": "USC",
+   "teacherName": "Anna G.",
    "startDateTimeUTC": "2026-12-08T19:20:00+01:00",
    "endDateTimeUTC": "2026-12-08T20:20:00+01:00",
    "category": {
@@ -62297,27 +62570,6 @@
    "venue": "boogaloo-tanzstudio"
   },
   {
-   "id": 109736260,
-   "title": "Mat - Strength",
-   "teacherName": "Margarita I.",
-   "startDateTimeUTC": "2026-12-08T19:20:00+01:00",
-   "endDateTimeUTC": "2026-12-08T20:10:00+01:00",
-   "category": {
-    "id": 4,
-    "name": "Pilates"
-   },
-   "spots": {
-    "max": 12
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "elevate-pilates"
-  },
-  {
    "id": 109736253,
    "title": "Reformer - Beginner",
    "teacherName": "Shirin S.",
@@ -62329,6 +62581,27 @@
    },
    "spots": {
     "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109736260,
+   "title": "Mat - Strength",
+   "teacherName": "Margarita I.",
+   "startDateTimeUTC": "2026-12-08T19:20:00+01:00",
+   "endDateTimeUTC": "2026-12-08T20:10:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 12
    },
    "planTypesB2C": [
     "M",
@@ -63239,27 +63512,6 @@
    "venue": "berliner-pilates-prenzlauer-berg"
   },
   {
-   "id": 109749652,
-   "title": "Mat - Abs & Booty",
-   "teacherName": "Andreia T.",
-   "startDateTimeUTC": "2026-12-09T08:00:00+01:00",
-   "endDateTimeUTC": "2026-12-09T08:50:00+01:00",
-   "category": {
-    "id": 4,
-    "name": "Pilates"
-   },
-   "spots": {
-    "max": 12
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "elevate-pilates"
-  },
-  {
    "id": 109749649,
    "title": "Reformer - Sculpt",
    "teacherName": "Leah M.",
@@ -63271,6 +63523,27 @@
    },
    "spots": {
     "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109749652,
+   "title": "Mat - Abs & Booty",
+   "teacherName": "Andreia T.",
+   "startDateTimeUTC": "2026-12-09T08:00:00+01:00",
+   "endDateTimeUTC": "2026-12-09T08:50:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 12
    },
    "planTypesB2C": [
     "M",
@@ -64643,27 +64916,6 @@
    "venue": "asa-studio"
   },
   {
-   "id": 109754364,
-   "title": "Barre - Power",
-   "teacherName": "Alexandra A.",
-   "startDateTimeUTC": "2026-12-09T13:00:00+01:00",
-   "endDateTimeUTC": "2026-12-09T13:50:00+01:00",
-   "category": {
-    "id": 1378,
-    "name": "Barre"
-   },
-   "spots": {
-    "max": 12
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "elevate-pilates"
-  },
-  {
    "id": 109753654,
    "title": "Reformer - Intermediate (Female Only)",
    "teacherName": "Martina A.",
@@ -64675,6 +64927,27 @@
    },
    "spots": {
     "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109754364,
+   "title": "Barre - Power",
+   "teacherName": "Alexandra A.",
+   "startDateTimeUTC": "2026-12-09T13:00:00+01:00",
+   "endDateTimeUTC": "2026-12-09T13:50:00+01:00",
+   "category": {
+    "id": 1378,
+    "name": "Barre"
+   },
+   "spots": {
+    "max": 12
    },
    "planTypesB2C": [
     "M",
@@ -65083,6 +65356,27 @@
    "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
   },
   {
+   "id": 109859336,
+   "title": "REST. Yin Ceremony",
+   "teacherName": "Lisa",
+   "startDateTimeUTC": "2026-12-09T15:30:00+01:00",
+   "endDateTimeUTC": "2026-12-09T16:30:00+01:00",
+   "category": {
+    "id": 6,
+    "name": "Yoga"
+   },
+   "spots": {
+    "max": 14
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "studio-berlin"
+  },
+  {
    "id": 109755276,
    "title": "REFORM.NOW Sculpt EN",
    "teacherName": "Savina C.",
@@ -65227,6 +65521,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "halenow-prenzlauer-berg"
+  },
+  {
+   "id": 109858222,
+   "title": "Hot Fusion by Nicci",
+   "teacherName": "Nicci H.",
+   "startDateTimeUTC": "2026-12-09T16:00:00+01:00",
+   "endDateTimeUTC": "2026-12-09T16:50:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "hot-aura"
   },
   {
    "id": 109755120,
@@ -65480,9 +65795,9 @@
    "venue": "berliner-pilates-prenzlauer-berg"
   },
   {
-   "id": 109755774,
-   "title": "Pole L2 · Beginners Experts",
-   "teacherName": "Francesca T.",
+   "id": 109860065,
+   "title": "Handstand / Handstands Combos",
+   "teacherName": "Isabel R.",
    "startDateTimeUTC": "2026-12-09T17:00:00+01:00",
    "endDateTimeUTC": "2026-12-09T18:00:00+01:00",
    "category": {
@@ -65490,7 +65805,7 @@
     "name": "Pole Dance"
    },
    "spots": {
-    "max": 8
+    "max": 10
    },
    "planTypesB2C": [
     "M",
@@ -65627,7 +65942,7 @@
   },
   {
    "id": 109757146,
-   "title": "Spinning Pole L1 - L2 Lower Intermediate",
+   "title": "Pole L1 - L2 Lower Intermediate",
    "teacherName": "Giovanni G.",
    "startDateTimeUTC": "2026-12-09T17:05:00+01:00",
    "endDateTimeUTC": "2026-12-09T18:05:00+01:00",
@@ -65647,27 +65962,6 @@
    "venue": "lyra"
   },
   {
-   "id": 109757533,
-   "title": "Reformer - Intermediate",
-   "teacherName": "Leah M.",
-   "startDateTimeUTC": "2026-12-09T17:10:00+01:00",
-   "endDateTimeUTC": "2026-12-09T18:00:00+01:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 15
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "elevate-pilates"
-  },
-  {
    "id": 109759353,
    "title": "Mat - Strength",
    "teacherName": "Margarita I.",
@@ -65679,6 +65973,27 @@
    },
    "spots": {
     "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109757533,
+   "title": "Reformer - Intermediate",
+   "teacherName": "Leah M.",
+   "startDateTimeUTC": "2026-12-09T17:10:00+01:00",
+   "endDateTimeUTC": "2026-12-09T18:00:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 15
    },
    "planTypesB2C": [
     "M",
@@ -65750,6 +66065,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "halenow-prenzlauer-berg"
+  },
+  {
+   "id": 109860141,
+   "title": "Hot Pilates",
+   "teacherName": "Vanessa G.",
+   "startDateTimeUTC": "2026-12-09T17:30:00+01:00",
+   "endDateTimeUTC": "2026-12-09T18:20:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "hot-aura"
   },
   {
    "id": 109744141,
@@ -66252,6 +66588,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "holmes-place-boutique"
+  },
+  {
+   "id": 109861129,
+   "title": "Hot Pilates",
+   "teacherName": "Vanessa G.",
+   "startDateTimeUTC": "2026-12-09T18:45:00+01:00",
+   "endDateTimeUTC": "2026-12-09T19:35:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "hot-aura"
   },
   {
    "id": 109765732,
@@ -66819,27 +67176,6 @@
    "venue": "laudace-studio"
   },
   {
-   "id": 109764179,
-   "title": "Frame Up - Beginner",
-   "teacherName": "Maya B.",
-   "startDateTimeUTC": "2026-12-09T20:00:00+01:00",
-   "endDateTimeUTC": "2026-12-09T21:00:00+01:00",
-   "category": {
-    "id": 7,
-    "name": "Dance"
-   },
-   "spots": {
-    "max": 20
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "lunatix-dance-base-east-side-mall-1"
-  },
-  {
    "id": 109764159,
    "title": "Heels Dance - Beginner",
    "teacherName": "Juliane M.",
@@ -66851,6 +67187,27 @@
    },
    "spots": {
     "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
+   "id": 109764179,
+   "title": "Frame Up - Beginner",
+   "teacherName": "Maya B.",
+   "startDateTimeUTC": "2026-12-09T20:00:00+01:00",
+   "endDateTimeUTC": "2026-12-09T21:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 20
    },
    "planTypesB2C": [
     "M",
@@ -67302,27 +67659,6 @@
    "venue": "good-moves-studio"
   },
   {
-   "id": 109802130,
-   "title": "Reformer - Pilates for Runners (DE/EN)",
-   "teacherName": "Lara F.",
-   "startDateTimeUTC": "2026-12-10T07:30:00+01:00",
-   "endDateTimeUTC": "2026-12-10T08:20:00+01:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 15
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "elevate-pilates"
-  },
-  {
    "id": 109802131,
    "title": "Mat - Sculpt & Sweat",
    "teacherName": "Sabrina I.",
@@ -67334,6 +67670,27 @@
    },
    "spots": {
     "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109802130,
+   "title": "Reformer - Pilates for Runners (DE/EN)",
+   "teacherName": "Lara F.",
+   "startDateTimeUTC": "2026-12-10T07:30:00+01:00",
+   "endDateTimeUTC": "2026-12-10T08:20:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 15
    },
    "planTypesB2C": [
     "M",
@@ -67446,6 +67803,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "holmes-place-boutique"
+  },
+  {
+   "id": 109921217,
+   "title": "Hot Pilates",
+   "teacherName": "Pauli",
+   "startDateTimeUTC": "2026-12-10T08:00:00+01:00",
+   "endDateTimeUTC": "2026-12-10T08:50:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "hot-aura"
   },
   {
    "id": 109801811,
@@ -67948,6 +68326,27 @@
    "venue": "asa-studio"
   },
   {
+   "id": 109803593,
+   "title": "Mat - Abs & Booty",
+   "teacherName": "Sabrina I.",
+   "startDateTimeUTC": "2026-12-10T10:00:00+01:00",
+   "endDateTimeUTC": "2026-12-10T10:50:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
    "id": 109803577,
    "title": "Reformer - Intermediate",
    "teacherName": "Donna M.",
@@ -67969,17 +68368,17 @@
    "venue": "elevate-pilates"
   },
   {
-   "id": 109803593,
-   "title": "Mat - Abs & Booty",
-   "teacherName": "Sabrina I.",
+   "id": 109922381,
+   "title": "Hot Sculpt",
+   "teacherName": "Lotti F.",
    "startDateTimeUTC": "2026-12-10T10:00:00+01:00",
    "endDateTimeUTC": "2026-12-10T10:50:00+01:00",
    "category": {
-    "id": 4,
-    "name": "Pilates"
+    "id": 1,
+    "name": "Fitness"
    },
    "spots": {
-    "max": 12
+    "max": 18
    },
    "planTypesB2C": [
     "M",
@@ -67987,7 +68386,7 @@
     "XL"
    ],
    "isPlusCheckin": false,
-   "venue": "elevate-pilates"
+   "venue": "hot-aura"
   },
   {
    "id": 109803222,
@@ -68221,6 +68620,27 @@
    "venue": "lyra-prenzlauerberg"
   },
   {
+   "id": 109924668,
+   "title": "Hot Pilates",
+   "teacherName": "Sara U.",
+   "startDateTimeUTC": "2026-12-10T11:30:00+01:00",
+   "endDateTimeUTC": "2026-12-10T12:20:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "hot-aura"
+  },
+  {
    "id": 109781924,
    "title": "ROFORM STUDIO 2",
    "teacherName": "Lea M.",
@@ -68305,27 +68725,6 @@
    "venue": "boogaloo-tanzstudio"
   },
   {
-   "id": 109805557,
-   "title": "Reformer - Sculpt",
-   "teacherName": "Adela M.",
-   "startDateTimeUTC": "2026-12-10T12:00:00+01:00",
-   "endDateTimeUTC": "2026-12-10T12:50:00+01:00",
-   "category": {
-    "id": 344,
-    "name": "Pilates Reformer"
-   },
-   "spots": {
-    "max": 15
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "elevate-pilates"
-  },
-  {
    "id": 109804901,
    "title": "Mat - Spinal Strength",
    "teacherName": "Sabrina I.",
@@ -68337,6 +68736,27 @@
    },
    "spots": {
     "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109805557,
+   "title": "Reformer - Sculpt",
+   "teacherName": "Adela M.",
+   "startDateTimeUTC": "2026-12-10T12:00:00+01:00",
+   "endDateTimeUTC": "2026-12-10T12:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 15
    },
    "planTypesB2C": [
     "M",
@@ -68575,6 +68995,27 @@
    ],
    "isPlusCheckin": false,
    "venue": "lyra-prenzlauerberg"
+  },
+  {
+   "id": 109925568,
+   "title": "Hot Barre",
+   "teacherName": "Sara U.",
+   "startDateTimeUTC": "2026-12-10T12:45:00+01:00",
+   "endDateTimeUTC": "2026-12-10T13:35:00+01:00",
+   "category": {
+    "id": 1378,
+    "name": "Barre"
+   },
+   "spots": {
+    "max": 14
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "hot-aura"
   },
   {
    "id": 109805711,
@@ -69083,7 +69524,7 @@
   {
    "id": 109815685,
    "title": "HOT Infrared x Abs & Booty",
-   "teacherName": "Giovanni R.",
+   "teacherName": "Gio R.",
    "startDateTimeUTC": "2026-12-10T16:00:00+01:00",
    "endDateTimeUTC": "2026-12-10T16:45:00+01:00",
    "category": {
@@ -69499,27 +69940,6 @@
    "venue": "studio-berlin"
   },
   {
-   "id": 109809380,
-   "title": "Barre - Sculpt",
-   "teacherName": "Olga G.",
-   "startDateTimeUTC": "2026-12-10T17:10:00+01:00",
-   "endDateTimeUTC": "2026-12-10T18:00:00+01:00",
-   "category": {
-    "id": 1378,
-    "name": "Barre"
-   },
-   "spots": {
-    "max": 12
-   },
-   "planTypesB2C": [
-    "M",
-    "L",
-    "XL"
-   ],
-   "isPlusCheckin": false,
-   "venue": "elevate-pilates"
-  },
-  {
    "id": 109811003,
    "title": "Reformer - Sculpt",
    "teacherName": "Martina A.",
@@ -69531,6 +69951,27 @@
    },
    "spots": {
     "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109809380,
+   "title": "Barre - Sculpt",
+   "teacherName": "Olga G.",
+   "startDateTimeUTC": "2026-12-10T17:10:00+01:00",
+   "endDateTimeUTC": "2026-12-10T18:00:00+01:00",
+   "category": {
+    "id": 1378,
+    "name": "Barre"
+   },
+   "spots": {
+    "max": 12
    },
    "planTypesB2C": [
     "M",
@@ -70991,6 +71432,3651 @@
    "teacherName": "Your C.",
    "startDateTimeUTC": "2026-12-10T23:00:00+01:00",
    "endDateTimeUTC": "2026-12-10T23:55:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 5
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "laudace-studio"
+  },
+  {
+   "id": 109851677,
+   "title": "Reformer Pilates Session",
+   "teacherName": "Your C.",
+   "startDateTimeUTC": "2026-12-11T05:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T06:00:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 5
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "laudace-studio"
+  },
+  {
+   "id": 109851685,
+   "title": "Reformer Pilates Session",
+   "teacherName": "Your C.",
+   "startDateTimeUTC": "2026-12-11T06:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T07:00:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 5
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "laudace-studio"
+  },
+  {
+   "id": 109851774,
+   "title": "Reformer Pilates Session",
+   "teacherName": "Your C.",
+   "startDateTimeUTC": "2026-12-11T07:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T08:00:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 5
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "laudace-studio"
+  },
+  {
+   "id": 109838361,
+   "title": "ROFORM STUDIO 1",
+   "teacherName": "Isa",
+   "startDateTimeUTC": "2026-12-11T07:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T07:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 109823702,
+   "title": "Power Moves Pilates (EN)",
+   "teacherName": "Gabriela",
+   "startDateTimeUTC": "2026-12-11T07:15:00+01:00",
+   "endDateTimeUTC": "2026-12-11T08:00:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "good-moves-studio"
+  },
+  {
+   "id": 109852409,
+   "title": "1,5 Std. Hale.GYM",
+   "teacherName": "Room",
+   "startDateTimeUTC": "2026-12-11T07:30:00+01:00",
+   "endDateTimeUTC": "2026-12-11T09:00:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 14
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "halenow-egym"
+  },
+  {
+   "id": 109836806,
+   "title": "ROFORM STUDIO 2",
+   "teacherName": "Tea",
+   "startDateTimeUTC": "2026-12-11T07:30:00+01:00",
+   "endDateTimeUTC": "2026-12-11T08:20:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 109863082,
+   "title": "Reformer Class",
+   "teacherName": "Lila",
+   "startDateTimeUTC": "2026-12-11T08:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T08:45:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "asa-studio"
+  },
+  {
+   "id": 109865702,
+   "title": "Good Morning Reformer",
+   "teacherName": "Eveline",
+   "startDateTimeUTC": "2026-12-11T08:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T09:00:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 3
+   },
+   "planTypesB2C": [
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "berliner-pilates-prenzlauer-berg"
+  },
+  {
+   "id": 109852428,
+   "title": "Mat - Female Only",
+   "teacherName": "Debi F.",
+   "startDateTimeUTC": "2026-12-11T08:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T08:50:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109852424,
+   "title": "Reformer - Sculpt",
+   "teacherName": "Oliwia D.",
+   "startDateTimeUTC": "2026-12-11T08:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T08:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109852427,
+   "title": "STRETCH.NOW Mobility DE",
+   "teacherName": "Marja J.",
+   "startDateTimeUTC": "2026-12-11T08:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T08:45:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 22
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "halenow-prenzlauer-berg"
+  },
+  {
+   "id": 109852435,
+   "title": "REFORM.NOW Sculpt EN",
+   "teacherName": "Maja F.",
+   "startDateTimeUTC": "2026-12-11T08:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T08:55:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "halenow-prenzlauer-berg-pilates-reformer"
+  },
+  {
+   "id": 109863512,
+   "title": "Full Body Sculpt (ENG)",
+   "teacherName": "Lara J.",
+   "startDateTimeUTC": "2026-12-11T08:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T08:45:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
+   "id": 109852261,
+   "title": "Reformer Pilates Session",
+   "teacherName": "Your C.",
+   "startDateTimeUTC": "2026-12-11T08:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T09:00:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 5
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "laudace-studio"
+  },
+  {
+   "id": 109852556,
+   "title": "REFORMER Full Body | Beginner | ENG",
+   "teacherName": "Hannah A.",
+   "startDateTimeUTC": "2026-12-11T08:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T08:45:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 22
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "pilates4all-reformer-pilates-prenzlauer-berg"
+  },
+  {
+   "id": 109836310,
+   "title": "ROFORM STUDIO 1",
+   "teacherName": "Isa",
+   "startDateTimeUTC": "2026-12-11T08:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T08:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 109880705,
+   "title": "Sunrise Reformer Intermediate (EN)",
+   "teacherName": "Dicle",
+   "startDateTimeUTC": "2026-12-11T08:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T08:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
+   "id": 109823102,
+   "title": "Pilates Form x Weights (EN)",
+   "teacherName": "Adela",
+   "startDateTimeUTC": "2026-12-11T08:15:00+01:00",
+   "endDateTimeUTC": "2026-12-11T09:00:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 22
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "good-moves-studio"
+  },
+  {
+   "id": 109836897,
+   "title": "ROFORM STUDIO 2",
+   "teacherName": "Tea",
+   "startDateTimeUTC": "2026-12-11T08:30:00+01:00",
+   "endDateTimeUTC": "2026-12-11T09:20:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 109815091,
+   "title": "Reformer Mittelstufe",
+   "teacherName": "Susanne",
+   "startDateTimeUTC": "2026-12-11T08:30:00+01:00",
+   "endDateTimeUTC": "2026-12-11T09:30:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 7
+   },
+   "planTypesB2C": [
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": true,
+   "venue": "via-pilates-pilates-reformer"
+  },
+  {
+   "id": 109863092,
+   "title": "Mat Pilates",
+   "teacherName": "Olga",
+   "startDateTimeUTC": "2026-12-11T09:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T09:45:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 11
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "asa-studio"
+  },
+  {
+   "id": 109863084,
+   "title": "Reformer Class",
+   "teacherName": "Lila",
+   "startDateTimeUTC": "2026-12-11T09:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T09:45:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "asa-studio"
+  },
+  {
+   "id": 109853123,
+   "title": "1,5 Std. Hale.GYM",
+   "teacherName": "Room",
+   "startDateTimeUTC": "2026-12-11T09:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T10:30:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 14
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "halenow-egym"
+  },
+  {
+   "id": 109863574,
+   "title": "Abs & Booty (ENG)",
+   "teacherName": "Lara J.",
+   "startDateTimeUTC": "2026-12-11T09:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T09:45:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
+   "id": 109852869,
+   "title": "Reformer Pilates Session",
+   "teacherName": "Your C.",
+   "startDateTimeUTC": "2026-12-11T09:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T10:00:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 5
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "laudace-studio"
+  },
+  {
+   "id": 109853237,
+   "title": "REFORMER Full Body | Experienced | ENG",
+   "teacherName": "Hannah A.",
+   "startDateTimeUTC": "2026-12-11T09:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T09:45:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 22
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "pilates4all-reformer-pilates-prenzlauer-berg"
+  },
+  {
+   "id": 109836314,
+   "title": "ROFORM STUDIO 1",
+   "teacherName": "Maria A.",
+   "startDateTimeUTC": "2026-12-11T09:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T09:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 109880728,
+   "title": "Spicy Full Body Reformer Intermediate (EN)",
+   "teacherName": "Dicle",
+   "startDateTimeUTC": "2026-12-11T09:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T09:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
+   "id": 109854368,
+   "title": "REFORM.NOW Flow EN",
+   "teacherName": "Maja F.",
+   "startDateTimeUTC": "2026-12-11T09:15:00+01:00",
+   "endDateTimeUTC": "2026-12-11T10:10:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "halenow-prenzlauer-berg-pilates-reformer"
+  },
+  {
+   "id": 109854199,
+   "title": "Mat - Sculpt & Sweat Pilates",
+   "teacherName": "Debi F.",
+   "startDateTimeUTC": "2026-12-11T09:20:00+01:00",
+   "endDateTimeUTC": "2026-12-11T10:10:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109855172,
+   "title": "Reformer - Beginner",
+   "teacherName": "Tilda E.",
+   "startDateTimeUTC": "2026-12-11T09:20:00+01:00",
+   "endDateTimeUTC": "2026-12-11T10:10:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109868199,
+   "title": "Pilates (EN)",
+   "teacherName": "Lina W.",
+   "startDateTimeUTC": "2026-12-11T09:20:00+01:00",
+   "endDateTimeUTC": "2026-12-11T10:20:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "mysenses"
+  },
+  {
+   "id": 109854149,
+   "title": "STRONG.NOW Full Body EN",
+   "teacherName": "Mariza B.",
+   "startDateTimeUTC": "2026-12-11T09:30:00+01:00",
+   "endDateTimeUTC": "2026-12-11T10:30:00+01:00",
+   "category": {
+    "id": 233,
+    "name": "Functional Training"
+   },
+   "spots": {
+    "max": 22
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "halenow-prenzlauer-berg"
+  },
+  {
+   "id": 109836934,
+   "title": "ROFORM STUDIO 2",
+   "teacherName": "Tea",
+   "startDateTimeUTC": "2026-12-11T09:30:00+01:00",
+   "endDateTimeUTC": "2026-12-11T10:20:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 109854016,
+   "title": "BALLET Level 1 | in English | ADULTS",
+   "teacherName": "Jarred B.",
+   "startDateTimeUTC": "2026-12-11T09:30:00+01:00",
+   "endDateTimeUTC": "2026-12-11T10:45:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "the-center-berlin-studio-2-1"
+  },
+  {
+   "id": 109863070,
+   "title": "Reformer Class",
+   "teacherName": "Renata",
+   "startDateTimeUTC": "2026-12-11T10:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T10:45:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "asa-studio"
+  },
+  {
+   "id": 109854094,
+   "title": "Reformer Pilates Session",
+   "teacherName": "Your C.",
+   "startDateTimeUTC": "2026-12-11T10:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T11:00:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 5
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "laudace-studio"
+  },
+  {
+   "id": 109838325,
+   "title": "ROFORM STUDIO 1",
+   "teacherName": "Maria A.",
+   "startDateTimeUTC": "2026-12-11T10:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T10:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 109854959,
+   "title": "Sensual Pole Flow L1+ (Heels Opt.)",
+   "teacherName": "Valeria C.",
+   "startDateTimeUTC": "2026-12-11T10:05:00+01:00",
+   "endDateTimeUTC": "2026-12-11T11:05:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
+   "id": 109854960,
+   "title": "Pole Handstands",
+   "teacherName": "Francesca F.",
+   "startDateTimeUTC": "2026-12-11T10:10:00+01:00",
+   "endDateTimeUTC": "2026-12-11T11:10:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra-prenzlauerberg"
+  },
+  {
+   "id": 109855167,
+   "title": "1,5 Std. Hale.GYM",
+   "teacherName": "Room",
+   "startDateTimeUTC": "2026-12-11T10:30:00+01:00",
+   "endDateTimeUTC": "2026-12-11T12:00:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 14
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "halenow-egym"
+  },
+  {
+   "id": 109836801,
+   "title": "ROFORM STUDIO 2",
+   "teacherName": "Anna-Lise",
+   "startDateTimeUTC": "2026-12-11T10:30:00+01:00",
+   "endDateTimeUTC": "2026-12-11T11:20:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 109863213,
+   "title": "CYCLICA - Conscious Weightlifting for Women",
+   "teacherName": "Carolina",
+   "startDateTimeUTC": "2026-12-11T10:30:00+01:00",
+   "endDateTimeUTC": "2026-12-11T11:30:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 14
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "studio-berlin"
+  },
+  {
+   "id": 109855181,
+   "title": "Reformer - Intermediate",
+   "teacherName": "Tilda E.",
+   "startDateTimeUTC": "2026-12-11T10:40:00+01:00",
+   "endDateTimeUTC": "2026-12-11T11:30:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109855178,
+   "title": "Mat - Prenatal Pilates",
+   "teacherName": "Katia S.",
+   "startDateTimeUTC": "2026-12-11T10:40:00+01:00",
+   "endDateTimeUTC": "2026-12-11T11:30:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109854846,
+   "title": "Pole L0 - Introduction",
+   "teacherName": "Leonie V.",
+   "startDateTimeUTC": "2026-12-11T10:50:00+01:00",
+   "endDateTimeUTC": "2026-12-11T11:50:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
+   "id": 109863085,
+   "title": "Reformer Class",
+   "teacherName": "Renata",
+   "startDateTimeUTC": "2026-12-11T11:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T11:45:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "asa-studio"
+  },
+  {
+   "id": 109855174,
+   "title": "PILATES.NOW Sculpt EN",
+   "teacherName": "Anita Z.",
+   "startDateTimeUTC": "2026-12-11T11:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T11:45:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 22
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "halenow-prenzlauer-berg"
+  },
+  {
+   "id": 109854955,
+   "title": "Reformer Pilates Session",
+   "teacherName": "Your C.",
+   "startDateTimeUTC": "2026-12-11T11:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T12:00:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 5
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "laudace-studio"
+  },
+  {
+   "id": 109838261,
+   "title": "ROFORM STUDIO 1",
+   "teacherName": "Ferhat",
+   "startDateTimeUTC": "2026-12-11T11:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T11:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 109854974,
+   "title": "BALLET Level 2 | in English | ADULTS",
+   "teacherName": "Jarred B.",
+   "startDateTimeUTC": "2026-12-11T11:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T12:30:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "the-center-berlin-studio-2-1"
+  },
+  {
+   "id": 109855628,
+   "title": "Pole L0 Absolute Beginners",
+   "teacherName": "Valeria C.",
+   "startDateTimeUTC": "2026-12-11T11:15:00+01:00",
+   "endDateTimeUTC": "2026-12-11T12:15:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
+   "id": 109855626,
+   "title": "Pole L2 - L3 Advanced",
+   "teacherName": "Francesca F.",
+   "startDateTimeUTC": "2026-12-11T11:20:00+01:00",
+   "endDateTimeUTC": "2026-12-11T12:20:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra-prenzlauerberg"
+  },
+  {
+   "id": 109836818,
+   "title": "ROFORM STUDIO 2",
+   "teacherName": "Anna-Lise",
+   "startDateTimeUTC": "2026-12-11T11:30:00+01:00",
+   "endDateTimeUTC": "2026-12-11T12:20:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 109863067,
+   "title": "ASA Mom´s Club",
+   "teacherName": "Renata",
+   "startDateTimeUTC": "2026-12-11T12:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T12:45:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 11
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "asa-studio"
+  },
+  {
+   "id": 109856030,
+   "title": "Pole L1 - Beginners",
+   "teacherName": "Leonie V.",
+   "startDateTimeUTC": "2026-12-11T12:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T13:00:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
+   "id": 109855875,
+   "title": "Mat - Power Pilates",
+   "teacherName": "Debi F.",
+   "startDateTimeUTC": "2026-12-11T12:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T12:50:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109856718,
+   "title": "Reformer - Sculpt",
+   "teacherName": "Leah M.",
+   "startDateTimeUTC": "2026-12-11T12:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T12:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109855836,
+   "title": "1,5 Std. Hale.GYM",
+   "teacherName": "Room",
+   "startDateTimeUTC": "2026-12-11T12:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T13:30:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 14
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "halenow-egym"
+  },
+  {
+   "id": 109863570,
+   "title": "Abs & Booty (ENG)",
+   "teacherName": "Monica L.",
+   "startDateTimeUTC": "2026-12-11T12:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T12:45:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
+   "id": 109855604,
+   "title": "Reformer Pilates Session",
+   "teacherName": "Your C.",
+   "startDateTimeUTC": "2026-12-11T12:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T13:00:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 5
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "laudace-studio"
+  },
+  {
+   "id": 109855922,
+   "title": "REFORMER Full Body | Beginner | ENG",
+   "teacherName": "Feline V.",
+   "startDateTimeUTC": "2026-12-11T12:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T12:45:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 22
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "pilates4all-reformer-pilates-prenzlauer-berg"
+  },
+  {
+   "id": 109836344,
+   "title": "ROFORM STUDIO 1",
+   "teacherName": "Ferhat",
+   "startDateTimeUTC": "2026-12-11T12:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T12:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 109863226,
+   "title": "PUSH. Pilates + Weights",
+   "teacherName": "Elena",
+   "startDateTimeUTC": "2026-12-11T12:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T12:45:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 14
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "studio-berlin"
+  },
+  {
+   "id": 109823688,
+   "title": "Power Moves Pilates (EN)",
+   "teacherName": "Sara",
+   "startDateTimeUTC": "2026-12-11T12:15:00+01:00",
+   "endDateTimeUTC": "2026-12-11T13:00:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 22
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "good-moves-studio"
+  },
+  {
+   "id": 109856754,
+   "title": "PILATES.NOW Flow EN",
+   "teacherName": "Anita Z.",
+   "startDateTimeUTC": "2026-12-11T12:15:00+01:00",
+   "endDateTimeUTC": "2026-12-11T13:00:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 22
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "halenow-prenzlauer-berg"
+  },
+  {
+   "id": 109856534,
+   "title": "Pole L0 - L1 Beginners with Experience",
+   "teacherName": "Valeria C.",
+   "startDateTimeUTC": "2026-12-11T12:25:00+01:00",
+   "endDateTimeUTC": "2026-12-11T13:25:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 1
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
+   "id": 109856535,
+   "title": "Open Training - Pole",
+   "teacherName": "Shilpashree M.",
+   "startDateTimeUTC": "2026-12-11T12:30:00+01:00",
+   "endDateTimeUTC": "2026-12-11T13:30:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra-prenzlauerberg"
+  },
+  {
+   "id": 109836924,
+   "title": "ROFORM STUDIO 2",
+   "teacherName": "Alana S.",
+   "startDateTimeUTC": "2026-12-11T12:30:00+01:00",
+   "endDateTimeUTC": "2026-12-11T13:20:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 109856510,
+   "title": "Reformer Pilates Session",
+   "teacherName": "Your C.",
+   "startDateTimeUTC": "2026-12-11T13:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T14:00:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 5
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "laudace-studio"
+  },
+  {
+   "id": 109856829,
+   "title": "REFORMER Abs & Ass | ENG",
+   "teacherName": "Feline V.",
+   "startDateTimeUTC": "2026-12-11T13:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T13:45:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 22
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "pilates4all-reformer-pilates-prenzlauer-berg"
+  },
+  {
+   "id": 109838331,
+   "title": "ROFORM STUDIO 1",
+   "teacherName": "Pia",
+   "startDateTimeUTC": "2026-12-11T13:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T13:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 109863220,
+   "title": "FLOW. Yoga for Back Release",
+   "teacherName": "Margo",
+   "startDateTimeUTC": "2026-12-11T13:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T14:00:00+01:00",
+   "category": {
+    "id": 6,
+    "name": "Yoga"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "studio-berlin"
+  },
+  {
+   "id": 109857060,
+   "title": "Pole L2 · Beginners Experts",
+   "teacherName": "Leonie V.",
+   "startDateTimeUTC": "2026-12-11T13:10:00+01:00",
+   "endDateTimeUTC": "2026-12-11T14:10:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
+   "id": 109857456,
+   "title": "Reformer Pre-Natal",
+   "teacherName": "Leah M.",
+   "startDateTimeUTC": "2026-12-11T13:10:00+01:00",
+   "endDateTimeUTC": "2026-12-11T14:00:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109857396,
+   "title": "1,5 Std. Hale.GYM",
+   "teacherName": "Room",
+   "startDateTimeUTC": "2026-12-11T13:30:00+01:00",
+   "endDateTimeUTC": "2026-12-11T15:00:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 14
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "halenow-egym"
+  },
+  {
+   "id": 109836976,
+   "title": "ROFORM STUDIO 2",
+   "teacherName": "Alana S.",
+   "startDateTimeUTC": "2026-12-11T13:30:00+01:00",
+   "endDateTimeUTC": "2026-12-11T14:20:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 109857208,
+   "title": "Pole L1 Beginner+",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-12-11T13:35:00+01:00",
+   "endDateTimeUTC": "2026-12-11T14:35:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
+   "id": 109857209,
+   "title": "Pole L0 - L1 Beginners with Experience",
+   "teacherName": "Jane W.",
+   "startDateTimeUTC": "2026-12-11T13:40:00+01:00",
+   "endDateTimeUTC": "2026-12-11T14:40:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra-prenzlauerberg"
+  },
+  {
+   "id": 109863076,
+   "title": "Reformer Class",
+   "teacherName": "Lila",
+   "startDateTimeUTC": "2026-12-11T14:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T14:45:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "asa-studio"
+  },
+  {
+   "id": 109857228,
+   "title": "Reformer Pilates Session",
+   "teacherName": "Your C.",
+   "startDateTimeUTC": "2026-12-11T14:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T15:00:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 5
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "laudace-studio"
+  },
+  {
+   "id": 109836444,
+   "title": "ROFORM STUDIO 1",
+   "teacherName": "Pia",
+   "startDateTimeUTC": "2026-12-11T14:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T14:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 109857621,
+   "title": "Pole L0 - Introduction",
+   "teacherName": "Leonie V.",
+   "startDateTimeUTC": "2026-12-11T14:20:00+01:00",
+   "endDateTimeUTC": "2026-12-11T15:20:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
+   "id": 109836798,
+   "title": "ROFORM STUDIO 2",
+   "teacherName": "Alana S.",
+   "startDateTimeUTC": "2026-12-11T14:30:00+01:00",
+   "endDateTimeUTC": "2026-12-11T15:20:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 109857760,
+   "title": "Intro to Spinning Pole L0",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-12-11T14:45:00+01:00",
+   "endDateTimeUTC": "2026-12-11T15:45:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
+   "id": 109857767,
+   "title": "Pole Flying Heels L1+ Beginner / Intermediate",
+   "teacherName": "Jane W.",
+   "startDateTimeUTC": "2026-12-11T14:50:00+01:00",
+   "endDateTimeUTC": "2026-12-11T15:50:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra-prenzlauerberg"
+  },
+  {
+   "id": 109863087,
+   "title": "Reformer Class",
+   "teacherName": "Lila",
+   "startDateTimeUTC": "2026-12-11T15:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T15:45:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "asa-studio"
+  },
+  {
+   "id": 109857828,
+   "title": "1,5 Std. Hale.GYM",
+   "teacherName": "Room",
+   "startDateTimeUTC": "2026-12-11T15:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T16:30:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 14
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "halenow-egym"
+  },
+  {
+   "id": 109857827,
+   "title": "PILATES.NOW Sculpt EN",
+   "teacherName": "Jessica S.",
+   "startDateTimeUTC": "2026-12-11T15:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T15:45:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 22
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "halenow-prenzlauer-berg"
+  },
+  {
+   "id": 109857855,
+   "title": "Reformer Pilates Session",
+   "teacherName": "Your C.",
+   "startDateTimeUTC": "2026-12-11T15:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T16:00:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 5
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "laudace-studio"
+  },
+  {
+   "id": 109857916,
+   "title": "REFORMER Full Body | Experienced | ENG",
+   "teacherName": "Tea Z.",
+   "startDateTimeUTC": "2026-12-11T15:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T15:45:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 22
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "pilates4all-reformer-pilates-prenzlauer-berg"
+  },
+  {
+   "id": 109838342,
+   "title": "ROFORM STUDIO 1",
+   "teacherName": "Pia",
+   "startDateTimeUTC": "2026-12-11T15:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T15:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 109880714,
+   "title": "Full Body Reformer - Intermediate (EN)",
+   "teacherName": "Toni L.",
+   "startDateTimeUTC": "2026-12-11T15:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T15:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
+   "id": 109863198,
+   "title": "FLOW. Pre-Natal Pilates",
+   "teacherName": "Irene",
+   "startDateTimeUTC": "2026-12-11T15:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T16:00:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "studio-berlin"
+  },
+  {
+   "id": 109836967,
+   "title": "ROFORM STUDIO 2",
+   "teacherName": "Laura R.",
+   "startDateTimeUTC": "2026-12-11T15:30:00+01:00",
+   "endDateTimeUTC": "2026-12-11T16:20:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 109858333,
+   "title": "Pole Choreography",
+   "teacherName": "Pilar.Serenlipia X.",
+   "startDateTimeUTC": "2026-12-11T15:50:00+01:00",
+   "endDateTimeUTC": "2026-12-11T16:50:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 5
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
+   "id": 109858178,
+   "title": "Pole L1 - L2 Lower Intermediate",
+   "teacherName": "Louise H.",
+   "startDateTimeUTC": "2026-12-11T15:55:00+01:00",
+   "endDateTimeUTC": "2026-12-11T16:55:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 11
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
+   "id": 109858392,
+   "title": "Postnatal Mat Pilates",
+   "teacherName": "Tilda E.",
+   "startDateTimeUTC": "2026-12-11T16:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T16:50:00+01:00",
+   "category": {
+    "id": 6,
+    "name": "Yoga"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109858389,
+   "title": "Reformer - Beginner",
+   "teacherName": "Julieta B.",
+   "startDateTimeUTC": "2026-12-11T16:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T16:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109863553,
+   "title": "HOT Infrared x Pilates",
+   "teacherName": "Aurora",
+   "startDateTimeUTC": "2026-12-11T16:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T16:45:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
+   "id": 109858124,
+   "title": "Reformer Pilates Session",
+   "teacherName": "Your C.",
+   "startDateTimeUTC": "2026-12-11T16:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T17:00:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 5
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "laudace-studio"
+  },
+  {
+   "id": 109858179,
+   "title": "Spinning Pole L1 Advanced Beginners",
+   "teacherName": "Jane W.",
+   "startDateTimeUTC": "2026-12-11T16:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T17:00:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra-prenzlauerberg"
+  },
+  {
+   "id": 109858394,
+   "title": "REFORMER Build & Burn | ENG",
+   "teacherName": "Tea Z.",
+   "startDateTimeUTC": "2026-12-11T16:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T16:45:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 22
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "pilates4all-reformer-pilates-prenzlauer-berg"
+  },
+  {
+   "id": 109836326,
+   "title": "ROFORM STUDIO 1",
+   "teacherName": "Lea S.",
+   "startDateTimeUTC": "2026-12-11T16:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T16:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 109880763,
+   "title": "Reformer Pilates - ATHLETIC ADVANCED",
+   "teacherName": "Toni L.",
+   "startDateTimeUTC": "2026-12-11T16:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T16:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
+   "id": 109859044,
+   "title": "REFORM.NOW Flow EN",
+   "teacherName": "Jessica S.",
+   "startDateTimeUTC": "2026-12-11T16:15:00+01:00",
+   "endDateTimeUTC": "2026-12-11T17:10:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "halenow-prenzlauer-berg-pilates-reformer"
+  },
+  {
+   "id": 109866906,
+   "title": "Reformer Foundation",
+   "teacherName": "Emma R.",
+   "startDateTimeUTC": "2026-12-11T16:30:00+01:00",
+   "endDateTimeUTC": "2026-12-11T17:30:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 3
+   },
+   "planTypesB2C": [
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "berliner-pilates-prenzlauer-berg"
+  },
+  {
+   "id": 109859031,
+   "title": "1,5 Std. Hale.GYM",
+   "teacherName": "Room",
+   "startDateTimeUTC": "2026-12-11T16:30:00+01:00",
+   "endDateTimeUTC": "2026-12-11T18:00:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 14
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "halenow-egym"
+  },
+  {
+   "id": 109836884,
+   "title": "ROFORM STUDIO 2",
+   "teacherName": "Laura R.",
+   "startDateTimeUTC": "2026-12-11T16:30:00+01:00",
+   "endDateTimeUTC": "2026-12-11T17:20:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 109863206,
+   "title": "REST. Aroma Therapy & Sound Bath",
+   "teacherName": "Desiree",
+   "startDateTimeUTC": "2026-12-11T16:30:00+01:00",
+   "endDateTimeUTC": "2026-12-11T17:30:00+01:00",
+   "category": {
+    "id": 6,
+    "name": "Yoga"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "studio-berlin"
+  },
+  {
+   "id": 109865384,
+   "title": "Strong Pilates (DE) 45 Min",
+   "teacherName": "Basma",
+   "startDateTimeUTC": "2026-12-11T16:45:00+01:00",
+   "endDateTimeUTC": "2026-12-11T17:30:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 14
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "casa-flow"
+  },
+  {
+   "id": 109863534,
+   "title": "HOT Infrared x Sculpt",
+   "teacherName": "Cover C.",
+   "startDateTimeUTC": "2026-12-11T16:55:00+01:00",
+   "endDateTimeUTC": "2026-12-11T17:40:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
+   "id": 109863072,
+   "title": "Reformer Class",
+   "teacherName": "Ksenia",
+   "startDateTimeUTC": "2026-12-11T17:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T17:45:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "asa-studio"
+  },
+  {
+   "id": 109863097,
+   "title": "HIGH HEELS DANCE – FEMININITY & CONFIDENCE",
+   "teacherName": "Valeria",
+   "startDateTimeUTC": "2026-12-11T17:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T17:45:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "asa-studio"
+  },
+  {
+   "id": 109858692,
+   "title": "Pole L1 - Spinning Beginner",
+   "teacherName": "Pilar.Serenlipia X.",
+   "startDateTimeUTC": "2026-12-11T17:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T18:00:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 8
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
+   "id": 109859146,
+   "title": "Barre - Sculpt",
+   "teacherName": "Tilda E.",
+   "startDateTimeUTC": "2026-12-11T17:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T17:50:00+01:00",
+   "category": {
+    "id": 1378,
+    "name": "Barre"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109859151,
+   "title": "Reformer - Abs & Booty",
+   "teacherName": "Julieta B.",
+   "startDateTimeUTC": "2026-12-11T17:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T17:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109859048,
+   "title": "STRONG.NOW Full Body (female) DE",
+   "teacherName": "Laura F.",
+   "startDateTimeUTC": "2026-12-11T17:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T17:45:00+01:00",
+   "category": {
+    "id": 233,
+    "name": "Functional Training"
+   },
+   "spots": {
+    "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "halenow-prenzlauer-berg"
+  },
+  {
+   "id": 109859188,
+   "title": "Reformer Pilates Session",
+   "teacherName": "Your C.",
+   "startDateTimeUTC": "2026-12-11T17:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T18:00:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 5
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "laudace-studio"
+  },
+  {
+   "id": 109863742,
+   "title": "K-Pop - Beginner",
+   "teacherName": "Suzi",
+   "startDateTimeUTC": "2026-12-11T17:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T18:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
+   "id": 109859224,
+   "title": "REFORMER Full Body | Beginner | DE",
+   "teacherName": "Kathrin G.",
+   "startDateTimeUTC": "2026-12-11T17:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T17:45:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 22
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "pilates4all-reformer-pilates-prenzlauer-berg"
+  },
+  {
+   "id": 109836318,
+   "title": "ROFORM STUDIO 1",
+   "teacherName": "Lea S.",
+   "startDateTimeUTC": "2026-12-11T17:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T17:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 109880749,
+   "title": "Basis Reformer Pilates (EN)",
+   "teacherName": "Beatrice",
+   "startDateTimeUTC": "2026-12-11T17:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T17:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
+   "id": 109860002,
+   "title": "Spinning Pole Invert Combos L1+",
+   "teacherName": "Angelko R.",
+   "startDateTimeUTC": "2026-12-11T17:05:00+01:00",
+   "endDateTimeUTC": "2026-12-11T18:05:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
+   "id": 109860012,
+   "title": "Pole L0 Absolute Beginners",
+   "teacherName": "Ester A.",
+   "startDateTimeUTC": "2026-12-11T17:10:00+01:00",
+   "endDateTimeUTC": "2026-12-11T18:10:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra-prenzlauerberg"
+  },
+  {
+   "id": 109860301,
+   "title": "REFORM.NOW Sculpt EN",
+   "teacherName": "Jessica S.",
+   "startDateTimeUTC": "2026-12-11T17:30:00+01:00",
+   "endDateTimeUTC": "2026-12-11T18:25:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "halenow-prenzlauer-berg-pilates-reformer"
+  },
+  {
+   "id": 109836845,
+   "title": "ROFORM STUDIO 2",
+   "teacherName": "Harry",
+   "startDateTimeUTC": "2026-12-11T17:30:00+01:00",
+   "endDateTimeUTC": "2026-12-11T18:20:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 109866859,
+   "title": "Reformer Evolution",
+   "teacherName": "Emma R.",
+   "startDateTimeUTC": "2026-12-11T17:45:00+01:00",
+   "endDateTimeUTC": "2026-12-11T18:45:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 3
+   },
+   "planTypesB2C": [
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "berliner-pilates-prenzlauer-berg"
+  },
+  {
+   "id": 109863522,
+   "title": "HOT Infrared x Abs & Booty",
+   "teacherName": "Cover C.",
+   "startDateTimeUTC": "2026-12-11T17:50:00+01:00",
+   "endDateTimeUTC": "2026-12-11T18:35:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
+   "id": 109865513,
+   "title": "Commercial (Intermediate)",
+   "teacherName": "Liv",
+   "startDateTimeUTC": "2026-12-11T18:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T19:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
+  },
+  {
+   "id": 109863066,
+   "title": "Reformer Class",
+   "teacherName": "Ksenia",
+   "startDateTimeUTC": "2026-12-11T18:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T18:45:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "asa-studio"
+  },
+  {
+   "id": 109865391,
+   "title": "Afterwork Pilates (DE) 45 Min",
+   "teacherName": "Basma",
+   "startDateTimeUTC": "2026-12-11T18:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T18:45:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 14
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "casa-flow"
+  },
+  {
+   "id": 109860420,
+   "title": "Reformer - Upper Body Sculpt",
+   "teacherName": "Bennay M.",
+   "startDateTimeUTC": "2026-12-11T18:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T18:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109860419,
+   "title": "Mat - Abs & Booty",
+   "teacherName": "Lena W.",
+   "startDateTimeUTC": "2026-12-11T18:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T18:50:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109860313,
+   "title": "1,5 Std. Hale.GYM",
+   "teacherName": "Room",
+   "startDateTimeUTC": "2026-12-11T18:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T19:30:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 14
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "halenow-egym"
+  },
+  {
+   "id": 109860059,
+   "title": "Reformer Pilates Session",
+   "teacherName": "Your C.",
+   "startDateTimeUTC": "2026-12-11T18:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T19:00:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 5
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "laudace-studio"
+  },
+  {
+   "id": 109863873,
+   "title": "Female Performance - Intermediate",
+   "teacherName": "Kristina A.",
+   "startDateTimeUTC": "2026-12-11T18:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T19:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
+   "id": 109860495,
+   "title": "REFORMER Full Body | Experienced | ENG",
+   "teacherName": "Kathrin G.",
+   "startDateTimeUTC": "2026-12-11T18:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T18:45:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 22
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "pilates4all-reformer-pilates-prenzlauer-berg"
+  },
+  {
+   "id": 109836337,
+   "title": "ROFORM STUDIO 1",
+   "teacherName": "Lea S.",
+   "startDateTimeUTC": "2026-12-11T18:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T18:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 109880759,
+   "title": "Reformer Full Body Beginner (EN)",
+   "teacherName": "Beatrice",
+   "startDateTimeUTC": "2026-12-11T18:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T18:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
+   "id": 109863202,
+   "title": "FLOW. Myofascial Pilates & Gong Bath",
+   "teacherName": "Ily",
+   "startDateTimeUTC": "2026-12-11T18:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T19:00:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "studio-berlin"
+  },
+  {
+   "id": 109860661,
+   "title": "Pole L1 - Beginners",
+   "teacherName": "Pilar.Serenlipia X.",
+   "startDateTimeUTC": "2026-12-11T18:10:00+01:00",
+   "endDateTimeUTC": "2026-12-11T19:10:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "boogaloo-tanzstudio"
+  },
+  {
+   "id": 109823712,
+   "title": "Power Moves Pilates (EN)",
+   "teacherName": "Tara",
+   "startDateTimeUTC": "2026-12-11T18:15:00+01:00",
+   "endDateTimeUTC": "2026-12-11T19:00:00+01:00",
+   "category": {
+    "id": 4,
+    "name": "Pilates"
+   },
+   "spots": {
+    "max": 22
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "good-moves-studio"
+  },
+  {
+   "id": 109861544,
+   "title": "SHAPE.NOW Full Body EN",
+   "teacherName": "Ezgi K.",
+   "startDateTimeUTC": "2026-12-11T18:15:00+01:00",
+   "endDateTimeUTC": "2026-12-11T19:00:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 22
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "halenow-prenzlauer-berg"
+  },
+  {
+   "id": 109861057,
+   "title": "Intro to Pole Handspring Advanced Beginner/ Intermediate",
+   "teacherName": "Angelko R.",
+   "startDateTimeUTC": "2026-12-11T18:15:00+01:00",
+   "endDateTimeUTC": "2026-12-11T19:15:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
+   "id": 109861062,
+   "title": "Pole L1 Beginner+",
+   "teacherName": "Ester A.",
+   "startDateTimeUTC": "2026-12-11T18:20:00+01:00",
+   "endDateTimeUTC": "2026-12-11T19:20:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra-prenzlauerberg"
+  },
+  {
+   "id": 109836796,
+   "title": "ROFORM STUDIO 2",
+   "teacherName": "Harry",
+   "startDateTimeUTC": "2026-12-11T18:30:00+01:00",
+   "endDateTimeUTC": "2026-12-11T19:20:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 109861543,
+   "title": "REFORM.NOW Basic EN",
+   "teacherName": "Jessica S.",
+   "startDateTimeUTC": "2026-12-11T18:45:00+01:00",
+   "endDateTimeUTC": "2026-12-11T19:40:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "halenow-prenzlauer-berg-pilates-reformer"
+  },
+  {
+   "id": 109863571,
+   "title": "HOT Infrared x Stretch & Mobility",
+   "teacherName": "Orsola C.",
+   "startDateTimeUTC": "2026-12-11T18:45:00+01:00",
+   "endDateTimeUTC": "2026-12-11T19:30:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 29
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "holmes-place-boutique"
+  },
+  {
+   "id": 109865508,
+   "title": "Ü30 Dance & Fitness",
+   "teacherName": "Cheyenne",
+   "startDateTimeUTC": "2026-12-11T19:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T20:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
+  },
+  {
+   "id": 109863074,
+   "title": "End of Week Power Reformer",
+   "teacherName": "Ksenia",
+   "startDateTimeUTC": "2026-12-11T19:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T19:45:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 11
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "asa-studio"
+  },
+  {
+   "id": 109865419,
+   "title": "Afterwork Flow - Power & Release Yoga (DE) 60 Min",
+   "teacherName": "Sahra",
+   "startDateTimeUTC": "2026-12-11T19:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T20:00:00+01:00",
+   "category": {
+    "id": 6,
+    "name": "Yoga"
+   },
+   "spots": {
+    "max": 14
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "casa-flow"
+  },
+  {
+   "id": 109861559,
+   "title": "Reformer X Strength- DE/EN",
+   "teacherName": "Bennay M.",
+   "startDateTimeUTC": "2026-12-11T19:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T19:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "elevate-pilates"
+  },
+  {
+   "id": 109861258,
+   "title": "Reformer Pilates Session",
+   "teacherName": "Your C.",
+   "startDateTimeUTC": "2026-12-11T19:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T20:00:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 5
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "laudace-studio"
+  },
+  {
+   "id": 109863763,
+   "title": "Reggaeton - Beginner",
+   "teacherName": "Anna",
+   "startDateTimeUTC": "2026-12-11T19:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T20:00:00+01:00",
+   "category": {
+    "id": 7,
+    "name": "Dance"
+   },
+   "spots": {
+    "max": 20
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lunatix-dance-base-east-side-mall-1"
+  },
+  {
+   "id": 109861443,
+   "title": "REFORMER MUSIC SPECIAL | House Music | ENG",
+   "teacherName": "Romy J.",
+   "startDateTimeUTC": "2026-12-11T19:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T19:45:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 22
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "pilates4all-reformer-pilates-prenzlauer-berg"
+  },
+  {
+   "id": 109836333,
+   "title": "ROFORM STUDIO 1",
+   "teacherName": "Julia H.",
+   "startDateTimeUTC": "2026-12-11T19:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T19:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 109880769,
+   "title": "Full Body Sculpt Reformer Beginner (EN)",
+   "teacherName": "Beatrice",
+   "startDateTimeUTC": "2026-12-11T19:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T19:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 12
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "soulsport"
+  },
+  {
+   "id": 109862019,
+   "title": "Spinning Pole L1 Advanced Beginners",
+   "teacherName": "Angelko R.",
+   "startDateTimeUTC": "2026-12-11T19:25:00+01:00",
+   "endDateTimeUTC": "2026-12-11T20:25:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
+   "id": 109862114,
+   "title": "1,5 Std. Hale.GYM",
+   "teacherName": "Room",
+   "startDateTimeUTC": "2026-12-11T19:30:00+01:00",
+   "endDateTimeUTC": "2026-12-11T21:00:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 14
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "halenow-egym"
+  },
+  {
+   "id": 109862106,
+   "title": "BARRE.NOW Sculpt EN",
+   "teacherName": "Samantha G.",
+   "startDateTimeUTC": "2026-12-11T19:30:00+01:00",
+   "endDateTimeUTC": "2026-12-11T20:30:00+01:00",
+   "category": {
+    "id": 1378,
+    "name": "Barre"
+   },
+   "spots": {
+    "max": 22
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "halenow-prenzlauer-berg"
+  },
+  {
+   "id": 109862021,
+   "title": "Pole L2 Intermediate",
+   "teacherName": "Laura B.",
+   "startDateTimeUTC": "2026-12-11T19:30:00+01:00",
+   "endDateTimeUTC": "2026-12-11T20:30:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra-prenzlauerberg"
+  },
+  {
+   "id": 109836877,
+   "title": "ROFORM STUDIO 2",
+   "teacherName": "Harry",
+   "startDateTimeUTC": "2026-12-11T19:30:00+01:00",
+   "endDateTimeUTC": "2026-12-11T20:20:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "rostudios-berlin-prenzlauer-berg-studio-2"
+  },
+  {
+   "id": 109863201,
+   "title": "REST. Quantum Healing & Sound",
+   "teacherName": "Flor",
+   "startDateTimeUTC": "2026-12-11T19:30:00+01:00",
+   "endDateTimeUTC": "2026-12-11T20:30:00+01:00",
+   "category": {
+    "id": 13,
+    "name": "Meditation"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "studio-berlin"
+  },
+  {
+   "id": 109861943,
+   "title": "Reformer Pilates Session",
+   "teacherName": "Your C.",
+   "startDateTimeUTC": "2026-12-11T20:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T21:00:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 5
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "laudace-studio"
+  },
+  {
+   "id": 109836407,
+   "title": "ROFORM STUDIO 1",
+   "teacherName": "Julia H.",
+   "startDateTimeUTC": "2026-12-11T20:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T20:50:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 18
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "rostudios-berlin-prenzlauer-berg"
+  },
+  {
+   "id": 109865478,
+   "title": "Yin Yoga mit ätherischen Ölen",
+   "teacherName": "Christina",
+   "startDateTimeUTC": "2026-12-11T20:15:00+01:00",
+   "endDateTimeUTC": "2026-12-11T21:15:00+01:00",
+   "category": {
+    "id": 6,
+    "name": "Yoga"
+   },
+   "spots": {
+    "max": 10
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "24535"
+  },
+  {
+   "id": 109862508,
+   "title": "CONTEMPORARY Dance | in English | ADULTS",
+   "teacherName": "Melissa S.",
+   "startDateTimeUTC": "2026-12-11T20:30:00+01:00",
+   "endDateTimeUTC": "2026-12-11T21:45:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 14
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "the-center-berlin-studio-2-1"
+  },
+  {
+   "id": 109862445,
+   "title": "Open Training - Pole",
+   "teacherName": "Shilpashree M.",
+   "startDateTimeUTC": "2026-12-11T20:35:00+01:00",
+   "endDateTimeUTC": "2026-12-11T21:35:00+01:00",
+   "category": {
+    "id": 1,
+    "name": "Fitness"
+   },
+   "spots": {
+    "max": 13
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra"
+  },
+  {
+   "id": 109862505,
+   "title": "Pole L0 - L1 Beginners with Experience",
+   "teacherName": "Laura B.",
+   "startDateTimeUTC": "2026-12-11T20:40:00+01:00",
+   "endDateTimeUTC": "2026-12-11T21:40:00+01:00",
+   "category": {
+    "id": 135,
+    "name": "Pole Dance"
+   },
+   "spots": {
+    "max": 15
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "lyra-prenzlauerberg"
+  },
+  {
+   "id": 109862519,
+   "title": "Reformer Pilates Session",
+   "teacherName": "Your C.",
+   "startDateTimeUTC": "2026-12-11T21:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T22:00:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 5
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "laudace-studio"
+  },
+  {
+   "id": 109862764,
+   "title": "Reformer Pilates Session",
+   "teacherName": "Your C.",
+   "startDateTimeUTC": "2026-12-11T22:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T23:00:00+01:00",
+   "category": {
+    "id": 344,
+    "name": "Pilates Reformer"
+   },
+   "spots": {
+    "max": 5
+   },
+   "planTypesB2C": [
+    "M",
+    "L",
+    "XL"
+   ],
+   "isPlusCheckin": false,
+   "venue": "laudace-studio"
+  },
+  {
+   "id": 109862822,
+   "title": "55 Reformer Session",
+   "teacherName": "Your C.",
+   "startDateTimeUTC": "2026-12-11T23:00:00+01:00",
+   "endDateTimeUTC": "2026-12-11T23:55:00+01:00",
    "category": {
     "id": 344,
     "name": "Pilates Reformer"
